@@ -1,19 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Ore : MonoBehaviour
 {
+    public static Action OnBreakOre { get; set; }
+
     [SerializeField]
-    private GameObject _mineralPrefab;
+    private Mineral _mineralPrefab;
 
     public Vector2 RigidPosition { get => _rigid.position; }
     private Rigidbody2D _rigid;
     private int _health = 20;
-    private int _mineralCount = 5;
+    private int _mineralCount = 10;
+    private Miner _miner;
 
     // true == ±úÁü
     // false == ¾È±úÁü
+
+    public void SetMiner(Miner miner)
+    {
+        _miner = miner;
+    }
+
     public bool Hit(int damage)
     {
         _health -= damage;
@@ -27,14 +37,12 @@ public class Ore : MonoBehaviour
 
     private void Break()
     {
-        Vector2 dropPos;
         for (int i = 0; i < _mineralCount; i++)
         {
-            dropPos = transform.position;
-            dropPos.x += Random.Range(-1, 1f);
-            dropPos.y += Random.Range(-1, 1f);
-            Instantiate(_mineralPrefab, dropPos, Quaternion.identity);
+            Mineral mineral = Instantiate(_mineralPrefab, transform.position, Quaternion.identity);
+            mineral.Init(_miner);
         }
+        OnBreakOre();
         Destroy(gameObject);
     }
 

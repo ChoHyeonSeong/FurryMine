@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,36 +6,64 @@ using UnityEngine;
 
 public class Miner : MonoBehaviour
 {
-    [SerializeField]
-    private Ore _targetOre;
+    public static Func<Ore> RequestOre { get; set; }
 
     private bool _isMining;
-    private int _power = 10;
-    private float _mineSpeed = 1;
-    private WaitForSeconds _mineAnimWait = new WaitForSeconds(0.333f);
-    private float _moveSpeed = 1;
-    private string _oreTag = "Ore";
+    private bool _isBlockMove = false;
+    private int _maxMineCount;
+    private int _mineCount;
+    private int _power;
+    private float _mineTime;
+    private float _moveSpeed;
+    private float _mineAnimTime = 0.333f;
+    private float _delayTime = 0.3f;
+    private WaitForSeconds _mineAnimWait;
+    private WaitForSeconds _mineWait;
 
+    private MineCart _cart { get => GameManager.Inst.Cart; }
+    private GameObject _target;
     private SpriteRenderer _spriter;
     private Animator _animator;
     private Rigidbody2D _rigid;
-    private WaitForSeconds _mineWait;
-    private void Awake()
+
+    public void Init(int power, float moveSpeed, int maxMineCount, float mineTime, float mineAnimSpeed)
     {
         _spriter = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
         _rigid = GetComponent<Rigidbody2D>();
-        _mineWait = new WaitForSeconds(_mineSpeed);
         _animator.SetBool("Idle", true);
         _isMining = false;
+
+        _power = power;
+        _moveSpeed = moveSpeed;
+        _mineTime = mineTime;
+        _maxMineCount = maxMineCount;
+        _mineAnimWait = new WaitForSeconds(_mineAnimTime * mineAnimSpeed);
+        _mineWait = new WaitForSeconds(_mineTime);
+
+        _mineCount = _maxMineCount;
+    }
+
+    private void Update()
+    {
+        if (_target == null)
+        {
+            Ore tempOre = RequestOre();
+            if (tempOre != null)
+            {
+                _target = tempOre.gameObject;
+                tempOre.SetMiner(this);
+            }
+        }
     }
 
     private void FixedUpdate()
     {
-        if (_targetOre != null && !_isMining)
+        if (_target != null && !_isMining && !_isBlockMove)
         {
-            _spriter.flipX = _targetOre.RigidPosition.x < _rigid.position.x;
-            Vector2 dirPos = _targetOre.RigidPosition - _rigid.position;
+            _spriter.flipX = _target.transform.position.x < _rigid.position.x;
+            Vector2 dirPos = _target.transform.position;
+            dirPos -= _rigid.position;
             Vector2 nextPos = dirPos.normalized * Time.fixedDeltaTime * _moveSpeed;
             _rigid.MovePosition(nextPos + _rigid.position);
             _rigid.velocity = Vector2.zero;
@@ -44,16 +73,25 @@ public class Miner : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag(_oreTag))
-            return;
-        StartMining(collision.gameObject.GetComponent<Ore>());
+        if (collision.gameObject.CompareTag(Consts.OreTag))
+        {
+            Ore ore = collision.gameObject.GetComponent<Ore>();
+            if (ore.gameObject == _target)
+                StartMining(ore);
+        }
+        else if (_mineCount == 0 && collision.gameObject.CompareTag(Consts.CartTag))
+        {
+            _mineCount = _maxMineCount;
+            SetAnim("Idle");
+            StartCoroutine(BlockMove(_delayTime));
+            _target = null;
+        }
     }
 
     private void StartMining(Ore targetOre)
     {
         _isMining = true;
-        _targetOre = targetOre;
-        StartCoroutine(Mine());
+        StartCoroutine(Mine(targetOre));
     }
 
     private void InitAnimatorState()
@@ -69,21 +107,30 @@ public class Miner : MonoBehaviour
         _animator.SetBool(param, true);
     }
 
-    private IEnumerator Mine()
+    private IEnumerator Mine(Ore ore)
     {
         SetAnim("Idle");
         yield return _mineWait;
         SetAnim("Mine");
         yield return _mineAnimWait;
-        if (_targetOre.Hit(_power))
+        if (ore.Hit(_power))
         {
             SetAnim("Idle");
             _isMining = false;
-            _targetOre = null;
+            _mineCount--;
+            StartCoroutine(BlockMove(_delayTime));
+            _target = _mineCount > 0 ? null : _cart.gameObject;
         }
         else
         {
-            StartCoroutine(Mine());
+            StartCoroutine(Mine(ore));
         }
+    }
+
+    private IEnumerator BlockMove(float blockTime)
+    {
+        _isBlockMove = true;
+        yield return new WaitForSeconds(blockTime);
+        _isBlockMove = false;
     }
 }
