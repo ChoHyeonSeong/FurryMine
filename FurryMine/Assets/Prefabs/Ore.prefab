@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6843763242484113292}
   - component: {fileID: 7859595482000890389}
   - component: {fileID: 9184707771068390163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ore
   m_TagString: Ore
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!114 &7859595482000890389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +82,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6b28b1d9512754d8220a8864f0cdae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mineralPrefab: {fileID: 316470740067354738, guid: 87719191b2677fe43b090552069d9b6d, type: 3}
 --- !u!50 &9184707771068390163
 Rigidbody2D:
   serializedVersion: 4
@@ -120,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3359121486672362610}
   - component: {fileID: 1063606099013692729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OreSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

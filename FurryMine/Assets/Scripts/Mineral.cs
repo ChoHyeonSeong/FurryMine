@@ -1,9 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Mineral : MonoBehaviour
 {
+    public static Action<Mineral> OnPickMineral { get; set; }
+
+    public int Price { get; private set; } = 1;
+
     private Miner _miner;
     private Vector2 _minerPos { get => _miner.transform.position; }
     private Vector2[] _points = new Vector2[4];
@@ -14,6 +20,7 @@ public class Mineral : MonoBehaviour
     private float _speed = 0.5f;
     private float _startNoise = 6f;
     private float _endNoise = 3f;
+    private float _worldScale = 0.5f;
 
     public void Init(Miner miner)
     {
@@ -22,8 +29,8 @@ public class Mineral : MonoBehaviour
         _timerMax = Random.Range(0.3f, 0.5f);
 
         _points[0] = transform.position;
-        _points[1] = _points[0] + (_startNoise * ((Random.Range(-1.0f, 1.0f) * Vector2.right) + (Random.Range(-1.0f, 1.0f) * Vector2.up)));
-        _endPoint = _endNoise * ((Random.Range(-1.0f, 1.0f) * Vector2.right) + (Random.Range(-1.0f, 1.0f) * Vector2.up));
+        _points[1] = _points[0] + (_startNoise * ((Random.Range(-_worldScale, _worldScale) * Vector2.right) + (Random.Range(-_worldScale, _worldScale) * Vector2.up)));
+        _endPoint = _endNoise * ((Random.Range(-_worldScale, _worldScale) * Vector2.right) + (Random.Range(-_worldScale, _worldScale) * Vector2.up));
     }
 
     private void Update()
@@ -39,9 +46,10 @@ public class Mineral : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Miner"))
+        if (!collision.CompareTag(Consts.MinerTag))
             return;
-        Destroy(gameObject);
+        collision.GetComponent<Miner>().PlusPrice(this);
+        OnPickMineral(this);
     }
 
     private float CubicBezierCurve(float a, float b, float c, float d)

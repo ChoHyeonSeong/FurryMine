@@ -6,6 +6,6 @@ public class HeadMiner : Miner
 {
     private void Awake()
     {
-        Init(10, 5, 1, 0.5f, 1);
+        Init(10, 1, 1, 1, 1);
     }
 }

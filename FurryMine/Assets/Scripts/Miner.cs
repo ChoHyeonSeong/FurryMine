@@ -1,3 +1,4 @@
+using Pathfinding;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,8 +9,7 @@ public class Miner : MonoBehaviour
 {
     public static Func<Ore> RequestOre { get; set; }
 
-    private bool _isMining;
-    private bool _isBlockMove = false;
+    private int _price;
     private int _maxMineCount;
     private int _mineCount;
     private int _power;
@@ -25,14 +25,15 @@ public class Miner : MonoBehaviour
     private SpriteRenderer _spriter;
     private Animator _animator;
     private Rigidbody2D _rigid;
+    private AIPath _aiPath;
 
     public void Init(int power, float moveSpeed, int maxMineCount, float mineTime, float mineAnimSpeed)
     {
         _spriter = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
         _rigid = GetComponent<Rigidbody2D>();
+        _aiPath = GetComponent<AIPath>();
         _animator.SetBool("Idle", true);
-        _isMining = false;
 
         _power = power;
         _moveSpeed = moveSpeed;
@@ -41,8 +42,15 @@ public class Miner : MonoBehaviour
         _mineAnimWait = new WaitForSeconds(_mineAnimTime * mineAnimSpeed);
         _mineWait = new WaitForSeconds(_mineTime);
 
+        _price = 0;
         _mineCount = _maxMineCount;
     }
+
+    public void PlusPrice(Mineral mineral)
+    {
+        _price += mineral.Price;
+    }
+
 
     private void Update()
     {
@@ -53,22 +61,23 @@ public class Miner : MonoBehaviour
             {
                 _target = tempOre.gameObject;
                 tempOre.SetMiner(this);
+                MoveToTarget();
             }
         }
     }
 
     private void FixedUpdate()
     {
-        if (_target != null && !_isMining && !_isBlockMove)
-        {
-            _spriter.flipX = _target.transform.position.x < _rigid.position.x;
-            Vector2 dirPos = _target.transform.position;
-            dirPos -= _rigid.position;
-            Vector2 nextPos = dirPos.normalized * Time.fixedDeltaTime * _moveSpeed;
-            _rigid.MovePosition(nextPos + _rigid.position);
-            _rigid.velocity = Vector2.zero;
-            SetAnim("Run");
-        }
+        /*        if (_target != null && !_isMining && !_isBlockMove)
+                {
+                    _spriter.flipX = _target.transform.position.x < _rigid.position.x;
+                    Vector2 dirPos = _target.transform.position;
+                    dirPos -= _rigid.position;
+                    Vector2 nextPos = dirPos.normalized * Time.fixedDeltaTime * _moveSpeed;
+                    _rigid.MovePosition(nextPos + _rigid.position);
+                    _rigid.velocity = Vector2.zero;
+                    SetAnim("Run");
+                }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -81,16 +90,16 @@ public class Miner : MonoBehaviour
         }
         else if (_mineCount == 0 && collision.gameObject.CompareTag(Consts.CartTag))
         {
+            GameManager.Inst.Cart.PlusMoney(_price);
+            _price = 0;
             _mineCount = _maxMineCount;
-            SetAnim("Idle");
-            StartCoroutine(BlockMove(_delayTime));
-            _target = null;
+            StartCoroutine(BlockMove(_delayTime, null));
         }
     }
 
     private void StartMining(Ore targetOre)
     {
-        _isMining = true;
+        _aiPath.destination = transform.position;
         StartCoroutine(Mine(targetOre));
     }
 
@@ -107,6 +116,13 @@ public class Miner : MonoBehaviour
         _animator.SetBool(param, true);
     }
 
+    private void MoveToTarget()
+    {
+        SetAnim("Run");
+        _spriter.flipX = _target.transform.position.x < _rigid.position.x;
+        _aiPath.destination = _target.transform.position;
+    }
+
     private IEnumerator Mine(Ore ore)
     {
         SetAnim("Idle");
@@ -115,11 +131,8 @@ public class Miner : MonoBehaviour
         yield return _mineAnimWait;
         if (ore.Hit(_power))
         {
-            SetAnim("Idle");
-            _isMining = false;
             _mineCount--;
-            StartCoroutine(BlockMove(_delayTime));
-            _target = _mineCount > 0 ? null : _cart.gameObject;
+            StartCoroutine(BlockMove(_delayTime, _mineCount > 0 ? null : _cart.gameObject));
         }
         else
         {
@@ -127,10 +140,13 @@ public class Miner : MonoBehaviour
         }
     }
 
-    private IEnumerator BlockMove(float blockTime)
+    private IEnumerator BlockMove(float blockTime, GameObject target)
     {
-        _isBlockMove = true;
+        SetAnim("Idle");
+        _aiPath.destination = transform.position;
         yield return new WaitForSeconds(blockTime);
-        _isBlockMove = false;
+        _target = target;
+        if (_target != null)
+            MoveToTarget();
     }
 }

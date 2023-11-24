@@ -35,13 +35,13 @@ public class OreSpawner : MonoBehaviour
     private void OnEnable()
     {
         Miner.RequestOre += ResponseOre;
-        Ore.OnBreakOre += MinusOreCount;
+        Ore.OnBreakOre += CollectOre;
     }
 
     private void OnDisable()
     {
         Miner.RequestOre -= ResponseOre;
-        Ore.OnBreakOre -= MinusOreCount;
+        Ore.OnBreakOre -= CollectOre;
     }
 
     private Ore ResponseOre()
@@ -49,9 +49,11 @@ public class OreSpawner : MonoBehaviour
         return _newOreQueue.Count > 0 ? _newOreQueue.Dequeue() : null;
     }
 
-    private void MinusOreCount()
+    private void CollectOre(Ore ore)
     {
         _oreCount--;
+        _orePool.DestroyOre(ore);
+        AstarPath.active.Scan();
     }
 
     private IEnumerator SpawnOre()
@@ -68,6 +70,9 @@ public class OreSpawner : MonoBehaviour
             }
         }
         Vector2 spawnPos = candidate[Random.Range(0, candidate.Count)];
-        _newOreQueue.Enqueue(_orePool.CreateOre(spawnPos));
+        Ore ore = _orePool.CreateOre(spawnPos);
+        ore.Init();
+        _newOreQueue.Enqueue(ore);
+        AstarPath.active.Scan();
     }
 }

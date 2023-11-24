@@ -5,15 +5,16 @@ using UnityEngine;
 
 public class Ore : MonoBehaviour
 {
-    public static Action OnBreakOre { get; set; }
+    public static Action<Ore> OnBreakOre { get; set; }
 
-    [SerializeField]
-    private Mineral _mineralPrefab;
+    public int MineralCount { get => _mineralCount; }
+
+    public Miner CurrentMiner { get => _miner; }
 
     public Vector2 RigidPosition { get => _rigid.position; }
     private Rigidbody2D _rigid;
-    private int _health = 20;
-    private int _mineralCount = 10;
+    private int _health;
+    private int _mineralCount;
     private Miner _miner;
 
     // true == ±úÁü
@@ -35,19 +36,20 @@ public class Ore : MonoBehaviour
         return false;
     }
 
-    private void Break()
+    public void Init()
     {
-        for (int i = 0; i < _mineralCount; i++)
-        {
-            Mineral mineral = Instantiate(_mineralPrefab, transform.position, Quaternion.identity);
-            mineral.Init(_miner);
-        }
-        OnBreakOre();
-        Destroy(gameObject);
+        _health = 20;
+        _mineralCount = 10;
+        _miner = null;
     }
 
     private void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
+    }
+
+    private void Break()
+    {
+        OnBreakOre(this);
     }
 }
