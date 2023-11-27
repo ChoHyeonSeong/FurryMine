@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 5470771170544242876}
   - component: {fileID: 5470771170544242877}
   - component: {fileID: 5470771170544242878}
+  - component: {fileID: 8322672423202932725}
   m_Layer: 5
   m_Name: TimeSlide
   m_TagString: Untagged
@@ -203,3 +204,15 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8322672423202932725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5470771170544242848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b034b4eb528ffc94794c97df60552168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
