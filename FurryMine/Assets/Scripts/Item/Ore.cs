@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Ore : MonoBehaviour
 {
+    public static Action<bool, string, Vector2> OnHitText;
     public static Action<Ore> OnBreakOre { get; set; }
 
     public int MineralCount { get => _mineralCount; }
@@ -28,6 +29,7 @@ public class Ore : MonoBehaviour
     public bool Hit(int damage)
     {
         _health -= damage;
+        OnHitText(false, damage.ToString(), transform.position);
         if (_health <= 0)
         {
             Break();

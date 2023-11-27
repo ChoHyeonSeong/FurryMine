@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MineCart : MonoBehaviour
 {
+    public static Action<bool, string, Vector2> OnPlusText;
     public static Action<int> OnChangeMoney { get; set; }
     public static Action<float> OnChangeCount { get; set; }
     public static Action<float> OnChangeTime { get; set; }
@@ -59,6 +60,7 @@ public class MineCart : MonoBehaviour
     {
         _money += price;
         OnChangeMoney(_money);
+        OnPlusText(true, $"+{price}G", transform.position);
     }
 
     public bool MinusMoney(int price)
