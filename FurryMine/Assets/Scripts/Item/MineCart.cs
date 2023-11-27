@@ -26,7 +26,7 @@ public class MineCart : MonoBehaviour
 
     private void Start()
     {
-        PlusMoney(1000);
+        PlusMoney(100000);
     }
 
     private void Update()

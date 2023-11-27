@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public MineCart Cart { get; private set; }
     public HeadMiner Player { get; private set; }
 
-    private int _level = 1;
+    private int _level = 0;
 
     public void LevelUp()
     {
@@ -25,5 +25,13 @@ public class GameManager : MonoBehaviour
         Inst = this;
         Cart = FindAnyObjectByType<MineCart>();
         Player = FindAnyObjectByType<HeadMiner>();
+        DataManager.LoadData();
+        var enforceManager = FindAnyObjectByType<EnforceManager>();
+        enforceManager.Init();
+    }
+
+    private void Start()
+    {
+        LevelUp();
     }
 }

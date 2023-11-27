@@ -88,6 +88,7 @@ public class Miner : MonoBehaviour
                 break;
             case EEnforce.HEAD_MOTION_SPEED:
                 _finalMotionSpeed = _motionSpeed + enforceFigure;
+                _animator.SetFloat("MineSpeed", _finalMotionSpeed);
                 _mineAnimWait = new WaitForSeconds(_miningAnimTime / _finalMotionSpeed);
                 break;
             case EEnforce.HEAD_MOVING_SPEED:

@@ -7,9 +7,9 @@ using UnityEngine.Tilemaps;
 public class OreSpawner : MonoBehaviour
 {
     private bool _isSpawning = false;
-    private int _mineralCount = 1;
-    private int _oreHealth = 2;
-    private int _maxOreCount = 2;
+    private int _mineralCount;
+    private int _oreHealth;
+    private int _maxOreCount;
     private int _oreCount = 0;
     private float _respawnTime = 1f;
     private OrePool _orePool;
@@ -38,14 +38,14 @@ public class OreSpawner : MonoBehaviour
     {
         Miner.RequestOre += ResponseOre;
         Ore.OnBreakOre += CollectOre;
-        GameManager.OnLevelUp += UpdateOreHealth;
+        GameManager.OnLevelUp += LevelUpOre;
     }
 
     private void OnDisable()
     {
         Miner.RequestOre -= ResponseOre;
         Ore.OnBreakOre -= CollectOre;
-        GameManager.OnLevelUp -= UpdateOreHealth;
+        GameManager.OnLevelUp -= LevelUpOre;
     }
 
     private Ore ResponseOre()
@@ -80,8 +80,11 @@ public class OreSpawner : MonoBehaviour
         AstarPath.active.Scan();
     }
 
-    private void UpdateOreHealth(int level)
+    private void LevelUpOre(int level)
     {
-        _oreHealth = (int)(level * Consts.GoldenRatio);
+        MineEntity entity = DataManager.MineDict[level];
+        _oreHealth = entity.OreHealth;
+        _maxOreCount = entity.OreCount;
+        _mineralCount = entity.MineralCount;
     }
 }

@@ -28,7 +28,7 @@ public class Ore : MonoBehaviour
 
     public bool Hit(int damage)
     {
-        _health -= damage;
+        _health -= damage;  
         OnHitText(false, damage.ToString(), transform.position);
         if (_health <= 0)
         {
