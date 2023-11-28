@@ -5,20 +5,20 @@ using UnityEngine;
 public static class DataManager
 {
     public static Dictionary<int, MineEntity> MineDict = new Dictionary<int, MineEntity>();
-    public static Dictionary<int, EnforcePriceEntity> EnforcePriceDict = new Dictionary<int, EnforcePriceEntity>();
+    public static Dictionary<int, PriceEntity> PriceDict = new Dictionary<int, PriceEntity>();
 
     public static void LoadData()
     {
-        var mineData = Resources.Load<MineData>("Datas/MineData");
-        foreach (var entity in mineData.Data)
+        var mineData = Resources.Load<MineTable>("Datas/MineTable");
+        foreach (var entity in mineData.Table)
         {
             MineDict[entity.Level] = entity;
         }
 
-        var enforcePriceData = Resources.Load<EnforcePriceData>("Datas/EnforcePriceData");
-        foreach (var entity in enforcePriceData.Data)
+        var enforcePriceData = Resources.Load<PriceTable>("Datas/PriceTable");
+        foreach (var entity in enforcePriceData.Table)
         {
-            EnforcePriceDict[entity.Level] = entity;
+            PriceDict[entity.Level] = entity;
         }
     }
 }

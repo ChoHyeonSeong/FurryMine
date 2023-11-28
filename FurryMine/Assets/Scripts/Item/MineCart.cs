@@ -10,7 +10,9 @@ public class MineCart : MonoBehaviour
     public static Action<float> OnChangeCount { get; set; }
     public static Action<float> OnChangeTime { get; set; }
 
-    private int _money = 0;
+    public int Money { get => _money; }
+
+    private int _money;
 
     private int _quotaCount;
     private int _currentCount;
@@ -26,7 +28,8 @@ public class MineCart : MonoBehaviour
 
     private void Start()
     {
-        PlusMoney(100000);
+        _money = SaveManager.Save.Money;
+        OnChangeMoney(_money);
     }
 
     private void Update()

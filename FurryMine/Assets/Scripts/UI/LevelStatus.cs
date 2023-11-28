@@ -12,6 +12,10 @@ public class LevelStatus : MonoBehaviour
     {
         _levelText.text = "1";
     }
+    private void Start()
+    {
+        _levelText.text = SaveManager.Save.MineLevel.ToString();
+    }
 
     private void OnEnable()
     {

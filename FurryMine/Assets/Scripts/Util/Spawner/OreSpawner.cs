@@ -25,6 +25,11 @@ public class OreSpawner : MonoBehaviour
         _newOreQueue = new Queue<Ore>();
     }
 
+    private void Start()
+    {
+        InitOreLevel(SaveManager.Save.MineLevel);
+    }
+
     private void Update()
     {
         if (!_isSpawning && _oreCount < _maxOreCount)
@@ -38,14 +43,14 @@ public class OreSpawner : MonoBehaviour
     {
         Miner.RequestOre += ResponseOre;
         Ore.OnBreakOre += CollectOre;
-        GameManager.OnLevelUp += LevelUpOre;
+        GameManager.OnLevelUp += InitOreLevel;
     }
 
     private void OnDisable()
     {
         Miner.RequestOre -= ResponseOre;
         Ore.OnBreakOre -= CollectOre;
-        GameManager.OnLevelUp -= LevelUpOre;
+        GameManager.OnLevelUp -= InitOreLevel;
     }
 
     private Ore ResponseOre()
@@ -80,7 +85,7 @@ public class OreSpawner : MonoBehaviour
         AstarPath.active.Scan();
     }
 
-    private void LevelUpOre(int level)
+    private void InitOreLevel(int level)
     {
         MineEntity entity = DataManager.MineDict[level];
         _oreHealth = entity.OreHealth;

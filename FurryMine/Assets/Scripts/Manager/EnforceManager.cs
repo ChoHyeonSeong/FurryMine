@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public enum EEnforce
 {
@@ -17,6 +15,8 @@ public enum EEnforce
 
 public class EnforceManager : MonoBehaviour
 {
+    public Dictionary<EEnforce, int> LevelDict { get => _levelDict; }
+
     private Dictionary<EEnforce, int> _levelDict = new Dictionary<EEnforce, int>();
     private Dictionary<EEnforce, int> _priceDict = new Dictionary<EEnforce, int>();
     private Dictionary<EEnforce, float> _coeffDict = new Dictionary<EEnforce, float>();
@@ -25,12 +25,11 @@ public class EnforceManager : MonoBehaviour
 
     public void Init()
     {
-        foreach(EEnforce enforce in Enum.GetValues(typeof(EEnforce)))
-        {
-            _levelDict[enforce] = 0;
-        }
+        var enumArray = Enum.GetValues(typeof(EEnforce));
+        InitLevel(enumArray);
         InitPrice();
         InitCoeff();
+        InitStat(enumArray);
     }
 
     private void Start()
@@ -50,17 +49,25 @@ public class EnforceManager : MonoBehaviour
         EnforceItem.OnInitInformation -= InitItem;
     }
 
-    private void InitPrice()
+    private void InitLevel(Array enumArray)
     {
-        _priceDict[EEnforce.HEAD_MINING_POWER] = DataManager.EnforcePriceDict[1].HeadMiningPower;
-        _priceDict[EEnforce.HEAD_MINING_SPEED] = DataManager.EnforcePriceDict[1].HeadMiningSpeed;
-        _priceDict[EEnforce.HEAD_MOTION_SPEED] = DataManager.EnforcePriceDict[1].HeadMotionSpeed;
-        _priceDict[EEnforce.HEAD_MOVING_SPEED] = DataManager.EnforcePriceDict[1].HeadMovingSpeed;
-        _priceDict[EEnforce.HEAD_MINING_COUNT] = DataManager.EnforcePriceDict[1].HeadMiningCount;
-        _priceDict[EEnforce.HEAD_CRITICAL_PERCENT] = DataManager.EnforcePriceDict[1].HeadCriticalPercent;
-        _priceDict[EEnforce.HEAD_CRITICAL_POWER] = DataManager.EnforcePriceDict[1].HeadCriticalPower;
+        bool isSaveNull = SaveManager.Save.EnforceLevels == null;
+        foreach (EEnforce enforce in enumArray)
+        {
+            _levelDict[enforce] = isSaveNull ? 0 : SaveManager.Save.EnforceLevels[(int)enforce];
+        }
     }
 
+    private void InitPrice()
+    {
+        _priceDict[EEnforce.HEAD_MINING_POWER] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MINING_POWER]].HeadMiningPower;
+        _priceDict[EEnforce.HEAD_MINING_SPEED] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MINING_SPEED]].HeadMiningSpeed;
+        _priceDict[EEnforce.HEAD_MOTION_SPEED] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MOTION_SPEED]].HeadMotionSpeed;
+        _priceDict[EEnforce.HEAD_MOVING_SPEED] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MOVING_SPEED]].HeadMovingSpeed;
+        _priceDict[EEnforce.HEAD_MINING_COUNT] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MINING_COUNT]].HeadMiningCount;
+        _priceDict[EEnforce.HEAD_CRITICAL_PERCENT] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_CRITICAL_PERCENT]].HeadCriticalPercent;
+        _priceDict[EEnforce.HEAD_CRITICAL_POWER] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_CRITICAL_POWER]].HeadCriticalPower;
+    }
 
     private void InitCoeff()
     {
@@ -73,31 +80,55 @@ public class EnforceManager : MonoBehaviour
         _coeffDict[EEnforce.HEAD_CRITICAL_POWER] = 0.01f;
     }
 
+    private void InitStat(Array enumArray)
+    {
+        foreach (EEnforce enforce in enumArray)
+        {
+            ApplyEnforce(enforce);
+        }
+    }
+
+    private void ApplyEnforce(EEnforce enforce)
+    {
+        switch (enforce)
+        {
+            case EEnforce.HEAD_MINING_POWER:
+            case EEnforce.HEAD_MINING_SPEED:
+            case EEnforce.HEAD_MOTION_SPEED:
+            case EEnforce.HEAD_MOVING_SPEED:
+            case EEnforce.HEAD_MINING_COUNT:
+            case EEnforce.HEAD_CRITICAL_PERCENT:
+            case EEnforce.HEAD_CRITICAL_POWER:
+                GameManager.Inst.Player.EnforceStat(enforce, _levelDict[enforce] * _coeffDict[enforce]);
+                break;
+        }
+    }
+
     private void UpdatePrice(int level, EEnforce enforce)
     {
         int price = 0;
         switch (enforce)
         {
             case EEnforce.HEAD_MINING_POWER:
-                price = DataManager.EnforcePriceDict[level].HeadMiningPower;
+                price = DataManager.PriceDict[level].HeadMiningPower;
                 break;
             case EEnforce.HEAD_MINING_SPEED:
-                price = DataManager.EnforcePriceDict[level].HeadMiningSpeed;
+                price = DataManager.PriceDict[level].HeadMiningSpeed;
                 break;
             case EEnforce.HEAD_MOTION_SPEED:
-                price = DataManager.EnforcePriceDict[level].HeadMotionSpeed;
+                price = DataManager.PriceDict[level].HeadMotionSpeed;
                 break;
             case EEnforce.HEAD_MOVING_SPEED:
-                price = DataManager.EnforcePriceDict[level].HeadMovingSpeed;
+                price = DataManager.PriceDict[level].HeadMovingSpeed;
                 break;
             case EEnforce.HEAD_MINING_COUNT:
-                price = DataManager.EnforcePriceDict[level].HeadMiningCount;
+                price = DataManager.PriceDict[level].HeadMiningCount;
                 break;
             case EEnforce.HEAD_CRITICAL_PERCENT:
-                price = DataManager.EnforcePriceDict[level].HeadCriticalPercent;
+                price = DataManager.PriceDict[level].HeadCriticalPercent;
                 break;
             case EEnforce.HEAD_CRITICAL_POWER:
-                price = DataManager.EnforcePriceDict[level].HeadCriticalPower;
+                price = DataManager.PriceDict[level].HeadCriticalPower;
                 break;
         }
         _priceDict[enforce] = price;
@@ -117,18 +148,7 @@ public class EnforceManager : MonoBehaviour
                 _priceDict[enforce]
                 );
 
-            switch (item.Enforce)
-            {
-                case EEnforce.HEAD_MINING_POWER:
-                case EEnforce.HEAD_MINING_SPEED:
-                case EEnforce.HEAD_MOTION_SPEED:
-                case EEnforce.HEAD_MOVING_SPEED:
-                case EEnforce.HEAD_MINING_COUNT:
-                case EEnforce.HEAD_CRITICAL_PERCENT:
-                case EEnforce.HEAD_CRITICAL_POWER:
-                    GameManager.Inst.Player.EnforceStat(item.Enforce, _levelDict[enforce] * _coeffDict[enforce]);
-                    break;
-            }
+            ApplyEnforce(enforce);
         }
     }
 
