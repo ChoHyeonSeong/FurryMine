@@ -7,7 +7,7 @@ public enum EEnforce
     HEAD_MINING_SPEED,
     HEAD_MOTION_SPEED,
     HEAD_MOVING_SPEED,
-    HEAD_MINING_COUNT,
+    //HEAD_MINING_COUNT,
     HEAD_CRITICAL_PERCENT,
     HEAD_CRITICAL_POWER,
 }
@@ -58,7 +58,6 @@ public static class EnforceManager
         PriceDict[EEnforce.HEAD_MINING_SPEED] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MINING_SPEED]].HeadMiningSpeed;
         PriceDict[EEnforce.HEAD_MOTION_SPEED] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MOTION_SPEED]].HeadMotionSpeed;
         PriceDict[EEnforce.HEAD_MOVING_SPEED] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MOVING_SPEED]].HeadMovingSpeed;
-        PriceDict[EEnforce.HEAD_MINING_COUNT] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MINING_COUNT]].HeadMiningCount;
         PriceDict[EEnforce.HEAD_CRITICAL_PERCENT] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_CRITICAL_PERCENT]].HeadCriticalPercent;
         PriceDict[EEnforce.HEAD_CRITICAL_POWER] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_CRITICAL_POWER]].HeadCriticalPower;
     }
@@ -69,7 +68,6 @@ public static class EnforceManager
         CoeffDict[EEnforce.HEAD_MINING_SPEED] = 0.01f;
         CoeffDict[EEnforce.HEAD_MOTION_SPEED] = 0.01f;
         CoeffDict[EEnforce.HEAD_MOVING_SPEED] = 0.01f;
-        CoeffDict[EEnforce.HEAD_MINING_COUNT] = 1f;
         CoeffDict[EEnforce.HEAD_CRITICAL_PERCENT] = 0.01f;
         CoeffDict[EEnforce.HEAD_CRITICAL_POWER] = 0.01f;
     }
@@ -90,9 +88,6 @@ public static class EnforceManager
                 break;
             case EEnforce.HEAD_MOVING_SPEED:
                 price = TableManager.PriceTable[LevelDict[enforce]].HeadMovingSpeed;
-                break;
-            case EEnforce.HEAD_MINING_COUNT:
-                price = TableManager.PriceTable[LevelDict[enforce]].HeadMiningCount;
                 break;
             case EEnforce.HEAD_CRITICAL_PERCENT:
                 price = TableManager.PriceTable[LevelDict[enforce]].HeadCriticalPercent;

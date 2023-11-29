@@ -12,6 +12,7 @@ public class GameApp : MonoBehaviour
         SaveManager.LoadGame();
         EnforceManager.LoadEnforce();
         GameManager.LoadCaching();
+        AdManager.LoadRewardedAd();
     }
 
     private void Start()
@@ -28,6 +29,7 @@ public class GameApp : MonoBehaviour
             SaveManager.SaveGame(new SaveData(
                 GameManager.Cart.Money,
                 GameManager.Mine.MineLevel,
+                GameManager.Reward.RemainCoolTime,
                 EnforceManager.GetEnforceLevelList()
                 ));
         }
@@ -41,6 +43,7 @@ public class GameApp : MonoBehaviour
         SaveManager.SaveGame(new SaveData(
             GameManager.Cart.Money,
             GameManager.Mine.MineLevel,
+            GameManager.Reward.RemainCoolTime,
             EnforceManager.GetEnforceLevelList()
             ));
 #endif

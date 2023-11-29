@@ -12,12 +12,14 @@ public class EnforceApplier : MonoBehaviour
     {
         GameApp.OnGameStart += GameStart;
         EnforceItem.OnBuyEnforce += BuyEnforceItem;
+        RewardReceiver.OnRandEnforce += ApplyEnforce;
     }
 
     private void OnDisable()
     {
         GameApp.OnGameStart -= GameStart;
         EnforceItem.OnBuyEnforce -= BuyEnforceItem;
+        RewardReceiver.OnRandEnforce -= ApplyEnforce;
     }
 
     private void GameStart()

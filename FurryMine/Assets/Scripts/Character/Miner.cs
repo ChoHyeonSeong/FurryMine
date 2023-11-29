@@ -95,9 +95,6 @@ public class Miner : MonoBehaviour
                 _finalMovingSpeed = _movingSpeed * (1f + enforceFigure);
                 _aiPath.maxSpeed = _finalMovingSpeed;
                 break;
-            case EEnforce.HEAD_MINING_COUNT:
-                _finalMiningCount = _miningCount + (int)enforceFigure;
-                break;
             case EEnforce.HEAD_CRITICAL_PERCENT:
                 _finalCriticalPercent = _criticalPercent + enforceFigure;
                 break;
