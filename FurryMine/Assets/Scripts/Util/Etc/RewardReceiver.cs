@@ -42,7 +42,8 @@ public class RewardReceiver : MonoBehaviour
         List<EEnforce> enforceList = new List<EEnforce>();
         foreach (EEnforce enforce in enumArray)
         {
-            enforceList.Add(enforce);
+            if (EnforceManager.LevelDict[enforce] < EnforceManager.LimitDict[enforce])
+                enforceList.Add(enforce);
         }
         EEnforce rand = enforceList[Random.Range(0, enforceList.Count)];
         EnforceManager.LevelUpEnforce(rand);

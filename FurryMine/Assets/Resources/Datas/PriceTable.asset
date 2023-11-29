@@ -4020,7 +4020,7 @@ MonoBehaviour:
     HeadMovingSpeed: 501
     HeadMiningCount: 501
     HeadCriticalPercent: 501
-    HeadCriticalPower: 501
+    HeadCriticalPower: 0
   - Level: 501
     HeadMiningPower: 502
     HeadMiningSpeed: 502
@@ -4028,7 +4028,7 @@ MonoBehaviour:
     HeadMovingSpeed: 502
     HeadMiningCount: 502
     HeadCriticalPercent: 502
-    HeadCriticalPower: 502
+    HeadCriticalPower: 0
   - Level: 502
     HeadMiningPower: 503
     HeadMiningSpeed: 503
@@ -4036,7 +4036,7 @@ MonoBehaviour:
     HeadMovingSpeed: 503
     HeadMiningCount: 503
     HeadCriticalPercent: 503
-    HeadCriticalPower: 503
+    HeadCriticalPower: 0
   - Level: 503
     HeadMiningPower: 504
     HeadMiningSpeed: 504
@@ -4044,7 +4044,7 @@ MonoBehaviour:
     HeadMovingSpeed: 504
     HeadMiningCount: 504
     HeadCriticalPercent: 504
-    HeadCriticalPower: 504
+    HeadCriticalPower: 0
   - Level: 504
     HeadMiningPower: 505
     HeadMiningSpeed: 505
@@ -4052,7 +4052,7 @@ MonoBehaviour:
     HeadMovingSpeed: 505
     HeadMiningCount: 505
     HeadCriticalPercent: 505
-    HeadCriticalPower: 505
+    HeadCriticalPower: 0
   - Level: 505
     HeadMiningPower: 506
     HeadMiningSpeed: 506
@@ -4060,7 +4060,7 @@ MonoBehaviour:
     HeadMovingSpeed: 506
     HeadMiningCount: 506
     HeadCriticalPercent: 506
-    HeadCriticalPower: 506
+    HeadCriticalPower: 0
   - Level: 506
     HeadMiningPower: 507
     HeadMiningSpeed: 507
@@ -4068,7 +4068,7 @@ MonoBehaviour:
     HeadMovingSpeed: 507
     HeadMiningCount: 507
     HeadCriticalPercent: 507
-    HeadCriticalPower: 507
+    HeadCriticalPower: 0
   - Level: 507
     HeadMiningPower: 508
     HeadMiningSpeed: 508
@@ -4076,7 +4076,7 @@ MonoBehaviour:
     HeadMovingSpeed: 508
     HeadMiningCount: 508
     HeadCriticalPercent: 508
-    HeadCriticalPower: 508
+    HeadCriticalPower: 0
   - Level: 508
     HeadMiningPower: 509
     HeadMiningSpeed: 509
@@ -4084,7 +4084,7 @@ MonoBehaviour:
     HeadMovingSpeed: 509
     HeadMiningCount: 509
     HeadCriticalPercent: 509
-    HeadCriticalPower: 509
+    HeadCriticalPower: 0
   - Level: 509
     HeadMiningPower: 510
     HeadMiningSpeed: 510
@@ -4092,7 +4092,7 @@ MonoBehaviour:
     HeadMovingSpeed: 510
     HeadMiningCount: 510
     HeadCriticalPercent: 510
-    HeadCriticalPower: 510
+    HeadCriticalPower: 0
   - Level: 510
     HeadMiningPower: 511
     HeadMiningSpeed: 511
@@ -4100,7 +4100,7 @@ MonoBehaviour:
     HeadMovingSpeed: 511
     HeadMiningCount: 511
     HeadCriticalPercent: 511
-    HeadCriticalPower: 511
+    HeadCriticalPower: 0
   - Level: 511
     HeadMiningPower: 512
     HeadMiningSpeed: 512
@@ -4108,7 +4108,7 @@ MonoBehaviour:
     HeadMovingSpeed: 512
     HeadMiningCount: 512
     HeadCriticalPercent: 512
-    HeadCriticalPower: 512
+    HeadCriticalPower: 0
   - Level: 512
     HeadMiningPower: 513
     HeadMiningSpeed: 513
@@ -4116,7 +4116,7 @@ MonoBehaviour:
     HeadMovingSpeed: 513
     HeadMiningCount: 513
     HeadCriticalPercent: 513
-    HeadCriticalPower: 513
+    HeadCriticalPower: 0
   - Level: 513
     HeadMiningPower: 514
     HeadMiningSpeed: 514
@@ -4124,7 +4124,7 @@ MonoBehaviour:
     HeadMovingSpeed: 514
     HeadMiningCount: 514
     HeadCriticalPercent: 514
-    HeadCriticalPower: 514
+    HeadCriticalPower: 0
   - Level: 514
     HeadMiningPower: 515
     HeadMiningSpeed: 515
@@ -4132,7 +4132,7 @@ MonoBehaviour:
     HeadMovingSpeed: 515
     HeadMiningCount: 515
     HeadCriticalPercent: 515
-    HeadCriticalPower: 515
+    HeadCriticalPower: 0
   - Level: 515
     HeadMiningPower: 516
     HeadMiningSpeed: 516
@@ -4140,7 +4140,7 @@ MonoBehaviour:
     HeadMovingSpeed: 516
     HeadMiningCount: 516
     HeadCriticalPercent: 516
-    HeadCriticalPower: 516
+    HeadCriticalPower: 0
   - Level: 516
     HeadMiningPower: 517
     HeadMiningSpeed: 517
@@ -4148,7 +4148,7 @@ MonoBehaviour:
     HeadMovingSpeed: 517
     HeadMiningCount: 517
     HeadCriticalPercent: 517
-    HeadCriticalPower: 517
+    HeadCriticalPower: 0
   - Level: 517
     HeadMiningPower: 518
     HeadMiningSpeed: 518
@@ -4156,7 +4156,7 @@ MonoBehaviour:
     HeadMovingSpeed: 518
     HeadMiningCount: 518
     HeadCriticalPercent: 518
-    HeadCriticalPower: 518
+    HeadCriticalPower: 0
   - Level: 518
     HeadMiningPower: 519
     HeadMiningSpeed: 519
@@ -4164,7 +4164,7 @@ MonoBehaviour:
     HeadMovingSpeed: 519
     HeadMiningCount: 519
     HeadCriticalPercent: 519
-    HeadCriticalPower: 519
+    HeadCriticalPower: 0
   - Level: 519
     HeadMiningPower: 520
     HeadMiningSpeed: 520
@@ -4172,7 +4172,7 @@ MonoBehaviour:
     HeadMovingSpeed: 520
     HeadMiningCount: 520
     HeadCriticalPercent: 520
-    HeadCriticalPower: 520
+    HeadCriticalPower: 0
   - Level: 520
     HeadMiningPower: 521
     HeadMiningSpeed: 521
@@ -4180,7 +4180,7 @@ MonoBehaviour:
     HeadMovingSpeed: 521
     HeadMiningCount: 521
     HeadCriticalPercent: 521
-    HeadCriticalPower: 521
+    HeadCriticalPower: 0
   - Level: 521
     HeadMiningPower: 522
     HeadMiningSpeed: 522
@@ -4188,7 +4188,7 @@ MonoBehaviour:
     HeadMovingSpeed: 522
     HeadMiningCount: 522
     HeadCriticalPercent: 522
-    HeadCriticalPower: 522
+    HeadCriticalPower: 0
   - Level: 522
     HeadMiningPower: 523
     HeadMiningSpeed: 523
@@ -4196,7 +4196,7 @@ MonoBehaviour:
     HeadMovingSpeed: 523
     HeadMiningCount: 523
     HeadCriticalPercent: 523
-    HeadCriticalPower: 523
+    HeadCriticalPower: 0
   - Level: 523
     HeadMiningPower: 524
     HeadMiningSpeed: 524
@@ -4204,7 +4204,7 @@ MonoBehaviour:
     HeadMovingSpeed: 524
     HeadMiningCount: 524
     HeadCriticalPercent: 524
-    HeadCriticalPower: 524
+    HeadCriticalPower: 0
   - Level: 524
     HeadMiningPower: 525
     HeadMiningSpeed: 525
@@ -4212,7 +4212,7 @@ MonoBehaviour:
     HeadMovingSpeed: 525
     HeadMiningCount: 525
     HeadCriticalPercent: 525
-    HeadCriticalPower: 525
+    HeadCriticalPower: 0
   - Level: 525
     HeadMiningPower: 526
     HeadMiningSpeed: 526
@@ -4220,7 +4220,7 @@ MonoBehaviour:
     HeadMovingSpeed: 526
     HeadMiningCount: 526
     HeadCriticalPercent: 526
-    HeadCriticalPower: 526
+    HeadCriticalPower: 0
   - Level: 526
     HeadMiningPower: 527
     HeadMiningSpeed: 527
@@ -4228,7 +4228,7 @@ MonoBehaviour:
     HeadMovingSpeed: 527
     HeadMiningCount: 527
     HeadCriticalPercent: 527
-    HeadCriticalPower: 527
+    HeadCriticalPower: 0
   - Level: 527
     HeadMiningPower: 528
     HeadMiningSpeed: 528
@@ -4236,7 +4236,7 @@ MonoBehaviour:
     HeadMovingSpeed: 528
     HeadMiningCount: 528
     HeadCriticalPercent: 528
-    HeadCriticalPower: 528
+    HeadCriticalPower: 0
   - Level: 528
     HeadMiningPower: 529
     HeadMiningSpeed: 529
@@ -4244,7 +4244,7 @@ MonoBehaviour:
     HeadMovingSpeed: 529
     HeadMiningCount: 529
     HeadCriticalPercent: 529
-    HeadCriticalPower: 529
+    HeadCriticalPower: 0
   - Level: 529
     HeadMiningPower: 530
     HeadMiningSpeed: 530
@@ -4252,7 +4252,7 @@ MonoBehaviour:
     HeadMovingSpeed: 530
     HeadMiningCount: 530
     HeadCriticalPercent: 530
-    HeadCriticalPower: 530
+    HeadCriticalPower: 0
   - Level: 530
     HeadMiningPower: 531
     HeadMiningSpeed: 531
@@ -4260,7 +4260,7 @@ MonoBehaviour:
     HeadMovingSpeed: 531
     HeadMiningCount: 531
     HeadCriticalPercent: 531
-    HeadCriticalPower: 531
+    HeadCriticalPower: 0
   - Level: 531
     HeadMiningPower: 532
     HeadMiningSpeed: 532
@@ -4268,7 +4268,7 @@ MonoBehaviour:
     HeadMovingSpeed: 532
     HeadMiningCount: 532
     HeadCriticalPercent: 532
-    HeadCriticalPower: 532
+    HeadCriticalPower: 0
   - Level: 532
     HeadMiningPower: 533
     HeadMiningSpeed: 533
@@ -4276,7 +4276,7 @@ MonoBehaviour:
     HeadMovingSpeed: 533
     HeadMiningCount: 533
     HeadCriticalPercent: 533
-    HeadCriticalPower: 533
+    HeadCriticalPower: 0
   - Level: 533
     HeadMiningPower: 534
     HeadMiningSpeed: 534
@@ -4284,7 +4284,7 @@ MonoBehaviour:
     HeadMovingSpeed: 534
     HeadMiningCount: 534
     HeadCriticalPercent: 534
-    HeadCriticalPower: 534
+    HeadCriticalPower: 0
   - Level: 534
     HeadMiningPower: 535
     HeadMiningSpeed: 535
@@ -4292,7 +4292,7 @@ MonoBehaviour:
     HeadMovingSpeed: 535
     HeadMiningCount: 535
     HeadCriticalPercent: 535
-    HeadCriticalPower: 535
+    HeadCriticalPower: 0
   - Level: 535
     HeadMiningPower: 536
     HeadMiningSpeed: 536
@@ -4300,7 +4300,7 @@ MonoBehaviour:
     HeadMovingSpeed: 536
     HeadMiningCount: 536
     HeadCriticalPercent: 536
-    HeadCriticalPower: 536
+    HeadCriticalPower: 0
   - Level: 536
     HeadMiningPower: 537
     HeadMiningSpeed: 537
@@ -4308,7 +4308,7 @@ MonoBehaviour:
     HeadMovingSpeed: 537
     HeadMiningCount: 537
     HeadCriticalPercent: 537
-    HeadCriticalPower: 537
+    HeadCriticalPower: 0
   - Level: 537
     HeadMiningPower: 538
     HeadMiningSpeed: 538
@@ -4316,7 +4316,7 @@ MonoBehaviour:
     HeadMovingSpeed: 538
     HeadMiningCount: 538
     HeadCriticalPercent: 538
-    HeadCriticalPower: 538
+    HeadCriticalPower: 0
   - Level: 538
     HeadMiningPower: 539
     HeadMiningSpeed: 539
@@ -4324,7 +4324,7 @@ MonoBehaviour:
     HeadMovingSpeed: 539
     HeadMiningCount: 539
     HeadCriticalPercent: 539
-    HeadCriticalPower: 539
+    HeadCriticalPower: 0
   - Level: 539
     HeadMiningPower: 540
     HeadMiningSpeed: 540
@@ -4332,7 +4332,7 @@ MonoBehaviour:
     HeadMovingSpeed: 540
     HeadMiningCount: 540
     HeadCriticalPercent: 540
-    HeadCriticalPower: 540
+    HeadCriticalPower: 0
   - Level: 540
     HeadMiningPower: 541
     HeadMiningSpeed: 541
@@ -4340,7 +4340,7 @@ MonoBehaviour:
     HeadMovingSpeed: 541
     HeadMiningCount: 541
     HeadCriticalPercent: 541
-    HeadCriticalPower: 541
+    HeadCriticalPower: 0
   - Level: 541
     HeadMiningPower: 542
     HeadMiningSpeed: 542
@@ -4348,7 +4348,7 @@ MonoBehaviour:
     HeadMovingSpeed: 542
     HeadMiningCount: 542
     HeadCriticalPercent: 542
-    HeadCriticalPower: 542
+    HeadCriticalPower: 0
   - Level: 542
     HeadMiningPower: 543
     HeadMiningSpeed: 543
@@ -4356,7 +4356,7 @@ MonoBehaviour:
     HeadMovingSpeed: 543
     HeadMiningCount: 543
     HeadCriticalPercent: 543
-    HeadCriticalPower: 543
+    HeadCriticalPower: 0
   - Level: 543
     HeadMiningPower: 544
     HeadMiningSpeed: 544
@@ -4364,7 +4364,7 @@ MonoBehaviour:
     HeadMovingSpeed: 544
     HeadMiningCount: 544
     HeadCriticalPercent: 544
-    HeadCriticalPower: 544
+    HeadCriticalPower: 0
   - Level: 544
     HeadMiningPower: 545
     HeadMiningSpeed: 545
@@ -4372,7 +4372,7 @@ MonoBehaviour:
     HeadMovingSpeed: 545
     HeadMiningCount: 545
     HeadCriticalPercent: 545
-    HeadCriticalPower: 545
+    HeadCriticalPower: 0
   - Level: 545
     HeadMiningPower: 546
     HeadMiningSpeed: 546
@@ -4380,7 +4380,7 @@ MonoBehaviour:
     HeadMovingSpeed: 546
     HeadMiningCount: 546
     HeadCriticalPercent: 546
-    HeadCriticalPower: 546
+    HeadCriticalPower: 0
   - Level: 546
     HeadMiningPower: 547
     HeadMiningSpeed: 547
@@ -4388,7 +4388,7 @@ MonoBehaviour:
     HeadMovingSpeed: 547
     HeadMiningCount: 547
     HeadCriticalPercent: 547
-    HeadCriticalPower: 547
+    HeadCriticalPower: 0
   - Level: 547
     HeadMiningPower: 548
     HeadMiningSpeed: 548
@@ -4396,7 +4396,7 @@ MonoBehaviour:
     HeadMovingSpeed: 548
     HeadMiningCount: 548
     HeadCriticalPercent: 548
-    HeadCriticalPower: 548
+    HeadCriticalPower: 0
   - Level: 548
     HeadMiningPower: 549
     HeadMiningSpeed: 549
@@ -4404,7 +4404,7 @@ MonoBehaviour:
     HeadMovingSpeed: 549
     HeadMiningCount: 549
     HeadCriticalPercent: 549
-    HeadCriticalPower: 549
+    HeadCriticalPower: 0
   - Level: 549
     HeadMiningPower: 550
     HeadMiningSpeed: 550
@@ -4412,7 +4412,7 @@ MonoBehaviour:
     HeadMovingSpeed: 550
     HeadMiningCount: 550
     HeadCriticalPercent: 550
-    HeadCriticalPower: 550
+    HeadCriticalPower: 0
   - Level: 550
     HeadMiningPower: 551
     HeadMiningSpeed: 551
@@ -4420,7 +4420,7 @@ MonoBehaviour:
     HeadMovingSpeed: 551
     HeadMiningCount: 551
     HeadCriticalPercent: 551
-    HeadCriticalPower: 551
+    HeadCriticalPower: 0
   - Level: 551
     HeadMiningPower: 552
     HeadMiningSpeed: 552
@@ -4428,7 +4428,7 @@ MonoBehaviour:
     HeadMovingSpeed: 552
     HeadMiningCount: 552
     HeadCriticalPercent: 552
-    HeadCriticalPower: 552
+    HeadCriticalPower: 0
   - Level: 552
     HeadMiningPower: 553
     HeadMiningSpeed: 553
@@ -4436,7 +4436,7 @@ MonoBehaviour:
     HeadMovingSpeed: 553
     HeadMiningCount: 553
     HeadCriticalPercent: 553
-    HeadCriticalPower: 553
+    HeadCriticalPower: 0
   - Level: 553
     HeadMiningPower: 554
     HeadMiningSpeed: 554
@@ -4444,7 +4444,7 @@ MonoBehaviour:
     HeadMovingSpeed: 554
     HeadMiningCount: 554
     HeadCriticalPercent: 554
-    HeadCriticalPower: 554
+    HeadCriticalPower: 0
   - Level: 554
     HeadMiningPower: 555
     HeadMiningSpeed: 555
@@ -4452,7 +4452,7 @@ MonoBehaviour:
     HeadMovingSpeed: 555
     HeadMiningCount: 555
     HeadCriticalPercent: 555
-    HeadCriticalPower: 555
+    HeadCriticalPower: 0
   - Level: 555
     HeadMiningPower: 556
     HeadMiningSpeed: 556
@@ -4460,7 +4460,7 @@ MonoBehaviour:
     HeadMovingSpeed: 556
     HeadMiningCount: 556
     HeadCriticalPercent: 556
-    HeadCriticalPower: 556
+    HeadCriticalPower: 0
   - Level: 556
     HeadMiningPower: 557
     HeadMiningSpeed: 557
@@ -4468,7 +4468,7 @@ MonoBehaviour:
     HeadMovingSpeed: 557
     HeadMiningCount: 557
     HeadCriticalPercent: 557
-    HeadCriticalPower: 557
+    HeadCriticalPower: 0
   - Level: 557
     HeadMiningPower: 558
     HeadMiningSpeed: 558
@@ -4476,7 +4476,7 @@ MonoBehaviour:
     HeadMovingSpeed: 558
     HeadMiningCount: 558
     HeadCriticalPercent: 558
-    HeadCriticalPower: 558
+    HeadCriticalPower: 0
   - Level: 558
     HeadMiningPower: 559
     HeadMiningSpeed: 559
@@ -4484,7 +4484,7 @@ MonoBehaviour:
     HeadMovingSpeed: 559
     HeadMiningCount: 559
     HeadCriticalPercent: 559
-    HeadCriticalPower: 559
+    HeadCriticalPower: 0
   - Level: 559
     HeadMiningPower: 560
     HeadMiningSpeed: 560
@@ -4492,7 +4492,7 @@ MonoBehaviour:
     HeadMovingSpeed: 560
     HeadMiningCount: 560
     HeadCriticalPercent: 560
-    HeadCriticalPower: 560
+    HeadCriticalPower: 0
   - Level: 560
     HeadMiningPower: 561
     HeadMiningSpeed: 561
@@ -4500,7 +4500,7 @@ MonoBehaviour:
     HeadMovingSpeed: 561
     HeadMiningCount: 561
     HeadCriticalPercent: 561
-    HeadCriticalPower: 561
+    HeadCriticalPower: 0
   - Level: 561
     HeadMiningPower: 562
     HeadMiningSpeed: 562
@@ -4508,7 +4508,7 @@ MonoBehaviour:
     HeadMovingSpeed: 562
     HeadMiningCount: 562
     HeadCriticalPercent: 562
-    HeadCriticalPower: 562
+    HeadCriticalPower: 0
   - Level: 562
     HeadMiningPower: 563
     HeadMiningSpeed: 563
@@ -4516,7 +4516,7 @@ MonoBehaviour:
     HeadMovingSpeed: 563
     HeadMiningCount: 563
     HeadCriticalPercent: 563
-    HeadCriticalPower: 563
+    HeadCriticalPower: 0
   - Level: 563
     HeadMiningPower: 564
     HeadMiningSpeed: 564
@@ -4524,7 +4524,7 @@ MonoBehaviour:
     HeadMovingSpeed: 564
     HeadMiningCount: 564
     HeadCriticalPercent: 564
-    HeadCriticalPower: 564
+    HeadCriticalPower: 0
   - Level: 564
     HeadMiningPower: 565
     HeadMiningSpeed: 565
@@ -4532,7 +4532,7 @@ MonoBehaviour:
     HeadMovingSpeed: 565
     HeadMiningCount: 565
     HeadCriticalPercent: 565
-    HeadCriticalPower: 565
+    HeadCriticalPower: 0
   - Level: 565
     HeadMiningPower: 566
     HeadMiningSpeed: 566
@@ -4540,7 +4540,7 @@ MonoBehaviour:
     HeadMovingSpeed: 566
     HeadMiningCount: 566
     HeadCriticalPercent: 566
-    HeadCriticalPower: 566
+    HeadCriticalPower: 0
   - Level: 566
     HeadMiningPower: 567
     HeadMiningSpeed: 567
@@ -4548,7 +4548,7 @@ MonoBehaviour:
     HeadMovingSpeed: 567
     HeadMiningCount: 567
     HeadCriticalPercent: 567
-    HeadCriticalPower: 567
+    HeadCriticalPower: 0
   - Level: 567
     HeadMiningPower: 568
     HeadMiningSpeed: 568
@@ -4556,7 +4556,7 @@ MonoBehaviour:
     HeadMovingSpeed: 568
     HeadMiningCount: 568
     HeadCriticalPercent: 568
-    HeadCriticalPower: 568
+    HeadCriticalPower: 0
   - Level: 568
     HeadMiningPower: 569
     HeadMiningSpeed: 569
@@ -4564,7 +4564,7 @@ MonoBehaviour:
     HeadMovingSpeed: 569
     HeadMiningCount: 569
     HeadCriticalPercent: 569
-    HeadCriticalPower: 569
+    HeadCriticalPower: 0
   - Level: 569
     HeadMiningPower: 570
     HeadMiningSpeed: 570
@@ -4572,7 +4572,7 @@ MonoBehaviour:
     HeadMovingSpeed: 570
     HeadMiningCount: 570
     HeadCriticalPercent: 570
-    HeadCriticalPower: 570
+    HeadCriticalPower: 0
   - Level: 570
     HeadMiningPower: 571
     HeadMiningSpeed: 571
@@ -4580,7 +4580,7 @@ MonoBehaviour:
     HeadMovingSpeed: 571
     HeadMiningCount: 571
     HeadCriticalPercent: 571
-    HeadCriticalPower: 571
+    HeadCriticalPower: 0
   - Level: 571
     HeadMiningPower: 572
     HeadMiningSpeed: 572
@@ -4588,7 +4588,7 @@ MonoBehaviour:
     HeadMovingSpeed: 572
     HeadMiningCount: 572
     HeadCriticalPercent: 572
-    HeadCriticalPower: 572
+    HeadCriticalPower: 0
   - Level: 572
     HeadMiningPower: 573
     HeadMiningSpeed: 573
@@ -4596,7 +4596,7 @@ MonoBehaviour:
     HeadMovingSpeed: 573
     HeadMiningCount: 573
     HeadCriticalPercent: 573
-    HeadCriticalPower: 573
+    HeadCriticalPower: 0
   - Level: 573
     HeadMiningPower: 574
     HeadMiningSpeed: 574
@@ -4604,7 +4604,7 @@ MonoBehaviour:
     HeadMovingSpeed: 574
     HeadMiningCount: 574
     HeadCriticalPercent: 574
-    HeadCriticalPower: 574
+    HeadCriticalPower: 0
   - Level: 574
     HeadMiningPower: 575
     HeadMiningSpeed: 575
@@ -4612,7 +4612,7 @@ MonoBehaviour:
     HeadMovingSpeed: 575
     HeadMiningCount: 575
     HeadCriticalPercent: 575
-    HeadCriticalPower: 575
+    HeadCriticalPower: 0
   - Level: 575
     HeadMiningPower: 576
     HeadMiningSpeed: 576
@@ -4620,7 +4620,7 @@ MonoBehaviour:
     HeadMovingSpeed: 576
     HeadMiningCount: 576
     HeadCriticalPercent: 576
-    HeadCriticalPower: 576
+    HeadCriticalPower: 0
   - Level: 576
     HeadMiningPower: 577
     HeadMiningSpeed: 577
@@ -4628,7 +4628,7 @@ MonoBehaviour:
     HeadMovingSpeed: 577
     HeadMiningCount: 577
     HeadCriticalPercent: 577
-    HeadCriticalPower: 577
+    HeadCriticalPower: 0
   - Level: 577
     HeadMiningPower: 578
     HeadMiningSpeed: 578
@@ -4636,7 +4636,7 @@ MonoBehaviour:
     HeadMovingSpeed: 578
     HeadMiningCount: 578
     HeadCriticalPercent: 578
-    HeadCriticalPower: 578
+    HeadCriticalPower: 0
   - Level: 578
     HeadMiningPower: 579
     HeadMiningSpeed: 579
@@ -4644,7 +4644,7 @@ MonoBehaviour:
     HeadMovingSpeed: 579
     HeadMiningCount: 579
     HeadCriticalPercent: 579
-    HeadCriticalPower: 579
+    HeadCriticalPower: 0
   - Level: 579
     HeadMiningPower: 580
     HeadMiningSpeed: 580
@@ -4652,7 +4652,7 @@ MonoBehaviour:
     HeadMovingSpeed: 580
     HeadMiningCount: 580
     HeadCriticalPercent: 580
-    HeadCriticalPower: 580
+    HeadCriticalPower: 0
   - Level: 580
     HeadMiningPower: 581
     HeadMiningSpeed: 581
@@ -4660,7 +4660,7 @@ MonoBehaviour:
     HeadMovingSpeed: 581
     HeadMiningCount: 581
     HeadCriticalPercent: 581
-    HeadCriticalPower: 581
+    HeadCriticalPower: 0
   - Level: 581
     HeadMiningPower: 582
     HeadMiningSpeed: 582
@@ -4668,7 +4668,7 @@ MonoBehaviour:
     HeadMovingSpeed: 582
     HeadMiningCount: 582
     HeadCriticalPercent: 582
-    HeadCriticalPower: 582
+    HeadCriticalPower: 0
   - Level: 582
     HeadMiningPower: 583
     HeadMiningSpeed: 583
@@ -4676,7 +4676,7 @@ MonoBehaviour:
     HeadMovingSpeed: 583
     HeadMiningCount: 583
     HeadCriticalPercent: 583
-    HeadCriticalPower: 583
+    HeadCriticalPower: 0
   - Level: 583
     HeadMiningPower: 584
     HeadMiningSpeed: 584
@@ -4684,7 +4684,7 @@ MonoBehaviour:
     HeadMovingSpeed: 584
     HeadMiningCount: 584
     HeadCriticalPercent: 584
-    HeadCriticalPower: 584
+    HeadCriticalPower: 0
   - Level: 584
     HeadMiningPower: 585
     HeadMiningSpeed: 585
@@ -4692,7 +4692,7 @@ MonoBehaviour:
     HeadMovingSpeed: 585
     HeadMiningCount: 585
     HeadCriticalPercent: 585
-    HeadCriticalPower: 585
+    HeadCriticalPower: 0
   - Level: 585
     HeadMiningPower: 586
     HeadMiningSpeed: 586
@@ -4700,7 +4700,7 @@ MonoBehaviour:
     HeadMovingSpeed: 586
     HeadMiningCount: 586
     HeadCriticalPercent: 586
-    HeadCriticalPower: 586
+    HeadCriticalPower: 0
   - Level: 586
     HeadMiningPower: 587
     HeadMiningSpeed: 587
@@ -4708,7 +4708,7 @@ MonoBehaviour:
     HeadMovingSpeed: 587
     HeadMiningCount: 587
     HeadCriticalPercent: 587
-    HeadCriticalPower: 587
+    HeadCriticalPower: 0
   - Level: 587
     HeadMiningPower: 588
     HeadMiningSpeed: 588
@@ -4716,7 +4716,7 @@ MonoBehaviour:
     HeadMovingSpeed: 588
     HeadMiningCount: 588
     HeadCriticalPercent: 588
-    HeadCriticalPower: 588
+    HeadCriticalPower: 0
   - Level: 588
     HeadMiningPower: 589
     HeadMiningSpeed: 589
@@ -4724,7 +4724,7 @@ MonoBehaviour:
     HeadMovingSpeed: 589
     HeadMiningCount: 589
     HeadCriticalPercent: 589
-    HeadCriticalPower: 589
+    HeadCriticalPower: 0
   - Level: 589
     HeadMiningPower: 590
     HeadMiningSpeed: 590
@@ -4732,7 +4732,7 @@ MonoBehaviour:
     HeadMovingSpeed: 590
     HeadMiningCount: 590
     HeadCriticalPercent: 590
-    HeadCriticalPower: 590
+    HeadCriticalPower: 0
   - Level: 590
     HeadMiningPower: 591
     HeadMiningSpeed: 591
@@ -4740,7 +4740,7 @@ MonoBehaviour:
     HeadMovingSpeed: 591
     HeadMiningCount: 591
     HeadCriticalPercent: 591
-    HeadCriticalPower: 591
+    HeadCriticalPower: 0
   - Level: 591
     HeadMiningPower: 592
     HeadMiningSpeed: 592
@@ -4748,7 +4748,7 @@ MonoBehaviour:
     HeadMovingSpeed: 592
     HeadMiningCount: 592
     HeadCriticalPercent: 592
-    HeadCriticalPower: 592
+    HeadCriticalPower: 0
   - Level: 592
     HeadMiningPower: 593
     HeadMiningSpeed: 593
@@ -4756,7 +4756,7 @@ MonoBehaviour:
     HeadMovingSpeed: 593
     HeadMiningCount: 593
     HeadCriticalPercent: 593
-    HeadCriticalPower: 593
+    HeadCriticalPower: 0
   - Level: 593
     HeadMiningPower: 594
     HeadMiningSpeed: 594
@@ -4764,7 +4764,7 @@ MonoBehaviour:
     HeadMovingSpeed: 594
     HeadMiningCount: 594
     HeadCriticalPercent: 594
-    HeadCriticalPower: 594
+    HeadCriticalPower: 0
   - Level: 594
     HeadMiningPower: 595
     HeadMiningSpeed: 595
@@ -4772,7 +4772,7 @@ MonoBehaviour:
     HeadMovingSpeed: 595
     HeadMiningCount: 595
     HeadCriticalPercent: 595
-    HeadCriticalPower: 595
+    HeadCriticalPower: 0
   - Level: 595
     HeadMiningPower: 596
     HeadMiningSpeed: 596
@@ -4780,7 +4780,7 @@ MonoBehaviour:
     HeadMovingSpeed: 596
     HeadMiningCount: 596
     HeadCriticalPercent: 596
-    HeadCriticalPower: 596
+    HeadCriticalPower: 0
   - Level: 596
     HeadMiningPower: 597
     HeadMiningSpeed: 597
@@ -4788,7 +4788,7 @@ MonoBehaviour:
     HeadMovingSpeed: 597
     HeadMiningCount: 597
     HeadCriticalPercent: 597
-    HeadCriticalPower: 597
+    HeadCriticalPower: 0
   - Level: 597
     HeadMiningPower: 598
     HeadMiningSpeed: 598
@@ -4796,7 +4796,7 @@ MonoBehaviour:
     HeadMovingSpeed: 598
     HeadMiningCount: 598
     HeadCriticalPercent: 598
-    HeadCriticalPower: 598
+    HeadCriticalPower: 0
   - Level: 598
     HeadMiningPower: 599
     HeadMiningSpeed: 599
@@ -4804,7 +4804,7 @@ MonoBehaviour:
     HeadMovingSpeed: 599
     HeadMiningCount: 599
     HeadCriticalPercent: 599
-    HeadCriticalPower: 599
+    HeadCriticalPower: 0
   - Level: 599
     HeadMiningPower: 600
     HeadMiningSpeed: 600
@@ -4812,7 +4812,7 @@ MonoBehaviour:
     HeadMovingSpeed: 600
     HeadMiningCount: 600
     HeadCriticalPercent: 600
-    HeadCriticalPower: 600
+    HeadCriticalPower: 0
   - Level: 600
     HeadMiningPower: 601
     HeadMiningSpeed: 601
@@ -4820,7 +4820,7 @@ MonoBehaviour:
     HeadMovingSpeed: 601
     HeadMiningCount: 601
     HeadCriticalPercent: 601
-    HeadCriticalPower: 601
+    HeadCriticalPower: 0
   - Level: 601
     HeadMiningPower: 602
     HeadMiningSpeed: 602
@@ -4828,7 +4828,7 @@ MonoBehaviour:
     HeadMovingSpeed: 602
     HeadMiningCount: 602
     HeadCriticalPercent: 602
-    HeadCriticalPower: 602
+    HeadCriticalPower: 0
   - Level: 602
     HeadMiningPower: 603
     HeadMiningSpeed: 603
@@ -4836,7 +4836,7 @@ MonoBehaviour:
     HeadMovingSpeed: 603
     HeadMiningCount: 603
     HeadCriticalPercent: 603
-    HeadCriticalPower: 603
+    HeadCriticalPower: 0
   - Level: 603
     HeadMiningPower: 604
     HeadMiningSpeed: 604
@@ -4844,7 +4844,7 @@ MonoBehaviour:
     HeadMovingSpeed: 604
     HeadMiningCount: 604
     HeadCriticalPercent: 604
-    HeadCriticalPower: 604
+    HeadCriticalPower: 0
   - Level: 604
     HeadMiningPower: 605
     HeadMiningSpeed: 605
@@ -4852,7 +4852,7 @@ MonoBehaviour:
     HeadMovingSpeed: 605
     HeadMiningCount: 605
     HeadCriticalPercent: 605
-    HeadCriticalPower: 605
+    HeadCriticalPower: 0
   - Level: 605
     HeadMiningPower: 606
     HeadMiningSpeed: 606
@@ -4860,7 +4860,7 @@ MonoBehaviour:
     HeadMovingSpeed: 606
     HeadMiningCount: 606
     HeadCriticalPercent: 606
-    HeadCriticalPower: 606
+    HeadCriticalPower: 0
   - Level: 606
     HeadMiningPower: 607
     HeadMiningSpeed: 607
@@ -4868,7 +4868,7 @@ MonoBehaviour:
     HeadMovingSpeed: 607
     HeadMiningCount: 607
     HeadCriticalPercent: 607
-    HeadCriticalPower: 607
+    HeadCriticalPower: 0
   - Level: 607
     HeadMiningPower: 608
     HeadMiningSpeed: 608
@@ -4876,7 +4876,7 @@ MonoBehaviour:
     HeadMovingSpeed: 608
     HeadMiningCount: 608
     HeadCriticalPercent: 608
-    HeadCriticalPower: 608
+    HeadCriticalPower: 0
   - Level: 608
     HeadMiningPower: 609
     HeadMiningSpeed: 609
@@ -4884,7 +4884,7 @@ MonoBehaviour:
     HeadMovingSpeed: 609
     HeadMiningCount: 609
     HeadCriticalPercent: 609
-    HeadCriticalPower: 609
+    HeadCriticalPower: 0
   - Level: 609
     HeadMiningPower: 610
     HeadMiningSpeed: 610
@@ -4892,7 +4892,7 @@ MonoBehaviour:
     HeadMovingSpeed: 610
     HeadMiningCount: 610
     HeadCriticalPercent: 610
-    HeadCriticalPower: 610
+    HeadCriticalPower: 0
   - Level: 610
     HeadMiningPower: 611
     HeadMiningSpeed: 611
@@ -4900,7 +4900,7 @@ MonoBehaviour:
     HeadMovingSpeed: 611
     HeadMiningCount: 611
     HeadCriticalPercent: 611
-    HeadCriticalPower: 611
+    HeadCriticalPower: 0
   - Level: 611
     HeadMiningPower: 612
     HeadMiningSpeed: 612
@@ -4908,7 +4908,7 @@ MonoBehaviour:
     HeadMovingSpeed: 612
     HeadMiningCount: 612
     HeadCriticalPercent: 612
-    HeadCriticalPower: 612
+    HeadCriticalPower: 0
   - Level: 612
     HeadMiningPower: 613
     HeadMiningSpeed: 613
@@ -4916,7 +4916,7 @@ MonoBehaviour:
     HeadMovingSpeed: 613
     HeadMiningCount: 613
     HeadCriticalPercent: 613
-    HeadCriticalPower: 613
+    HeadCriticalPower: 0
   - Level: 613
     HeadMiningPower: 614
     HeadMiningSpeed: 614
@@ -4924,7 +4924,7 @@ MonoBehaviour:
     HeadMovingSpeed: 614
     HeadMiningCount: 614
     HeadCriticalPercent: 614
-    HeadCriticalPower: 614
+    HeadCriticalPower: 0
   - Level: 614
     HeadMiningPower: 615
     HeadMiningSpeed: 615
@@ -4932,7 +4932,7 @@ MonoBehaviour:
     HeadMovingSpeed: 615
     HeadMiningCount: 615
     HeadCriticalPercent: 615
-    HeadCriticalPower: 615
+    HeadCriticalPower: 0
   - Level: 615
     HeadMiningPower: 616
     HeadMiningSpeed: 616
@@ -4940,7 +4940,7 @@ MonoBehaviour:
     HeadMovingSpeed: 616
     HeadMiningCount: 616
     HeadCriticalPercent: 616
-    HeadCriticalPower: 616
+    HeadCriticalPower: 0
   - Level: 616
     HeadMiningPower: 617
     HeadMiningSpeed: 617
@@ -4948,7 +4948,7 @@ MonoBehaviour:
     HeadMovingSpeed: 617
     HeadMiningCount: 617
     HeadCriticalPercent: 617
-    HeadCriticalPower: 617
+    HeadCriticalPower: 0
   - Level: 617
     HeadMiningPower: 618
     HeadMiningSpeed: 618
@@ -4956,7 +4956,7 @@ MonoBehaviour:
     HeadMovingSpeed: 618
     HeadMiningCount: 618
     HeadCriticalPercent: 618
-    HeadCriticalPower: 618
+    HeadCriticalPower: 0
   - Level: 618
     HeadMiningPower: 619
     HeadMiningSpeed: 619
@@ -4964,7 +4964,7 @@ MonoBehaviour:
     HeadMovingSpeed: 619
     HeadMiningCount: 619
     HeadCriticalPercent: 619
-    HeadCriticalPower: 619
+    HeadCriticalPower: 0
   - Level: 619
     HeadMiningPower: 620
     HeadMiningSpeed: 620
@@ -4972,7 +4972,7 @@ MonoBehaviour:
     HeadMovingSpeed: 620
     HeadMiningCount: 620
     HeadCriticalPercent: 620
-    HeadCriticalPower: 620
+    HeadCriticalPower: 0
   - Level: 620
     HeadMiningPower: 621
     HeadMiningSpeed: 621
@@ -4980,7 +4980,7 @@ MonoBehaviour:
     HeadMovingSpeed: 621
     HeadMiningCount: 621
     HeadCriticalPercent: 621
-    HeadCriticalPower: 621
+    HeadCriticalPower: 0
   - Level: 621
     HeadMiningPower: 622
     HeadMiningSpeed: 622
@@ -4988,7 +4988,7 @@ MonoBehaviour:
     HeadMovingSpeed: 622
     HeadMiningCount: 622
     HeadCriticalPercent: 622
-    HeadCriticalPower: 622
+    HeadCriticalPower: 0
   - Level: 622
     HeadMiningPower: 623
     HeadMiningSpeed: 623
@@ -4996,7 +4996,7 @@ MonoBehaviour:
     HeadMovingSpeed: 623
     HeadMiningCount: 623
     HeadCriticalPercent: 623
-    HeadCriticalPower: 623
+    HeadCriticalPower: 0
   - Level: 623
     HeadMiningPower: 624
     HeadMiningSpeed: 624
@@ -5004,7 +5004,7 @@ MonoBehaviour:
     HeadMovingSpeed: 624
     HeadMiningCount: 624
     HeadCriticalPercent: 624
-    HeadCriticalPower: 624
+    HeadCriticalPower: 0
   - Level: 624
     HeadMiningPower: 625
     HeadMiningSpeed: 625
@@ -5012,7 +5012,7 @@ MonoBehaviour:
     HeadMovingSpeed: 625
     HeadMiningCount: 625
     HeadCriticalPercent: 625
-    HeadCriticalPower: 625
+    HeadCriticalPower: 0
   - Level: 625
     HeadMiningPower: 626
     HeadMiningSpeed: 626
@@ -5020,7 +5020,7 @@ MonoBehaviour:
     HeadMovingSpeed: 626
     HeadMiningCount: 626
     HeadCriticalPercent: 626
-    HeadCriticalPower: 626
+    HeadCriticalPower: 0
   - Level: 626
     HeadMiningPower: 627
     HeadMiningSpeed: 627
@@ -5028,7 +5028,7 @@ MonoBehaviour:
     HeadMovingSpeed: 627
     HeadMiningCount: 627
     HeadCriticalPercent: 627
-    HeadCriticalPower: 627
+    HeadCriticalPower: 0
   - Level: 627
     HeadMiningPower: 628
     HeadMiningSpeed: 628
@@ -5036,7 +5036,7 @@ MonoBehaviour:
     HeadMovingSpeed: 628
     HeadMiningCount: 628
     HeadCriticalPercent: 628
-    HeadCriticalPower: 628
+    HeadCriticalPower: 0
   - Level: 628
     HeadMiningPower: 629
     HeadMiningSpeed: 629
@@ -5044,7 +5044,7 @@ MonoBehaviour:
     HeadMovingSpeed: 629
     HeadMiningCount: 629
     HeadCriticalPercent: 629
-    HeadCriticalPower: 629
+    HeadCriticalPower: 0
   - Level: 629
     HeadMiningPower: 630
     HeadMiningSpeed: 630
@@ -5052,7 +5052,7 @@ MonoBehaviour:
     HeadMovingSpeed: 630
     HeadMiningCount: 630
     HeadCriticalPercent: 630
-    HeadCriticalPower: 630
+    HeadCriticalPower: 0
   - Level: 630
     HeadMiningPower: 631
     HeadMiningSpeed: 631
@@ -5060,7 +5060,7 @@ MonoBehaviour:
     HeadMovingSpeed: 631
     HeadMiningCount: 631
     HeadCriticalPercent: 631
-    HeadCriticalPower: 631
+    HeadCriticalPower: 0
   - Level: 631
     HeadMiningPower: 632
     HeadMiningSpeed: 632
@@ -5068,7 +5068,7 @@ MonoBehaviour:
     HeadMovingSpeed: 632
     HeadMiningCount: 632
     HeadCriticalPercent: 632
-    HeadCriticalPower: 632
+    HeadCriticalPower: 0
   - Level: 632
     HeadMiningPower: 633
     HeadMiningSpeed: 633
@@ -5076,7 +5076,7 @@ MonoBehaviour:
     HeadMovingSpeed: 633
     HeadMiningCount: 633
     HeadCriticalPercent: 633
-    HeadCriticalPower: 633
+    HeadCriticalPower: 0
   - Level: 633
     HeadMiningPower: 634
     HeadMiningSpeed: 634
@@ -5084,7 +5084,7 @@ MonoBehaviour:
     HeadMovingSpeed: 634
     HeadMiningCount: 634
     HeadCriticalPercent: 634
-    HeadCriticalPower: 634
+    HeadCriticalPower: 0
   - Level: 634
     HeadMiningPower: 635
     HeadMiningSpeed: 635
@@ -5092,7 +5092,7 @@ MonoBehaviour:
     HeadMovingSpeed: 635
     HeadMiningCount: 635
     HeadCriticalPercent: 635
-    HeadCriticalPower: 635
+    HeadCriticalPower: 0
   - Level: 635
     HeadMiningPower: 636
     HeadMiningSpeed: 636
@@ -5100,7 +5100,7 @@ MonoBehaviour:
     HeadMovingSpeed: 636
     HeadMiningCount: 636
     HeadCriticalPercent: 636
-    HeadCriticalPower: 636
+    HeadCriticalPower: 0
   - Level: 636
     HeadMiningPower: 637
     HeadMiningSpeed: 637
@@ -5108,7 +5108,7 @@ MonoBehaviour:
     HeadMovingSpeed: 637
     HeadMiningCount: 637
     HeadCriticalPercent: 637
-    HeadCriticalPower: 637
+    HeadCriticalPower: 0
   - Level: 637
     HeadMiningPower: 638
     HeadMiningSpeed: 638
@@ -5116,7 +5116,7 @@ MonoBehaviour:
     HeadMovingSpeed: 638
     HeadMiningCount: 638
     HeadCriticalPercent: 638
-    HeadCriticalPower: 638
+    HeadCriticalPower: 0
   - Level: 638
     HeadMiningPower: 639
     HeadMiningSpeed: 639
@@ -5124,7 +5124,7 @@ MonoBehaviour:
     HeadMovingSpeed: 639
     HeadMiningCount: 639
     HeadCriticalPercent: 639
-    HeadCriticalPower: 639
+    HeadCriticalPower: 0
   - Level: 639
     HeadMiningPower: 640
     HeadMiningSpeed: 640
@@ -5132,7 +5132,7 @@ MonoBehaviour:
     HeadMovingSpeed: 640
     HeadMiningCount: 640
     HeadCriticalPercent: 640
-    HeadCriticalPower: 640
+    HeadCriticalPower: 0
   - Level: 640
     HeadMiningPower: 641
     HeadMiningSpeed: 641
@@ -5140,7 +5140,7 @@ MonoBehaviour:
     HeadMovingSpeed: 641
     HeadMiningCount: 641
     HeadCriticalPercent: 641
-    HeadCriticalPower: 641
+    HeadCriticalPower: 0
   - Level: 641
     HeadMiningPower: 642
     HeadMiningSpeed: 642
@@ -5148,7 +5148,7 @@ MonoBehaviour:
     HeadMovingSpeed: 642
     HeadMiningCount: 642
     HeadCriticalPercent: 642
-    HeadCriticalPower: 642
+    HeadCriticalPower: 0
   - Level: 642
     HeadMiningPower: 643
     HeadMiningSpeed: 643
@@ -5156,7 +5156,7 @@ MonoBehaviour:
     HeadMovingSpeed: 643
     HeadMiningCount: 643
     HeadCriticalPercent: 643
-    HeadCriticalPower: 643
+    HeadCriticalPower: 0
   - Level: 643
     HeadMiningPower: 644
     HeadMiningSpeed: 644
@@ -5164,7 +5164,7 @@ MonoBehaviour:
     HeadMovingSpeed: 644
     HeadMiningCount: 644
     HeadCriticalPercent: 644
-    HeadCriticalPower: 644
+    HeadCriticalPower: 0
   - Level: 644
     HeadMiningPower: 645
     HeadMiningSpeed: 645
@@ -5172,7 +5172,7 @@ MonoBehaviour:
     HeadMovingSpeed: 645
     HeadMiningCount: 645
     HeadCriticalPercent: 645
-    HeadCriticalPower: 645
+    HeadCriticalPower: 0
   - Level: 645
     HeadMiningPower: 646
     HeadMiningSpeed: 646
@@ -5180,7 +5180,7 @@ MonoBehaviour:
     HeadMovingSpeed: 646
     HeadMiningCount: 646
     HeadCriticalPercent: 646
-    HeadCriticalPower: 646
+    HeadCriticalPower: 0
   - Level: 646
     HeadMiningPower: 647
     HeadMiningSpeed: 647
@@ -5188,7 +5188,7 @@ MonoBehaviour:
     HeadMovingSpeed: 647
     HeadMiningCount: 647
     HeadCriticalPercent: 647
-    HeadCriticalPower: 647
+    HeadCriticalPower: 0
   - Level: 647
     HeadMiningPower: 648
     HeadMiningSpeed: 648
@@ -5196,7 +5196,7 @@ MonoBehaviour:
     HeadMovingSpeed: 648
     HeadMiningCount: 648
     HeadCriticalPercent: 648
-    HeadCriticalPower: 648
+    HeadCriticalPower: 0
   - Level: 648
     HeadMiningPower: 649
     HeadMiningSpeed: 649
@@ -5204,7 +5204,7 @@ MonoBehaviour:
     HeadMovingSpeed: 649
     HeadMiningCount: 649
     HeadCriticalPercent: 649
-    HeadCriticalPower: 649
+    HeadCriticalPower: 0
   - Level: 649
     HeadMiningPower: 650
     HeadMiningSpeed: 650
@@ -5212,7 +5212,7 @@ MonoBehaviour:
     HeadMovingSpeed: 650
     HeadMiningCount: 650
     HeadCriticalPercent: 650
-    HeadCriticalPower: 650
+    HeadCriticalPower: 0
   - Level: 650
     HeadMiningPower: 651
     HeadMiningSpeed: 651
@@ -5220,7 +5220,7 @@ MonoBehaviour:
     HeadMovingSpeed: 651
     HeadMiningCount: 651
     HeadCriticalPercent: 651
-    HeadCriticalPower: 651
+    HeadCriticalPower: 0
   - Level: 651
     HeadMiningPower: 652
     HeadMiningSpeed: 652
@@ -5228,7 +5228,7 @@ MonoBehaviour:
     HeadMovingSpeed: 652
     HeadMiningCount: 652
     HeadCriticalPercent: 652
-    HeadCriticalPower: 652
+    HeadCriticalPower: 0
   - Level: 652
     HeadMiningPower: 653
     HeadMiningSpeed: 653
@@ -5236,7 +5236,7 @@ MonoBehaviour:
     HeadMovingSpeed: 653
     HeadMiningCount: 653
     HeadCriticalPercent: 653
-    HeadCriticalPower: 653
+    HeadCriticalPower: 0
   - Level: 653
     HeadMiningPower: 654
     HeadMiningSpeed: 654
@@ -5244,7 +5244,7 @@ MonoBehaviour:
     HeadMovingSpeed: 654
     HeadMiningCount: 654
     HeadCriticalPercent: 654
-    HeadCriticalPower: 654
+    HeadCriticalPower: 0
   - Level: 654
     HeadMiningPower: 655
     HeadMiningSpeed: 655
@@ -5252,7 +5252,7 @@ MonoBehaviour:
     HeadMovingSpeed: 655
     HeadMiningCount: 655
     HeadCriticalPercent: 655
-    HeadCriticalPower: 655
+    HeadCriticalPower: 0
   - Level: 655
     HeadMiningPower: 656
     HeadMiningSpeed: 656
@@ -5260,7 +5260,7 @@ MonoBehaviour:
     HeadMovingSpeed: 656
     HeadMiningCount: 656
     HeadCriticalPercent: 656
-    HeadCriticalPower: 656
+    HeadCriticalPower: 0
   - Level: 656
     HeadMiningPower: 657
     HeadMiningSpeed: 657
@@ -5268,7 +5268,7 @@ MonoBehaviour:
     HeadMovingSpeed: 657
     HeadMiningCount: 657
     HeadCriticalPercent: 657
-    HeadCriticalPower: 657
+    HeadCriticalPower: 0
   - Level: 657
     HeadMiningPower: 658
     HeadMiningSpeed: 658
@@ -5276,7 +5276,7 @@ MonoBehaviour:
     HeadMovingSpeed: 658
     HeadMiningCount: 658
     HeadCriticalPercent: 658
-    HeadCriticalPower: 658
+    HeadCriticalPower: 0
   - Level: 658
     HeadMiningPower: 659
     HeadMiningSpeed: 659
@@ -5284,7 +5284,7 @@ MonoBehaviour:
     HeadMovingSpeed: 659
     HeadMiningCount: 659
     HeadCriticalPercent: 659
-    HeadCriticalPower: 659
+    HeadCriticalPower: 0
   - Level: 659
     HeadMiningPower: 660
     HeadMiningSpeed: 660
@@ -5292,7 +5292,7 @@ MonoBehaviour:
     HeadMovingSpeed: 660
     HeadMiningCount: 660
     HeadCriticalPercent: 660
-    HeadCriticalPower: 660
+    HeadCriticalPower: 0
   - Level: 660
     HeadMiningPower: 661
     HeadMiningSpeed: 661
@@ -5300,7 +5300,7 @@ MonoBehaviour:
     HeadMovingSpeed: 661
     HeadMiningCount: 661
     HeadCriticalPercent: 661
-    HeadCriticalPower: 661
+    HeadCriticalPower: 0
   - Level: 661
     HeadMiningPower: 662
     HeadMiningSpeed: 662
@@ -5308,7 +5308,7 @@ MonoBehaviour:
     HeadMovingSpeed: 662
     HeadMiningCount: 662
     HeadCriticalPercent: 662
-    HeadCriticalPower: 662
+    HeadCriticalPower: 0
   - Level: 662
     HeadMiningPower: 663
     HeadMiningSpeed: 663
@@ -5316,7 +5316,7 @@ MonoBehaviour:
     HeadMovingSpeed: 663
     HeadMiningCount: 663
     HeadCriticalPercent: 663
-    HeadCriticalPower: 663
+    HeadCriticalPower: 0
   - Level: 663
     HeadMiningPower: 664
     HeadMiningSpeed: 664
@@ -5324,7 +5324,7 @@ MonoBehaviour:
     HeadMovingSpeed: 664
     HeadMiningCount: 664
     HeadCriticalPercent: 664
-    HeadCriticalPower: 664
+    HeadCriticalPower: 0
   - Level: 664
     HeadMiningPower: 665
     HeadMiningSpeed: 665
@@ -5332,7 +5332,7 @@ MonoBehaviour:
     HeadMovingSpeed: 665
     HeadMiningCount: 665
     HeadCriticalPercent: 665
-    HeadCriticalPower: 665
+    HeadCriticalPower: 0
   - Level: 665
     HeadMiningPower: 666
     HeadMiningSpeed: 666
@@ -5340,7 +5340,7 @@ MonoBehaviour:
     HeadMovingSpeed: 666
     HeadMiningCount: 666
     HeadCriticalPercent: 666
-    HeadCriticalPower: 666
+    HeadCriticalPower: 0
   - Level: 666
     HeadMiningPower: 667
     HeadMiningSpeed: 667
@@ -5348,7 +5348,7 @@ MonoBehaviour:
     HeadMovingSpeed: 667
     HeadMiningCount: 667
     HeadCriticalPercent: 667
-    HeadCriticalPower: 667
+    HeadCriticalPower: 0
   - Level: 667
     HeadMiningPower: 668
     HeadMiningSpeed: 668
@@ -5356,7 +5356,7 @@ MonoBehaviour:
     HeadMovingSpeed: 668
     HeadMiningCount: 668
     HeadCriticalPercent: 668
-    HeadCriticalPower: 668
+    HeadCriticalPower: 0
   - Level: 668
     HeadMiningPower: 669
     HeadMiningSpeed: 669
@@ -5364,7 +5364,7 @@ MonoBehaviour:
     HeadMovingSpeed: 669
     HeadMiningCount: 669
     HeadCriticalPercent: 669
-    HeadCriticalPower: 669
+    HeadCriticalPower: 0
   - Level: 669
     HeadMiningPower: 670
     HeadMiningSpeed: 670
@@ -5372,7 +5372,7 @@ MonoBehaviour:
     HeadMovingSpeed: 670
     HeadMiningCount: 670
     HeadCriticalPercent: 670
-    HeadCriticalPower: 670
+    HeadCriticalPower: 0
   - Level: 670
     HeadMiningPower: 671
     HeadMiningSpeed: 671
@@ -5380,7 +5380,7 @@ MonoBehaviour:
     HeadMovingSpeed: 671
     HeadMiningCount: 671
     HeadCriticalPercent: 671
-    HeadCriticalPower: 671
+    HeadCriticalPower: 0
   - Level: 671
     HeadMiningPower: 672
     HeadMiningSpeed: 672
@@ -5388,7 +5388,7 @@ MonoBehaviour:
     HeadMovingSpeed: 672
     HeadMiningCount: 672
     HeadCriticalPercent: 672
-    HeadCriticalPower: 672
+    HeadCriticalPower: 0
   - Level: 672
     HeadMiningPower: 673
     HeadMiningSpeed: 673
@@ -5396,7 +5396,7 @@ MonoBehaviour:
     HeadMovingSpeed: 673
     HeadMiningCount: 673
     HeadCriticalPercent: 673
-    HeadCriticalPower: 673
+    HeadCriticalPower: 0
   - Level: 673
     HeadMiningPower: 674
     HeadMiningSpeed: 674
@@ -5404,7 +5404,7 @@ MonoBehaviour:
     HeadMovingSpeed: 674
     HeadMiningCount: 674
     HeadCriticalPercent: 674
-    HeadCriticalPower: 674
+    HeadCriticalPower: 0
   - Level: 674
     HeadMiningPower: 675
     HeadMiningSpeed: 675
@@ -5412,7 +5412,7 @@ MonoBehaviour:
     HeadMovingSpeed: 675
     HeadMiningCount: 675
     HeadCriticalPercent: 675
-    HeadCriticalPower: 675
+    HeadCriticalPower: 0
   - Level: 675
     HeadMiningPower: 676
     HeadMiningSpeed: 676
@@ -5420,7 +5420,7 @@ MonoBehaviour:
     HeadMovingSpeed: 676
     HeadMiningCount: 676
     HeadCriticalPercent: 676
-    HeadCriticalPower: 676
+    HeadCriticalPower: 0
   - Level: 676
     HeadMiningPower: 677
     HeadMiningSpeed: 677
@@ -5428,7 +5428,7 @@ MonoBehaviour:
     HeadMovingSpeed: 677
     HeadMiningCount: 677
     HeadCriticalPercent: 677
-    HeadCriticalPower: 677
+    HeadCriticalPower: 0
   - Level: 677
     HeadMiningPower: 678
     HeadMiningSpeed: 678
@@ -5436,7 +5436,7 @@ MonoBehaviour:
     HeadMovingSpeed: 678
     HeadMiningCount: 678
     HeadCriticalPercent: 678
-    HeadCriticalPower: 678
+    HeadCriticalPower: 0
   - Level: 678
     HeadMiningPower: 679
     HeadMiningSpeed: 679
@@ -5444,7 +5444,7 @@ MonoBehaviour:
     HeadMovingSpeed: 679
     HeadMiningCount: 679
     HeadCriticalPercent: 679
-    HeadCriticalPower: 679
+    HeadCriticalPower: 0
   - Level: 679
     HeadMiningPower: 680
     HeadMiningSpeed: 680
@@ -5452,7 +5452,7 @@ MonoBehaviour:
     HeadMovingSpeed: 680
     HeadMiningCount: 680
     HeadCriticalPercent: 680
-    HeadCriticalPower: 680
+    HeadCriticalPower: 0
   - Level: 680
     HeadMiningPower: 681
     HeadMiningSpeed: 681
@@ -5460,7 +5460,7 @@ MonoBehaviour:
     HeadMovingSpeed: 681
     HeadMiningCount: 681
     HeadCriticalPercent: 681
-    HeadCriticalPower: 681
+    HeadCriticalPower: 0
   - Level: 681
     HeadMiningPower: 682
     HeadMiningSpeed: 682
@@ -5468,7 +5468,7 @@ MonoBehaviour:
     HeadMovingSpeed: 682
     HeadMiningCount: 682
     HeadCriticalPercent: 682
-    HeadCriticalPower: 682
+    HeadCriticalPower: 0
   - Level: 682
     HeadMiningPower: 683
     HeadMiningSpeed: 683
@@ -5476,7 +5476,7 @@ MonoBehaviour:
     HeadMovingSpeed: 683
     HeadMiningCount: 683
     HeadCriticalPercent: 683
-    HeadCriticalPower: 683
+    HeadCriticalPower: 0
   - Level: 683
     HeadMiningPower: 684
     HeadMiningSpeed: 684
@@ -5484,7 +5484,7 @@ MonoBehaviour:
     HeadMovingSpeed: 684
     HeadMiningCount: 684
     HeadCriticalPercent: 684
-    HeadCriticalPower: 684
+    HeadCriticalPower: 0
   - Level: 684
     HeadMiningPower: 685
     HeadMiningSpeed: 685
@@ -5492,7 +5492,7 @@ MonoBehaviour:
     HeadMovingSpeed: 685
     HeadMiningCount: 685
     HeadCriticalPercent: 685
-    HeadCriticalPower: 685
+    HeadCriticalPower: 0
   - Level: 685
     HeadMiningPower: 686
     HeadMiningSpeed: 686
@@ -5500,7 +5500,7 @@ MonoBehaviour:
     HeadMovingSpeed: 686
     HeadMiningCount: 686
     HeadCriticalPercent: 686
-    HeadCriticalPower: 686
+    HeadCriticalPower: 0
   - Level: 686
     HeadMiningPower: 687
     HeadMiningSpeed: 687
@@ -5508,7 +5508,7 @@ MonoBehaviour:
     HeadMovingSpeed: 687
     HeadMiningCount: 687
     HeadCriticalPercent: 687
-    HeadCriticalPower: 687
+    HeadCriticalPower: 0
   - Level: 687
     HeadMiningPower: 688
     HeadMiningSpeed: 688
@@ -5516,7 +5516,7 @@ MonoBehaviour:
     HeadMovingSpeed: 688
     HeadMiningCount: 688
     HeadCriticalPercent: 688
-    HeadCriticalPower: 688
+    HeadCriticalPower: 0
   - Level: 688
     HeadMiningPower: 689
     HeadMiningSpeed: 689
@@ -5524,7 +5524,7 @@ MonoBehaviour:
     HeadMovingSpeed: 689
     HeadMiningCount: 689
     HeadCriticalPercent: 689
-    HeadCriticalPower: 689
+    HeadCriticalPower: 0
   - Level: 689
     HeadMiningPower: 690
     HeadMiningSpeed: 690
@@ -5532,7 +5532,7 @@ MonoBehaviour:
     HeadMovingSpeed: 690
     HeadMiningCount: 690
     HeadCriticalPercent: 690
-    HeadCriticalPower: 690
+    HeadCriticalPower: 0
   - Level: 690
     HeadMiningPower: 691
     HeadMiningSpeed: 691
@@ -5540,7 +5540,7 @@ MonoBehaviour:
     HeadMovingSpeed: 691
     HeadMiningCount: 691
     HeadCriticalPercent: 691
-    HeadCriticalPower: 691
+    HeadCriticalPower: 0
   - Level: 691
     HeadMiningPower: 692
     HeadMiningSpeed: 692
@@ -5548,7 +5548,7 @@ MonoBehaviour:
     HeadMovingSpeed: 692
     HeadMiningCount: 692
     HeadCriticalPercent: 692
-    HeadCriticalPower: 692
+    HeadCriticalPower: 0
   - Level: 692
     HeadMiningPower: 693
     HeadMiningSpeed: 693
@@ -5556,7 +5556,7 @@ MonoBehaviour:
     HeadMovingSpeed: 693
     HeadMiningCount: 693
     HeadCriticalPercent: 693
-    HeadCriticalPower: 693
+    HeadCriticalPower: 0
   - Level: 693
     HeadMiningPower: 694
     HeadMiningSpeed: 694
@@ -5564,7 +5564,7 @@ MonoBehaviour:
     HeadMovingSpeed: 694
     HeadMiningCount: 694
     HeadCriticalPercent: 694
-    HeadCriticalPower: 694
+    HeadCriticalPower: 0
   - Level: 694
     HeadMiningPower: 695
     HeadMiningSpeed: 695
@@ -5572,7 +5572,7 @@ MonoBehaviour:
     HeadMovingSpeed: 695
     HeadMiningCount: 695
     HeadCriticalPercent: 695
-    HeadCriticalPower: 695
+    HeadCriticalPower: 0
   - Level: 695
     HeadMiningPower: 696
     HeadMiningSpeed: 696
@@ -5580,7 +5580,7 @@ MonoBehaviour:
     HeadMovingSpeed: 696
     HeadMiningCount: 696
     HeadCriticalPercent: 696
-    HeadCriticalPower: 696
+    HeadCriticalPower: 0
   - Level: 696
     HeadMiningPower: 697
     HeadMiningSpeed: 697
@@ -5588,7 +5588,7 @@ MonoBehaviour:
     HeadMovingSpeed: 697
     HeadMiningCount: 697
     HeadCriticalPercent: 697
-    HeadCriticalPower: 697
+    HeadCriticalPower: 0
   - Level: 697
     HeadMiningPower: 698
     HeadMiningSpeed: 698
@@ -5596,7 +5596,7 @@ MonoBehaviour:
     HeadMovingSpeed: 698
     HeadMiningCount: 698
     HeadCriticalPercent: 698
-    HeadCriticalPower: 698
+    HeadCriticalPower: 0
   - Level: 698
     HeadMiningPower: 699
     HeadMiningSpeed: 699
@@ -5604,7 +5604,7 @@ MonoBehaviour:
     HeadMovingSpeed: 699
     HeadMiningCount: 699
     HeadCriticalPercent: 699
-    HeadCriticalPower: 699
+    HeadCriticalPower: 0
   - Level: 699
     HeadMiningPower: 700
     HeadMiningSpeed: 700
@@ -5612,7 +5612,7 @@ MonoBehaviour:
     HeadMovingSpeed: 700
     HeadMiningCount: 700
     HeadCriticalPercent: 700
-    HeadCriticalPower: 700
+    HeadCriticalPower: 0
   - Level: 700
     HeadMiningPower: 701
     HeadMiningSpeed: 701
@@ -5620,7 +5620,7 @@ MonoBehaviour:
     HeadMovingSpeed: 701
     HeadMiningCount: 701
     HeadCriticalPercent: 701
-    HeadCriticalPower: 701
+    HeadCriticalPower: 0
   - Level: 701
     HeadMiningPower: 702
     HeadMiningSpeed: 702
@@ -5628,7 +5628,7 @@ MonoBehaviour:
     HeadMovingSpeed: 702
     HeadMiningCount: 702
     HeadCriticalPercent: 702
-    HeadCriticalPower: 702
+    HeadCriticalPower: 0
   - Level: 702
     HeadMiningPower: 703
     HeadMiningSpeed: 703
@@ -5636,7 +5636,7 @@ MonoBehaviour:
     HeadMovingSpeed: 703
     HeadMiningCount: 703
     HeadCriticalPercent: 703
-    HeadCriticalPower: 703
+    HeadCriticalPower: 0
   - Level: 703
     HeadMiningPower: 704
     HeadMiningSpeed: 704
@@ -5644,7 +5644,7 @@ MonoBehaviour:
     HeadMovingSpeed: 704
     HeadMiningCount: 704
     HeadCriticalPercent: 704
-    HeadCriticalPower: 704
+    HeadCriticalPower: 0
   - Level: 704
     HeadMiningPower: 705
     HeadMiningSpeed: 705
@@ -5652,7 +5652,7 @@ MonoBehaviour:
     HeadMovingSpeed: 705
     HeadMiningCount: 705
     HeadCriticalPercent: 705
-    HeadCriticalPower: 705
+    HeadCriticalPower: 0
   - Level: 705
     HeadMiningPower: 706
     HeadMiningSpeed: 706
@@ -5660,7 +5660,7 @@ MonoBehaviour:
     HeadMovingSpeed: 706
     HeadMiningCount: 706
     HeadCriticalPercent: 706
-    HeadCriticalPower: 706
+    HeadCriticalPower: 0
   - Level: 706
     HeadMiningPower: 707
     HeadMiningSpeed: 707
@@ -5668,7 +5668,7 @@ MonoBehaviour:
     HeadMovingSpeed: 707
     HeadMiningCount: 707
     HeadCriticalPercent: 707
-    HeadCriticalPower: 707
+    HeadCriticalPower: 0
   - Level: 707
     HeadMiningPower: 708
     HeadMiningSpeed: 708
@@ -5676,7 +5676,7 @@ MonoBehaviour:
     HeadMovingSpeed: 708
     HeadMiningCount: 708
     HeadCriticalPercent: 708
-    HeadCriticalPower: 708
+    HeadCriticalPower: 0
   - Level: 708
     HeadMiningPower: 709
     HeadMiningSpeed: 709
@@ -5684,7 +5684,7 @@ MonoBehaviour:
     HeadMovingSpeed: 709
     HeadMiningCount: 709
     HeadCriticalPercent: 709
-    HeadCriticalPower: 709
+    HeadCriticalPower: 0
   - Level: 709
     HeadMiningPower: 710
     HeadMiningSpeed: 710
@@ -5692,7 +5692,7 @@ MonoBehaviour:
     HeadMovingSpeed: 710
     HeadMiningCount: 710
     HeadCriticalPercent: 710
-    HeadCriticalPower: 710
+    HeadCriticalPower: 0
   - Level: 710
     HeadMiningPower: 711
     HeadMiningSpeed: 711
@@ -5700,7 +5700,7 @@ MonoBehaviour:
     HeadMovingSpeed: 711
     HeadMiningCount: 711
     HeadCriticalPercent: 711
-    HeadCriticalPower: 711
+    HeadCriticalPower: 0
   - Level: 711
     HeadMiningPower: 712
     HeadMiningSpeed: 712
@@ -5708,7 +5708,7 @@ MonoBehaviour:
     HeadMovingSpeed: 712
     HeadMiningCount: 712
     HeadCriticalPercent: 712
-    HeadCriticalPower: 712
+    HeadCriticalPower: 0
   - Level: 712
     HeadMiningPower: 713
     HeadMiningSpeed: 713
@@ -5716,7 +5716,7 @@ MonoBehaviour:
     HeadMovingSpeed: 713
     HeadMiningCount: 713
     HeadCriticalPercent: 713
-    HeadCriticalPower: 713
+    HeadCriticalPower: 0
   - Level: 713
     HeadMiningPower: 714
     HeadMiningSpeed: 714
@@ -5724,7 +5724,7 @@ MonoBehaviour:
     HeadMovingSpeed: 714
     HeadMiningCount: 714
     HeadCriticalPercent: 714
-    HeadCriticalPower: 714
+    HeadCriticalPower: 0
   - Level: 714
     HeadMiningPower: 715
     HeadMiningSpeed: 715
@@ -5732,7 +5732,7 @@ MonoBehaviour:
     HeadMovingSpeed: 715
     HeadMiningCount: 715
     HeadCriticalPercent: 715
-    HeadCriticalPower: 715
+    HeadCriticalPower: 0
   - Level: 715
     HeadMiningPower: 716
     HeadMiningSpeed: 716
@@ -5740,7 +5740,7 @@ MonoBehaviour:
     HeadMovingSpeed: 716
     HeadMiningCount: 716
     HeadCriticalPercent: 716
-    HeadCriticalPower: 716
+    HeadCriticalPower: 0
   - Level: 716
     HeadMiningPower: 717
     HeadMiningSpeed: 717
@@ -5748,7 +5748,7 @@ MonoBehaviour:
     HeadMovingSpeed: 717
     HeadMiningCount: 717
     HeadCriticalPercent: 717
-    HeadCriticalPower: 717
+    HeadCriticalPower: 0
   - Level: 717
     HeadMiningPower: 718
     HeadMiningSpeed: 718
@@ -5756,7 +5756,7 @@ MonoBehaviour:
     HeadMovingSpeed: 718
     HeadMiningCount: 718
     HeadCriticalPercent: 718
-    HeadCriticalPower: 718
+    HeadCriticalPower: 0
   - Level: 718
     HeadMiningPower: 719
     HeadMiningSpeed: 719
@@ -5764,7 +5764,7 @@ MonoBehaviour:
     HeadMovingSpeed: 719
     HeadMiningCount: 719
     HeadCriticalPercent: 719
-    HeadCriticalPower: 719
+    HeadCriticalPower: 0
   - Level: 719
     HeadMiningPower: 720
     HeadMiningSpeed: 720
@@ -5772,7 +5772,7 @@ MonoBehaviour:
     HeadMovingSpeed: 720
     HeadMiningCount: 720
     HeadCriticalPercent: 720
-    HeadCriticalPower: 720
+    HeadCriticalPower: 0
   - Level: 720
     HeadMiningPower: 721
     HeadMiningSpeed: 721
@@ -5780,7 +5780,7 @@ MonoBehaviour:
     HeadMovingSpeed: 721
     HeadMiningCount: 721
     HeadCriticalPercent: 721
-    HeadCriticalPower: 721
+    HeadCriticalPower: 0
   - Level: 721
     HeadMiningPower: 722
     HeadMiningSpeed: 722
@@ -5788,7 +5788,7 @@ MonoBehaviour:
     HeadMovingSpeed: 722
     HeadMiningCount: 722
     HeadCriticalPercent: 722
-    HeadCriticalPower: 722
+    HeadCriticalPower: 0
   - Level: 722
     HeadMiningPower: 723
     HeadMiningSpeed: 723
@@ -5796,7 +5796,7 @@ MonoBehaviour:
     HeadMovingSpeed: 723
     HeadMiningCount: 723
     HeadCriticalPercent: 723
-    HeadCriticalPower: 723
+    HeadCriticalPower: 0
   - Level: 723
     HeadMiningPower: 724
     HeadMiningSpeed: 724
@@ -5804,7 +5804,7 @@ MonoBehaviour:
     HeadMovingSpeed: 724
     HeadMiningCount: 724
     HeadCriticalPercent: 724
-    HeadCriticalPower: 724
+    HeadCriticalPower: 0
   - Level: 724
     HeadMiningPower: 725
     HeadMiningSpeed: 725
@@ -5812,7 +5812,7 @@ MonoBehaviour:
     HeadMovingSpeed: 725
     HeadMiningCount: 725
     HeadCriticalPercent: 725
-    HeadCriticalPower: 725
+    HeadCriticalPower: 0
   - Level: 725
     HeadMiningPower: 726
     HeadMiningSpeed: 726
@@ -5820,7 +5820,7 @@ MonoBehaviour:
     HeadMovingSpeed: 726
     HeadMiningCount: 726
     HeadCriticalPercent: 726
-    HeadCriticalPower: 726
+    HeadCriticalPower: 0
   - Level: 726
     HeadMiningPower: 727
     HeadMiningSpeed: 727
@@ -5828,7 +5828,7 @@ MonoBehaviour:
     HeadMovingSpeed: 727
     HeadMiningCount: 727
     HeadCriticalPercent: 727
-    HeadCriticalPower: 727
+    HeadCriticalPower: 0
   - Level: 727
     HeadMiningPower: 728
     HeadMiningSpeed: 728
@@ -5836,7 +5836,7 @@ MonoBehaviour:
     HeadMovingSpeed: 728
     HeadMiningCount: 728
     HeadCriticalPercent: 728
-    HeadCriticalPower: 728
+    HeadCriticalPower: 0
   - Level: 728
     HeadMiningPower: 729
     HeadMiningSpeed: 729
@@ -5844,7 +5844,7 @@ MonoBehaviour:
     HeadMovingSpeed: 729
     HeadMiningCount: 729
     HeadCriticalPercent: 729
-    HeadCriticalPower: 729
+    HeadCriticalPower: 0
   - Level: 729
     HeadMiningPower: 730
     HeadMiningSpeed: 730
@@ -5852,7 +5852,7 @@ MonoBehaviour:
     HeadMovingSpeed: 730
     HeadMiningCount: 730
     HeadCriticalPercent: 730
-    HeadCriticalPower: 730
+    HeadCriticalPower: 0
   - Level: 730
     HeadMiningPower: 731
     HeadMiningSpeed: 731
@@ -5860,7 +5860,7 @@ MonoBehaviour:
     HeadMovingSpeed: 731
     HeadMiningCount: 731
     HeadCriticalPercent: 731
-    HeadCriticalPower: 731
+    HeadCriticalPower: 0
   - Level: 731
     HeadMiningPower: 732
     HeadMiningSpeed: 732
@@ -5868,7 +5868,7 @@ MonoBehaviour:
     HeadMovingSpeed: 732
     HeadMiningCount: 732
     HeadCriticalPercent: 732
-    HeadCriticalPower: 732
+    HeadCriticalPower: 0
   - Level: 732
     HeadMiningPower: 733
     HeadMiningSpeed: 733
@@ -5876,7 +5876,7 @@ MonoBehaviour:
     HeadMovingSpeed: 733
     HeadMiningCount: 733
     HeadCriticalPercent: 733
-    HeadCriticalPower: 733
+    HeadCriticalPower: 0
   - Level: 733
     HeadMiningPower: 734
     HeadMiningSpeed: 734
@@ -5884,7 +5884,7 @@ MonoBehaviour:
     HeadMovingSpeed: 734
     HeadMiningCount: 734
     HeadCriticalPercent: 734
-    HeadCriticalPower: 734
+    HeadCriticalPower: 0
   - Level: 734
     HeadMiningPower: 735
     HeadMiningSpeed: 735
@@ -5892,7 +5892,7 @@ MonoBehaviour:
     HeadMovingSpeed: 735
     HeadMiningCount: 735
     HeadCriticalPercent: 735
-    HeadCriticalPower: 735
+    HeadCriticalPower: 0
   - Level: 735
     HeadMiningPower: 736
     HeadMiningSpeed: 736
@@ -5900,7 +5900,7 @@ MonoBehaviour:
     HeadMovingSpeed: 736
     HeadMiningCount: 736
     HeadCriticalPercent: 736
-    HeadCriticalPower: 736
+    HeadCriticalPower: 0
   - Level: 736
     HeadMiningPower: 737
     HeadMiningSpeed: 737
@@ -5908,7 +5908,7 @@ MonoBehaviour:
     HeadMovingSpeed: 737
     HeadMiningCount: 737
     HeadCriticalPercent: 737
-    HeadCriticalPower: 737
+    HeadCriticalPower: 0
   - Level: 737
     HeadMiningPower: 738
     HeadMiningSpeed: 738
@@ -5916,7 +5916,7 @@ MonoBehaviour:
     HeadMovingSpeed: 738
     HeadMiningCount: 738
     HeadCriticalPercent: 738
-    HeadCriticalPower: 738
+    HeadCriticalPower: 0
   - Level: 738
     HeadMiningPower: 739
     HeadMiningSpeed: 739
@@ -5924,7 +5924,7 @@ MonoBehaviour:
     HeadMovingSpeed: 739
     HeadMiningCount: 739
     HeadCriticalPercent: 739
-    HeadCriticalPower: 739
+    HeadCriticalPower: 0
   - Level: 739
     HeadMiningPower: 740
     HeadMiningSpeed: 740
@@ -5932,7 +5932,7 @@ MonoBehaviour:
     HeadMovingSpeed: 740
     HeadMiningCount: 740
     HeadCriticalPercent: 740
-    HeadCriticalPower: 740
+    HeadCriticalPower: 0
   - Level: 740
     HeadMiningPower: 741
     HeadMiningSpeed: 741
@@ -5940,7 +5940,7 @@ MonoBehaviour:
     HeadMovingSpeed: 741
     HeadMiningCount: 741
     HeadCriticalPercent: 741
-    HeadCriticalPower: 741
+    HeadCriticalPower: 0
   - Level: 741
     HeadMiningPower: 742
     HeadMiningSpeed: 742
@@ -5948,7 +5948,7 @@ MonoBehaviour:
     HeadMovingSpeed: 742
     HeadMiningCount: 742
     HeadCriticalPercent: 742
-    HeadCriticalPower: 742
+    HeadCriticalPower: 0
   - Level: 742
     HeadMiningPower: 743
     HeadMiningSpeed: 743
@@ -5956,7 +5956,7 @@ MonoBehaviour:
     HeadMovingSpeed: 743
     HeadMiningCount: 743
     HeadCriticalPercent: 743
-    HeadCriticalPower: 743
+    HeadCriticalPower: 0
   - Level: 743
     HeadMiningPower: 744
     HeadMiningSpeed: 744
@@ -5964,7 +5964,7 @@ MonoBehaviour:
     HeadMovingSpeed: 744
     HeadMiningCount: 744
     HeadCriticalPercent: 744
-    HeadCriticalPower: 744
+    HeadCriticalPower: 0
   - Level: 744
     HeadMiningPower: 745
     HeadMiningSpeed: 745
@@ -5972,7 +5972,7 @@ MonoBehaviour:
     HeadMovingSpeed: 745
     HeadMiningCount: 745
     HeadCriticalPercent: 745
-    HeadCriticalPower: 745
+    HeadCriticalPower: 0
   - Level: 745
     HeadMiningPower: 746
     HeadMiningSpeed: 746
@@ -5980,7 +5980,7 @@ MonoBehaviour:
     HeadMovingSpeed: 746
     HeadMiningCount: 746
     HeadCriticalPercent: 746
-    HeadCriticalPower: 746
+    HeadCriticalPower: 0
   - Level: 746
     HeadMiningPower: 747
     HeadMiningSpeed: 747
@@ -5988,7 +5988,7 @@ MonoBehaviour:
     HeadMovingSpeed: 747
     HeadMiningCount: 747
     HeadCriticalPercent: 747
-    HeadCriticalPower: 747
+    HeadCriticalPower: 0
   - Level: 747
     HeadMiningPower: 748
     HeadMiningSpeed: 748
@@ -5996,7 +5996,7 @@ MonoBehaviour:
     HeadMovingSpeed: 748
     HeadMiningCount: 748
     HeadCriticalPercent: 748
-    HeadCriticalPower: 748
+    HeadCriticalPower: 0
   - Level: 748
     HeadMiningPower: 749
     HeadMiningSpeed: 749
@@ -6004,7 +6004,7 @@ MonoBehaviour:
     HeadMovingSpeed: 749
     HeadMiningCount: 749
     HeadCriticalPercent: 749
-    HeadCriticalPower: 749
+    HeadCriticalPower: 0
   - Level: 749
     HeadMiningPower: 750
     HeadMiningSpeed: 750
@@ -6012,7 +6012,7 @@ MonoBehaviour:
     HeadMovingSpeed: 750
     HeadMiningCount: 750
     HeadCriticalPercent: 750
-    HeadCriticalPower: 750
+    HeadCriticalPower: 0
   - Level: 750
     HeadMiningPower: 751
     HeadMiningSpeed: 751
@@ -6020,7 +6020,7 @@ MonoBehaviour:
     HeadMovingSpeed: 751
     HeadMiningCount: 751
     HeadCriticalPercent: 751
-    HeadCriticalPower: 751
+    HeadCriticalPower: 0
   - Level: 751
     HeadMiningPower: 752
     HeadMiningSpeed: 752
@@ -6028,7 +6028,7 @@ MonoBehaviour:
     HeadMovingSpeed: 752
     HeadMiningCount: 752
     HeadCriticalPercent: 752
-    HeadCriticalPower: 752
+    HeadCriticalPower: 0
   - Level: 752
     HeadMiningPower: 753
     HeadMiningSpeed: 753
@@ -6036,7 +6036,7 @@ MonoBehaviour:
     HeadMovingSpeed: 753
     HeadMiningCount: 753
     HeadCriticalPercent: 753
-    HeadCriticalPower: 753
+    HeadCriticalPower: 0
   - Level: 753
     HeadMiningPower: 754
     HeadMiningSpeed: 754
@@ -6044,7 +6044,7 @@ MonoBehaviour:
     HeadMovingSpeed: 754
     HeadMiningCount: 754
     HeadCriticalPercent: 754
-    HeadCriticalPower: 754
+    HeadCriticalPower: 0
   - Level: 754
     HeadMiningPower: 755
     HeadMiningSpeed: 755
@@ -6052,7 +6052,7 @@ MonoBehaviour:
     HeadMovingSpeed: 755
     HeadMiningCount: 755
     HeadCriticalPercent: 755
-    HeadCriticalPower: 755
+    HeadCriticalPower: 0
   - Level: 755
     HeadMiningPower: 756
     HeadMiningSpeed: 756
@@ -6060,7 +6060,7 @@ MonoBehaviour:
     HeadMovingSpeed: 756
     HeadMiningCount: 756
     HeadCriticalPercent: 756
-    HeadCriticalPower: 756
+    HeadCriticalPower: 0
   - Level: 756
     HeadMiningPower: 757
     HeadMiningSpeed: 757
@@ -6068,7 +6068,7 @@ MonoBehaviour:
     HeadMovingSpeed: 757
     HeadMiningCount: 757
     HeadCriticalPercent: 757
-    HeadCriticalPower: 757
+    HeadCriticalPower: 0
   - Level: 757
     HeadMiningPower: 758
     HeadMiningSpeed: 758
@@ -6076,7 +6076,7 @@ MonoBehaviour:
     HeadMovingSpeed: 758
     HeadMiningCount: 758
     HeadCriticalPercent: 758
-    HeadCriticalPower: 758
+    HeadCriticalPower: 0
   - Level: 758
     HeadMiningPower: 759
     HeadMiningSpeed: 759
@@ -6084,7 +6084,7 @@ MonoBehaviour:
     HeadMovingSpeed: 759
     HeadMiningCount: 759
     HeadCriticalPercent: 759
-    HeadCriticalPower: 759
+    HeadCriticalPower: 0
   - Level: 759
     HeadMiningPower: 760
     HeadMiningSpeed: 760
@@ -6092,7 +6092,7 @@ MonoBehaviour:
     HeadMovingSpeed: 760
     HeadMiningCount: 760
     HeadCriticalPercent: 760
-    HeadCriticalPower: 760
+    HeadCriticalPower: 0
   - Level: 760
     HeadMiningPower: 761
     HeadMiningSpeed: 761
@@ -6100,7 +6100,7 @@ MonoBehaviour:
     HeadMovingSpeed: 761
     HeadMiningCount: 761
     HeadCriticalPercent: 761
-    HeadCriticalPower: 761
+    HeadCriticalPower: 0
   - Level: 761
     HeadMiningPower: 762
     HeadMiningSpeed: 762
@@ -6108,7 +6108,7 @@ MonoBehaviour:
     HeadMovingSpeed: 762
     HeadMiningCount: 762
     HeadCriticalPercent: 762
-    HeadCriticalPower: 762
+    HeadCriticalPower: 0
   - Level: 762
     HeadMiningPower: 763
     HeadMiningSpeed: 763
@@ -6116,7 +6116,7 @@ MonoBehaviour:
     HeadMovingSpeed: 763
     HeadMiningCount: 763
     HeadCriticalPercent: 763
-    HeadCriticalPower: 763
+    HeadCriticalPower: 0
   - Level: 763
     HeadMiningPower: 764
     HeadMiningSpeed: 764
@@ -6124,7 +6124,7 @@ MonoBehaviour:
     HeadMovingSpeed: 764
     HeadMiningCount: 764
     HeadCriticalPercent: 764
-    HeadCriticalPower: 764
+    HeadCriticalPower: 0
   - Level: 764
     HeadMiningPower: 765
     HeadMiningSpeed: 765
@@ -6132,7 +6132,7 @@ MonoBehaviour:
     HeadMovingSpeed: 765
     HeadMiningCount: 765
     HeadCriticalPercent: 765
-    HeadCriticalPower: 765
+    HeadCriticalPower: 0
   - Level: 765
     HeadMiningPower: 766
     HeadMiningSpeed: 766
@@ -6140,7 +6140,7 @@ MonoBehaviour:
     HeadMovingSpeed: 766
     HeadMiningCount: 766
     HeadCriticalPercent: 766
-    HeadCriticalPower: 766
+    HeadCriticalPower: 0
   - Level: 766
     HeadMiningPower: 767
     HeadMiningSpeed: 767
@@ -6148,7 +6148,7 @@ MonoBehaviour:
     HeadMovingSpeed: 767
     HeadMiningCount: 767
     HeadCriticalPercent: 767
-    HeadCriticalPower: 767
+    HeadCriticalPower: 0
   - Level: 767
     HeadMiningPower: 768
     HeadMiningSpeed: 768
@@ -6156,7 +6156,7 @@ MonoBehaviour:
     HeadMovingSpeed: 768
     HeadMiningCount: 768
     HeadCriticalPercent: 768
-    HeadCriticalPower: 768
+    HeadCriticalPower: 0
   - Level: 768
     HeadMiningPower: 769
     HeadMiningSpeed: 769
@@ -6164,7 +6164,7 @@ MonoBehaviour:
     HeadMovingSpeed: 769
     HeadMiningCount: 769
     HeadCriticalPercent: 769
-    HeadCriticalPower: 769
+    HeadCriticalPower: 0
   - Level: 769
     HeadMiningPower: 770
     HeadMiningSpeed: 770
@@ -6172,7 +6172,7 @@ MonoBehaviour:
     HeadMovingSpeed: 770
     HeadMiningCount: 770
     HeadCriticalPercent: 770
-    HeadCriticalPower: 770
+    HeadCriticalPower: 0
   - Level: 770
     HeadMiningPower: 771
     HeadMiningSpeed: 771
@@ -6180,7 +6180,7 @@ MonoBehaviour:
     HeadMovingSpeed: 771
     HeadMiningCount: 771
     HeadCriticalPercent: 771
-    HeadCriticalPower: 771
+    HeadCriticalPower: 0
   - Level: 771
     HeadMiningPower: 772
     HeadMiningSpeed: 772
@@ -6188,7 +6188,7 @@ MonoBehaviour:
     HeadMovingSpeed: 772
     HeadMiningCount: 772
     HeadCriticalPercent: 772
-    HeadCriticalPower: 772
+    HeadCriticalPower: 0
   - Level: 772
     HeadMiningPower: 773
     HeadMiningSpeed: 773
@@ -6196,7 +6196,7 @@ MonoBehaviour:
     HeadMovingSpeed: 773
     HeadMiningCount: 773
     HeadCriticalPercent: 773
-    HeadCriticalPower: 773
+    HeadCriticalPower: 0
   - Level: 773
     HeadMiningPower: 774
     HeadMiningSpeed: 774
@@ -6204,7 +6204,7 @@ MonoBehaviour:
     HeadMovingSpeed: 774
     HeadMiningCount: 774
     HeadCriticalPercent: 774
-    HeadCriticalPower: 774
+    HeadCriticalPower: 0
   - Level: 774
     HeadMiningPower: 775
     HeadMiningSpeed: 775
@@ -6212,7 +6212,7 @@ MonoBehaviour:
     HeadMovingSpeed: 775
     HeadMiningCount: 775
     HeadCriticalPercent: 775
-    HeadCriticalPower: 775
+    HeadCriticalPower: 0
   - Level: 775
     HeadMiningPower: 776
     HeadMiningSpeed: 776
@@ -6220,7 +6220,7 @@ MonoBehaviour:
     HeadMovingSpeed: 776
     HeadMiningCount: 776
     HeadCriticalPercent: 776
-    HeadCriticalPower: 776
+    HeadCriticalPower: 0
   - Level: 776
     HeadMiningPower: 777
     HeadMiningSpeed: 777
@@ -6228,7 +6228,7 @@ MonoBehaviour:
     HeadMovingSpeed: 777
     HeadMiningCount: 777
     HeadCriticalPercent: 777
-    HeadCriticalPower: 777
+    HeadCriticalPower: 0
   - Level: 777
     HeadMiningPower: 778
     HeadMiningSpeed: 778
@@ -6236,7 +6236,7 @@ MonoBehaviour:
     HeadMovingSpeed: 778
     HeadMiningCount: 778
     HeadCriticalPercent: 778
-    HeadCriticalPower: 778
+    HeadCriticalPower: 0
   - Level: 778
     HeadMiningPower: 779
     HeadMiningSpeed: 779
@@ -6244,7 +6244,7 @@ MonoBehaviour:
     HeadMovingSpeed: 779
     HeadMiningCount: 779
     HeadCriticalPercent: 779
-    HeadCriticalPower: 779
+    HeadCriticalPower: 0
   - Level: 779
     HeadMiningPower: 780
     HeadMiningSpeed: 780
@@ -6252,7 +6252,7 @@ MonoBehaviour:
     HeadMovingSpeed: 780
     HeadMiningCount: 780
     HeadCriticalPercent: 780
-    HeadCriticalPower: 780
+    HeadCriticalPower: 0
   - Level: 780
     HeadMiningPower: 781
     HeadMiningSpeed: 781
@@ -6260,7 +6260,7 @@ MonoBehaviour:
     HeadMovingSpeed: 781
     HeadMiningCount: 781
     HeadCriticalPercent: 781
-    HeadCriticalPower: 781
+    HeadCriticalPower: 0
   - Level: 781
     HeadMiningPower: 782
     HeadMiningSpeed: 782
@@ -6268,7 +6268,7 @@ MonoBehaviour:
     HeadMovingSpeed: 782
     HeadMiningCount: 782
     HeadCriticalPercent: 782
-    HeadCriticalPower: 782
+    HeadCriticalPower: 0
   - Level: 782
     HeadMiningPower: 783
     HeadMiningSpeed: 783
@@ -6276,7 +6276,7 @@ MonoBehaviour:
     HeadMovingSpeed: 783
     HeadMiningCount: 783
     HeadCriticalPercent: 783
-    HeadCriticalPower: 783
+    HeadCriticalPower: 0
   - Level: 783
     HeadMiningPower: 784
     HeadMiningSpeed: 784
@@ -6284,7 +6284,7 @@ MonoBehaviour:
     HeadMovingSpeed: 784
     HeadMiningCount: 784
     HeadCriticalPercent: 784
-    HeadCriticalPower: 784
+    HeadCriticalPower: 0
   - Level: 784
     HeadMiningPower: 785
     HeadMiningSpeed: 785
@@ -6292,7 +6292,7 @@ MonoBehaviour:
     HeadMovingSpeed: 785
     HeadMiningCount: 785
     HeadCriticalPercent: 785
-    HeadCriticalPower: 785
+    HeadCriticalPower: 0
   - Level: 785
     HeadMiningPower: 786
     HeadMiningSpeed: 786
@@ -6300,7 +6300,7 @@ MonoBehaviour:
     HeadMovingSpeed: 786
     HeadMiningCount: 786
     HeadCriticalPercent: 786
-    HeadCriticalPower: 786
+    HeadCriticalPower: 0
   - Level: 786
     HeadMiningPower: 787
     HeadMiningSpeed: 787
@@ -6308,7 +6308,7 @@ MonoBehaviour:
     HeadMovingSpeed: 787
     HeadMiningCount: 787
     HeadCriticalPercent: 787
-    HeadCriticalPower: 787
+    HeadCriticalPower: 0
   - Level: 787
     HeadMiningPower: 788
     HeadMiningSpeed: 788
@@ -6316,7 +6316,7 @@ MonoBehaviour:
     HeadMovingSpeed: 788
     HeadMiningCount: 788
     HeadCriticalPercent: 788
-    HeadCriticalPower: 788
+    HeadCriticalPower: 0
   - Level: 788
     HeadMiningPower: 789
     HeadMiningSpeed: 789
@@ -6324,7 +6324,7 @@ MonoBehaviour:
     HeadMovingSpeed: 789
     HeadMiningCount: 789
     HeadCriticalPercent: 789
-    HeadCriticalPower: 789
+    HeadCriticalPower: 0
   - Level: 789
     HeadMiningPower: 790
     HeadMiningSpeed: 790
@@ -6332,7 +6332,7 @@ MonoBehaviour:
     HeadMovingSpeed: 790
     HeadMiningCount: 790
     HeadCriticalPercent: 790
-    HeadCriticalPower: 790
+    HeadCriticalPower: 0
   - Level: 790
     HeadMiningPower: 791
     HeadMiningSpeed: 791
@@ -6340,7 +6340,7 @@ MonoBehaviour:
     HeadMovingSpeed: 791
     HeadMiningCount: 791
     HeadCriticalPercent: 791
-    HeadCriticalPower: 791
+    HeadCriticalPower: 0
   - Level: 791
     HeadMiningPower: 792
     HeadMiningSpeed: 792
@@ -6348,7 +6348,7 @@ MonoBehaviour:
     HeadMovingSpeed: 792
     HeadMiningCount: 792
     HeadCriticalPercent: 792
-    HeadCriticalPower: 792
+    HeadCriticalPower: 0
   - Level: 792
     HeadMiningPower: 793
     HeadMiningSpeed: 793
@@ -6356,7 +6356,7 @@ MonoBehaviour:
     HeadMovingSpeed: 793
     HeadMiningCount: 793
     HeadCriticalPercent: 793
-    HeadCriticalPower: 793
+    HeadCriticalPower: 0
   - Level: 793
     HeadMiningPower: 794
     HeadMiningSpeed: 794
@@ -6364,7 +6364,7 @@ MonoBehaviour:
     HeadMovingSpeed: 794
     HeadMiningCount: 794
     HeadCriticalPercent: 794
-    HeadCriticalPower: 794
+    HeadCriticalPower: 0
   - Level: 794
     HeadMiningPower: 795
     HeadMiningSpeed: 795
@@ -6372,7 +6372,7 @@ MonoBehaviour:
     HeadMovingSpeed: 795
     HeadMiningCount: 795
     HeadCriticalPercent: 795
-    HeadCriticalPower: 795
+    HeadCriticalPower: 0
   - Level: 795
     HeadMiningPower: 796
     HeadMiningSpeed: 796
@@ -6380,7 +6380,7 @@ MonoBehaviour:
     HeadMovingSpeed: 796
     HeadMiningCount: 796
     HeadCriticalPercent: 796
-    HeadCriticalPower: 796
+    HeadCriticalPower: 0
   - Level: 796
     HeadMiningPower: 797
     HeadMiningSpeed: 797
@@ -6388,7 +6388,7 @@ MonoBehaviour:
     HeadMovingSpeed: 797
     HeadMiningCount: 797
     HeadCriticalPercent: 797
-    HeadCriticalPower: 797
+    HeadCriticalPower: 0
   - Level: 797
     HeadMiningPower: 798
     HeadMiningSpeed: 798
@@ -6396,7 +6396,7 @@ MonoBehaviour:
     HeadMovingSpeed: 798
     HeadMiningCount: 798
     HeadCriticalPercent: 798
-    HeadCriticalPower: 798
+    HeadCriticalPower: 0
   - Level: 798
     HeadMiningPower: 799
     HeadMiningSpeed: 799
@@ -6404,7 +6404,7 @@ MonoBehaviour:
     HeadMovingSpeed: 799
     HeadMiningCount: 799
     HeadCriticalPercent: 799
-    HeadCriticalPower: 799
+    HeadCriticalPower: 0
   - Level: 799
     HeadMiningPower: 800
     HeadMiningSpeed: 800
@@ -6412,7 +6412,7 @@ MonoBehaviour:
     HeadMovingSpeed: 800
     HeadMiningCount: 800
     HeadCriticalPercent: 800
-    HeadCriticalPower: 800
+    HeadCriticalPower: 0
   - Level: 800
     HeadMiningPower: 801
     HeadMiningSpeed: 801
@@ -6420,7 +6420,7 @@ MonoBehaviour:
     HeadMovingSpeed: 801
     HeadMiningCount: 801
     HeadCriticalPercent: 801
-    HeadCriticalPower: 801
+    HeadCriticalPower: 0
   - Level: 801
     HeadMiningPower: 802
     HeadMiningSpeed: 802
@@ -6428,7 +6428,7 @@ MonoBehaviour:
     HeadMovingSpeed: 802
     HeadMiningCount: 802
     HeadCriticalPercent: 802
-    HeadCriticalPower: 802
+    HeadCriticalPower: 0
   - Level: 802
     HeadMiningPower: 803
     HeadMiningSpeed: 803
@@ -6436,7 +6436,7 @@ MonoBehaviour:
     HeadMovingSpeed: 803
     HeadMiningCount: 803
     HeadCriticalPercent: 803
-    HeadCriticalPower: 803
+    HeadCriticalPower: 0
   - Level: 803
     HeadMiningPower: 804
     HeadMiningSpeed: 804
@@ -6444,7 +6444,7 @@ MonoBehaviour:
     HeadMovingSpeed: 804
     HeadMiningCount: 804
     HeadCriticalPercent: 804
-    HeadCriticalPower: 804
+    HeadCriticalPower: 0
   - Level: 804
     HeadMiningPower: 805
     HeadMiningSpeed: 805
@@ -6452,7 +6452,7 @@ MonoBehaviour:
     HeadMovingSpeed: 805
     HeadMiningCount: 805
     HeadCriticalPercent: 805
-    HeadCriticalPower: 805
+    HeadCriticalPower: 0
   - Level: 805
     HeadMiningPower: 806
     HeadMiningSpeed: 806
@@ -6460,7 +6460,7 @@ MonoBehaviour:
     HeadMovingSpeed: 806
     HeadMiningCount: 806
     HeadCriticalPercent: 806
-    HeadCriticalPower: 806
+    HeadCriticalPower: 0
   - Level: 806
     HeadMiningPower: 807
     HeadMiningSpeed: 807
@@ -6468,7 +6468,7 @@ MonoBehaviour:
     HeadMovingSpeed: 807
     HeadMiningCount: 807
     HeadCriticalPercent: 807
-    HeadCriticalPower: 807
+    HeadCriticalPower: 0
   - Level: 807
     HeadMiningPower: 808
     HeadMiningSpeed: 808
@@ -6476,7 +6476,7 @@ MonoBehaviour:
     HeadMovingSpeed: 808
     HeadMiningCount: 808
     HeadCriticalPercent: 808
-    HeadCriticalPower: 808
+    HeadCriticalPower: 0
   - Level: 808
     HeadMiningPower: 809
     HeadMiningSpeed: 809
@@ -6484,7 +6484,7 @@ MonoBehaviour:
     HeadMovingSpeed: 809
     HeadMiningCount: 809
     HeadCriticalPercent: 809
-    HeadCriticalPower: 809
+    HeadCriticalPower: 0
   - Level: 809
     HeadMiningPower: 810
     HeadMiningSpeed: 810
@@ -6492,7 +6492,7 @@ MonoBehaviour:
     HeadMovingSpeed: 810
     HeadMiningCount: 810
     HeadCriticalPercent: 810
-    HeadCriticalPower: 810
+    HeadCriticalPower: 0
   - Level: 810
     HeadMiningPower: 811
     HeadMiningSpeed: 811
@@ -6500,7 +6500,7 @@ MonoBehaviour:
     HeadMovingSpeed: 811
     HeadMiningCount: 811
     HeadCriticalPercent: 811
-    HeadCriticalPower: 811
+    HeadCriticalPower: 0
   - Level: 811
     HeadMiningPower: 812
     HeadMiningSpeed: 812
@@ -6508,7 +6508,7 @@ MonoBehaviour:
     HeadMovingSpeed: 812
     HeadMiningCount: 812
     HeadCriticalPercent: 812
-    HeadCriticalPower: 812
+    HeadCriticalPower: 0
   - Level: 812
     HeadMiningPower: 813
     HeadMiningSpeed: 813
@@ -6516,7 +6516,7 @@ MonoBehaviour:
     HeadMovingSpeed: 813
     HeadMiningCount: 813
     HeadCriticalPercent: 813
-    HeadCriticalPower: 813
+    HeadCriticalPower: 0
   - Level: 813
     HeadMiningPower: 814
     HeadMiningSpeed: 814
@@ -6524,7 +6524,7 @@ MonoBehaviour:
     HeadMovingSpeed: 814
     HeadMiningCount: 814
     HeadCriticalPercent: 814
-    HeadCriticalPower: 814
+    HeadCriticalPower: 0
   - Level: 814
     HeadMiningPower: 815
     HeadMiningSpeed: 815
@@ -6532,7 +6532,7 @@ MonoBehaviour:
     HeadMovingSpeed: 815
     HeadMiningCount: 815
     HeadCriticalPercent: 815
-    HeadCriticalPower: 815
+    HeadCriticalPower: 0
   - Level: 815
     HeadMiningPower: 816
     HeadMiningSpeed: 816
@@ -6540,7 +6540,7 @@ MonoBehaviour:
     HeadMovingSpeed: 816
     HeadMiningCount: 816
     HeadCriticalPercent: 816
-    HeadCriticalPower: 816
+    HeadCriticalPower: 0
   - Level: 816
     HeadMiningPower: 817
     HeadMiningSpeed: 817
@@ -6548,7 +6548,7 @@ MonoBehaviour:
     HeadMovingSpeed: 817
     HeadMiningCount: 817
     HeadCriticalPercent: 817
-    HeadCriticalPower: 817
+    HeadCriticalPower: 0
   - Level: 817
     HeadMiningPower: 818
     HeadMiningSpeed: 818
@@ -6556,7 +6556,7 @@ MonoBehaviour:
     HeadMovingSpeed: 818
     HeadMiningCount: 818
     HeadCriticalPercent: 818
-    HeadCriticalPower: 818
+    HeadCriticalPower: 0
   - Level: 818
     HeadMiningPower: 819
     HeadMiningSpeed: 819
@@ -6564,7 +6564,7 @@ MonoBehaviour:
     HeadMovingSpeed: 819
     HeadMiningCount: 819
     HeadCriticalPercent: 819
-    HeadCriticalPower: 819
+    HeadCriticalPower: 0
   - Level: 819
     HeadMiningPower: 820
     HeadMiningSpeed: 820
@@ -6572,7 +6572,7 @@ MonoBehaviour:
     HeadMovingSpeed: 820
     HeadMiningCount: 820
     HeadCriticalPercent: 820
-    HeadCriticalPower: 820
+    HeadCriticalPower: 0
   - Level: 820
     HeadMiningPower: 821
     HeadMiningSpeed: 821
@@ -6580,7 +6580,7 @@ MonoBehaviour:
     HeadMovingSpeed: 821
     HeadMiningCount: 821
     HeadCriticalPercent: 821
-    HeadCriticalPower: 821
+    HeadCriticalPower: 0
   - Level: 821
     HeadMiningPower: 822
     HeadMiningSpeed: 822
@@ -6588,7 +6588,7 @@ MonoBehaviour:
     HeadMovingSpeed: 822
     HeadMiningCount: 822
     HeadCriticalPercent: 822
-    HeadCriticalPower: 822
+    HeadCriticalPower: 0
   - Level: 822
     HeadMiningPower: 823
     HeadMiningSpeed: 823
@@ -6596,7 +6596,7 @@ MonoBehaviour:
     HeadMovingSpeed: 823
     HeadMiningCount: 823
     HeadCriticalPercent: 823
-    HeadCriticalPower: 823
+    HeadCriticalPower: 0
   - Level: 823
     HeadMiningPower: 824
     HeadMiningSpeed: 824
@@ -6604,7 +6604,7 @@ MonoBehaviour:
     HeadMovingSpeed: 824
     HeadMiningCount: 824
     HeadCriticalPercent: 824
-    HeadCriticalPower: 824
+    HeadCriticalPower: 0
   - Level: 824
     HeadMiningPower: 825
     HeadMiningSpeed: 825
@@ -6612,7 +6612,7 @@ MonoBehaviour:
     HeadMovingSpeed: 825
     HeadMiningCount: 825
     HeadCriticalPercent: 825
-    HeadCriticalPower: 825
+    HeadCriticalPower: 0
   - Level: 825
     HeadMiningPower: 826
     HeadMiningSpeed: 826
@@ -6620,7 +6620,7 @@ MonoBehaviour:
     HeadMovingSpeed: 826
     HeadMiningCount: 826
     HeadCriticalPercent: 826
-    HeadCriticalPower: 826
+    HeadCriticalPower: 0
   - Level: 826
     HeadMiningPower: 827
     HeadMiningSpeed: 827
@@ -6628,7 +6628,7 @@ MonoBehaviour:
     HeadMovingSpeed: 827
     HeadMiningCount: 827
     HeadCriticalPercent: 827
-    HeadCriticalPower: 827
+    HeadCriticalPower: 0
   - Level: 827
     HeadMiningPower: 828
     HeadMiningSpeed: 828
@@ -6636,7 +6636,7 @@ MonoBehaviour:
     HeadMovingSpeed: 828
     HeadMiningCount: 828
     HeadCriticalPercent: 828
-    HeadCriticalPower: 828
+    HeadCriticalPower: 0
   - Level: 828
     HeadMiningPower: 829
     HeadMiningSpeed: 829
@@ -6644,7 +6644,7 @@ MonoBehaviour:
     HeadMovingSpeed: 829
     HeadMiningCount: 829
     HeadCriticalPercent: 829
-    HeadCriticalPower: 829
+    HeadCriticalPower: 0
   - Level: 829
     HeadMiningPower: 830
     HeadMiningSpeed: 830
@@ -6652,7 +6652,7 @@ MonoBehaviour:
     HeadMovingSpeed: 830
     HeadMiningCount: 830
     HeadCriticalPercent: 830
-    HeadCriticalPower: 830
+    HeadCriticalPower: 0
   - Level: 830
     HeadMiningPower: 831
     HeadMiningSpeed: 831
@@ -6660,7 +6660,7 @@ MonoBehaviour:
     HeadMovingSpeed: 831
     HeadMiningCount: 831
     HeadCriticalPercent: 831
-    HeadCriticalPower: 831
+    HeadCriticalPower: 0
   - Level: 831
     HeadMiningPower: 832
     HeadMiningSpeed: 832
@@ -6668,7 +6668,7 @@ MonoBehaviour:
     HeadMovingSpeed: 832
     HeadMiningCount: 832
     HeadCriticalPercent: 832
-    HeadCriticalPower: 832
+    HeadCriticalPower: 0
   - Level: 832
     HeadMiningPower: 833
     HeadMiningSpeed: 833
@@ -6676,7 +6676,7 @@ MonoBehaviour:
     HeadMovingSpeed: 833
     HeadMiningCount: 833
     HeadCriticalPercent: 833
-    HeadCriticalPower: 833
+    HeadCriticalPower: 0
   - Level: 833
     HeadMiningPower: 834
     HeadMiningSpeed: 834
@@ -6684,7 +6684,7 @@ MonoBehaviour:
     HeadMovingSpeed: 834
     HeadMiningCount: 834
     HeadCriticalPercent: 834
-    HeadCriticalPower: 834
+    HeadCriticalPower: 0
   - Level: 834
     HeadMiningPower: 835
     HeadMiningSpeed: 835
@@ -6692,7 +6692,7 @@ MonoBehaviour:
     HeadMovingSpeed: 835
     HeadMiningCount: 835
     HeadCriticalPercent: 835
-    HeadCriticalPower: 835
+    HeadCriticalPower: 0
   - Level: 835
     HeadMiningPower: 836
     HeadMiningSpeed: 836
@@ -6700,7 +6700,7 @@ MonoBehaviour:
     HeadMovingSpeed: 836
     HeadMiningCount: 836
     HeadCriticalPercent: 836
-    HeadCriticalPower: 836
+    HeadCriticalPower: 0
   - Level: 836
     HeadMiningPower: 837
     HeadMiningSpeed: 837
@@ -6708,7 +6708,7 @@ MonoBehaviour:
     HeadMovingSpeed: 837
     HeadMiningCount: 837
     HeadCriticalPercent: 837
-    HeadCriticalPower: 837
+    HeadCriticalPower: 0
   - Level: 837
     HeadMiningPower: 838
     HeadMiningSpeed: 838
@@ -6716,7 +6716,7 @@ MonoBehaviour:
     HeadMovingSpeed: 838
     HeadMiningCount: 838
     HeadCriticalPercent: 838
-    HeadCriticalPower: 838
+    HeadCriticalPower: 0
   - Level: 838
     HeadMiningPower: 839
     HeadMiningSpeed: 839
@@ -6724,7 +6724,7 @@ MonoBehaviour:
     HeadMovingSpeed: 839
     HeadMiningCount: 839
     HeadCriticalPercent: 839
-    HeadCriticalPower: 839
+    HeadCriticalPower: 0
   - Level: 839
     HeadMiningPower: 840
     HeadMiningSpeed: 840
@@ -6732,7 +6732,7 @@ MonoBehaviour:
     HeadMovingSpeed: 840
     HeadMiningCount: 840
     HeadCriticalPercent: 840
-    HeadCriticalPower: 840
+    HeadCriticalPower: 0
   - Level: 840
     HeadMiningPower: 841
     HeadMiningSpeed: 841
@@ -6740,7 +6740,7 @@ MonoBehaviour:
     HeadMovingSpeed: 841
     HeadMiningCount: 841
     HeadCriticalPercent: 841
-    HeadCriticalPower: 841
+    HeadCriticalPower: 0
   - Level: 841
     HeadMiningPower: 842
     HeadMiningSpeed: 842
@@ -6748,7 +6748,7 @@ MonoBehaviour:
     HeadMovingSpeed: 842
     HeadMiningCount: 842
     HeadCriticalPercent: 842
-    HeadCriticalPower: 842
+    HeadCriticalPower: 0
   - Level: 842
     HeadMiningPower: 843
     HeadMiningSpeed: 843
@@ -6756,7 +6756,7 @@ MonoBehaviour:
     HeadMovingSpeed: 843
     HeadMiningCount: 843
     HeadCriticalPercent: 843
-    HeadCriticalPower: 843
+    HeadCriticalPower: 0
   - Level: 843
     HeadMiningPower: 844
     HeadMiningSpeed: 844
@@ -6764,7 +6764,7 @@ MonoBehaviour:
     HeadMovingSpeed: 844
     HeadMiningCount: 844
     HeadCriticalPercent: 844
-    HeadCriticalPower: 844
+    HeadCriticalPower: 0
   - Level: 844
     HeadMiningPower: 845
     HeadMiningSpeed: 845
@@ -6772,7 +6772,7 @@ MonoBehaviour:
     HeadMovingSpeed: 845
     HeadMiningCount: 845
     HeadCriticalPercent: 845
-    HeadCriticalPower: 845
+    HeadCriticalPower: 0
   - Level: 845
     HeadMiningPower: 846
     HeadMiningSpeed: 846
@@ -6780,7 +6780,7 @@ MonoBehaviour:
     HeadMovingSpeed: 846
     HeadMiningCount: 846
     HeadCriticalPercent: 846
-    HeadCriticalPower: 846
+    HeadCriticalPower: 0
   - Level: 846
     HeadMiningPower: 847
     HeadMiningSpeed: 847
@@ -6788,7 +6788,7 @@ MonoBehaviour:
     HeadMovingSpeed: 847
     HeadMiningCount: 847
     HeadCriticalPercent: 847
-    HeadCriticalPower: 847
+    HeadCriticalPower: 0
   - Level: 847
     HeadMiningPower: 848
     HeadMiningSpeed: 848
@@ -6796,7 +6796,7 @@ MonoBehaviour:
     HeadMovingSpeed: 848
     HeadMiningCount: 848
     HeadCriticalPercent: 848
-    HeadCriticalPower: 848
+    HeadCriticalPower: 0
   - Level: 848
     HeadMiningPower: 849
     HeadMiningSpeed: 849
@@ -6804,7 +6804,7 @@ MonoBehaviour:
     HeadMovingSpeed: 849
     HeadMiningCount: 849
     HeadCriticalPercent: 849
-    HeadCriticalPower: 849
+    HeadCriticalPower: 0
   - Level: 849
     HeadMiningPower: 850
     HeadMiningSpeed: 850
@@ -6812,7 +6812,7 @@ MonoBehaviour:
     HeadMovingSpeed: 850
     HeadMiningCount: 850
     HeadCriticalPercent: 850
-    HeadCriticalPower: 850
+    HeadCriticalPower: 0
   - Level: 850
     HeadMiningPower: 851
     HeadMiningSpeed: 851
@@ -6820,7 +6820,7 @@ MonoBehaviour:
     HeadMovingSpeed: 851
     HeadMiningCount: 851
     HeadCriticalPercent: 851
-    HeadCriticalPower: 851
+    HeadCriticalPower: 0
   - Level: 851
     HeadMiningPower: 852
     HeadMiningSpeed: 852
@@ -6828,7 +6828,7 @@ MonoBehaviour:
     HeadMovingSpeed: 852
     HeadMiningCount: 852
     HeadCriticalPercent: 852
-    HeadCriticalPower: 852
+    HeadCriticalPower: 0
   - Level: 852
     HeadMiningPower: 853
     HeadMiningSpeed: 853
@@ -6836,7 +6836,7 @@ MonoBehaviour:
     HeadMovingSpeed: 853
     HeadMiningCount: 853
     HeadCriticalPercent: 853
-    HeadCriticalPower: 853
+    HeadCriticalPower: 0
   - Level: 853
     HeadMiningPower: 854
     HeadMiningSpeed: 854
@@ -6844,7 +6844,7 @@ MonoBehaviour:
     HeadMovingSpeed: 854
     HeadMiningCount: 854
     HeadCriticalPercent: 854
-    HeadCriticalPower: 854
+    HeadCriticalPower: 0
   - Level: 854
     HeadMiningPower: 855
     HeadMiningSpeed: 855
@@ -6852,7 +6852,7 @@ MonoBehaviour:
     HeadMovingSpeed: 855
     HeadMiningCount: 855
     HeadCriticalPercent: 855
-    HeadCriticalPower: 855
+    HeadCriticalPower: 0
   - Level: 855
     HeadMiningPower: 856
     HeadMiningSpeed: 856
@@ -6860,7 +6860,7 @@ MonoBehaviour:
     HeadMovingSpeed: 856
     HeadMiningCount: 856
     HeadCriticalPercent: 856
-    HeadCriticalPower: 856
+    HeadCriticalPower: 0
   - Level: 856
     HeadMiningPower: 857
     HeadMiningSpeed: 857
@@ -6868,7 +6868,7 @@ MonoBehaviour:
     HeadMovingSpeed: 857
     HeadMiningCount: 857
     HeadCriticalPercent: 857
-    HeadCriticalPower: 857
+    HeadCriticalPower: 0
   - Level: 857
     HeadMiningPower: 858
     HeadMiningSpeed: 858
@@ -6876,7 +6876,7 @@ MonoBehaviour:
     HeadMovingSpeed: 858
     HeadMiningCount: 858
     HeadCriticalPercent: 858
-    HeadCriticalPower: 858
+    HeadCriticalPower: 0
   - Level: 858
     HeadMiningPower: 859
     HeadMiningSpeed: 859
@@ -6884,7 +6884,7 @@ MonoBehaviour:
     HeadMovingSpeed: 859
     HeadMiningCount: 859
     HeadCriticalPercent: 859
-    HeadCriticalPower: 859
+    HeadCriticalPower: 0
   - Level: 859
     HeadMiningPower: 860
     HeadMiningSpeed: 860
@@ -6892,7 +6892,7 @@ MonoBehaviour:
     HeadMovingSpeed: 860
     HeadMiningCount: 860
     HeadCriticalPercent: 860
-    HeadCriticalPower: 860
+    HeadCriticalPower: 0
   - Level: 860
     HeadMiningPower: 861
     HeadMiningSpeed: 861
@@ -6900,7 +6900,7 @@ MonoBehaviour:
     HeadMovingSpeed: 861
     HeadMiningCount: 861
     HeadCriticalPercent: 861
-    HeadCriticalPower: 861
+    HeadCriticalPower: 0
   - Level: 861
     HeadMiningPower: 862
     HeadMiningSpeed: 862
@@ -6908,7 +6908,7 @@ MonoBehaviour:
     HeadMovingSpeed: 862
     HeadMiningCount: 862
     HeadCriticalPercent: 862
-    HeadCriticalPower: 862
+    HeadCriticalPower: 0
   - Level: 862
     HeadMiningPower: 863
     HeadMiningSpeed: 863
@@ -6916,7 +6916,7 @@ MonoBehaviour:
     HeadMovingSpeed: 863
     HeadMiningCount: 863
     HeadCriticalPercent: 863
-    HeadCriticalPower: 863
+    HeadCriticalPower: 0
   - Level: 863
     HeadMiningPower: 864
     HeadMiningSpeed: 864
@@ -6924,7 +6924,7 @@ MonoBehaviour:
     HeadMovingSpeed: 864
     HeadMiningCount: 864
     HeadCriticalPercent: 864
-    HeadCriticalPower: 864
+    HeadCriticalPower: 0
   - Level: 864
     HeadMiningPower: 865
     HeadMiningSpeed: 865
@@ -6932,7 +6932,7 @@ MonoBehaviour:
     HeadMovingSpeed: 865
     HeadMiningCount: 865
     HeadCriticalPercent: 865
-    HeadCriticalPower: 865
+    HeadCriticalPower: 0
   - Level: 865
     HeadMiningPower: 866
     HeadMiningSpeed: 866
@@ -6940,7 +6940,7 @@ MonoBehaviour:
     HeadMovingSpeed: 866
     HeadMiningCount: 866
     HeadCriticalPercent: 866
-    HeadCriticalPower: 866
+    HeadCriticalPower: 0
   - Level: 866
     HeadMiningPower: 867
     HeadMiningSpeed: 867
@@ -6948,7 +6948,7 @@ MonoBehaviour:
     HeadMovingSpeed: 867
     HeadMiningCount: 867
     HeadCriticalPercent: 867
-    HeadCriticalPower: 867
+    HeadCriticalPower: 0
   - Level: 867
     HeadMiningPower: 868
     HeadMiningSpeed: 868
@@ -6956,7 +6956,7 @@ MonoBehaviour:
     HeadMovingSpeed: 868
     HeadMiningCount: 868
     HeadCriticalPercent: 868
-    HeadCriticalPower: 868
+    HeadCriticalPower: 0
   - Level: 868
     HeadMiningPower: 869
     HeadMiningSpeed: 869
@@ -6964,7 +6964,7 @@ MonoBehaviour:
     HeadMovingSpeed: 869
     HeadMiningCount: 869
     HeadCriticalPercent: 869
-    HeadCriticalPower: 869
+    HeadCriticalPower: 0
   - Level: 869
     HeadMiningPower: 870
     HeadMiningSpeed: 870
@@ -6972,7 +6972,7 @@ MonoBehaviour:
     HeadMovingSpeed: 870
     HeadMiningCount: 870
     HeadCriticalPercent: 870
-    HeadCriticalPower: 870
+    HeadCriticalPower: 0
   - Level: 870
     HeadMiningPower: 871
     HeadMiningSpeed: 871
@@ -6980,7 +6980,7 @@ MonoBehaviour:
     HeadMovingSpeed: 871
     HeadMiningCount: 871
     HeadCriticalPercent: 871
-    HeadCriticalPower: 871
+    HeadCriticalPower: 0
   - Level: 871
     HeadMiningPower: 872
     HeadMiningSpeed: 872
@@ -6988,7 +6988,7 @@ MonoBehaviour:
     HeadMovingSpeed: 872
     HeadMiningCount: 872
     HeadCriticalPercent: 872
-    HeadCriticalPower: 872
+    HeadCriticalPower: 0
   - Level: 872
     HeadMiningPower: 873
     HeadMiningSpeed: 873
@@ -6996,7 +6996,7 @@ MonoBehaviour:
     HeadMovingSpeed: 873
     HeadMiningCount: 873
     HeadCriticalPercent: 873
-    HeadCriticalPower: 873
+    HeadCriticalPower: 0
   - Level: 873
     HeadMiningPower: 874
     HeadMiningSpeed: 874
@@ -7004,7 +7004,7 @@ MonoBehaviour:
     HeadMovingSpeed: 874
     HeadMiningCount: 874
     HeadCriticalPercent: 874
-    HeadCriticalPower: 874
+    HeadCriticalPower: 0
   - Level: 874
     HeadMiningPower: 875
     HeadMiningSpeed: 875
@@ -7012,7 +7012,7 @@ MonoBehaviour:
     HeadMovingSpeed: 875
     HeadMiningCount: 875
     HeadCriticalPercent: 875
-    HeadCriticalPower: 875
+    HeadCriticalPower: 0
   - Level: 875
     HeadMiningPower: 876
     HeadMiningSpeed: 876
@@ -7020,7 +7020,7 @@ MonoBehaviour:
     HeadMovingSpeed: 876
     HeadMiningCount: 876
     HeadCriticalPercent: 876
-    HeadCriticalPower: 876
+    HeadCriticalPower: 0
   - Level: 876
     HeadMiningPower: 877
     HeadMiningSpeed: 877
@@ -7028,7 +7028,7 @@ MonoBehaviour:
     HeadMovingSpeed: 877
     HeadMiningCount: 877
     HeadCriticalPercent: 877
-    HeadCriticalPower: 877
+    HeadCriticalPower: 0
   - Level: 877
     HeadMiningPower: 878
     HeadMiningSpeed: 878
@@ -7036,7 +7036,7 @@ MonoBehaviour:
     HeadMovingSpeed: 878
     HeadMiningCount: 878
     HeadCriticalPercent: 878
-    HeadCriticalPower: 878
+    HeadCriticalPower: 0
   - Level: 878
     HeadMiningPower: 879
     HeadMiningSpeed: 879
@@ -7044,7 +7044,7 @@ MonoBehaviour:
     HeadMovingSpeed: 879
     HeadMiningCount: 879
     HeadCriticalPercent: 879
-    HeadCriticalPower: 879
+    HeadCriticalPower: 0
   - Level: 879
     HeadMiningPower: 880
     HeadMiningSpeed: 880
@@ -7052,7 +7052,7 @@ MonoBehaviour:
     HeadMovingSpeed: 880
     HeadMiningCount: 880
     HeadCriticalPercent: 880
-    HeadCriticalPower: 880
+    HeadCriticalPower: 0
   - Level: 880
     HeadMiningPower: 881
     HeadMiningSpeed: 881
@@ -7060,7 +7060,7 @@ MonoBehaviour:
     HeadMovingSpeed: 881
     HeadMiningCount: 881
     HeadCriticalPercent: 881
-    HeadCriticalPower: 881
+    HeadCriticalPower: 0
   - Level: 881
     HeadMiningPower: 882
     HeadMiningSpeed: 882
@@ -7068,7 +7068,7 @@ MonoBehaviour:
     HeadMovingSpeed: 882
     HeadMiningCount: 882
     HeadCriticalPercent: 882
-    HeadCriticalPower: 882
+    HeadCriticalPower: 0
   - Level: 882
     HeadMiningPower: 883
     HeadMiningSpeed: 883
@@ -7076,7 +7076,7 @@ MonoBehaviour:
     HeadMovingSpeed: 883
     HeadMiningCount: 883
     HeadCriticalPercent: 883
-    HeadCriticalPower: 883
+    HeadCriticalPower: 0
   - Level: 883
     HeadMiningPower: 884
     HeadMiningSpeed: 884
@@ -7084,7 +7084,7 @@ MonoBehaviour:
     HeadMovingSpeed: 884
     HeadMiningCount: 884
     HeadCriticalPercent: 884
-    HeadCriticalPower: 884
+    HeadCriticalPower: 0
   - Level: 884
     HeadMiningPower: 885
     HeadMiningSpeed: 885
@@ -7092,7 +7092,7 @@ MonoBehaviour:
     HeadMovingSpeed: 885
     HeadMiningCount: 885
     HeadCriticalPercent: 885
-    HeadCriticalPower: 885
+    HeadCriticalPower: 0
   - Level: 885
     HeadMiningPower: 886
     HeadMiningSpeed: 886
@@ -7100,7 +7100,7 @@ MonoBehaviour:
     HeadMovingSpeed: 886
     HeadMiningCount: 886
     HeadCriticalPercent: 886
-    HeadCriticalPower: 886
+    HeadCriticalPower: 0
   - Level: 886
     HeadMiningPower: 887
     HeadMiningSpeed: 887
@@ -7108,7 +7108,7 @@ MonoBehaviour:
     HeadMovingSpeed: 887
     HeadMiningCount: 887
     HeadCriticalPercent: 887
-    HeadCriticalPower: 887
+    HeadCriticalPower: 0
   - Level: 887
     HeadMiningPower: 888
     HeadMiningSpeed: 888
@@ -7116,7 +7116,7 @@ MonoBehaviour:
     HeadMovingSpeed: 888
     HeadMiningCount: 888
     HeadCriticalPercent: 888
-    HeadCriticalPower: 888
+    HeadCriticalPower: 0
   - Level: 888
     HeadMiningPower: 889
     HeadMiningSpeed: 889
@@ -7124,7 +7124,7 @@ MonoBehaviour:
     HeadMovingSpeed: 889
     HeadMiningCount: 889
     HeadCriticalPercent: 889
-    HeadCriticalPower: 889
+    HeadCriticalPower: 0
   - Level: 889
     HeadMiningPower: 890
     HeadMiningSpeed: 890
@@ -7132,7 +7132,7 @@ MonoBehaviour:
     HeadMovingSpeed: 890
     HeadMiningCount: 890
     HeadCriticalPercent: 890
-    HeadCriticalPower: 890
+    HeadCriticalPower: 0
   - Level: 890
     HeadMiningPower: 891
     HeadMiningSpeed: 891
@@ -7140,7 +7140,7 @@ MonoBehaviour:
     HeadMovingSpeed: 891
     HeadMiningCount: 891
     HeadCriticalPercent: 891
-    HeadCriticalPower: 891
+    HeadCriticalPower: 0
   - Level: 891
     HeadMiningPower: 892
     HeadMiningSpeed: 892
@@ -7148,7 +7148,7 @@ MonoBehaviour:
     HeadMovingSpeed: 892
     HeadMiningCount: 892
     HeadCriticalPercent: 892
-    HeadCriticalPower: 892
+    HeadCriticalPower: 0
   - Level: 892
     HeadMiningPower: 893
     HeadMiningSpeed: 893
@@ -7156,7 +7156,7 @@ MonoBehaviour:
     HeadMovingSpeed: 893
     HeadMiningCount: 893
     HeadCriticalPercent: 893
-    HeadCriticalPower: 893
+    HeadCriticalPower: 0
   - Level: 893
     HeadMiningPower: 894
     HeadMiningSpeed: 894
@@ -7164,7 +7164,7 @@ MonoBehaviour:
     HeadMovingSpeed: 894
     HeadMiningCount: 894
     HeadCriticalPercent: 894
-    HeadCriticalPower: 894
+    HeadCriticalPower: 0
   - Level: 894
     HeadMiningPower: 895
     HeadMiningSpeed: 895
@@ -7172,7 +7172,7 @@ MonoBehaviour:
     HeadMovingSpeed: 895
     HeadMiningCount: 895
     HeadCriticalPercent: 895
-    HeadCriticalPower: 895
+    HeadCriticalPower: 0
   - Level: 895
     HeadMiningPower: 896
     HeadMiningSpeed: 896
@@ -7180,7 +7180,7 @@ MonoBehaviour:
     HeadMovingSpeed: 896
     HeadMiningCount: 896
     HeadCriticalPercent: 896
-    HeadCriticalPower: 896
+    HeadCriticalPower: 0
   - Level: 896
     HeadMiningPower: 897
     HeadMiningSpeed: 897
@@ -7188,7 +7188,7 @@ MonoBehaviour:
     HeadMovingSpeed: 897
     HeadMiningCount: 897
     HeadCriticalPercent: 897
-    HeadCriticalPower: 897
+    HeadCriticalPower: 0
   - Level: 897
     HeadMiningPower: 898
     HeadMiningSpeed: 898
@@ -7196,7 +7196,7 @@ MonoBehaviour:
     HeadMovingSpeed: 898
     HeadMiningCount: 898
     HeadCriticalPercent: 898
-    HeadCriticalPower: 898
+    HeadCriticalPower: 0
   - Level: 898
     HeadMiningPower: 899
     HeadMiningSpeed: 899
@@ -7204,7 +7204,7 @@ MonoBehaviour:
     HeadMovingSpeed: 899
     HeadMiningCount: 899
     HeadCriticalPercent: 899
-    HeadCriticalPower: 899
+    HeadCriticalPower: 0
   - Level: 899
     HeadMiningPower: 900
     HeadMiningSpeed: 900
@@ -7212,7 +7212,7 @@ MonoBehaviour:
     HeadMovingSpeed: 900
     HeadMiningCount: 900
     HeadCriticalPercent: 900
-    HeadCriticalPower: 900
+    HeadCriticalPower: 0
   - Level: 900
     HeadMiningPower: 901
     HeadMiningSpeed: 901
@@ -7220,7 +7220,7 @@ MonoBehaviour:
     HeadMovingSpeed: 901
     HeadMiningCount: 901
     HeadCriticalPercent: 901
-    HeadCriticalPower: 901
+    HeadCriticalPower: 0
   - Level: 901
     HeadMiningPower: 902
     HeadMiningSpeed: 902
@@ -7228,7 +7228,7 @@ MonoBehaviour:
     HeadMovingSpeed: 902
     HeadMiningCount: 902
     HeadCriticalPercent: 902
-    HeadCriticalPower: 902
+    HeadCriticalPower: 0
   - Level: 902
     HeadMiningPower: 903
     HeadMiningSpeed: 903
@@ -7236,7 +7236,7 @@ MonoBehaviour:
     HeadMovingSpeed: 903
     HeadMiningCount: 903
     HeadCriticalPercent: 903
-    HeadCriticalPower: 903
+    HeadCriticalPower: 0
   - Level: 903
     HeadMiningPower: 904
     HeadMiningSpeed: 904
@@ -7244,7 +7244,7 @@ MonoBehaviour:
     HeadMovingSpeed: 904
     HeadMiningCount: 904
     HeadCriticalPercent: 904
-    HeadCriticalPower: 904
+    HeadCriticalPower: 0
   - Level: 904
     HeadMiningPower: 905
     HeadMiningSpeed: 905
@@ -7252,7 +7252,7 @@ MonoBehaviour:
     HeadMovingSpeed: 905
     HeadMiningCount: 905
     HeadCriticalPercent: 905
-    HeadCriticalPower: 905
+    HeadCriticalPower: 0
   - Level: 905
     HeadMiningPower: 906
     HeadMiningSpeed: 906
@@ -7260,7 +7260,7 @@ MonoBehaviour:
     HeadMovingSpeed: 906
     HeadMiningCount: 906
     HeadCriticalPercent: 906
-    HeadCriticalPower: 906
+    HeadCriticalPower: 0
   - Level: 906
     HeadMiningPower: 907
     HeadMiningSpeed: 907
@@ -7268,7 +7268,7 @@ MonoBehaviour:
     HeadMovingSpeed: 907
     HeadMiningCount: 907
     HeadCriticalPercent: 907
-    HeadCriticalPower: 907
+    HeadCriticalPower: 0
   - Level: 907
     HeadMiningPower: 908
     HeadMiningSpeed: 908
@@ -7276,7 +7276,7 @@ MonoBehaviour:
     HeadMovingSpeed: 908
     HeadMiningCount: 908
     HeadCriticalPercent: 908
-    HeadCriticalPower: 908
+    HeadCriticalPower: 0
   - Level: 908
     HeadMiningPower: 909
     HeadMiningSpeed: 909
@@ -7284,7 +7284,7 @@ MonoBehaviour:
     HeadMovingSpeed: 909
     HeadMiningCount: 909
     HeadCriticalPercent: 909
-    HeadCriticalPower: 909
+    HeadCriticalPower: 0
   - Level: 909
     HeadMiningPower: 910
     HeadMiningSpeed: 910
@@ -7292,7 +7292,7 @@ MonoBehaviour:
     HeadMovingSpeed: 910
     HeadMiningCount: 910
     HeadCriticalPercent: 910
-    HeadCriticalPower: 910
+    HeadCriticalPower: 0
   - Level: 910
     HeadMiningPower: 911
     HeadMiningSpeed: 911
@@ -7300,7 +7300,7 @@ MonoBehaviour:
     HeadMovingSpeed: 911
     HeadMiningCount: 911
     HeadCriticalPercent: 911
-    HeadCriticalPower: 911
+    HeadCriticalPower: 0
   - Level: 911
     HeadMiningPower: 912
     HeadMiningSpeed: 912
@@ -7308,7 +7308,7 @@ MonoBehaviour:
     HeadMovingSpeed: 912
     HeadMiningCount: 912
     HeadCriticalPercent: 912
-    HeadCriticalPower: 912
+    HeadCriticalPower: 0
   - Level: 912
     HeadMiningPower: 913
     HeadMiningSpeed: 913
@@ -7316,7 +7316,7 @@ MonoBehaviour:
     HeadMovingSpeed: 913
     HeadMiningCount: 913
     HeadCriticalPercent: 913
-    HeadCriticalPower: 913
+    HeadCriticalPower: 0
   - Level: 913
     HeadMiningPower: 914
     HeadMiningSpeed: 914
@@ -7324,7 +7324,7 @@ MonoBehaviour:
     HeadMovingSpeed: 914
     HeadMiningCount: 914
     HeadCriticalPercent: 914
-    HeadCriticalPower: 914
+    HeadCriticalPower: 0
   - Level: 914
     HeadMiningPower: 915
     HeadMiningSpeed: 915
@@ -7332,7 +7332,7 @@ MonoBehaviour:
     HeadMovingSpeed: 915
     HeadMiningCount: 915
     HeadCriticalPercent: 915
-    HeadCriticalPower: 915
+    HeadCriticalPower: 0
   - Level: 915
     HeadMiningPower: 916
     HeadMiningSpeed: 916
@@ -7340,7 +7340,7 @@ MonoBehaviour:
     HeadMovingSpeed: 916
     HeadMiningCount: 916
     HeadCriticalPercent: 916
-    HeadCriticalPower: 916
+    HeadCriticalPower: 0
   - Level: 916
     HeadMiningPower: 917
     HeadMiningSpeed: 917
@@ -7348,7 +7348,7 @@ MonoBehaviour:
     HeadMovingSpeed: 917
     HeadMiningCount: 917
     HeadCriticalPercent: 917
-    HeadCriticalPower: 917
+    HeadCriticalPower: 0
   - Level: 917
     HeadMiningPower: 918
     HeadMiningSpeed: 918
@@ -7356,7 +7356,7 @@ MonoBehaviour:
     HeadMovingSpeed: 918
     HeadMiningCount: 918
     HeadCriticalPercent: 918
-    HeadCriticalPower: 918
+    HeadCriticalPower: 0
   - Level: 918
     HeadMiningPower: 919
     HeadMiningSpeed: 919
@@ -7364,7 +7364,7 @@ MonoBehaviour:
     HeadMovingSpeed: 919
     HeadMiningCount: 919
     HeadCriticalPercent: 919
-    HeadCriticalPower: 919
+    HeadCriticalPower: 0
   - Level: 919
     HeadMiningPower: 920
     HeadMiningSpeed: 920
@@ -7372,7 +7372,7 @@ MonoBehaviour:
     HeadMovingSpeed: 920
     HeadMiningCount: 920
     HeadCriticalPercent: 920
-    HeadCriticalPower: 920
+    HeadCriticalPower: 0
   - Level: 920
     HeadMiningPower: 921
     HeadMiningSpeed: 921
@@ -7380,7 +7380,7 @@ MonoBehaviour:
     HeadMovingSpeed: 921
     HeadMiningCount: 921
     HeadCriticalPercent: 921
-    HeadCriticalPower: 921
+    HeadCriticalPower: 0
   - Level: 921
     HeadMiningPower: 922
     HeadMiningSpeed: 922
@@ -7388,7 +7388,7 @@ MonoBehaviour:
     HeadMovingSpeed: 922
     HeadMiningCount: 922
     HeadCriticalPercent: 922
-    HeadCriticalPower: 922
+    HeadCriticalPower: 0
   - Level: 922
     HeadMiningPower: 923
     HeadMiningSpeed: 923
@@ -7396,7 +7396,7 @@ MonoBehaviour:
     HeadMovingSpeed: 923
     HeadMiningCount: 923
     HeadCriticalPercent: 923
-    HeadCriticalPower: 923
+    HeadCriticalPower: 0
   - Level: 923
     HeadMiningPower: 924
     HeadMiningSpeed: 924
@@ -7404,7 +7404,7 @@ MonoBehaviour:
     HeadMovingSpeed: 924
     HeadMiningCount: 924
     HeadCriticalPercent: 924
-    HeadCriticalPower: 924
+    HeadCriticalPower: 0
   - Level: 924
     HeadMiningPower: 925
     HeadMiningSpeed: 925
@@ -7412,7 +7412,7 @@ MonoBehaviour:
     HeadMovingSpeed: 925
     HeadMiningCount: 925
     HeadCriticalPercent: 925
-    HeadCriticalPower: 925
+    HeadCriticalPower: 0
   - Level: 925
     HeadMiningPower: 926
     HeadMiningSpeed: 926
@@ -7420,7 +7420,7 @@ MonoBehaviour:
     HeadMovingSpeed: 926
     HeadMiningCount: 926
     HeadCriticalPercent: 926
-    HeadCriticalPower: 926
+    HeadCriticalPower: 0
   - Level: 926
     HeadMiningPower: 927
     HeadMiningSpeed: 927
@@ -7428,7 +7428,7 @@ MonoBehaviour:
     HeadMovingSpeed: 927
     HeadMiningCount: 927
     HeadCriticalPercent: 927
-    HeadCriticalPower: 927
+    HeadCriticalPower: 0
   - Level: 927
     HeadMiningPower: 928
     HeadMiningSpeed: 928
@@ -7436,7 +7436,7 @@ MonoBehaviour:
     HeadMovingSpeed: 928
     HeadMiningCount: 928
     HeadCriticalPercent: 928
-    HeadCriticalPower: 928
+    HeadCriticalPower: 0
   - Level: 928
     HeadMiningPower: 929
     HeadMiningSpeed: 929
@@ -7444,7 +7444,7 @@ MonoBehaviour:
     HeadMovingSpeed: 929
     HeadMiningCount: 929
     HeadCriticalPercent: 929
-    HeadCriticalPower: 929
+    HeadCriticalPower: 0
   - Level: 929
     HeadMiningPower: 930
     HeadMiningSpeed: 930
@@ -7452,7 +7452,7 @@ MonoBehaviour:
     HeadMovingSpeed: 930
     HeadMiningCount: 930
     HeadCriticalPercent: 930
-    HeadCriticalPower: 930
+    HeadCriticalPower: 0
   - Level: 930
     HeadMiningPower: 931
     HeadMiningSpeed: 931
@@ -7460,7 +7460,7 @@ MonoBehaviour:
     HeadMovingSpeed: 931
     HeadMiningCount: 931
     HeadCriticalPercent: 931
-    HeadCriticalPower: 931
+    HeadCriticalPower: 0
   - Level: 931
     HeadMiningPower: 932
     HeadMiningSpeed: 932
@@ -7468,7 +7468,7 @@ MonoBehaviour:
     HeadMovingSpeed: 932
     HeadMiningCount: 932
     HeadCriticalPercent: 932
-    HeadCriticalPower: 932
+    HeadCriticalPower: 0
   - Level: 932
     HeadMiningPower: 933
     HeadMiningSpeed: 933
@@ -7476,7 +7476,7 @@ MonoBehaviour:
     HeadMovingSpeed: 933
     HeadMiningCount: 933
     HeadCriticalPercent: 933
-    HeadCriticalPower: 933
+    HeadCriticalPower: 0
   - Level: 933
     HeadMiningPower: 934
     HeadMiningSpeed: 934
@@ -7484,7 +7484,7 @@ MonoBehaviour:
     HeadMovingSpeed: 934
     HeadMiningCount: 934
     HeadCriticalPercent: 934
-    HeadCriticalPower: 934
+    HeadCriticalPower: 0
   - Level: 934
     HeadMiningPower: 935
     HeadMiningSpeed: 935
@@ -7492,7 +7492,7 @@ MonoBehaviour:
     HeadMovingSpeed: 935
     HeadMiningCount: 935
     HeadCriticalPercent: 935
-    HeadCriticalPower: 935
+    HeadCriticalPower: 0
   - Level: 935
     HeadMiningPower: 936
     HeadMiningSpeed: 936
@@ -7500,7 +7500,7 @@ MonoBehaviour:
     HeadMovingSpeed: 936
     HeadMiningCount: 936
     HeadCriticalPercent: 936
-    HeadCriticalPower: 936
+    HeadCriticalPower: 0
   - Level: 936
     HeadMiningPower: 937
     HeadMiningSpeed: 937
@@ -7508,7 +7508,7 @@ MonoBehaviour:
     HeadMovingSpeed: 937
     HeadMiningCount: 937
     HeadCriticalPercent: 937
-    HeadCriticalPower: 937
+    HeadCriticalPower: 0
   - Level: 937
     HeadMiningPower: 938
     HeadMiningSpeed: 938
@@ -7516,7 +7516,7 @@ MonoBehaviour:
     HeadMovingSpeed: 938
     HeadMiningCount: 938
     HeadCriticalPercent: 938
-    HeadCriticalPower: 938
+    HeadCriticalPower: 0
   - Level: 938
     HeadMiningPower: 939
     HeadMiningSpeed: 939
@@ -7524,7 +7524,7 @@ MonoBehaviour:
     HeadMovingSpeed: 939
     HeadMiningCount: 939
     HeadCriticalPercent: 939
-    HeadCriticalPower: 939
+    HeadCriticalPower: 0
   - Level: 939
     HeadMiningPower: 940
     HeadMiningSpeed: 940
@@ -7532,7 +7532,7 @@ MonoBehaviour:
     HeadMovingSpeed: 940
     HeadMiningCount: 940
     HeadCriticalPercent: 940
-    HeadCriticalPower: 940
+    HeadCriticalPower: 0
   - Level: 940
     HeadMiningPower: 941
     HeadMiningSpeed: 941
@@ -7540,7 +7540,7 @@ MonoBehaviour:
     HeadMovingSpeed: 941
     HeadMiningCount: 941
     HeadCriticalPercent: 941
-    HeadCriticalPower: 941
+    HeadCriticalPower: 0
   - Level: 941
     HeadMiningPower: 942
     HeadMiningSpeed: 942
@@ -7548,7 +7548,7 @@ MonoBehaviour:
     HeadMovingSpeed: 942
     HeadMiningCount: 942
     HeadCriticalPercent: 942
-    HeadCriticalPower: 942
+    HeadCriticalPower: 0
   - Level: 942
     HeadMiningPower: 943
     HeadMiningSpeed: 943
@@ -7556,7 +7556,7 @@ MonoBehaviour:
     HeadMovingSpeed: 943
     HeadMiningCount: 943
     HeadCriticalPercent: 943
-    HeadCriticalPower: 943
+    HeadCriticalPower: 0
   - Level: 943
     HeadMiningPower: 944
     HeadMiningSpeed: 944
@@ -7564,7 +7564,7 @@ MonoBehaviour:
     HeadMovingSpeed: 944
     HeadMiningCount: 944
     HeadCriticalPercent: 944
-    HeadCriticalPower: 944
+    HeadCriticalPower: 0
   - Level: 944
     HeadMiningPower: 945
     HeadMiningSpeed: 945
@@ -7572,7 +7572,7 @@ MonoBehaviour:
     HeadMovingSpeed: 945
     HeadMiningCount: 945
     HeadCriticalPercent: 945
-    HeadCriticalPower: 945
+    HeadCriticalPower: 0
   - Level: 945
     HeadMiningPower: 946
     HeadMiningSpeed: 946
@@ -7580,7 +7580,7 @@ MonoBehaviour:
     HeadMovingSpeed: 946
     HeadMiningCount: 946
     HeadCriticalPercent: 946
-    HeadCriticalPower: 946
+    HeadCriticalPower: 0
   - Level: 946
     HeadMiningPower: 947
     HeadMiningSpeed: 947
@@ -7588,7 +7588,7 @@ MonoBehaviour:
     HeadMovingSpeed: 947
     HeadMiningCount: 947
     HeadCriticalPercent: 947
-    HeadCriticalPower: 947
+    HeadCriticalPower: 0
   - Level: 947
     HeadMiningPower: 948
     HeadMiningSpeed: 948
@@ -7596,7 +7596,7 @@ MonoBehaviour:
     HeadMovingSpeed: 948
     HeadMiningCount: 948
     HeadCriticalPercent: 948
-    HeadCriticalPower: 948
+    HeadCriticalPower: 0
   - Level: 948
     HeadMiningPower: 949
     HeadMiningSpeed: 949
@@ -7604,7 +7604,7 @@ MonoBehaviour:
     HeadMovingSpeed: 949
     HeadMiningCount: 949
     HeadCriticalPercent: 949
-    HeadCriticalPower: 949
+    HeadCriticalPower: 0
   - Level: 949
     HeadMiningPower: 950
     HeadMiningSpeed: 950
@@ -7612,7 +7612,7 @@ MonoBehaviour:
     HeadMovingSpeed: 950
     HeadMiningCount: 950
     HeadCriticalPercent: 950
-    HeadCriticalPower: 950
+    HeadCriticalPower: 0
   - Level: 950
     HeadMiningPower: 951
     HeadMiningSpeed: 951
@@ -7620,7 +7620,7 @@ MonoBehaviour:
     HeadMovingSpeed: 951
     HeadMiningCount: 951
     HeadCriticalPercent: 951
-    HeadCriticalPower: 951
+    HeadCriticalPower: 0
   - Level: 951
     HeadMiningPower: 952
     HeadMiningSpeed: 952
@@ -7628,7 +7628,7 @@ MonoBehaviour:
     HeadMovingSpeed: 952
     HeadMiningCount: 952
     HeadCriticalPercent: 952
-    HeadCriticalPower: 952
+    HeadCriticalPower: 0
   - Level: 952
     HeadMiningPower: 953
     HeadMiningSpeed: 953
@@ -7636,7 +7636,7 @@ MonoBehaviour:
     HeadMovingSpeed: 953
     HeadMiningCount: 953
     HeadCriticalPercent: 953
-    HeadCriticalPower: 953
+    HeadCriticalPower: 0
   - Level: 953
     HeadMiningPower: 954
     HeadMiningSpeed: 954
@@ -7644,7 +7644,7 @@ MonoBehaviour:
     HeadMovingSpeed: 954
     HeadMiningCount: 954
     HeadCriticalPercent: 954
-    HeadCriticalPower: 954
+    HeadCriticalPower: 0
   - Level: 954
     HeadMiningPower: 955
     HeadMiningSpeed: 955
@@ -7652,7 +7652,7 @@ MonoBehaviour:
     HeadMovingSpeed: 955
     HeadMiningCount: 955
     HeadCriticalPercent: 955
-    HeadCriticalPower: 955
+    HeadCriticalPower: 0
   - Level: 955
     HeadMiningPower: 956
     HeadMiningSpeed: 956
@@ -7660,7 +7660,7 @@ MonoBehaviour:
     HeadMovingSpeed: 956
     HeadMiningCount: 956
     HeadCriticalPercent: 956
-    HeadCriticalPower: 956
+    HeadCriticalPower: 0
   - Level: 956
     HeadMiningPower: 957
     HeadMiningSpeed: 957
@@ -7668,7 +7668,7 @@ MonoBehaviour:
     HeadMovingSpeed: 957
     HeadMiningCount: 957
     HeadCriticalPercent: 957
-    HeadCriticalPower: 957
+    HeadCriticalPower: 0
   - Level: 957
     HeadMiningPower: 958
     HeadMiningSpeed: 958
@@ -7676,7 +7676,7 @@ MonoBehaviour:
     HeadMovingSpeed: 958
     HeadMiningCount: 958
     HeadCriticalPercent: 958
-    HeadCriticalPower: 958
+    HeadCriticalPower: 0
   - Level: 958
     HeadMiningPower: 959
     HeadMiningSpeed: 959
@@ -7684,7 +7684,7 @@ MonoBehaviour:
     HeadMovingSpeed: 959
     HeadMiningCount: 959
     HeadCriticalPercent: 959
-    HeadCriticalPower: 959
+    HeadCriticalPower: 0
   - Level: 959
     HeadMiningPower: 960
     HeadMiningSpeed: 960
@@ -7692,7 +7692,7 @@ MonoBehaviour:
     HeadMovingSpeed: 960
     HeadMiningCount: 960
     HeadCriticalPercent: 960
-    HeadCriticalPower: 960
+    HeadCriticalPower: 0
   - Level: 960
     HeadMiningPower: 961
     HeadMiningSpeed: 961
@@ -7700,7 +7700,7 @@ MonoBehaviour:
     HeadMovingSpeed: 961
     HeadMiningCount: 961
     HeadCriticalPercent: 961
-    HeadCriticalPower: 961
+    HeadCriticalPower: 0
   - Level: 961
     HeadMiningPower: 962
     HeadMiningSpeed: 962
@@ -7708,7 +7708,7 @@ MonoBehaviour:
     HeadMovingSpeed: 962
     HeadMiningCount: 962
     HeadCriticalPercent: 962
-    HeadCriticalPower: 962
+    HeadCriticalPower: 0
   - Level: 962
     HeadMiningPower: 963
     HeadMiningSpeed: 963
@@ -7716,7 +7716,7 @@ MonoBehaviour:
     HeadMovingSpeed: 963
     HeadMiningCount: 963
     HeadCriticalPercent: 963
-    HeadCriticalPower: 963
+    HeadCriticalPower: 0
   - Level: 963
     HeadMiningPower: 964
     HeadMiningSpeed: 964
@@ -7724,7 +7724,7 @@ MonoBehaviour:
     HeadMovingSpeed: 964
     HeadMiningCount: 964
     HeadCriticalPercent: 964
-    HeadCriticalPower: 964
+    HeadCriticalPower: 0
   - Level: 964
     HeadMiningPower: 965
     HeadMiningSpeed: 965
@@ -7732,7 +7732,7 @@ MonoBehaviour:
     HeadMovingSpeed: 965
     HeadMiningCount: 965
     HeadCriticalPercent: 965
-    HeadCriticalPower: 965
+    HeadCriticalPower: 0
   - Level: 965
     HeadMiningPower: 966
     HeadMiningSpeed: 966
@@ -7740,7 +7740,7 @@ MonoBehaviour:
     HeadMovingSpeed: 966
     HeadMiningCount: 966
     HeadCriticalPercent: 966
-    HeadCriticalPower: 966
+    HeadCriticalPower: 0
   - Level: 966
     HeadMiningPower: 967
     HeadMiningSpeed: 967
@@ -7748,7 +7748,7 @@ MonoBehaviour:
     HeadMovingSpeed: 967
     HeadMiningCount: 967
     HeadCriticalPercent: 967
-    HeadCriticalPower: 967
+    HeadCriticalPower: 0
   - Level: 967
     HeadMiningPower: 968
     HeadMiningSpeed: 968
@@ -7756,7 +7756,7 @@ MonoBehaviour:
     HeadMovingSpeed: 968
     HeadMiningCount: 968
     HeadCriticalPercent: 968
-    HeadCriticalPower: 968
+    HeadCriticalPower: 0
   - Level: 968
     HeadMiningPower: 969
     HeadMiningSpeed: 969
@@ -7764,7 +7764,7 @@ MonoBehaviour:
     HeadMovingSpeed: 969
     HeadMiningCount: 969
     HeadCriticalPercent: 969
-    HeadCriticalPower: 969
+    HeadCriticalPower: 0
   - Level: 969
     HeadMiningPower: 970
     HeadMiningSpeed: 970
@@ -7772,7 +7772,7 @@ MonoBehaviour:
     HeadMovingSpeed: 970
     HeadMiningCount: 970
     HeadCriticalPercent: 970
-    HeadCriticalPower: 970
+    HeadCriticalPower: 0
   - Level: 970
     HeadMiningPower: 971
     HeadMiningSpeed: 971
@@ -7780,7 +7780,7 @@ MonoBehaviour:
     HeadMovingSpeed: 971
     HeadMiningCount: 971
     HeadCriticalPercent: 971
-    HeadCriticalPower: 971
+    HeadCriticalPower: 0
   - Level: 971
     HeadMiningPower: 972
     HeadMiningSpeed: 972
@@ -7788,7 +7788,7 @@ MonoBehaviour:
     HeadMovingSpeed: 972
     HeadMiningCount: 972
     HeadCriticalPercent: 972
-    HeadCriticalPower: 972
+    HeadCriticalPower: 0
   - Level: 972
     HeadMiningPower: 973
     HeadMiningSpeed: 973
@@ -7796,7 +7796,7 @@ MonoBehaviour:
     HeadMovingSpeed: 973
     HeadMiningCount: 973
     HeadCriticalPercent: 973
-    HeadCriticalPower: 973
+    HeadCriticalPower: 0
   - Level: 973
     HeadMiningPower: 974
     HeadMiningSpeed: 974
@@ -7804,7 +7804,7 @@ MonoBehaviour:
     HeadMovingSpeed: 974
     HeadMiningCount: 974
     HeadCriticalPercent: 974
-    HeadCriticalPower: 974
+    HeadCriticalPower: 0
   - Level: 974
     HeadMiningPower: 975
     HeadMiningSpeed: 975
@@ -7812,7 +7812,7 @@ MonoBehaviour:
     HeadMovingSpeed: 975
     HeadMiningCount: 975
     HeadCriticalPercent: 975
-    HeadCriticalPower: 975
+    HeadCriticalPower: 0
   - Level: 975
     HeadMiningPower: 976
     HeadMiningSpeed: 976
@@ -7820,7 +7820,7 @@ MonoBehaviour:
     HeadMovingSpeed: 976
     HeadMiningCount: 976
     HeadCriticalPercent: 976
-    HeadCriticalPower: 976
+    HeadCriticalPower: 0
   - Level: 976
     HeadMiningPower: 977
     HeadMiningSpeed: 977
@@ -7828,7 +7828,7 @@ MonoBehaviour:
     HeadMovingSpeed: 977
     HeadMiningCount: 977
     HeadCriticalPercent: 977
-    HeadCriticalPower: 977
+    HeadCriticalPower: 0
   - Level: 977
     HeadMiningPower: 978
     HeadMiningSpeed: 978
@@ -7836,7 +7836,7 @@ MonoBehaviour:
     HeadMovingSpeed: 978
     HeadMiningCount: 978
     HeadCriticalPercent: 978
-    HeadCriticalPower: 978
+    HeadCriticalPower: 0
   - Level: 978
     HeadMiningPower: 979
     HeadMiningSpeed: 979
@@ -7844,7 +7844,7 @@ MonoBehaviour:
     HeadMovingSpeed: 979
     HeadMiningCount: 979
     HeadCriticalPercent: 979
-    HeadCriticalPower: 979
+    HeadCriticalPower: 0
   - Level: 979
     HeadMiningPower: 980
     HeadMiningSpeed: 980
@@ -7852,7 +7852,7 @@ MonoBehaviour:
     HeadMovingSpeed: 980
     HeadMiningCount: 980
     HeadCriticalPercent: 980
-    HeadCriticalPower: 980
+    HeadCriticalPower: 0
   - Level: 980
     HeadMiningPower: 981
     HeadMiningSpeed: 981
@@ -7860,7 +7860,7 @@ MonoBehaviour:
     HeadMovingSpeed: 981
     HeadMiningCount: 981
     HeadCriticalPercent: 981
-    HeadCriticalPower: 981
+    HeadCriticalPower: 0
   - Level: 981
     HeadMiningPower: 982
     HeadMiningSpeed: 982
@@ -7868,7 +7868,7 @@ MonoBehaviour:
     HeadMovingSpeed: 982
     HeadMiningCount: 982
     HeadCriticalPercent: 982
-    HeadCriticalPower: 982
+    HeadCriticalPower: 0
   - Level: 982
     HeadMiningPower: 983
     HeadMiningSpeed: 983
@@ -7876,7 +7876,7 @@ MonoBehaviour:
     HeadMovingSpeed: 983
     HeadMiningCount: 983
     HeadCriticalPercent: 983
-    HeadCriticalPower: 983
+    HeadCriticalPower: 0
   - Level: 983
     HeadMiningPower: 984
     HeadMiningSpeed: 984
@@ -7884,7 +7884,7 @@ MonoBehaviour:
     HeadMovingSpeed: 984
     HeadMiningCount: 984
     HeadCriticalPercent: 984
-    HeadCriticalPower: 984
+    HeadCriticalPower: 0
   - Level: 984
     HeadMiningPower: 985
     HeadMiningSpeed: 985
@@ -7892,7 +7892,7 @@ MonoBehaviour:
     HeadMovingSpeed: 985
     HeadMiningCount: 985
     HeadCriticalPercent: 985
-    HeadCriticalPower: 985
+    HeadCriticalPower: 0
   - Level: 985
     HeadMiningPower: 986
     HeadMiningSpeed: 986
@@ -7900,7 +7900,7 @@ MonoBehaviour:
     HeadMovingSpeed: 986
     HeadMiningCount: 986
     HeadCriticalPercent: 986
-    HeadCriticalPower: 986
+    HeadCriticalPower: 0
   - Level: 986
     HeadMiningPower: 987
     HeadMiningSpeed: 987
@@ -7908,7 +7908,7 @@ MonoBehaviour:
     HeadMovingSpeed: 987
     HeadMiningCount: 987
     HeadCriticalPercent: 987
-    HeadCriticalPower: 987
+    HeadCriticalPower: 0
   - Level: 987
     HeadMiningPower: 988
     HeadMiningSpeed: 988
@@ -7916,7 +7916,7 @@ MonoBehaviour:
     HeadMovingSpeed: 988
     HeadMiningCount: 988
     HeadCriticalPercent: 988
-    HeadCriticalPower: 988
+    HeadCriticalPower: 0
   - Level: 988
     HeadMiningPower: 989
     HeadMiningSpeed: 989
@@ -7924,7 +7924,7 @@ MonoBehaviour:
     HeadMovingSpeed: 989
     HeadMiningCount: 989
     HeadCriticalPercent: 989
-    HeadCriticalPower: 989
+    HeadCriticalPower: 0
   - Level: 989
     HeadMiningPower: 990
     HeadMiningSpeed: 990
@@ -7932,7 +7932,7 @@ MonoBehaviour:
     HeadMovingSpeed: 990
     HeadMiningCount: 990
     HeadCriticalPercent: 990
-    HeadCriticalPower: 990
+    HeadCriticalPower: 0
   - Level: 990
     HeadMiningPower: 991
     HeadMiningSpeed: 991
@@ -7940,7 +7940,7 @@ MonoBehaviour:
     HeadMovingSpeed: 991
     HeadMiningCount: 991
     HeadCriticalPercent: 991
-    HeadCriticalPower: 991
+    HeadCriticalPower: 0
   - Level: 991
     HeadMiningPower: 992
     HeadMiningSpeed: 992
@@ -7948,7 +7948,7 @@ MonoBehaviour:
     HeadMovingSpeed: 992
     HeadMiningCount: 992
     HeadCriticalPercent: 992
-    HeadCriticalPower: 992
+    HeadCriticalPower: 0
   - Level: 992
     HeadMiningPower: 993
     HeadMiningSpeed: 993
@@ -7956,7 +7956,7 @@ MonoBehaviour:
     HeadMovingSpeed: 993
     HeadMiningCount: 993
     HeadCriticalPercent: 993
-    HeadCriticalPower: 993
+    HeadCriticalPower: 0
   - Level: 993
     HeadMiningPower: 994
     HeadMiningSpeed: 994
@@ -7964,7 +7964,7 @@ MonoBehaviour:
     HeadMovingSpeed: 994
     HeadMiningCount: 994
     HeadCriticalPercent: 994
-    HeadCriticalPower: 994
+    HeadCriticalPower: 0
   - Level: 994
     HeadMiningPower: 995
     HeadMiningSpeed: 995
@@ -7972,7 +7972,7 @@ MonoBehaviour:
     HeadMovingSpeed: 995
     HeadMiningCount: 995
     HeadCriticalPercent: 995
-    HeadCriticalPower: 995
+    HeadCriticalPower: 0
   - Level: 995
     HeadMiningPower: 996
     HeadMiningSpeed: 996
@@ -7980,7 +7980,7 @@ MonoBehaviour:
     HeadMovingSpeed: 996
     HeadMiningCount: 996
     HeadCriticalPercent: 996
-    HeadCriticalPower: 996
+    HeadCriticalPower: 0
   - Level: 996
     HeadMiningPower: 997
     HeadMiningSpeed: 997
@@ -7988,7 +7988,7 @@ MonoBehaviour:
     HeadMovingSpeed: 997
     HeadMiningCount: 997
     HeadCriticalPercent: 997
-    HeadCriticalPower: 997
+    HeadCriticalPower: 0
   - Level: 997
     HeadMiningPower: 998
     HeadMiningSpeed: 998
@@ -7996,7 +7996,7 @@ MonoBehaviour:
     HeadMovingSpeed: 998
     HeadMiningCount: 998
     HeadCriticalPercent: 998
-    HeadCriticalPower: 998
+    HeadCriticalPower: 0
   - Level: 998
     HeadMiningPower: 999
     HeadMiningSpeed: 999
@@ -8004,7 +8004,7 @@ MonoBehaviour:
     HeadMovingSpeed: 999
     HeadMiningCount: 999
     HeadCriticalPercent: 999
-    HeadCriticalPower: 999
+    HeadCriticalPower: 0
   - Level: 999
     HeadMiningPower: 1000
     HeadMiningSpeed: 1000
@@ -8012,7 +8012,7 @@ MonoBehaviour:
     HeadMovingSpeed: 1000
     HeadMiningCount: 1000
     HeadCriticalPercent: 1000
-    HeadCriticalPower: 1000
+    HeadCriticalPower: 0
   - Level: 1000
     HeadMiningPower: 0
     HeadMiningSpeed: 0

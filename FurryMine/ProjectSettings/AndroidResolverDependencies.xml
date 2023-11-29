@@ -6,7 +6,7 @@
   <files />
   <settings>
     <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
-    <setting name="bundleId" value="com.lizardwsb.furrymine" />
+    <setting name="bundleId" value="com.lizardwsb.miningworlds" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="True" />

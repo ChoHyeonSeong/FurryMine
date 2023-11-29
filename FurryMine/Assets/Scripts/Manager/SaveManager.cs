@@ -10,14 +10,18 @@ public static class SaveManager
     public static void SaveGame(SaveData save)
     {
         string jsonData = JsonUtility.ToJson(save);
-        File.WriteAllText(_filePath, jsonData);
+        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        string code = System.Convert.ToBase64String(bytes);
+        File.WriteAllText(_filePath, code);
     }
 
     public static void LoadGame()
     {
         if (File.Exists(_filePath))
         {
-            string jsonData = File.ReadAllText(_filePath);
+            string code = File.ReadAllText(_filePath);
+            byte[] bytes = System.Convert.FromBase64String(code);
+            string jsonData = System.Text.Encoding.UTF8.GetString(bytes);
             Save = JsonUtility.FromJson<SaveData>(jsonData);
         }
         else

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,7 +15,6 @@ public class RewardButton : MonoBehaviour
         _button = GetComponent<Button>();
         _remainText = GetComponentInChildren<TextMeshProUGUI>();
         _button.onClick.AddListener(ShowRewardedAd);
-        _remainText.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -41,20 +41,33 @@ public class RewardButton : MonoBehaviour
 
     private void ShowRewardedAd()
     {
-        ForbidShowAd();
-        AdManager.ShowRewardedAd();
+        if (CheckReceivableReward())
+        {
+            ForbidShowAd();
+            AdManager.ShowRewardedAd();
+        }
+    }
+
+    private bool CheckReceivableReward()
+    {
+        var enumArray = Enum.GetValues(typeof(EEnforce));
+        foreach (EEnforce enforce in enumArray)
+        {
+            if (EnforceManager.LevelDict[enforce] < EnforceManager.LimitDict[enforce])
+                return true;
+        }
+        return false;
     }
 
     private void ForbidShowAd()
     {
         _button.interactable = false;
-        _remainText.gameObject.SetActive(true);
     }
 
     private void AllowShowAd()
     {
         _button.interactable = true;
-        _remainText.gameObject.SetActive(false);
+        _remainText.text = "·£´ý°­È­";
     }
 
     private void UpdateRemainText(int seconds)

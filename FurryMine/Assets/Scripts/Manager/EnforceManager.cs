@@ -17,12 +17,24 @@ public static class EnforceManager
     public static Dictionary<EEnforce, int> LevelDict { get; private set; } = new Dictionary<EEnforce, int>();
     public static Dictionary<EEnforce, int> PriceDict { get; private set; } = new Dictionary<EEnforce, int>();
     public static Dictionary<EEnforce, float> CoeffDict { get; private set; } = new Dictionary<EEnforce, float>();
+    public static Dictionary<EEnforce, int> LimitDict { get; private set; } = new Dictionary<EEnforce, int>();
 
     public static void LoadEnforce()
     {
         InitLevel();
         InitPrice();
         InitCoeff();
+        InitLimit();
+    }
+
+    private static void InitLimit()
+    {
+        LimitDict[EEnforce.HEAD_MINING_POWER] = 1000;
+        LimitDict[EEnforce.HEAD_MINING_SPEED] = 1000;
+        LimitDict[EEnforce.HEAD_MOTION_SPEED] = 1000;
+        LimitDict[EEnforce.HEAD_MOVING_SPEED] = 1000;
+        LimitDict[EEnforce.HEAD_CRITICAL_PERCENT] = 100;
+        LimitDict[EEnforce.HEAD_CRITICAL_POWER] = 1000;
     }
 
     public static void LevelUpEnforce(EEnforce enforce)
@@ -35,7 +47,7 @@ public static class EnforceManager
     {
         List<int> list = new List<int>();
         var enumArray = Enum.GetValues(typeof(EEnforce));
-        foreach (EEnforce enforce in enumArray )
+        foreach (EEnforce enforce in enumArray)
         {
             list.Add(LevelDict[enforce]);
         }
@@ -96,7 +108,7 @@ public static class EnforceManager
                 price = TableManager.PriceTable[LevelDict[enforce]].HeadCriticalPower;
                 break;
             default:
-                price = 0; 
+                price = 0;
                 break;
         }
         PriceDict[enforce] = price;

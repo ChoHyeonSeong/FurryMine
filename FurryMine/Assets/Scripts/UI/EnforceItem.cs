@@ -76,10 +76,18 @@ public class EnforceItem : MonoBehaviour
     private void GameStart()
     {
         SetText(EnforceManager.LevelDict[Enforce], EnforceManager.CoeffDict[Enforce], EnforceManager.PriceDict[Enforce]);
+        if (EnforceManager.LevelDict[_enforce] >= EnforceManager.LimitDict[_enforce])
+        {
+            _buyBtn.interactable = false;
+        }
     }
 
     private void BuyEnforce()
     {
         OnBuyEnforce(this);
+        if (EnforceManager.LevelDict[_enforce] >= EnforceManager.LimitDict[_enforce])
+        {
+            _buyBtn.interactable = false;
+        }
     }
 }
