@@ -15,8 +15,6 @@ public class EnforceItem : MonoBehaviour
 {
     public static Action<EnforceItem> OnBuyEnforce { get; set; }
 
-    public static Action<EnforceItem> OnInitInformation { get; set; } 
-
     public EEnforce Enforce { get => _enforce; }
 
     public EUnit Unit { get => _unit; }
@@ -40,17 +38,20 @@ public class EnforceItem : MonoBehaviour
     private Button _buyBtn;
     private string _titleStr;
 
-    public void SetText(int level, int coeff, int price)
+    public void SetText(int level, float coeff, int price)
     {
+        int value;
         _titleText.text = $"{_titleStr} {level}";
         _priceText.text = price.ToString();
         switch (_unit)
         {
             case EUnit.NONE:
-                _valueText.text = $"+{level * coeff}";
+                value = (int)coeff;
+                _valueText.text = $"+{level * value}";
                 break;
             case EUnit.PERCENT:
-                _valueText.text = $"+{level * coeff}%";
+                value = (int)(coeff * 101);
+                _valueText.text = $"+{level * value}%";
                 break;
         }
     }
@@ -61,9 +62,20 @@ public class EnforceItem : MonoBehaviour
         _titleStr = _titleText.text;
         _buyBtn.onClick.AddListener(BuyEnforce);
     }
-    private void Start()
+
+    private void OnEnable()
     {
-        OnInitInformation(this);
+        GameApp.OnGameStart += GameStart;
+    }
+
+    private void OnDisable()
+    {
+        GameApp.OnGameStart -= GameStart;
+    }
+
+    private void GameStart()
+    {
+        SetText(EnforceManager.LevelDict[Enforce], EnforceManager.CoeffDict[Enforce], EnforceManager.PriceDict[Enforce]);
     }
 
     private void BuyEnforce()

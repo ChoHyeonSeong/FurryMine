@@ -36,7 +36,7 @@ public class Miner : MonoBehaviour
     private WaitForSeconds _mineAnimWait;
     private WaitForSeconds _mineWait;
 
-    private MineCart _cart { get => GameManager.Inst.Cart; }
+    private MineCart _cart { get => GameManager.Cart; }
     private GameObject _target;
     private SpriteRenderer _spriter;
     private Animator _animator;
@@ -138,8 +138,8 @@ public class Miner : MonoBehaviour
         }
         else if (_crtMiningCount == 0 && collision.gameObject.CompareTag(Consts.CartTag))
         {
-            GameManager.Inst.Cart.PlusMoney(_price);
-            GameManager.Inst.Cart.PlusCount(_mineralCount);
+            GameManager.Cart.PlusMoney(_price);
+            GameManager.Mine.SubmitMineral(_mineralCount);
             _mineralCount = 0;
             _price = 0;
             _crtMiningCount = _finalMiningCount;
@@ -151,7 +151,7 @@ public class Miner : MonoBehaviour
     private void StartMining(Ore targetOre)
     {
         _aiPath.destination = transform.position;
-        StartCoroutine(Mine(targetOre));
+        StartCoroutine(MineOre(targetOre));
     }
 
     private void InitAnimatorState()
@@ -179,7 +179,7 @@ public class Miner : MonoBehaviour
         return _finalCriticalPercent > Random.value;
     }
 
-    private IEnumerator Mine(Ore ore)
+    private IEnumerator MineOre(Ore ore)
     {
         SetAnim("Idle");
         yield return _mineWait;
@@ -192,7 +192,7 @@ public class Miner : MonoBehaviour
         }
         else
         {
-            StartCoroutine(Mine(ore));
+            StartCoroutine(MineOre(ore));
         }
     }
 

@@ -15,12 +15,12 @@ public class TimeBar : MonoBehaviour
 
     private void OnEnable()
     {
-        MineCart.OnChangeTime += UpdateBar;
+        Mine.OnSetTime += UpdateBar;
     }
 
     private void OnDisable()
     {
-        MineCart.OnChangeTime -= UpdateBar;
+        Mine.OnSetTime -= UpdateBar;
     }
 
     private void UpdateBar(float ratio)

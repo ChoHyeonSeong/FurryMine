@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public enum EEnforce
 {
@@ -13,152 +12,98 @@ public enum EEnforce
     HEAD_CRITICAL_POWER,
 }
 
-public class EnforceManager : MonoBehaviour
+public static class EnforceManager
 {
-    public Dictionary<EEnforce, int> LevelDict { get => _levelDict; }
+    public static Dictionary<EEnforce, int> LevelDict { get; private set; } = new Dictionary<EEnforce, int>();
+    public static Dictionary<EEnforce, int> PriceDict { get; private set; } = new Dictionary<EEnforce, int>();
+    public static Dictionary<EEnforce, float> CoeffDict { get; private set; } = new Dictionary<EEnforce, float>();
 
-    private Dictionary<EEnforce, int> _levelDict = new Dictionary<EEnforce, int>();
-    private Dictionary<EEnforce, int> _priceDict = new Dictionary<EEnforce, int>();
-    private Dictionary<EEnforce, float> _coeffDict = new Dictionary<EEnforce, float>();
-
-    private MineCart _cart;
-
-    public void Init()
+    public static void LoadEnforce()
     {
-        var enumArray = Enum.GetValues(typeof(EEnforce));
-        InitLevel(enumArray);
+        InitLevel();
         InitPrice();
         InitCoeff();
-        InitStat(enumArray);
     }
 
-    private void Start()
+    public static void LevelUpEnforce(EEnforce enforce)
     {
-        _cart = GameManager.Inst.Cart;
+        LevelDict[enforce]++;
+        UpdatePrice(enforce);
     }
 
-    private void OnEnable()
+    public static List<int> GetEnforceLevelList()
     {
-        EnforceItem.OnBuyEnforce += TryEnforce;
-        EnforceItem.OnInitInformation += InitItem;
+        List<int> list = new List<int>();
+        var enumArray = Enum.GetValues(typeof(EEnforce));
+        foreach (EEnforce enforce in enumArray )
+        {
+            list.Add(LevelDict[enforce]);
+        }
+        return list;
     }
 
-    private void OnDisable()
+    private static void InitLevel()
     {
-        EnforceItem.OnBuyEnforce -= TryEnforce;
-        EnforceItem.OnInitInformation -= InitItem;
-    }
-
-    private void InitLevel(Array enumArray)
-    {
+        var enumArray = Enum.GetValues(typeof(EEnforce));
         bool isSaveNull = SaveManager.Save.EnforceLevels == null;
         foreach (EEnforce enforce in enumArray)
         {
-            _levelDict[enforce] = isSaveNull ? 0 : SaveManager.Save.EnforceLevels[(int)enforce];
+            LevelDict[enforce] = isSaveNull ? 0 : SaveManager.Save.EnforceLevels[(int)enforce];
         }
     }
 
-    private void InitPrice()
+    private static void InitPrice()
     {
-        _priceDict[EEnforce.HEAD_MINING_POWER] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MINING_POWER]].HeadMiningPower;
-        _priceDict[EEnforce.HEAD_MINING_SPEED] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MINING_SPEED]].HeadMiningSpeed;
-        _priceDict[EEnforce.HEAD_MOTION_SPEED] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MOTION_SPEED]].HeadMotionSpeed;
-        _priceDict[EEnforce.HEAD_MOVING_SPEED] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MOVING_SPEED]].HeadMovingSpeed;
-        _priceDict[EEnforce.HEAD_MINING_COUNT] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_MINING_COUNT]].HeadMiningCount;
-        _priceDict[EEnforce.HEAD_CRITICAL_PERCENT] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_CRITICAL_PERCENT]].HeadCriticalPercent;
-        _priceDict[EEnforce.HEAD_CRITICAL_POWER] = DataManager.PriceDict[_levelDict[EEnforce.HEAD_CRITICAL_POWER]].HeadCriticalPower;
+        PriceDict[EEnforce.HEAD_MINING_POWER] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MINING_POWER]].HeadMiningPower;
+        PriceDict[EEnforce.HEAD_MINING_SPEED] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MINING_SPEED]].HeadMiningSpeed;
+        PriceDict[EEnforce.HEAD_MOTION_SPEED] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MOTION_SPEED]].HeadMotionSpeed;
+        PriceDict[EEnforce.HEAD_MOVING_SPEED] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MOVING_SPEED]].HeadMovingSpeed;
+        PriceDict[EEnforce.HEAD_MINING_COUNT] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_MINING_COUNT]].HeadMiningCount;
+        PriceDict[EEnforce.HEAD_CRITICAL_PERCENT] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_CRITICAL_PERCENT]].HeadCriticalPercent;
+        PriceDict[EEnforce.HEAD_CRITICAL_POWER] = TableManager.PriceTable[LevelDict[EEnforce.HEAD_CRITICAL_POWER]].HeadCriticalPower;
     }
 
-    private void InitCoeff()
+    private static void InitCoeff()
     {
-        _coeffDict[EEnforce.HEAD_MINING_POWER] = 1f;
-        _coeffDict[EEnforce.HEAD_MINING_SPEED] = 0.01f;
-        _coeffDict[EEnforce.HEAD_MOTION_SPEED] = 0.01f;
-        _coeffDict[EEnforce.HEAD_MOVING_SPEED] = 0.01f;
-        _coeffDict[EEnforce.HEAD_MINING_COUNT] = 1f;
-        _coeffDict[EEnforce.HEAD_CRITICAL_PERCENT] = 0.01f;
-        _coeffDict[EEnforce.HEAD_CRITICAL_POWER] = 0.01f;
+        CoeffDict[EEnforce.HEAD_MINING_POWER] = 1f;
+        CoeffDict[EEnforce.HEAD_MINING_SPEED] = 0.01f;
+        CoeffDict[EEnforce.HEAD_MOTION_SPEED] = 0.01f;
+        CoeffDict[EEnforce.HEAD_MOVING_SPEED] = 0.01f;
+        CoeffDict[EEnforce.HEAD_MINING_COUNT] = 1f;
+        CoeffDict[EEnforce.HEAD_CRITICAL_PERCENT] = 0.01f;
+        CoeffDict[EEnforce.HEAD_CRITICAL_POWER] = 0.01f;
     }
 
-    private void InitStat(Array enumArray)
+    private static void UpdatePrice(EEnforce enforce)
     {
-        foreach (EEnforce enforce in enumArray)
-        {
-            ApplyEnforce(enforce);
-        }
-    }
-
-    private void ApplyEnforce(EEnforce enforce)
-    {
+        int price;
         switch (enforce)
         {
             case EEnforce.HEAD_MINING_POWER:
-            case EEnforce.HEAD_MINING_SPEED:
-            case EEnforce.HEAD_MOTION_SPEED:
-            case EEnforce.HEAD_MOVING_SPEED:
-            case EEnforce.HEAD_MINING_COUNT:
-            case EEnforce.HEAD_CRITICAL_PERCENT:
-            case EEnforce.HEAD_CRITICAL_POWER:
-                GameManager.Inst.Player.EnforceStat(enforce, _levelDict[enforce] * _coeffDict[enforce]);
-                break;
-        }
-    }
-
-    private void UpdatePrice(int level, EEnforce enforce)
-    {
-        int price = 0;
-        switch (enforce)
-        {
-            case EEnforce.HEAD_MINING_POWER:
-                price = DataManager.PriceDict[level].HeadMiningPower;
+                price = TableManager.PriceTable[LevelDict[enforce]].HeadMiningPower;
                 break;
             case EEnforce.HEAD_MINING_SPEED:
-                price = DataManager.PriceDict[level].HeadMiningSpeed;
+                price = TableManager.PriceTable[LevelDict[enforce]].HeadMiningSpeed;
                 break;
             case EEnforce.HEAD_MOTION_SPEED:
-                price = DataManager.PriceDict[level].HeadMotionSpeed;
+                price = TableManager.PriceTable[LevelDict[enforce]].HeadMotionSpeed;
                 break;
             case EEnforce.HEAD_MOVING_SPEED:
-                price = DataManager.PriceDict[level].HeadMovingSpeed;
+                price = TableManager.PriceTable[LevelDict[enforce]].HeadMovingSpeed;
                 break;
             case EEnforce.HEAD_MINING_COUNT:
-                price = DataManager.PriceDict[level].HeadMiningCount;
+                price = TableManager.PriceTable[LevelDict[enforce]].HeadMiningCount;
                 break;
             case EEnforce.HEAD_CRITICAL_PERCENT:
-                price = DataManager.PriceDict[level].HeadCriticalPercent;
+                price = TableManager.PriceTable[LevelDict[enforce]].HeadCriticalPercent;
                 break;
             case EEnforce.HEAD_CRITICAL_POWER:
-                price = DataManager.PriceDict[level].HeadCriticalPower;
+                price = TableManager.PriceTable[LevelDict[enforce]].HeadCriticalPower;
+                break;
+            default:
+                price = 0; 
                 break;
         }
-        _priceDict[enforce] = price;
-    }
-
-
-    private void TryEnforce(EnforceItem item)
-    {
-        EEnforce enforce = item.Enforce;
-        if (_cart.MinusMoney(_priceDict[enforce]))
-        {
-            _levelDict[enforce]++;
-            UpdatePrice(_levelDict[enforce], enforce);
-            item.SetText(
-                _levelDict[enforce],
-                (int)(_coeffDict[enforce] * (item.Unit == EUnit.NONE ? 1 : 101)),
-                _priceDict[enforce]
-                );
-
-            ApplyEnforce(enforce);
-        }
-    }
-
-    private void InitItem(EnforceItem item)
-    {
-        EEnforce enforce = item.Enforce;
-        item.SetText(
-            _levelDict[enforce],
-            (int)(_coeffDict[enforce] * (item.Unit == EUnit.NONE ? 1 : 100)),
-            _priceDict[enforce]
-            );
+        PriceDict[enforce] = price;
     }
 }

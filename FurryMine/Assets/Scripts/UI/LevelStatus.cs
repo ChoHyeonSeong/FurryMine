@@ -19,12 +19,12 @@ public class LevelStatus : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnLevelUp += UpdateText;
+        Mine.OnSetMineLevel += UpdateText;
     }
 
     private void OnDisable()
     {
-        GameManager.OnLevelUp -= UpdateText;
+        Mine.OnSetMineLevel -= UpdateText;
     }
 
     private void UpdateText(int level)
