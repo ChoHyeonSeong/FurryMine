@@ -48,7 +48,7 @@ public class RewardReceiver : MonoBehaviour
         EEnforce rand = enforceList[Random.Range(0, enforceList.Count)];
         EnforceManager.LevelUpEnforce(rand);
         OnRandEnforce(rand);
-        _remainCoolTime = 10;
+        _remainCoolTime = 300;
         OnRemainCoolTime(_remainCoolTime);
         StartCoroutine(CoolTimeReward(_remainCoolTime));
     }
