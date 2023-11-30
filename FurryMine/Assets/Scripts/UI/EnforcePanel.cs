@@ -28,6 +28,6 @@ public class EnforcePanel : MonoBehaviour
 
     private void UpdateItem(EEnforce enforce)
     {
-        _items[enforce].SetText(EnforceManager.LevelDict[enforce], EnforceManager.CoeffDict[enforce], EnforceManager.PriceDict[enforce]);
+        _items[enforce].SetText(EnforceManager.GetLevel(enforce), EnforceManager.GetCoeff(enforce), EnforceManager.GetPrice(enforce));
     }
 }

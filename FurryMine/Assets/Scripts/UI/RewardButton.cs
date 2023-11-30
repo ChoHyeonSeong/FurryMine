@@ -53,7 +53,7 @@ public class RewardButton : MonoBehaviour
         var enumArray = Enum.GetValues(typeof(EEnforce));
         foreach (EEnforce enforce in enumArray)
         {
-            if (EnforceManager.LevelDict[enforce] < EnforceManager.LimitDict[enforce])
+            if (EnforceManager.GetLevel(enforce) < EnforceManager.GetLimit(enforce))
                 return true;
         }
         return false;

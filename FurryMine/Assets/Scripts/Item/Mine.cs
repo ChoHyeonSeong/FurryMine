@@ -57,6 +57,7 @@ public class Mine : MonoBehaviour
         _currentCount += count;
         if (_currentCount >= _quotaCount)
         {
+            _mineLevel++;
             _time = _limitTime;
             _currentCount -= _quotaCount;
             _quotaCount = (int)(_quotaCount * Consts.GoldenRatio);

@@ -30,7 +30,6 @@ public class FloatingTextSpawner : MonoBehaviour
 
     private void SpawnText(bool isGold, string content, Vector2 pos)
     {
-        Debug.Log(pos);
         FloatingText text = _floatingTextPool.CreateFloatingText(pos);
         text.Init(isGold, content);
     }

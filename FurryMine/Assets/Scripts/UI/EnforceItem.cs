@@ -40,18 +40,15 @@ public class EnforceItem : MonoBehaviour
 
     public void SetText(int level, float coeff, int price)
     {
-        int value;
         _titleText.text = $"{_titleStr} {level}";
         _priceText.text = price.ToString();
         switch (_unit)
         {
             case EUnit.NONE:
-                value = (int)coeff;
-                _valueText.text = $"+{level * value}";
+                _valueText.text = $"+{(int)(level * coeff)}";
                 break;
             case EUnit.PERCENT:
-                value = (int)(coeff * 101);
-                _valueText.text = $"+{level * value}%";
+                _valueText.text = $"+{level * coeff * 100}%";
                 break;
         }
     }
@@ -75,8 +72,8 @@ public class EnforceItem : MonoBehaviour
 
     private void GameStart()
     {
-        SetText(EnforceManager.LevelDict[Enforce], EnforceManager.CoeffDict[Enforce], EnforceManager.PriceDict[Enforce]);
-        if (EnforceManager.LevelDict[_enforce] >= EnforceManager.LimitDict[_enforce])
+        SetText(EnforceManager.GetLevel(_enforce), EnforceManager.GetCoeff(_enforce), EnforceManager.GetPrice(_enforce));
+        if (EnforceManager.GetLevel(_enforce) >= EnforceManager.GetLimit(_enforce))
         {
             _buyBtn.interactable = false;
         }
@@ -85,9 +82,5 @@ public class EnforceItem : MonoBehaviour
     private void BuyEnforce()
     {
         OnBuyEnforce(this);
-        if (EnforceManager.LevelDict[_enforce] >= EnforceManager.LimitDict[_enforce])
-        {
-            _buyBtn.interactable = false;
-        }
     }
 }

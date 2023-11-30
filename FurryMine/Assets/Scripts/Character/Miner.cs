@@ -13,7 +13,6 @@ public class Miner : MonoBehaviour
 
     private int _miningPower;
     private float _miningSpeed;
-    private float _motionSpeed;
     private int _miningCount;
     private float _movingSpeed;
     private float _criticalPercent;
@@ -21,7 +20,6 @@ public class Miner : MonoBehaviour
 
     private int _finalMiningPower;
     private float _finalMiningSpeed;
-    private float _finalMotionSpeed;
     private int _finalMiningCount;
     private float _finalMovingSpeed;
     private float _finalCriticalPercent;
@@ -43,7 +41,7 @@ public class Miner : MonoBehaviour
     private Rigidbody2D _rigid;
     private AIPath _aiPath;
 
-    public void Init(int baseMiningPower, float baseMiningSpeed, float baseMotionSpeed, float basemMovingSpeed, int baseMiningCount, float baseCriticalPercent, float baseCriticalPower)
+    public void Init(int baseMiningPower, float baseMiningSpeed, float basemMovingSpeed, int baseMiningCount, float baseCriticalPercent, float baseCriticalPower)
     {
         _spriter = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
@@ -53,7 +51,6 @@ public class Miner : MonoBehaviour
 
         _miningPower = baseMiningPower;
         _miningSpeed = baseMiningSpeed;
-        _motionSpeed = baseMotionSpeed;
         _movingSpeed = basemMovingSpeed;
         _miningCount = baseMiningCount;
         _criticalPercent = baseCriticalPercent;
@@ -61,7 +58,6 @@ public class Miner : MonoBehaviour
 
         _finalMiningPower = _miningPower;
         _finalMiningSpeed = _miningSpeed;
-        _finalMotionSpeed = _motionSpeed;
         _finalMovingSpeed = _movingSpeed;
         _finalMiningCount = _miningCount;
         _finalCriticalPercent = _criticalPercent;
@@ -71,8 +67,8 @@ public class Miner : MonoBehaviour
         _mineralCount = 0;
         _crtMiningCount = _miningCount;
         _aiPath.maxSpeed = _movingSpeed;
-        _mineWait = new WaitForSeconds(_miningTime * _miningSpeed);
-        _mineAnimWait = new WaitForSeconds(_miningAnimTime * _motionSpeed);
+        _mineWait = new WaitForSeconds(_miningTime / _miningSpeed);
+        _mineAnimWait = new WaitForSeconds(_miningAnimTime / _miningSpeed);
     }
 
     public void EnforceStat(EEnforce enforce, float enforceFigure)
@@ -84,12 +80,9 @@ public class Miner : MonoBehaviour
                 break;
             case EEnforce.HEAD_MINING_SPEED:
                 _finalMiningSpeed = _miningSpeed + enforceFigure;
+                _animator.SetFloat("MineSpeed", _finalMiningSpeed);
+                _mineAnimWait = new WaitForSeconds(_miningAnimTime / _finalMiningSpeed);
                 _mineWait = new WaitForSeconds(_miningTime / _finalMiningSpeed);
-                break;
-            case EEnforce.HEAD_MOTION_SPEED:
-                _finalMotionSpeed = _motionSpeed + enforceFigure;
-                _animator.SetFloat("MineSpeed", _finalMotionSpeed);
-                _mineAnimWait = new WaitForSeconds(_miningAnimTime / _finalMotionSpeed);
                 break;
             case EEnforce.HEAD_MOVING_SPEED:
                 _finalMovingSpeed = _movingSpeed * (1f + enforceFigure);

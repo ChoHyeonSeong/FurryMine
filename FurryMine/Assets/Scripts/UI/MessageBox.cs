@@ -32,9 +32,6 @@ public class MessageBox : MonoBehaviour
             case EEnforce.HEAD_MINING_SPEED:
                 enforceText = "Ã¤±¤¼Óµµ";
                 break;
-            case EEnforce.HEAD_MOTION_SPEED:
-                enforceText = "°î±ªÀÌ¼Óµµ";
-                break;
             case EEnforce.HEAD_MOVING_SPEED:
                 enforceText = "ÀÌµ¿¼Óµµ";
                 break;

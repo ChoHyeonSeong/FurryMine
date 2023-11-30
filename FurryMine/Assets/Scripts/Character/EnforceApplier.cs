@@ -26,26 +26,29 @@ public class EnforceApplier : MonoBehaviour
     {
         _headMiner = GameManager.Player;
         _mineCart = GameManager.Cart;
-        var enumArray = Enum.GetValues(typeof(EEnforce));
-        foreach (EEnforce enforce in enumArray)
+        for (int enforce = 0; enforce < EnforceManager.EnforceCount; enforce++)
         {
-            ApplyEnforce(enforce);
+            ApplyEnforce((EEnforce)enforce);
         }
     }
 
     private void BuyEnforceItem(EnforceItem item)
     {
         EEnforce enforce = item.Enforce;
-        if (_mineCart.MinusMoney(EnforceManager.PriceDict[enforce]))
+        if (_mineCart.MinusMoney(EnforceManager.GetPrice(enforce)))
         {
             EnforceManager.LevelUpEnforce(enforce);
             ApplyEnforce(enforce);
-            item.SetText(EnforceManager.LevelDict[enforce], EnforceManager.CoeffDict[enforce], EnforceManager.PriceDict[enforce]);
+            item.SetText(
+                EnforceManager.GetLevel(enforce),
+                EnforceManager.GetCoeff(enforce),
+                EnforceManager.GetLevel(enforce) >= EnforceManager.GetLimit(enforce) ? 0 : EnforceManager.GetPrice(enforce)
+                );
         }
     }
 
     private void ApplyEnforce(EEnforce enforce)
     {
-        _headMiner.EnforceStat(enforce, EnforceManager.LevelDict[enforce] * EnforceManager.CoeffDict[enforce]);
+        _headMiner.EnforceStat(enforce, EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
     }
 }

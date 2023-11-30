@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0ebaca54584a243996e97d87232241, type: 3}
+  m_Name: EnforceTable
+  m_EditorClassIdentifier: 
+  Table:
+  - Id: 0
+    Name: "\uCC44\uAD11\uB825"
+    Limit: 5
+    Coeff: 1
+    Price: 10
+  - Id: 1
+    Name: "\uCC44\uAD11\uC18D\uB3C4"
+    Limit: 1000
+    Coeff: 0.01
+    Price: 10
+  - Id: 2
+    Name: "\uC774\uB3D9\uC18D\uB3C4"
+    Limit: 1000
+    Coeff: 0.01
+    Price: 10
+  - Id: 3
+    Name: "\uAC15\uD0C0 \uD655\uB960"
+    Limit: 100
+    Coeff: 0.001
+    Price: 100
+  - Id: 4
+    Name: "\uAC15\uD0C0 \uD30C\uAD34\uB825"
+    Limit: 1000
+    Coeff: 0.01
+    Price: 100
+  - Id: 5
+    Name: "\uB3D9\uB8CC \uC778\uC6D0"
+    Limit: 10
+    Coeff: 1
+    Price: 10000
+  - Id: 6
+    Name: "\uB3D9\uB8CC \uCC44\uAD11\uB825"
+    Limit: 1000
+    Coeff: 1
+    Price: 100
+  - Id: 7
+    Name: "\uB3D9\uB8CC \uCC44\uAD11\uC18D\uB3C4"
+    Limit: 1000
+    Coeff: 0.01
+    Price: 100
+  - Id: 8
+    Name: "\uB3D9\uB8CC \uC774\uB3D9\uC18D\uB3C4"
+    Limit: 1000
+    Coeff: 0.01
+    Price: 100

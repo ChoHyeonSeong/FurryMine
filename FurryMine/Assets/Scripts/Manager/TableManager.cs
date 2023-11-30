@@ -5,7 +5,7 @@ using UnityEngine;
 public static class TableManager
 {
     public static Dictionary<int, MineEntity> MineTable = new Dictionary<int, MineEntity>();
-    public static Dictionary<int, PriceEntity> PriceTable = new Dictionary<int, PriceEntity>();
+    public static Dictionary<int, EnforceEntity> EnforceTable = new Dictionary<int, EnforceEntity>();
 
     public static void LoadTable()
     {
@@ -15,10 +15,10 @@ public static class TableManager
             MineTable[entity.Level] = entity;
         }
 
-        var enforcePriceData = Resources.Load<PriceTable>("Datas/PriceTable");
-        foreach (var entity in enforcePriceData.Table)
+        var enforceData = Resources.Load<EnforceTable>("Datas/EnforceTable");
+        foreach (var entity in enforceData.Table)
         {
-            PriceTable[entity.Level] = entity;
+            EnforceTable[entity.Id] = entity;
         }
     }
 }
