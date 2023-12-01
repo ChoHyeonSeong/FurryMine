@@ -1,8 +1,10 @@
+using System;
 using System.IO;
 using UnityEngine;
 
 public static class SaveManager
 {
+    public static Action OnComplete { get; set; }
     public static SaveData Save { get; private set; }
 
     private static string _filePath = Application.persistentDataPath + "/Save.txt";
@@ -17,6 +19,7 @@ public static class SaveManager
 
     public static void LoadGame()
     {
+        GameApp.AddLoading(1);
         if (File.Exists(_filePath))
         {
             string code = File.ReadAllText(_filePath);
@@ -29,5 +32,6 @@ public static class SaveManager
             Save = new SaveData();
             //처음부터
         }
+        OnComplete();
     }
 }

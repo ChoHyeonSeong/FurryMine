@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Animation
+  m_EditorClassIdentifier: 
+  m_GroupName: Animation
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0000101289e31ad42a7ec6ed654b0c2f
+  m_SerializeEntries:
+  - m_GUID: 299701dd37a023045ade0f9845be593d
+    m_Address: Assets/Animations/000_FoxMiner.controller
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AnimCtrl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 871929a21d2bd864795659729dd3d615
+    m_Address: Assets/Animations/001_WolfMIner.overrideController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AnimCtrl
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ff4495624a54e114bb19be1ea6188a86, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 16ed62fa400a31943a23f2706bda23f0, type: 2}
+    - {fileID: 11400000, guid: c7cd39261f257724da6ea3fc5e169f91, type: 2}

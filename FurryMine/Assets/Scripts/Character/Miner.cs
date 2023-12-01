@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -41,12 +42,13 @@ public class Miner : MonoBehaviour
     private Rigidbody2D _rigid;
     private AIPath _aiPath;
 
-    public void Init(int baseMiningPower, float baseMiningSpeed, float basemMovingSpeed, int baseMiningCount, float baseCriticalPercent, float baseCriticalPower)
+    public void Init(int baseMiningPower, float baseMiningSpeed, float basemMovingSpeed, int baseMiningCount, float baseCriticalPercent, float baseCriticalPower , RuntimeAnimatorController animCtrl)
     {
         _spriter = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
         _rigid = GetComponent<Rigidbody2D>();
         _aiPath = GetComponent<AIPath>();
+        _animator.runtimeAnimatorController = animCtrl;
         _animator.SetBool("Idle", true);
 
         _miningPower = baseMiningPower;

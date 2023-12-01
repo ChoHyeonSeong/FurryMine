@@ -31,14 +31,17 @@ public class Mine : MonoBehaviour
 
     private void Update()
     {
-        _time -= Time.deltaTime;
-        if (_time < 0)
+        if(GameApp.IsGameStart)
         {
-            _time = _limitTime;
-            _currentCount = 0;
-            OnSetSubmitMineral(_currentCount);
+            _time -= Time.deltaTime;
+            if (_time < 0)
+            {
+                _time = _limitTime;
+                _currentCount = 0;
+                OnSetSubmitMineral(_currentCount);
+            }
+            OnSetTime(_time / _limitTime);
         }
-        OnSetTime(_time / _limitTime);
     }
 
 

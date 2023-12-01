@@ -12,20 +12,23 @@ public class LevelStatus : MonoBehaviour
     {
         _levelText.text = "1";
     }
-    private void Start()
-    {
-        _levelText.text = SaveManager.Save.MineLevel.ToString();
-    }
-
     private void OnEnable()
     {
         Mine.OnSetMineLevel += UpdateText;
+        GameApp.OnGameStart += GameStart;
     }
 
     private void OnDisable()
     {
         Mine.OnSetMineLevel -= UpdateText;
+        GameApp.OnGameStart -= GameStart;
     }
+
+    private void GameStart()
+    {
+        _levelText.text = SaveManager.Save.MineLevel.ToString();
+    }
+
 
     private void UpdateText(int level)
     {

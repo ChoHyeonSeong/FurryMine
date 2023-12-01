@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnforceApplier : MonoBehaviour
 {
-    private HeadMiner _headMiner;
+    private Miner _headMiner;
     private MineCart _mineCart;
 
     private void OnEnable()
@@ -24,7 +24,6 @@ public class EnforceApplier : MonoBehaviour
 
     private void GameStart()
     {
-        _headMiner = GameManager.Player;
         _mineCart = GameManager.Cart;
         for (int enforce = 0; enforce < EnforceManager.EnforceCount; enforce++)
         {
