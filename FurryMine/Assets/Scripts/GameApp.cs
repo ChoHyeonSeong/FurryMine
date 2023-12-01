@@ -7,7 +7,7 @@ public class GameApp : MonoBehaviour
 
     public static bool IsGameStart { get; private set; } = false;
 
-    private static int _loadingCount = 0;
+    private static int _loadingCount = 5;
 
     private void Awake()
     {
@@ -31,19 +31,15 @@ public class GameApp : MonoBehaviour
     private void CompleteLoading()
     {
         _loadingCount--;
-        if(_loadingCount <= 0)
+        if (_loadingCount <= 0)
         {
+            Debug.Log("Complete Loading");
             EnforceManager.LoadEnforce();
             GameManager.LoadCaching();
             AdManager.LoadRewardedAd();
             IsGameStart = true;
             OnGameStart();
         }
-    }
-
-    public static void AddLoading(int loadingCount)
-    {
-        _loadingCount += loadingCount;
     }
 
     private void OnApplicationPause(bool pause)

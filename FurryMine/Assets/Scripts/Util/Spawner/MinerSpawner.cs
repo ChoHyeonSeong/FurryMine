@@ -27,10 +27,19 @@ public class MinerSpawner : MonoBehaviour
 
     private Miner GameStart()
     {
-        Miner head = _minerPool.CreateMiner();
-        MinerEntity entity = TableManager.MinerTable[SaveManager.Save.HeadMinerId];
-        head.Init(entity.MiningPower, entity.MiningSpeed, entity.MovingSpeed, entity.MiningCount, entity.CriticalPercent, entity.CriticalPower, ResourceManager.AnimCtrlList[entity.Id]);
-        return head;
+        return SpawnMiner(SaveManager.Save.HeadMinerId);
     }
 
+    private Miner SpawnMiner(int id)
+    {
+        Miner miner = _minerPool.CreateMiner(transform.position);
+        MinerEntity entity = TableManager.MinerTable[id];
+        miner.Init(entity.MiningPower, entity.MiningSpeed, entity.MovingSpeed, entity.MiningCount, entity.CriticalPercent, entity.CriticalPower, ResourceManager.AnimCtrlList[entity.Id]);
+        return miner;
+    }
+
+    private void CollectMiner(Miner miner)
+    {
+        _minerPool.DestoryMiner(miner);
+    }
 }

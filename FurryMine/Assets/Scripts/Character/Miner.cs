@@ -1,3 +1,4 @@
+using BackEnd.Game;
 using Pathfinding;
 using System;
 using System.Collections;
@@ -11,6 +12,9 @@ public class Miner : MonoBehaviour
 {
     public static Func<Ore> RequestOre { get; set; }
     public Action<int> OnChangeMineralCount { get; set; }
+
+    public Transform CameraTr { get => _cameraTr; }
+
 
     private int _miningPower;
     private float _miningSpeed;
@@ -35,7 +39,9 @@ public class Miner : MonoBehaviour
     private WaitForSeconds _mineAnimWait;
     private WaitForSeconds _mineWait;
 
-    private MineCart _cart { get => GameManager.Cart; }
+    [SerializeField]
+    private Transform _cameraTr;
+    private MineCart _cart;
     private GameObject _target;
     private SpriteRenderer _spriter;
     private Animator _animator;
@@ -69,6 +75,7 @@ public class Miner : MonoBehaviour
         _mineralCount = 0;
         _crtMiningCount = _miningCount;
         _aiPath.maxSpeed = _movingSpeed;
+        _cart = GameManager.Cart;
         _mineWait = new WaitForSeconds(_miningTime / _miningSpeed);
         _mineAnimWait = new WaitForSeconds(_miningAnimTime / _miningSpeed);
     }

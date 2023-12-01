@@ -14,9 +14,9 @@ public static class GameManager
 
     public static void LoadCaching()
     {
-        Player = SpawnHeadMiner();
         Cart = Object.FindAnyObjectByType<MineCart>();
         Mine = Object.FindAnyObjectByType<Mine>();
         Reward = Object.FindAnyObjectByType<RewardReceiver>();
+        Player = SpawnHeadMiner();
     }
 }

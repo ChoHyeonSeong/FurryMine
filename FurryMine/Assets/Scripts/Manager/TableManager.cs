@@ -19,7 +19,6 @@ public static class TableManager
 
     public static void LoadTable()
     {
-        GameApp.AddLoading(3);
         _minerRef = new AssetReferenceT<MinerTable>("Assets/Datas/MinerTable.asset");
 
         _minerRef.LoadAssetAsync().Completed += (table) =>
@@ -29,6 +28,7 @@ public static class TableManager
             {
                 MinerTable[entity.Id] = entity;
             }
+            Debug.Log("MinerTable Load");
             OnComplete();
         };
 
@@ -41,6 +41,7 @@ public static class TableManager
             {
                 MineTable[entity.Level] = entity;
             }
+            Debug.Log("MineTable Load");
             OnComplete();
         };
 
@@ -54,12 +55,14 @@ public static class TableManager
             {
                 EnforceTable[entity.Id] = entity;
             }
+            Debug.Log("EnforceTable Load");
             OnComplete();
         };
     }
 
     public static void UnloadTable()
     {
+        _minerRef.ReleaseAsset();
         _mineRef.ReleaseAsset();
         _enforceRef.ReleaseAsset();
     }
