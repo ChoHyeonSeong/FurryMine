@@ -9,6 +9,7 @@ public class SaveData
         Money = money;
         MineLevel = mineLevel;
         RemainCoolTime = remainCoolTime;
+        HeadMinerId = 0;
         EnforceLevels = enforceLevels;
     }
 
@@ -17,5 +18,6 @@ public class SaveData
     public int Money;
     public int MineLevel;
     public int RemainCoolTime;
+    public int HeadMinerId;
     public List<int> EnforceLevels;
 }
