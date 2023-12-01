@@ -15,7 +15,7 @@ MonoBehaviour:
   Table:
   - Id: 0
     Name: "\uCC44\uAD11\uB825"
-    Limit: 5
+    Limit: 1000
     Coeff: 1
     Price: 10
   - Id: 1
