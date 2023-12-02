@@ -23,21 +23,6 @@ public class MinerSpawner : MonoBehaviour
         _minerPool = GetComponent<MinerPool>();
     }
 
-    private void OnEnable()
-    {
-        GameManager.SpawnHeadMiner += GameStart;
-    }
-
-    private void OnDisable()
-    {
-        GameManager.SpawnHeadMiner -= GameStart;
-    }
-
-    private Miner GameStart()
-    {
-        return SpawnMiner(SaveManager.Save.HeadMinerId);
-    }
-
     private void CollectMiner(Miner miner)
     {
         _minerPool.DestoryMiner(miner);

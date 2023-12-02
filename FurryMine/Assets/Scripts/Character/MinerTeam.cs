@@ -12,39 +12,76 @@ public class MinerTeam : MonoBehaviour
     private MinerSpawner _minerSpawner;
     private List<Miner> _staffMiners;
 
-    public void EnforceTeam(EEnforce enforce, float enforceFigure)
+    private List<EEnforce> _headStatEnforce;
+    private List<EEnforce> _staffStatEnforce;
+
+    public void EnforceStaff(EEnforce enforce)
     {
-        switch (enforce)
+        float figure = EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce);
+        if (EEnforce.STAFF_MINER_COUNT == enforce)
         {
-            case EEnforce.STAFF_MINER_COUNT:
-                int count = (int)enforceFigure;
-                for (int i = _staffMiners.Count; i < count; i++)
+            int count = (int)figure;
+            if (_staffMiners.Count < count)
+            {
+                Miner miner = _minerSpawner.SpawnMiner(1);
+                foreach (EEnforce allStat in _staffStatEnforce)
                 {
-                    _staffMiners.Add(_minerSpawner.SpawnMiner(1));
+                    miner.EnforceStat(allStat, EnforceManager.GetLevel(allStat) * EnforceManager.GetCoeff(allStat));
                 }
-                break;
+                _staffMiners.Add(miner);
+            }
         }
+        else
+        {
+            foreach (Miner miner in _staffMiners)
+            {
+                miner.EnforceStat(enforce, figure);
+            }
+        }
+
+    }
+
+    public void EnforceHead(EEnforce enforce)
+    {
+        _headMiner.EnforceStat(enforce, EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
     }
 
     private void Awake()
     {
         _minerSpawner = GetComponent<MinerSpawner>();
         _staffMiners = new List<Miner>();
+        _headStatEnforce = new List<EEnforce>();
+        _staffStatEnforce = new List<EEnforce>();
+
+        for (int i = 0; i < 5; i++)
+        {
+            _headStatEnforce.Add((EEnforce)i);
+        }
+
+        for (int i = 6; i < 9; i++)
+        {
+            _staffStatEnforce.Add((EEnforce)i);
+        }
     }
 
     private void OnEnable()
     {
-        GameApp.OnGameStart += GameStart;
+        GameApp.OnPreGameStart += GameStart;
     }
 
     private void OnDisable()
     {
-        GameApp.OnGameStart -= GameStart;
+        GameApp.OnPreGameStart -= GameStart;
     }
 
-    private void GameStart()
+    public void GameStart()
     {
-        _headMiner = GameManager.Player;
+        _headMiner = _minerSpawner.SpawnMiner(SaveManager.Save.HeadMinerId);
+        int staffCount = EnforceManager.GetLevel(EEnforce.STAFF_MINER_COUNT);
+        for (int i = 0; i < staffCount; i++)
+        {
+            _staffMiners.Add(_minerSpawner.SpawnMiner(1));
+        }
         _followCam.Follow = _headMiner.CameraTr;
     }
 }

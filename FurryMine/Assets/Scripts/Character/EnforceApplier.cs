@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnforceApplier : MonoBehaviour
 {
-    private Miner _headMiner;
     private MineCart _mineCart;
     private MinerTeam _minerTeam;
 
@@ -30,7 +29,6 @@ public class EnforceApplier : MonoBehaviour
 
     private void GameStart()
     {
-        _headMiner = GameManager.Player;
         _mineCart = GameManager.Cart;
         for (int enforce = 0; enforce < EnforceManager.EnforceCount; enforce++)
         {
@@ -62,10 +60,16 @@ public class EnforceApplier : MonoBehaviour
             case EEnforce.HEAD_MOVING_SPEED:
             case EEnforce.HEAD_CRITICAL_PERCENT:
             case EEnforce.HEAD_CRITICAL_POWER:
-                _headMiner.EnforceStat(enforce, EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+                _minerTeam.EnforceHead(enforce);
                 break;
             case EEnforce.STAFF_MINER_COUNT:
-                _minerTeam.EnforceTeam(enforce, EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+            case EEnforce.STAFF_MINING_POWER:
+            case EEnforce.STAFF_MINING_SPEED:
+            case EEnforce.STAFF_MOVING_SPEED:
+                _minerTeam.EnforceStaff(enforce);
+                break;
+            default:
+                Debug.Log("지정되지 않은 강화");
                 break;
         }
     }

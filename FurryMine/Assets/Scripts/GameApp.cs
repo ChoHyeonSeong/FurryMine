@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameApp : MonoBehaviour
 {
+    public static Action OnPreGameStart { get; set; }
     public static Action OnGameStart { get; set; }
 
     public static bool IsGameStart { get; private set; } = false;
@@ -38,6 +39,7 @@ public class GameApp : MonoBehaviour
             GameManager.LoadCaching();
             AdManager.LoadRewardedAd();
             IsGameStart = true;
+            OnPreGameStart();
             OnGameStart();
         }
     }
@@ -52,7 +54,7 @@ public class GameApp : MonoBehaviour
                 GameManager.Cart.Money,
                 GameManager.Mine.MineLevel,
                 GameManager.Reward.RemainCoolTime,
-                EnforceManager.GetEnforceLevelList()
+                EnforceManager.GetLevelList()
                 ));
         }
 #endif
@@ -68,7 +70,7 @@ public class GameApp : MonoBehaviour
             GameManager.Cart.Money,
             GameManager.Mine.MineLevel,
             GameManager.Reward.RemainCoolTime,
-            EnforceManager.GetEnforceLevelList()
+            EnforceManager.GetLevelList()
             ));
 #endif
     }

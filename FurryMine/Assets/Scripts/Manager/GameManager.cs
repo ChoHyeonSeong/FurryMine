@@ -4,8 +4,6 @@ using Object = UnityEngine.Object;
 
 public static class GameManager
 {
-    public static Func<Miner> SpawnHeadMiner { get; set; }
-
     public static Miner Player { get; private set; }
     public static MineCart Cart { get; private set; }
     public static Mine Mine { get; private set; }
@@ -17,6 +15,5 @@ public static class GameManager
         Cart = Object.FindAnyObjectByType<MineCart>();
         Mine = Object.FindAnyObjectByType<Mine>();
         Reward = Object.FindAnyObjectByType<RewardReceiver>();
-        Player = SpawnHeadMiner();
     }
 }

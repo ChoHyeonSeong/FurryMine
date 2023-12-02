@@ -23,6 +23,7 @@ public class Miner : MonoBehaviour
     private float _criticalPercent;
     private float _criticalPower;
 
+    [SerializeField]
     private int _finalMiningPower;
     private float _finalMiningSpeed;
     private int _finalMiningCount;
@@ -84,15 +85,18 @@ public class Miner : MonoBehaviour
     {
         switch (enforce)
         {
+            case EEnforce.STAFF_MINING_POWER:
             case EEnforce.HEAD_MINING_POWER:
                 _finalMiningPower = _miningPower + (int)enforceFigure;
                 break;
+            case EEnforce.STAFF_MINING_SPEED:
             case EEnforce.HEAD_MINING_SPEED:
                 _finalMiningSpeed = _miningSpeed + enforceFigure;
                 _animator.SetFloat("MineSpeed", _finalMiningSpeed);
                 _mineAnimWait = new WaitForSeconds(_miningAnimTime / _finalMiningSpeed);
                 _mineWait = new WaitForSeconds(_miningTime / _finalMiningSpeed);
                 break;
+            case EEnforce.STAFF_MOVING_SPEED:
             case EEnforce.HEAD_MOVING_SPEED:
                 _finalMovingSpeed = _movingSpeed * (1f + enforceFigure);
                 _aiPath.maxSpeed = _finalMovingSpeed;
@@ -102,6 +106,9 @@ public class Miner : MonoBehaviour
                 break;
             case EEnforce.HEAD_CRITICAL_POWER:
                 _finalCriticalPower = _criticalPower + enforceFigure;
+                break;
+            default:
+                Debug.Log("지정되지 않은 광부 강화입니다.");
                 break;
         }
     }

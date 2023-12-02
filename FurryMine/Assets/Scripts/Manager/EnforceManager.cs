@@ -10,6 +10,9 @@ public enum EEnforce
     HEAD_CRITICAL_PERCENT,
     HEAD_CRITICAL_POWER,
     STAFF_MINER_COUNT,
+    STAFF_MINING_POWER,
+    STAFF_MINING_SPEED,
+    STAFF_MOVING_SPEED,
     COUNT
 }
 
@@ -54,6 +57,11 @@ public static class EnforceManager
     public static float GetLimit(EEnforce enforce)
     {
         return TableManager.EnforceTable[_enumToId[enforce]].Limit;
+    }
+
+    public static List<int> GetLevelList()
+    {
+        return _levelList;
     }
 
     private static void InitEnumToId()

@@ -24,7 +24,7 @@ public static class ResourceManager
         }).Completed += (table) =>
         {
             _animCtrlHandle = table;
-            Debug.Log("Load Resource");
+            Debug.Log("Resource Load");
             OnComplete();
         };
 
