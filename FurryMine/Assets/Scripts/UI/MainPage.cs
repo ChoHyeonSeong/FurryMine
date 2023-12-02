@@ -10,12 +10,14 @@ public class MainPage : MonoBehaviour
 
     [SerializeField]
     private Button _headMenu;
-
+    [SerializeField]
     private Button _staffMenu;
     private Button _mineMenu;
     private Button _snackMenu;
 
+    [SerializeField]
     private GameObject _headScroll;
+    [SerializeField]
     private GameObject _staffScroll;
     private GameObject _mineScroll;
     private GameObject _snackScroll;
@@ -25,17 +27,13 @@ public class MainPage : MonoBehaviour
     private void Awake()
     {
         _headMenu.onClick.AddListener(ShowHeadMenu);
-/*        _staffMenu.onClick.AddListener(ShowStaffMenu);
+        _staffMenu.onClick.AddListener(ShowStaffMenu);/*
         _mineMenu.onClick.AddListener(ShowMineMenu);
         _snackMenu.onClick.AddListener(ShowSnackMenu);*/
 
-        _headScroll = _headMenu.GetComponentInChildren<ScrollRect>().gameObject;
-/*        _staffScroll = _staffMenu.GetComponentInChildren<ScrollRect>().gameObject;
-        _mineScroll = _mineMenu.GetComponentInChildren<ScrollRect>().gameObject;
-        _snackScroll = _snackMenu.GetComponentInChildren<ScrollRect>().gameObject;*/
 
         _prevScroll = _headScroll;
-/*        _staffScroll.SetActive(false);
+        _staffScroll.SetActive(false);/*
         _mineScroll.SetActive(false);
         _snackScroll.SetActive(false);*/
     }

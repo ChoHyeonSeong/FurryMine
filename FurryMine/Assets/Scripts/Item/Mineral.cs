@@ -50,7 +50,10 @@ public class Mineral : MonoBehaviour
     {
         if (!collision.CompareTag(Consts.MinerTag))
             return;
-        collision.GetComponent<Miner>().PlusPrice(this);
+        Miner miner = collision.GetComponent<Miner>();
+        if (miner != _miner)
+            return;
+        miner.PlusPrice(this);
         OnPickMineral(this);
     }
 

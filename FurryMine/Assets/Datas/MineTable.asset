@@ -15,77 +15,77 @@ MonoBehaviour:
   Table:
   - Level: 1
     OreHealth: 1
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 1
     MineralCount: 1
   - Level: 2
     OreHealth: 2
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 1
     MineralCount: 1
   - Level: 3
     OreHealth: 3
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 2
     MineralCount: 1
   - Level: 4
     OreHealth: 4
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 2
     MineralCount: 1
   - Level: 5
     OreHealth: 5
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 3
     MineralCount: 1
   - Level: 6
     OreHealth: 6
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 3
     MineralCount: 1
   - Level: 7
     OreHealth: 7
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 4
     MineralCount: 1
   - Level: 8
     OreHealth: 8
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 4
     MineralCount: 1
   - Level: 9
     OreHealth: 9
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 5
     MineralCount: 1
   - Level: 10
     OreHealth: 10
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 5
     MineralCount: 1
   - Level: 11
     OreHealth: 11
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 6
     MineralCount: 1
   - Level: 12
     OreHealth: 12
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 6
     MineralCount: 1
   - Level: 13
     OreHealth: 13
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 7
     MineralCount: 1
   - Level: 14
     OreHealth: 14
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 7
     MineralCount: 1
   - Level: 15
     OreHealth: 15
-    OreCount: 1
+    OreCount: 5
     MineralPrice: 8
     MineralCount: 1
   - Level: 16

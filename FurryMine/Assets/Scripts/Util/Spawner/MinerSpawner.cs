@@ -10,6 +10,14 @@ public class MinerSpawner : MonoBehaviour
 
     private MinerPool _minerPool;
 
+    public Miner SpawnMiner(int id)
+    {
+        Miner miner = _minerPool.CreateMiner(transform.position);
+        MinerEntity entity = TableManager.MinerTable[id];
+        miner.Init(entity.MiningPower, entity.MiningSpeed, entity.MovingSpeed, entity.MiningCount, entity.CriticalPercent, entity.CriticalPower, ResourceManager.AnimCtrlList[entity.Id]);
+        return miner;
+    }
+
     private void Awake()
     {
         _minerPool = GetComponent<MinerPool>();
@@ -28,14 +36,6 @@ public class MinerSpawner : MonoBehaviour
     private Miner GameStart()
     {
         return SpawnMiner(SaveManager.Save.HeadMinerId);
-    }
-
-    private Miner SpawnMiner(int id)
-    {
-        Miner miner = _minerPool.CreateMiner(transform.position);
-        MinerEntity entity = TableManager.MinerTable[id];
-        miner.Init(entity.MiningPower, entity.MiningSpeed, entity.MovingSpeed, entity.MiningCount, entity.CriticalPercent, entity.CriticalPower, ResourceManager.AnimCtrlList[entity.Id]);
-        return miner;
     }
 
     private void CollectMiner(Miner miner)

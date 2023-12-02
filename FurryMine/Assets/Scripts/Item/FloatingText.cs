@@ -30,7 +30,6 @@ public class FloatingText : MonoBehaviour
         _floatingTime = 0;
         _startPosition = transform.localPosition;
         _startPosition.y += _isGold ? _goldStartY : _damageStartY;
-        Debug.Log(_startPosition);
         transform.localPosition = _startPosition;
         transform.localScale = Vector3.one;
         transform.DOLocalMoveY(_startPosition.y + 1, _isGold ? _goldTime : _damageTime);

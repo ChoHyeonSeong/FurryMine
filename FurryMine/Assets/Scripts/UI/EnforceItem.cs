@@ -58,14 +58,11 @@ public class EnforceItem : MonoBehaviour
         _buyBtn = GetComponentInChildren<Button>();
         _titleStr = _titleText.text;
         _buyBtn.onClick.AddListener(BuyEnforce);
-    }
-
-    private void OnEnable()
-    {
         GameApp.OnGameStart += GameStart;
     }
 
-    private void OnDisable()
+
+    private void OnDestroy()
     {
         GameApp.OnGameStart -= GameStart;
     }

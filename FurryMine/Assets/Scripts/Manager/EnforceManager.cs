@@ -9,6 +9,7 @@ public enum EEnforce
     HEAD_MOVING_SPEED,
     HEAD_CRITICAL_PERCENT,
     HEAD_CRITICAL_POWER,
+    STAFF_MINER_COUNT,
     COUNT
 }
 

@@ -7,6 +7,12 @@ public class EnforceApplier : MonoBehaviour
 {
     private Miner _headMiner;
     private MineCart _mineCart;
+    private MinerTeam _minerTeam;
+
+    private void Awake()
+    {
+        _minerTeam = GetComponent<MinerTeam>();
+    }
 
     private void OnEnable()
     {
@@ -49,6 +55,18 @@ public class EnforceApplier : MonoBehaviour
 
     private void ApplyEnforce(EEnforce enforce)
     {
-        _headMiner.EnforceStat(enforce, EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+        switch (enforce)
+        {
+            case EEnforce.HEAD_MINING_POWER:
+            case EEnforce.HEAD_MINING_SPEED:
+            case EEnforce.HEAD_MOVING_SPEED:
+            case EEnforce.HEAD_CRITICAL_PERCENT:
+            case EEnforce.HEAD_CRITICAL_POWER:
+                _headMiner.EnforceStat(enforce, EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+                break;
+            case EEnforce.STAFF_MINER_COUNT:
+                _minerTeam.EnforceTeam(enforce, EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+                break;
+        }
     }
 }

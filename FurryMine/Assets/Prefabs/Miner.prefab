@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 6620315322663760026}
   - component: {fileID: 2809713273684258679}
   - component: {fileID: 2679783252202705591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Miner
   m_TagString: Miner
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  drawGizmos: 1
+  drawGizmos: 0
   detailedGizmos: 0
   startEndModifier:
     addPoints: 0
