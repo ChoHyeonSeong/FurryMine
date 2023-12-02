@@ -5,83 +5,89 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    public static Action<int> OnSetMineLevel { get; set; }
-    public static Action<float> OnSetSubmitMineral { get; set; }
-    public static Action<float> OnSetTime { get; set; }
+    private int _oreId;
+    private int _oreDeposit;
+    private int _oreHealth;
+    private float _respawnTime;
 
-    public int MineLevel { get => _mineLevel; }
+    private float _respawnSpeed;
+    private int _oreCount;
+    private int _mineralCount;
+    private int _mineralPrice;
 
-    private int _quotaCount;
-    private int _currentCount;
-    private float _limitTime = 60f;
-    private float _time;
-    private int _mineLevel;
-    private MineralSpawner _mineralSpawner;
+    private float _finalRespawnSpeed;
+    private int _finalOreCount;
+    private int _finalMineralCount;
+    private int _finalMineralPrice;
+
     private OreSpawner _oreSpawner;
+    private MineralSpawner _mineralSpawner;
 
     private void Awake()
     {
         _mineralSpawner = FindAnyObjectByType<MineralSpawner>();
         _oreSpawner = FindAnyObjectByType<OreSpawner>();
-
-        _currentCount = 0;
-        _quotaCount = 5;
-        _time = _limitTime;
     }
-
-    private void Update()
-    {
-        if(GameApp.IsGameStart)
-        {
-            _time -= Time.deltaTime;
-            if (_time < 0)
-            {
-                _time = _limitTime;
-                _currentCount = 0;
-                OnSetSubmitMineral(_currentCount);
-            }
-            OnSetTime(_time / _limitTime);
-        }
-    }
-
 
     private void OnEnable()
     {
-        GameApp.OnGameStart += GameStart;
+        GameApp.OnPreGameStart += PreGameStart;
     }
 
     private void OnDisable()
     {
-        GameApp.OnGameStart -= GameStart;
+        GameApp.OnPreGameStart -= PreGameStart;
     }
 
-    public void SubmitMineral(int count)
+    private void PreGameStart()
     {
-        _currentCount += count;
-        if (_currentCount >= _quotaCount)
+        int index = SaveManager.Save.CurrentMineIndex;
+        MineData data = SaveManager.Save.MineDatas[index];
+        _oreId = data.OreId;
+        _oreDeposit = data.OreDeposit;
+        _oreHealth = data.OreHealth;
+        _respawnTime = data.RespawnTime;
+        _respawnSpeed = 1;
+        _oreCount = data.OreCount;
+        _mineralCount = data.MineralCount;
+        _mineralPrice = data.MineralPrice;
+
+        _oreSpawner.SetOreHealth(_oreHealth);
+    }
+
+    public void EnforceMine(EEnforce enforce)
+    {
+        float figure = EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce);
+        switch (enforce)
         {
-            _mineLevel++;
-            _time = _limitTime;
-            _currentCount -= _quotaCount;
-            _quotaCount = (int)(_quotaCount * Consts.GoldenRatio);
-            UpdateMine();
-            OnSetMineLevel(_mineLevel);
+            case EEnforce.MINE_RESPAWN_SPEED:
+                _finalRespawnSpeed = _respawnSpeed + figure;
+                _oreSpawner.SetRespawnTime(_respawnTime / _finalRespawnSpeed);
+                break;
+            case EEnforce.MINE_ORE_COUNT:
+                _finalOreCount = _oreCount + (int)figure;
+                _oreSpawner.SetOreCount(_finalOreCount);
+                break;
+            case EEnforce.MINE_MINERAL_COUNT:
+                _finalMineralCount = _mineralCount + (int)figure;
+                _oreSpawner.SetMineralCount(_finalMineralCount);
+                break;
+            case EEnforce.MINE_MINERAL_PRICE:
+                _finalMineralPrice = _mineralPrice + (int)figure;
+                _mineralSpawner.SetMineralPrice(_finalMineralPrice);
+                break;
         }
-        OnSetSubmitMineral(_currentCount / (float)_quotaCount);
     }
+}
 
-
-    private void GameStart()
-    {
-        _mineLevel = SaveManager.Save.MineLevel;
-        UpdateMine();
-        OnSetMineLevel(_mineLevel);
-    }
-
-    private void UpdateMine()
-    {
-        MineEntity entity = TableManager.MineTable[_mineLevel];
-        _mineralSpawner.InitMineral(entity.MineralPrice);
-        _oreSpawner.InitOre(entity.OreHealth, entity.OreCount, entity.MineralCount);
-    }
+[Serializable]
+public class MineData
+{
+    public int OreId;
+    public int OreDeposit;
+    public int OreHealth;
+    public float RespawnTime;
+    public int OreCount;
+    public int MineralCount;
+    public int MineralPrice;
 }

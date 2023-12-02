@@ -58,3 +58,23 @@ MonoBehaviour:
     Limit: 1000
     Coeff: 0.01
     Price: 100
+  - Id: 9
+    Name: "\uC7AC\uC0DD\uC131 \uC2DC\uAC04"
+    Limit: 1000
+    Coeff: 0.01
+    Price: 10
+  - Id: 10
+    Name: "\uAD11\uC11D \uAC2F\uC218"
+    Limit: 10
+    Coeff: 1
+    Price: 10
+  - Id: 11
+    Name: "\uAD11\uBB3C \uAC1C\uC218"
+    Limit: 30
+    Coeff: 1
+    Price: 10
+  - Id: 12
+    Name: "\uAD11\uBB3C \uAC00\uCE58"
+    Limit: 50
+    Coeff: 1
+    Price: 10

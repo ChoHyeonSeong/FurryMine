@@ -66,15 +66,15 @@ public class MinerTeam : MonoBehaviour
 
     private void OnEnable()
     {
-        GameApp.OnPreGameStart += GameStart;
+        GameApp.OnPreGameStart += PreGameStart;
     }
 
     private void OnDisable()
     {
-        GameApp.OnPreGameStart -= GameStart;
+        GameApp.OnPreGameStart -= PreGameStart;
     }
 
-    public void GameStart()
+    public void PreGameStart()
     {
         _headMiner = _minerSpawner.SpawnMiner(SaveManager.Save.HeadMinerId);
         int staffCount = EnforceManager.GetLevel(EEnforce.STAFF_MINER_COUNT);

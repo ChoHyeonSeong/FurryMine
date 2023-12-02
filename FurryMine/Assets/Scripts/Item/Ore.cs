@@ -5,17 +5,12 @@ using UnityEngine;
 
 public class Ore : MonoBehaviour
 {
-    public static Action<bool, string, Vector2> OnHitText;
+    public static Action<bool, string, Vector2> OnHitText { get; set; }
     public static Action<Ore> OnBreakOre { get; set; }
-
-    public int MineralCount { get => _mineralCount; }
 
     public Miner CurrentMiner { get => _miner; }
 
-    public Vector2 RigidPosition { get => _rigid.position; }
-    private Rigidbody2D _rigid;
     private int _health;
-    private int _mineralCount;
     private Miner _miner;
 
     // true == ±úÁü
@@ -38,16 +33,10 @@ public class Ore : MonoBehaviour
         return false;
     }
 
-    public void Init(int health, int mineralCount)
+    public void Init(int health)
     {
         _health = health;
-        _mineralCount = mineralCount;
         _miner = null;
-    }
-
-    private void Awake()
-    {
-        _rigid = GetComponent<Rigidbody2D>();
     }
 
     private void Break()

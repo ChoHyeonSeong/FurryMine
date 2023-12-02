@@ -14,13 +14,13 @@ public class LevelStatus : MonoBehaviour
     }
     private void OnEnable()
     {
-        Mine.OnSetMineLevel += UpdateText;
+        Owner.OnSetOwnerLevel += UpdateText;
         GameApp.OnGameStart += GameStart;
     }
 
     private void OnDisable()
     {
-        Mine.OnSetMineLevel -= UpdateText;
+        Owner.OnSetOwnerLevel -= UpdateText;
         GameApp.OnGameStart -= GameStart;
     }
 

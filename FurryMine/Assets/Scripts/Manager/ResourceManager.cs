@@ -18,6 +18,7 @@ public static class ResourceManager
 
     public static void LoadResource()
     {
+        GameApp.PlusLoadingCount(1);
         Addressables.LoadAssetsAsync(_animCtrlLabel, (Object obj) =>
         {
             AnimCtrlList.Add(obj as RuntimeAnimatorController);

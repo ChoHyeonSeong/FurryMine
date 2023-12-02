@@ -8,14 +8,12 @@ public class Mineral : MonoBehaviour
 {
     public static Action<Mineral> OnPickMineral { get; set; }
 
-    public int Price { get => _price; }
 
     private Miner _miner;
     private Vector2 _minerPos { get => _miner.transform.position; }
     private Vector2[] _points = new Vector2[4];
     private Vector2 _endPoint = new Vector2();
 
-    private int _price;
     private float _timerMax;
     private float _timerCur;
     private float _speed = 0.5f;
@@ -23,9 +21,8 @@ public class Mineral : MonoBehaviour
     private float _endNoise = 3f;
     private float _worldScale = 0.5f;
 
-    public void Init(Miner miner, int price)
+    public void Init(Miner miner)
     {
-        _price = price;
         _miner = miner;
         _timerCur = 0;
         _timerMax = Random.Range(0.3f, 0.5f);
@@ -53,7 +50,7 @@ public class Mineral : MonoBehaviour
         Miner miner = collision.GetComponent<Miner>();
         if (miner != _miner)
             return;
-        miner.PlusPrice(this);
+        miner.PlusPrice();
         OnPickMineral(this);
     }
 

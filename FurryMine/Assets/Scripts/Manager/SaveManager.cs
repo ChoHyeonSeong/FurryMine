@@ -19,6 +19,7 @@ public static class SaveManager
 
     public static void LoadGame()
     {
+        GameApp.PlusLoadingCount(1);
         if (File.Exists(_filePath))
         {
             string code = File.ReadAllText(_filePath);

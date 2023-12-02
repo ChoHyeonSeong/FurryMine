@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MineralSpawner : MonoBehaviour
 {
+    public static int MineralPrice { get; private set; }
+
     private MineralPool _mineralPool;
-    private int _mineralPrice;
 
     private void Awake()
     {
@@ -32,15 +33,15 @@ public class MineralSpawner : MonoBehaviour
 
     private void SpawnMineral(Ore ore)
     {
-        for (int i = 0; i < ore.MineralCount; i++)
+        for (int i = 0; i < OreSpawner.MineralCount; i++)
         {
             Mineral mineral = _mineralPool.CreateMineral(ore.transform.position);
-            mineral.Init(ore.CurrentMiner, _mineralPrice);
+            mineral.Init(ore.CurrentMiner);
         }
     }
 
-    public void InitMineral(int price)
+    public void SetMineralPrice(int price)
     {
-        _mineralPrice = price;
+        MineralPrice = price;
     }
 }

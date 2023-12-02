@@ -7,10 +7,12 @@ public class EnforceApplier : MonoBehaviour
 {
     private MineCart _mineCart;
     private MinerTeam _minerTeam;
+    private Mine _mine;
 
     private void Awake()
     {
-        _minerTeam = GetComponent<MinerTeam>();
+        _mine = GetComponentInChildren<Mine>();
+        _minerTeam = GetComponentInChildren<MinerTeam>();
     }
 
     private void OnEnable()
@@ -67,6 +69,12 @@ public class EnforceApplier : MonoBehaviour
             case EEnforce.STAFF_MINING_SPEED:
             case EEnforce.STAFF_MOVING_SPEED:
                 _minerTeam.EnforceStaff(enforce);
+                break;
+            case EEnforce.MINE_RESPAWN_SPEED:
+            case EEnforce.MINE_ORE_COUNT:
+            case EEnforce.MINE_MINERAL_COUNT:
+            case EEnforce.MINE_MINERAL_PRICE:
+                _mine.EnforceMine(enforce);
                 break;
             default:
                 Debug.Log("지정되지 않은 강화");

@@ -8,7 +8,12 @@ public class GameApp : MonoBehaviour
 
     public static bool IsGameStart { get; private set; } = false;
 
-    private static int _loadingCount = 5;
+    private static int _loadingCount = 0;
+
+    public static void PlusLoadingCount(int count)
+    {
+        _loadingCount += count;
+    }
 
     private void Awake()
     {

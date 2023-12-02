@@ -65,13 +65,6 @@ public class Miner : MonoBehaviour
         _criticalPercent = baseCriticalPercent;
         _criticalPower = baseCriticalPower;
 
-        _finalMiningPower = _miningPower;
-        _finalMiningSpeed = _miningSpeed;
-        _finalMovingSpeed = _movingSpeed;
-        _finalMiningCount = _miningCount;
-        _finalCriticalPercent = _criticalPercent;
-        _finalCriticalPower = _criticalPower;
-
         _price = 0;
         _mineralCount = 0;
         _crtMiningCount = _miningCount;
@@ -113,10 +106,10 @@ public class Miner : MonoBehaviour
         }
     }
 
-    public void PlusPrice(Mineral mineral)
+    public void PlusPrice()
     {
         _mineralCount++;
-        _price += mineral.Price;
+        _price += MineralSpawner.MineralPrice;
         OnChangeMineralCount(_mineralCount);
     }
 
@@ -145,7 +138,7 @@ public class Miner : MonoBehaviour
         else if (_crtMiningCount == 0 && collision.gameObject.CompareTag(Consts.CartTag))
         {
             GameManager.Cart.PlusMoney(_price);
-            GameManager.Mine.SubmitMineral(_mineralCount);
+            GameManager.Player.SubmitMineral(_mineralCount);
             _mineralCount = 0;
             _price = 0;
             _crtMiningCount = _finalMiningCount;

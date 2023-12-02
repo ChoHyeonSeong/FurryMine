@@ -6,14 +6,18 @@ using UnityEngine.Tilemaps;
 
 public class OreSpawner : MonoBehaviour
 {
-    private bool _isSpawning = false;
-    private int _mineralCount;
+    public static int MineralCount { get; private set; }
+
     private int _oreHealth;
-    private int _maxOreCount;
-    private int _oreCount = 0;
-    private float _respawnTime = 1f;
+    private float _respawnTime;
+    private int _oreCount;
+
+    private bool _isSpawning = false;
+    private int _currentOreCount = 0;
+
     private OrePool _orePool;
     private BlankPool _blankPool;
+
     private WaitForSeconds _respawnWait;
     private Queue<Ore> _newOreQueue;
 
@@ -21,16 +25,18 @@ public class OreSpawner : MonoBehaviour
     {
         _blankPool = FindAnyObjectByType<BlankPool>();
         _orePool = GetComponent<OrePool>();
-        _respawnWait = new WaitForSeconds(_respawnTime);
         _newOreQueue = new Queue<Ore>();
     }
 
     private void Update()
     {
-        if (!_isSpawning && _oreCount < _maxOreCount)
+        if (GameApp.IsGameStart)
         {
-            _isSpawning = true;
-            StartCoroutine(SpawnOre());
+            if (!_isSpawning && _currentOreCount < _oreCount)
+            {
+                _isSpawning = true;
+                StartCoroutine(SpawnOre());
+            }
         }
     }
 
@@ -53,7 +59,7 @@ public class OreSpawner : MonoBehaviour
 
     private void CollectOre(Ore ore)
     {
-        _oreCount--;
+        _currentOreCount--;
         _orePool.DestroyOre(ore);
         AstarPath.active.Scan();
     }
@@ -62,7 +68,7 @@ public class OreSpawner : MonoBehaviour
     {
         yield return _respawnWait;
         _isSpawning = false;
-        _oreCount++;
+        _currentOreCount++;
         List<Vector2> candidate = new List<Vector2>();
         foreach (Blank blank in _blankPool.BlankList)
         {
@@ -73,15 +79,29 @@ public class OreSpawner : MonoBehaviour
         }
         Vector2 spawnPos = candidate[Random.Range(0, candidate.Count)];
         Ore ore = _orePool.CreateOre(spawnPos);
-        ore.Init(_oreHealth, _mineralCount);
+        ore.Init(_oreHealth);
         _newOreQueue.Enqueue(ore);
         AstarPath.active.Scan();
     }
 
-    public void InitOre(int oreHealth, int maxOreCount, int mineralCount)
+    public void SetOreHealth(int oreHealth)
     {
         _oreHealth = oreHealth;
-        _maxOreCount = maxOreCount;
-        _mineralCount = mineralCount;
+    }
+
+    public void SetRespawnTime(float respawnTime)
+    {
+        _respawnTime = respawnTime;
+        _respawnWait = new WaitForSeconds(_respawnTime);
+    }
+
+    public void SetOreCount(int oreCount)
+    {
+        _oreCount = oreCount;
+    }
+
+    public void SetMineralCount(int mineralCount)
+    {
+        MineralCount = mineralCount;
     }
 }

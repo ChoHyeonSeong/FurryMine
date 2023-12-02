@@ -13,12 +13,12 @@ public class MineralBar : MonoBehaviour
 
     private void OnEnable()
     {
-        Mine.OnSetSubmitMineral += UpdateBar;
+        Owner.OnSetSubmitMineral += UpdateBar;
     }
 
     private void OnDisable()
     {
-        Mine.OnSetSubmitMineral -= UpdateBar;
+        Owner.OnSetSubmitMineral -= UpdateBar;
     }
 
     private void UpdateBar(float ratio)

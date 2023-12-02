@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 1ba577a43cbab474190c557b8032f003
   m_SerializeEntries:
-  - m_GUID: 66597fae85516b741a97e39479621c77
-    m_Address: Assets/Datas/MineTable.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ee0e3d4a47363a43a83dd1ac8c0bf90
     m_Address: Assets/Datas/EnforceTable.asset
     m_ReadOnly: 0
