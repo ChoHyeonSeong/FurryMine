@@ -68,10 +68,7 @@ public class Miner : MonoBehaviour
         _price = 0;
         _mineralCount = 0;
         _crtMiningCount = _miningCount;
-        _aiPath.maxSpeed = _movingSpeed;
         _cart = GameManager.Cart;
-        _mineWait = new WaitForSeconds(_miningTime / _miningSpeed);
-        _mineAnimWait = new WaitForSeconds(_miningAnimTime / _miningSpeed);
     }
 
     public void EnforceStat(EEnforce enforce, float enforceFigure)
@@ -120,6 +117,7 @@ public class Miner : MonoBehaviour
             Ore tempOre = RequestOre();
             if (tempOre != null)
             {
+                Debug.Log("±§ºÆ πﬂ∞ﬂ");
                 _target = tempOre.gameObject;
                 tempOre.SetMiner(this);
                 MoveToTarget();
@@ -141,7 +139,7 @@ public class Miner : MonoBehaviour
             GameManager.Player.SubmitMineral(_mineralCount);
             _mineralCount = 0;
             _price = 0;
-            _crtMiningCount = _finalMiningCount;
+            _crtMiningCount = _miningCount;
             OnChangeMineralCount(_mineralCount);
             StartCoroutine(BlockMove(_delayTime, null));
         }
@@ -149,6 +147,7 @@ public class Miner : MonoBehaviour
 
     private void StartMining(Ore targetOre)
     {
+        Debug.Log("√§±§ Ω√¿€");
         _aiPath.destination = transform.position;
         StartCoroutine(MineOre(targetOre));
     }

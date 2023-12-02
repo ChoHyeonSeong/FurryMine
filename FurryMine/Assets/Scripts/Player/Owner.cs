@@ -17,8 +17,8 @@ public class Owner : MonoBehaviour
 
     private void Awake()
     {
-        _quotaExp = 0;
-        _currentExp = 5;
+        _quotaExp = 5;
+        _currentExp = 0;
         _time = _limitTime;
     }
     private void Update()
