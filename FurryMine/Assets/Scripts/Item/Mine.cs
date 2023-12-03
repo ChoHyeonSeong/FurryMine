@@ -7,6 +7,9 @@ public class Mine : MonoBehaviour
 {
     private int _oreId;
     private int _oreDeposit;
+    private int _spawnedOreCount;
+    private int _minedOreCount;
+
     private int _oreHealth;
     private float _respawnTime;
 
@@ -31,11 +34,13 @@ public class Mine : MonoBehaviour
     private void OnEnable()
     {
         GameApp.OnPreGameStart += PreGameStart;
+        _oreSpawner.IsSpawnable += CheckSpawnable;
     }
 
     private void OnDisable()
     {
         GameApp.OnPreGameStart -= PreGameStart;
+        _oreSpawner.IsSpawnable -= CheckSpawnable;
     }
 
     private void PreGameStart()
@@ -74,6 +79,28 @@ public class Mine : MonoBehaviour
                 _finalMineralPrice = _mineralPrice + (int)figure;
                 _mineralSpawner.SetMineralPrice(_finalMineralPrice);
                 break;
+        }
+    }
+
+    private bool CheckSpawnable()
+    {
+        if (_oreDeposit == -1)
+            return true;
+        if (_spawnedOreCount < _oreDeposit)
+        {
+            ++_spawnedOreCount;
+            return true;
+        }
+        return false;
+    }
+
+    private void CheckDepletion()
+    {
+        if (_oreDeposit == -1)
+            return;
+        if (_oreDeposit < ++_minedOreCount)
+        {
+            // 기본 광산으로 바꾸기
         }
     }
 }

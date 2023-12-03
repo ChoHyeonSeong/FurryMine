@@ -1,12 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public class OreSpawner : MonoBehaviour
 {
     public static int MineralCount { get; private set; }
+
+    public Action OnSpawnedOre { get; set; }
+    public Func<bool> IsSpawnable { get; set; }
+    public Action OnCollectOre { get; set; }
 
     private int _oreHealth;
     private float _respawnTime;
@@ -30,7 +36,7 @@ public class OreSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (GameApp.IsGameStart)
+        if (GameApp.IsGameStart && IsSpawnable())
         {
             if (!_isSpawning && _currentOreCount < _oreCount)
             {
@@ -61,6 +67,7 @@ public class OreSpawner : MonoBehaviour
     {
         _currentOreCount--;
         _orePool.DestroyOre(ore);
+        OnCollectOre();
         AstarPath.active.Scan();
     }
 
