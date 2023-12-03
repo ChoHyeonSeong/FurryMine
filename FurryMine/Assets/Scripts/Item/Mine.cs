@@ -10,7 +10,6 @@ public class Mine : MonoBehaviour
     private int _oreHealth;
     private float _respawnTime;
 
-    private float _respawnSpeed;
     private int _oreCount;
     private int _mineralCount;
     private int _mineralPrice;
@@ -47,7 +46,6 @@ public class Mine : MonoBehaviour
         _oreDeposit = data.OreDeposit;
         _oreHealth = data.OreHealth;
         _respawnTime = data.RespawnTime;
-        _respawnSpeed = 1;
         _oreCount = data.OreCount;
         _mineralCount = data.MineralCount;
         _mineralPrice = data.MineralPrice;
@@ -57,11 +55,11 @@ public class Mine : MonoBehaviour
 
     public void EnforceMine(EEnforce enforce)
     {
-        float figure = EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce);
+        float figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
         switch (enforce)
         {
             case EEnforce.MINE_RESPAWN_SPEED:
-                _finalRespawnSpeed = _respawnSpeed + figure;
+                _finalRespawnSpeed = figure;
                 _oreSpawner.SetRespawnTime(_respawnTime / _finalRespawnSpeed);
                 break;
             case EEnforce.MINE_ORE_COUNT:

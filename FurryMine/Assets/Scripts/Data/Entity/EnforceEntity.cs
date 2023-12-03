@@ -7,5 +7,6 @@ public class EnforceEntity
     public string Name;
     public int Limit;
     public float Coeff;
+    public float Base;
     public int Price;
 }

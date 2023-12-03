@@ -17,7 +17,7 @@ public class MinerTeam : MonoBehaviour
 
     public void EnforceStaff(EEnforce enforce)
     {
-        float figure = EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce);
+        float figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
         if (EEnforce.STAFF_MINER_COUNT == enforce)
         {
             int count = (int)figure;
@@ -26,7 +26,7 @@ public class MinerTeam : MonoBehaviour
                 Miner miner = _minerSpawner.SpawnMiner(1);
                 foreach (EEnforce allStat in _staffStatEnforce)
                 {
-                    miner.EnforceStat(allStat, EnforceManager.GetLevel(allStat) * EnforceManager.GetCoeff(allStat));
+                    miner.EnforceStat(allStat, EnforceManager.GetBase(allStat) + (EnforceManager.GetLevel(allStat) * EnforceManager.GetCoeff(allStat)));
                 }
                 _staffMiners.Add(miner);
             }
@@ -43,7 +43,8 @@ public class MinerTeam : MonoBehaviour
 
     public void EnforceHead(EEnforce enforce)
     {
-        _headMiner.EnforceStat(enforce, EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+        float figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+        _headMiner.EnforceStat(enforce, figure);
     }
 
     private void Awake()

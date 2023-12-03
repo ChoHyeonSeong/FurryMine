@@ -17,11 +17,11 @@ public enum EEnforce
     MINE_ORE_COUNT,
     MINE_MINERAL_COUNT,
     MINE_MINERAL_PRICE,
-    //SNACK_DURATION_RATIO,
-    //SNACK_CHARGE_SPEED,
-    //SNACK_MINING_POWER_BOOST,
-    //SNACK_MINING_SPEED_BOOST,
-    //SNACK_MOVING_SPEED_BOOST,
+    SNACK_DURATION_RATIO,
+    SNACK_CHARGE_SPEED,
+    SNACK_MINING_POWER_BUFF,
+    SNACK_MINING_SPEED_BUFF,
+    SNACK_MOVING_SPEED_BUFF,
     COUNT
 }
 
@@ -61,6 +61,11 @@ public static class EnforceManager
     public static float GetCoeff(EEnforce enforce)
     {
         return TableManager.EnforceTable[_enumToId[enforce]].Coeff;
+    }
+
+    public static float GetBase(EEnforce enforce)
+    {
+        return TableManager.EnforceTable[_enumToId[enforce]].Base;
     }
 
     public static float GetLimit(EEnforce enforce)

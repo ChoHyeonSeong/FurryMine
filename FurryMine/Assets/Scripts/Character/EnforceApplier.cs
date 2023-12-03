@@ -8,11 +8,13 @@ public class EnforceApplier : MonoBehaviour
     private MineCart _mineCart;
     private MinerTeam _minerTeam;
     private Mine _mine;
+    private Snack _snack;
 
     private void Awake()
     {
         _mine = GetComponentInChildren<Mine>();
         _minerTeam = GetComponentInChildren<MinerTeam>();
+        _snack = GetComponentInChildren<Snack>();
     }
 
     private void OnEnable()
@@ -75,6 +77,13 @@ public class EnforceApplier : MonoBehaviour
             case EEnforce.MINE_MINERAL_COUNT:
             case EEnforce.MINE_MINERAL_PRICE:
                 _mine.EnforceMine(enforce);
+                break;
+            case EEnforce.SNACK_CHARGE_SPEED:
+            case EEnforce.SNACK_DURATION_RATIO:
+            case EEnforce.SNACK_MINING_POWER_BUFF:
+            case EEnforce.SNACK_MINING_SPEED_BUFF:
+            case EEnforce.SNACK_MOVING_SPEED_BUFF:
+                _snack.EnforceSnack(enforce);
                 break;
             default:
                 Debug.Log("지정되지 않은 강화");

@@ -25,10 +25,14 @@ public class Miner : MonoBehaviour
 
     [SerializeField]
     private int _finalMiningPower;
+    [SerializeField]
     private float _finalMiningSpeed;
     private int _finalMiningCount;
+    [SerializeField]
     private float _finalMovingSpeed;
+    [SerializeField]
     private float _finalCriticalPercent;
+    [SerializeField]
     private float _finalCriticalPower;
 
     private int _mineralCount;
@@ -49,7 +53,7 @@ public class Miner : MonoBehaviour
     private Rigidbody2D _rigid;
     private AIPath _aiPath;
 
-    public void Init(int baseMiningPower, float baseMiningSpeed, float basemMovingSpeed, int baseMiningCount, float baseCriticalPercent, float baseCriticalPower , RuntimeAnimatorController animCtrl)
+    public void Init(int baseMiningPower, float baseMiningSpeed, float basemMovingSpeed, int baseMiningCount, float baseCriticalPercent, float baseCriticalPower, RuntimeAnimatorController animCtrl)
     {
         _spriter = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
@@ -77,18 +81,21 @@ public class Miner : MonoBehaviour
         {
             case EEnforce.STAFF_MINING_POWER:
             case EEnforce.HEAD_MINING_POWER:
-                _finalMiningPower = _miningPower + (int)enforceFigure;
+                _finalMiningPower = Mathf.RoundToInt((_miningPower + (int)enforceFigure) * Snack.MiningPowerBuff);
                 break;
             case EEnforce.STAFF_MINING_SPEED:
             case EEnforce.HEAD_MINING_SPEED:
-                _finalMiningSpeed = _miningSpeed + enforceFigure;
+                _finalMiningSpeed = _miningSpeed * enforceFigure * Snack.MiningSpeedBuff;
                 _animator.SetFloat("MineSpeed", _finalMiningSpeed);
                 _mineAnimWait = new WaitForSeconds(_miningAnimTime / _finalMiningSpeed);
                 _mineWait = new WaitForSeconds(_miningTime / _finalMiningSpeed);
                 break;
             case EEnforce.STAFF_MOVING_SPEED:
             case EEnforce.HEAD_MOVING_SPEED:
-                _finalMovingSpeed = _movingSpeed * (1f + enforceFigure);
+                Debug.Log(_movingSpeed);
+                Debug.Log(enforceFigure);
+                Debug.Log(Snack.MovingSpeedBuff);
+                _finalMovingSpeed = _movingSpeed * enforceFigure * Snack.MovingSpeedBuff;
                 _aiPath.maxSpeed = _finalMovingSpeed;
                 break;
             case EEnforce.HEAD_CRITICAL_PERCENT:

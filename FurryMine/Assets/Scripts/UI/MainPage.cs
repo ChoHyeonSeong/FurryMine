@@ -14,6 +14,7 @@ public class MainPage : MonoBehaviour
     private Button _staffMenu;
     [SerializeField]
     private Button _mineMenu;
+    [SerializeField]
     private Button _snackMenu;
 
     [SerializeField]
@@ -24,6 +25,7 @@ public class MainPage : MonoBehaviour
     private RectTransform _staffContent;
     [SerializeField]
     private RectTransform _mineContent;
+    [SerializeField]
     private RectTransform _snackContent;
 
     private RectTransform _prevContent;
@@ -32,14 +34,14 @@ public class MainPage : MonoBehaviour
     {
         _headMenu.onClick.AddListener(ShowHeadMenu);
         _staffMenu.onClick.AddListener(ShowStaffMenu);
-        _mineMenu.onClick.AddListener(ShowMineMenu);/*
-        _snackMenu.onClick.AddListener(ShowSnackMenu);*/
+        _mineMenu.onClick.AddListener(ShowMineMenu);
+        _snackMenu.onClick.AddListener(ShowSnackMenu);
 
 
         _prevContent = _headContent;
         _staffContent.gameObject.SetActive(false);
-        _mineContent.gameObject.SetActive(false);/*
-        _snackScroll.SetActive(false);*/
+        _mineContent.gameObject.SetActive(false);
+        _mineContent.gameObject.SetActive(false);
     }
 
     private void ShowHeadMenu()
