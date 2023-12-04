@@ -24,7 +24,13 @@ MonoBehaviour:
     - AnimCtrl
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 871929a21d2bd864795659729dd3d615
-    m_Address: Assets/Animations/001_WolfMIner.overrideController
+    m_Address: Assets/Animations/001_WolfMiner.overrideController
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AnimCtrl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68545f14c0cf1ef408ae5f732bd6a799
+    m_Address: Assets/Animations/002_LizardMiner.overrideController
     m_ReadOnly: 0
     m_SerializedLabels:
     - AnimCtrl

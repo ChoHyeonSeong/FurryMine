@@ -11,7 +11,7 @@ public class Snack : MonoBehaviour
     public static float MiningSpeedBuff { get; private set; }
     public static float MovingSpeedBuff { get; private set; }
 
-    private int _chargeTime = 2;
+    private int _chargeTime = 600;
     private int _durationSnack = 10;
 
     private float _finalChargeTime;

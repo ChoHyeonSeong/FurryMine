@@ -6,12 +6,12 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 001_WolfMiner
+  m_Name: 002_LizardMiner
   m_Controller: {fileID: 9100000, guid: 299701dd37a023045ade0f9845be593d, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 9d26f62049685554483a9bbe8c29bd56, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 23efbc53acaf0fe47b3634a1d676a562, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 417efd8e91e075d458503fdd62a80fe6, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 90b80dde4b901ef42a2990b58b4f2ede, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: b0ef5b96a4881fa49b8da7504b05d72b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ddd34088687da7847bb9ab211a3fb3ab, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 6a2355de6122129499204d518bfe794f, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 960893e6230562a4b8e3981d3ee235b5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 74085ee5e6402f04ba07fb8e580baf0b, type: 2}

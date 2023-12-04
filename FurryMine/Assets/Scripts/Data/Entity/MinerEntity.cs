@@ -13,6 +13,7 @@ public class MinerEntity
     public int MiningCount;
     public float CriticalPercent;
     public float CriticalPower;
+    public string Rank;
     public string Name;
     public string Description;
 }

@@ -35,12 +35,14 @@ public class Mine : MonoBehaviour
     {
         GameApp.OnPreGameStart += PreGameStart;
         _oreSpawner.IsSpawnable += CheckSpawnable;
+        _oreSpawner.OnCollectOre += CheckDepletion;
     }
 
     private void OnDisable()
     {
         GameApp.OnPreGameStart -= PreGameStart;
         _oreSpawner.IsSpawnable -= CheckSpawnable;
+        _oreSpawner.OnCollectOre -= CheckDepletion;
     }
 
     private void PreGameStart()

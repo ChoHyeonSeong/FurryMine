@@ -27,7 +27,6 @@ public class Miner : MonoBehaviour
     private int _finalMiningPower;
     [SerializeField]
     private float _finalMiningSpeed;
-    private int _finalMiningCount;
     [SerializeField]
     private float _finalMovingSpeed;
     [SerializeField]
@@ -35,6 +34,7 @@ public class Miner : MonoBehaviour
     [SerializeField]
     private float _finalCriticalPower;
 
+    private bool _isOreTarget;
     private int _mineralCount;
     private int _price;
     private int _crtMiningCount; // crt == Current
@@ -69,8 +69,10 @@ public class Miner : MonoBehaviour
         _criticalPercent = baseCriticalPercent;
         _criticalPower = baseCriticalPower;
 
+        _isOreTarget = false;
         _price = 0;
         _mineralCount = 0;
+        _target = null;
         _crtMiningCount = _miningCount;
         _cart = GameManager.Cart;
     }
@@ -92,9 +94,6 @@ public class Miner : MonoBehaviour
                 break;
             case EEnforce.STAFF_MOVING_SPEED:
             case EEnforce.HEAD_MOVING_SPEED:
-                Debug.Log(_movingSpeed);
-                Debug.Log(enforceFigure);
-                Debug.Log(Snack.MovingSpeedBuff);
                 _finalMovingSpeed = _movingSpeed * enforceFigure * Snack.MovingSpeedBuff;
                 _aiPath.maxSpeed = _finalMovingSpeed;
                 break;
@@ -117,6 +116,19 @@ public class Miner : MonoBehaviour
         OnChangeMineralCount(_mineralCount);
     }
 
+    public void GoToSpare()
+    {
+        if(_isOreTarget)
+        {
+            _target.GetComponent<Ore>().SetMiner(null);
+        }
+        else
+        {
+            OnChangeMineralCount(0);
+            GameManager.Cart.PlusMoney(_price);
+        }
+    }
+
     private void Update()
     {
         if (_target == null)
@@ -127,6 +139,7 @@ public class Miner : MonoBehaviour
                 Debug.Log("±¤¼® ¹ß°ß");
                 _target = tempOre.gameObject;
                 tempOre.SetMiner(this);
+                _isOreTarget = true;
                 MoveToTarget();
             }
         }
@@ -192,6 +205,7 @@ public class Miner : MonoBehaviour
         yield return _mineAnimWait;
         if (ore.Hit((int)(_finalMiningPower * (CheckCritical() ? _finalCriticalPower : 1))))
         {
+            _isOreTarget = false;
             _crtMiningCount--;
             StartCoroutine(BlockMove(_delayTime, _crtMiningCount > 0 ? null : _cart.gameObject));
         }

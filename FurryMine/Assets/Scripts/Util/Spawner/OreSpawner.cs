@@ -50,12 +50,14 @@ public class OreSpawner : MonoBehaviour
     {
         Miner.RequestOre += ResponseOre;
         Ore.OnBreakOre += CollectOre;
+        Ore.OnSetMinerNull += ReIdleOre;
     }
 
     private void OnDisable()
     {
         Miner.RequestOre -= ResponseOre;
         Ore.OnBreakOre -= CollectOre;
+        Ore.OnSetMinerNull -= ReIdleOre;
     }
 
     private Ore ResponseOre()
@@ -69,6 +71,11 @@ public class OreSpawner : MonoBehaviour
         _orePool.DestroyOre(ore);
         OnCollectOre();
         AstarPath.active.Scan();
+    }
+
+    private void ReIdleOre(Ore ore)
+    {
+        _newOreQueue.Enqueue(ore);
     }
 
     private IEnumerator SpawnOre()

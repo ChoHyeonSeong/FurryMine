@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainPage : MonoBehaviour
+public class EnforcePage : MonoBehaviour
 {
     [SerializeField]
     private Transform _lightFrame;
@@ -41,7 +41,7 @@ public class MainPage : MonoBehaviour
         _prevContent = _headContent;
         _staffContent.gameObject.SetActive(false);
         _mineContent.gameObject.SetActive(false);
-        _mineContent.gameObject.SetActive(false);
+        _snackContent.gameObject.SetActive(false);
     }
 
     private void ShowHeadMenu()

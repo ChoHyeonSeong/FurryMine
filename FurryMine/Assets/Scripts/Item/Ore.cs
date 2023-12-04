@@ -8,6 +8,8 @@ public class Ore : MonoBehaviour
     public static Action<bool, string, Vector2> OnHitText { get; set; }
     public static Action<Ore> OnBreakOre { get; set; }
 
+    public static Action<Ore> OnSetMinerNull { get; set; }
+
     public Miner CurrentMiner { get => _miner; }
 
     private int _health;
@@ -19,6 +21,10 @@ public class Ore : MonoBehaviour
     public void SetMiner(Miner miner)
     {
         _miner = miner;
+        if(miner == null)
+        {
+            OnSetMinerNull(this);
+        }
     }
 
     public bool Hit(int damage)

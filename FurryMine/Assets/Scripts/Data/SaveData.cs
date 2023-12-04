@@ -4,14 +4,20 @@ using System.Collections.Generic;
 [Serializable]
 public class SaveData
 {
-    public SaveData(int money, int mineLevel, int remainCoolTime, List<int> enforceLevels)
+    public SaveData(int money, int ownerLevel, int remainCoolTime, List<int> enforceLevels)
     {
         Money = money;
-        MineLevel = mineLevel;
+        OwnerLevel = ownerLevel;
         RemainCoolTime = remainCoolTime;
-        HeadMinerId = 0;
         EnforceLevels = enforceLevels;
+        CurrentHeadId = 0;
         CurrentMineIndex = 0;
+        CurrentStaffIds = new List<int>();
+        MinerIds = new List<int>
+        {
+            0,1,2
+        };
+
         MineDatas = new List<MineData>
         {
             new MineData
@@ -30,10 +36,12 @@ public class SaveData
     public SaveData() : this(0, 1, 0, null) { }
 
     public int Money;
-    public int MineLevel;
+    public int OwnerLevel;
     public int RemainCoolTime;
-    public int HeadMinerId;
+    public int CurrentHeadId;
+    public List<int> CurrentStaffIds;
     public int CurrentMineIndex;
     public List<int> EnforceLevels;
+    public List<int> MinerIds;
     public List<MineData> MineDatas;
 }

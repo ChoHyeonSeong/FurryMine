@@ -16,7 +16,25 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 71b171e16e59b2c4396530276f78159d
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 927e9ebbacf2cc446b5053bbf1e95951
+    m_Address: Assets/Sprites/Runtime/Character/Icon/000_CatMiner_Icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MinerIcon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f700aa87eab0b04b8f7150a8b1dbde7
+    m_Address: Assets/Sprites/Runtime/Character/Icon/001_WolfMiner_Icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MinerIcon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 739e3382dd7d355428afbc83d48a5ded
+    m_Address: Assets/Sprites/Runtime/Character/Icon/002_LizardMiner_Icon.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MinerIcon
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff4495624a54e114bb19be1ea6188a86, type: 2}
   m_SchemaSet:

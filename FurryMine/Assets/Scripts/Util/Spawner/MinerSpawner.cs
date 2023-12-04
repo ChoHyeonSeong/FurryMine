@@ -18,13 +18,14 @@ public class MinerSpawner : MonoBehaviour
         return miner;
     }
 
+    public void CollectMiner(Miner miner)
+    {
+        miner.GoToSpare();
+        _minerPool.DestoryMiner(miner);
+    }
+
     private void Awake()
     {
         _minerPool = GetComponent<MinerPool>();
-    }
-
-    private void CollectMiner(Miner miner)
-    {
-        _minerPool.DestoryMiner(miner);
     }
 }

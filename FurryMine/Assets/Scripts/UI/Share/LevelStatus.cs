@@ -26,7 +26,7 @@ public class LevelStatus : MonoBehaviour
 
     private void GameStart()
     {
-        _levelText.text = SaveManager.Save.MineLevel.ToString();
+        _levelText.text = SaveManager.Save.OwnerLevel.ToString();
     }
 
 

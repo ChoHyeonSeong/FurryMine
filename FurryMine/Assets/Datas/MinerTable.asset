@@ -20,6 +20,7 @@ MonoBehaviour:
     MiningCount: 1
     CriticalPercent: 0
     CriticalPower: 2
+    Rank: C
     Name: "\uC5EC\uC6B0"
     Description: "\uC5EC\uC6B0\uAD11\uBD80"
   - Id: 1
@@ -29,5 +30,16 @@ MonoBehaviour:
     MiningCount: 1
     CriticalPercent: 0
     CriticalPower: 2
+    Rank: C
     Name: "\uB291\uB300"
     Description: "\uB291\uB300\uAD11\uBD80"
+  - Id: 2
+    MiningPower: 2
+    MiningSpeed: 1
+    MovingSpeed: 1
+    MiningCount: 1
+    CriticalPercent: 0
+    CriticalPower: 2
+    Rank: C
+    Name: "\uB3C4\uB9C8\uBC40"
+    Description: "\uB3C4\uB9C8\uBC40\uAD11\uBD80"
