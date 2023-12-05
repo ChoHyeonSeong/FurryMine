@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Table:
   - Id: 0
+    Type: "\uC554\uC11D"
+    BaseHealth: 10
     MineralPrice: 1
-    Name: 

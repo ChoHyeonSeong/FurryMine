@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,13 +23,13 @@ public class MinerContent : MonoBehaviour
     private void Awake()
     {
         GameApp.OnGameStart += GameStart;
-        MinerTeam.OnSetLabel += SetNoneLabel;
+        MinerTeam.OnSetLabel += SetLabel;
     }
 
     private void OnDestroy()
     {
         GameApp.OnGameStart -= GameStart;
-        MinerTeam.OnSetLabel -= SetNoneLabel;
+        MinerTeam.OnSetLabel -= SetLabel;
     }
 
     private void GameStart()
@@ -51,11 +49,11 @@ public class MinerContent : MonoBehaviour
     {
         MinerItem item = Instantiate(_minerItemPrefab, transform);
         MinerEntity entity = TableManager.MinerTable[minerId];
-        item.InitItem(_minerItems.Count, entity.Name, entity.Rank, ResourceManager.MinerIconList[minerId]);
+        item.InitItem(minerId, entity.Name, entity.Rank, ResourceManager.MinerIconList[minerId]);
         _minerItems[minerId] = item;
     }
 
-    private void SetNoneLabel(int minerId, EMinerLabel label)
+    private void SetLabel(int minerId, EMinerLabel label)
     {
         _minerItems[minerId].SetLabel(label);
     }

@@ -68,6 +68,7 @@ public class SelectMinerItem : MonoBehaviour, IPointerClickHandler
 
     private void ClickSelect()
     {
+        UnselectItem();
         OnSelectClick(_minerId);
     }
 

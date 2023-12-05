@@ -13,7 +13,7 @@ public class EnforcePage : MonoBehaviour
     [SerializeField]
     private Button _staffMenu;
     [SerializeField]
-    private Button _mineMenu;
+    private Button _miningMenu;
     [SerializeField]
     private Button _snackMenu;
 
@@ -24,7 +24,7 @@ public class EnforcePage : MonoBehaviour
     [SerializeField]
     private RectTransform _staffContent;
     [SerializeField]
-    private RectTransform _mineContent;
+    private RectTransform _miningContent;
     [SerializeField]
     private RectTransform _snackContent;
 
@@ -34,13 +34,13 @@ public class EnforcePage : MonoBehaviour
     {
         _headMenu.onClick.AddListener(ShowHeadMenu);
         _staffMenu.onClick.AddListener(ShowStaffMenu);
-        _mineMenu.onClick.AddListener(ShowMineMenu);
+        _miningMenu.onClick.AddListener(ShowMiningMenu);
         _snackMenu.onClick.AddListener(ShowSnackMenu);
 
 
         _prevContent = _headContent;
         _staffContent.gameObject.SetActive(false);
-        _mineContent.gameObject.SetActive(false);
+        _miningContent.gameObject.SetActive(false);
         _snackContent.gameObject.SetActive(false);
     }
 
@@ -62,13 +62,13 @@ public class EnforcePage : MonoBehaviour
         MoveLightFrame(_staffMenu.transform.position.x);
     }
 
-    private void ShowMineMenu()
+    private void ShowMiningMenu()
     {
-        _scroll.content = _mineContent;
+        _scroll.content = _miningContent;
         _prevContent.gameObject.SetActive(false);
-        _mineContent.gameObject.SetActive(true);
-        _prevContent = _mineContent;
-        MoveLightFrame(_mineMenu.transform.position.x);
+        _miningContent.gameObject.SetActive(true);
+        _prevContent = _miningContent;
+        MoveLightFrame(_miningMenu.transform.position.x);
     }
 
     private void ShowSnackMenu()

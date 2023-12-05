@@ -13,8 +13,7 @@ public class MinerSpawner : MonoBehaviour
     public Miner SpawnMiner(int id)
     {
         Miner miner = _minerPool.CreateMiner(transform.position);
-        MinerEntity entity = TableManager.MinerTable[id];
-        miner.Init(entity.MiningPower, entity.MiningSpeed, entity.MovingSpeed, entity.MiningCount, entity.CriticalPercent, entity.CriticalPower, ResourceManager.AnimCtrlList[entity.Id]);
+        miner.Init(TableManager.MinerTable[id], ResourceManager.AnimCtrlList[id]);
         return miner;
     }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Rendering;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Object = UnityEngine.Object;
 
@@ -19,6 +20,8 @@ public static class ResourceManager
     public static List<RuntimeAnimatorController> AnimCtrlList { get; private set; } = new List<RuntimeAnimatorController>();
 
     public static List<Sprite> MinerIconList { get; private set; } = new List<Sprite>();
+
+    public static List<Sprite> EquipIconList { get; private set; } = new List<Sprite>();
 
     public static void LoadResource()
     {
@@ -44,6 +47,12 @@ public static class ResourceManager
             Debug.Log("MinerIcon Load");
             OnComplete();
         };
+
+        var equipIcons = Resources.LoadAll<Texture2D>("EquipIcon");
+        foreach(var texture in equipIcons)
+        {
+            EquipIconList.Add(Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f)));
+        }
     }
 
     public static void UnloadResource()

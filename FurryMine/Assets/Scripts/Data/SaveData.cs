@@ -9,15 +9,11 @@ public class SaveData
         Money = money;
         OwnerLevel = ownerLevel;
         RemainCoolTime = remainCoolTime;
-        EnforceLevels = enforceLevels;
-        CurrentHeadId = 0;
         CurrentMineIndex = 0;
+        CurrentHeadId = 0;
         CurrentStaffIds = new List<int>();
-        MinerIds = new List<int>
-        {
-            0,1,2
-        };
-
+        CurrentMinerEquip = new Dictionary<int, int>();
+        EnforceLevels = enforceLevels;
         MineDatas = new List<MineData>
         {
             new MineData
@@ -31,6 +27,14 @@ public class SaveData
                 MineralPrice = 1,
             }
         };
+        MinerIds = new List<int>
+        {
+            0,1,2
+        };
+        EquipIds = new List<int>
+        {
+            0,1,2
+        };
     }
 
     public SaveData() : this(0, 1, 0, null) { }
@@ -38,10 +42,12 @@ public class SaveData
     public int Money;
     public int OwnerLevel;
     public int RemainCoolTime;
+    public int CurrentMineIndex;
     public int CurrentHeadId;
     public List<int> CurrentStaffIds;
-    public int CurrentMineIndex;
+    public Dictionary<int, int> CurrentMinerEquip;
     public List<int> EnforceLevels;
-    public List<int> MinerIds;
     public List<MineData> MineDatas;
+    public List<int> MinerIds;
+    public List<int> EquipIds;
 }

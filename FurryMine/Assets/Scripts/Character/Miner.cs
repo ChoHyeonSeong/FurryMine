@@ -1,11 +1,8 @@
-using BackEnd.Game;
 using Pathfinding;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Miner : MonoBehaviour
@@ -15,13 +12,11 @@ public class Miner : MonoBehaviour
 
     public Transform CameraTr { get => _cameraTr; }
 
+    public int EquipId { get => _equip == null ? -1 : _equip.EquipId; }
 
-    private int _miningPower;
-    private float _miningSpeed;
-    private int _miningCount;
-    private float _movingSpeed;
-    private float _criticalPercent;
-    private float _criticalPower;
+    private MinerEntity _minerEntity;
+
+    private Equip _equip;
 
     [SerializeField]
     private int _finalMiningPower;
@@ -30,10 +25,13 @@ public class Miner : MonoBehaviour
     [SerializeField]
     private float _finalMovingSpeed;
     [SerializeField]
+    private int _finalMiningCount;
+    [SerializeField]
     private float _finalCriticalPercent;
     [SerializeField]
     private float _finalCriticalPower;
 
+    private bool _haveEquip;
     private bool _isOreTarget;
     private int _mineralCount;
     private int _price;
@@ -53,28 +51,43 @@ public class Miner : MonoBehaviour
     private Rigidbody2D _rigid;
     private AIPath _aiPath;
 
-    public void Init(int baseMiningPower, float baseMiningSpeed, float basemMovingSpeed, int baseMiningCount, float baseCriticalPercent, float baseCriticalPower, RuntimeAnimatorController animCtrl)
+    private void Awake()
     {
         _spriter = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
         _rigid = GetComponent<Rigidbody2D>();
         _aiPath = GetComponent<AIPath>();
+        _cart = GameManager.Cart;
+    }
+
+    public void Init(MinerEntity minerEntity, RuntimeAnimatorController animCtrl)
+    {
         _animator.runtimeAnimatorController = animCtrl;
         _animator.SetBool("Idle", true);
 
-        _miningPower = baseMiningPower;
-        _miningSpeed = baseMiningSpeed;
-        _movingSpeed = basemMovingSpeed;
-        _miningCount = baseMiningCount;
-        _criticalPercent = baseCriticalPercent;
-        _criticalPower = baseCriticalPower;
+        _minerEntity = minerEntity;
 
+        _haveEquip = false;
         _isOreTarget = false;
         _price = 0;
         _mineralCount = 0;
         _target = null;
-        _crtMiningCount = _miningCount;
-        _cart = GameManager.Cart;
+        _finalMiningCount = _minerEntity.MiningCount;
+        _crtMiningCount = _finalMiningCount;
+    }
+
+    public void PutOnEquip(Equip equip)
+    {
+        _haveEquip = true;
+        _equip = equip;
+        _finalMiningCount = _minerEntity.MiningCount + _equip.FinalMiningCount;
+    }
+
+    public void TakeOffEquip()
+    {
+        _haveEquip = false;
+        _equip = null;
+        _finalMiningCount = _minerEntity.MiningCount;
     }
 
     public void EnforceStat(EEnforce enforce, float enforceFigure)
@@ -83,25 +96,25 @@ public class Miner : MonoBehaviour
         {
             case EEnforce.STAFF_MINING_POWER:
             case EEnforce.HEAD_MINING_POWER:
-                _finalMiningPower = Mathf.RoundToInt((_miningPower + (int)enforceFigure) * Snack.MiningPowerBuff);
+                _finalMiningPower = Mathf.RoundToInt((_minerEntity.MiningPower + (int)enforceFigure + (_haveEquip ? _equip.FinalMiningPower : 0)) * Snack.MiningPowerBuff);
                 break;
             case EEnforce.STAFF_MINING_SPEED:
             case EEnforce.HEAD_MINING_SPEED:
-                _finalMiningSpeed = _miningSpeed * enforceFigure * Snack.MiningSpeedBuff;
+                _finalMiningSpeed = _minerEntity.MiningSpeed * (enforceFigure + (_haveEquip ? _equip.FinalMiningSpeed : 0)) * Snack.MiningSpeedBuff;
                 _animator.SetFloat("MineSpeed", _finalMiningSpeed);
                 _mineAnimWait = new WaitForSeconds(_miningAnimTime / _finalMiningSpeed);
                 _mineWait = new WaitForSeconds(_miningTime / _finalMiningSpeed);
                 break;
             case EEnforce.STAFF_MOVING_SPEED:
             case EEnforce.HEAD_MOVING_SPEED:
-                _finalMovingSpeed = _movingSpeed * enforceFigure * Snack.MovingSpeedBuff;
+                _finalMovingSpeed = _minerEntity.MovingSpeed * (enforceFigure + (_haveEquip ? _equip.FinalMovingSpeed : 0)) * Snack.MovingSpeedBuff;
                 _aiPath.maxSpeed = _finalMovingSpeed;
                 break;
             case EEnforce.HEAD_CRITICAL_PERCENT:
-                _finalCriticalPercent = _criticalPercent + enforceFigure;
+                _finalCriticalPercent = _minerEntity.CriticalPercent + enforceFigure + (_haveEquip ? _equip.FinalCriticalPercent : 0);
                 break;
             case EEnforce.HEAD_CRITICAL_POWER:
-                _finalCriticalPower = _criticalPower + enforceFigure;
+                _finalCriticalPower = _minerEntity.CriticalPower + enforceFigure + (_haveEquip ? _equip.FinalCriticalPower : 0);
                 break;
             default:
                 Debug.Log("지정되지 않은 광부 강화입니다.");
@@ -118,7 +131,7 @@ public class Miner : MonoBehaviour
 
     public void GoToSpare()
     {
-        if(_isOreTarget)
+        if (_isOreTarget)
         {
             _target.GetComponent<Ore>().SetMiner(null);
         }
@@ -159,7 +172,7 @@ public class Miner : MonoBehaviour
             GameManager.Player.SubmitMineral(_mineralCount);
             _mineralCount = 0;
             _price = 0;
-            _crtMiningCount = _miningCount;
+            _crtMiningCount = _finalMiningCount;
             OnChangeMineralCount(_mineralCount);
             StartCoroutine(BlockMove(_delayTime, null));
         }

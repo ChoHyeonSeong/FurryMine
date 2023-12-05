@@ -8,8 +8,10 @@ using UnityEngine;
 public class MinerTeam : MonoBehaviour
 {
     public static Action<Action<int>> OnSetStaffMiner { get; set; }
+    public static Action<Action<int>> OnSetMinerEquip { get; set; }
 
     public static Action<int, EMinerLabel> OnSetLabel { get; set; }
+    public static Action<int, bool> OnSetWear { get; set; }
 
     [SerializeField]
     private CinemachineVirtualCamera _followCam;
@@ -19,6 +21,8 @@ public class MinerTeam : MonoBehaviour
     private int _headMinerId;
     private Miner _headMiner;
     private Dictionary<int, Miner> _staffMiners;
+    private Dictionary<int, int> _minerEquips;  // key == equipId, value == minerId
+    private Dictionary<int, Equip> _equips;
 
     private List<EEnforce> _headStatEnforce;
     private List<EEnforce> _staffStatEnforce;
@@ -53,6 +57,7 @@ public class MinerTeam : MonoBehaviour
         _staffMiners = new Dictionary<int, Miner>();
         _headStatEnforce = new List<EEnforce>();
         _staffStatEnforce = new List<EEnforce>();
+        _equips = new Dictionary<int, Equip>();
 
         for (int i = 0; i < 5; i++)
         {
@@ -71,6 +76,7 @@ public class MinerTeam : MonoBehaviour
         MinerItem.GetHeadId += GetHeadId;
         MinerItem.OnHeadClick += SetHeadMiner;
         MinerItem.OnStaffClick += SetStaffMiner;
+        EquipItem.OnWearClick += SetMinerEquip;
         SelectMinerContent.GetHeadId += GetHeadId;
         SelectMinerContent.GetStaffIdList += GetStaffIdList;
     }
@@ -81,6 +87,7 @@ public class MinerTeam : MonoBehaviour
         MinerItem.GetHeadId -= GetHeadId;
         MinerItem.OnHeadClick -= SetHeadMiner;
         MinerItem.OnStaffClick -= SetStaffMiner;
+        EquipItem.OnWearClick -= SetMinerEquip;
         SelectMinerContent.GetHeadId -= GetHeadId;
         SelectMinerContent.GetStaffIdList -= GetStaffIdList;
     }
@@ -95,6 +102,21 @@ public class MinerTeam : MonoBehaviour
         }
 
         _followCam.Follow = _headMiner.CameraTr;
+
+        _minerEquips = SaveManager.Save.CurrentMinerEquip;
+        foreach(int equipId in SaveManager.Save.EquipIds)
+        {
+            Equip equip = _equips[equipId] = new Equip(TableManager.EquipTable[equipId]);
+            if(_minerEquips.ContainsKey(equipId))
+            {
+                int minerId = _minerEquips[equipId];
+                if (minerId != _headMinerId)
+                    _staffMiners[minerId].PutOnEquip(equip);
+                else
+                    _headMiner.PutOnEquip(equip);
+            }
+        }
+
     }
 
     private void SetHeadMiner(MinerItem newHeadItem, MinerItem oldHeadItem)
@@ -105,30 +127,9 @@ public class MinerTeam : MonoBehaviour
                 {
                     // 동료를 반장으로, 반장을 동료로
                     oldHeadItem.SetLabel(EMinerLabel.STAFF);
-                    _staffMiners[oldHeadItem.MinerId] = _headMiner;
-
                     newHeadItem.SetLabel(EMinerLabel.HEAD);
-                    _headMiner = _staffMiners[newHeadItem.MinerId];
-                    _staffMiners.Remove(newHeadItem.MinerId);
 
-                    float figure;
-
-                    // 해당 동료, 반장 스탯 재계산
-                    foreach (EEnforce enforce in _headStatEnforce)
-                    {
-                        figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
-                        _headMiner.EnforceStat(enforce, figure);
-                    }
-
-                    Miner staff = _staffMiners[oldHeadItem.MinerId];
-                    foreach (EEnforce enforce in _staffStatEnforce)
-                    {
-                        figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
-                        staff.EnforceStat(enforce, figure);
-                    }
-                    staff.EnforceStat(EEnforce.HEAD_CRITICAL_PERCENT, 0);
-                    staff.EnforceStat(EEnforce.HEAD_CRITICAL_POWER, 0);
-
+                    SwapHeadStaff(oldHeadItem.MinerId, newHeadItem.MinerId);
                 }
                 break;
             case EMinerLabel.NONE:
@@ -170,28 +171,9 @@ public class MinerTeam : MonoBehaviour
                     // 포지션 바꿀 직원을 정하고
                     // 선택된 직원을 넣기
                     minerItem.SetLabel(EMinerLabel.STAFF);
-                    _staffMiners[minerItem.MinerId] = _headMiner;
-
                     OnSetLabel(minerId, EMinerLabel.HEAD);
-                    _headMiner = _staffMiners[minerId];
-                    _staffMiners.Remove(minerId);
 
-                    float figure;
-                    // 해당 동료, 반장 스탯 재계산
-                    foreach (EEnforce enforce in _headStatEnforce)
-                    {
-                        figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
-                        _headMiner.EnforceStat(enforce, figure);
-                    }
-
-                    Miner staff = _staffMiners[minerItem.MinerId];
-                    foreach (EEnforce enforce in _staffStatEnforce)
-                    {
-                        figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
-                        staff.EnforceStat(enforce, figure);
-                    }
-                    staff.EnforceStat(EEnforce.HEAD_CRITICAL_PERCENT, 0);
-                    staff.EnforceStat(EEnforce.HEAD_CRITICAL_POWER, 0);
+                    SwapHeadStaff(minerItem.MinerId, minerId);
 
                     _followCam.Follow = _headMiner.CameraTr;
                     _headMinerId = minerId;
@@ -227,10 +209,103 @@ public class MinerTeam : MonoBehaviour
         minerItem.InitSelectItem();
     }
 
+    private void SetMinerEquip(EquipItem equipItem)
+    {
+        // 경우의 수 ::
+        // 착용 중이지 않은 장비를 투입된 인원 중에 착용
+        // 착용 중이지 않은 장비를 이미 착용 장비가 있는 인원에게 착용
+        // 착용 중인 장비를 투입된 인원 중에 착용
+        // 착용 중인 장비를 착용중인 인원에 착용
+
+        OnSetMinerEquip((minerId) =>
+        {
+            // 이 장비를 이미 착용하고 있는 광부가 있을 경우 
+            if (_minerEquips.ContainsKey(equipItem.EquipId))
+            {
+                // 장비를 착용한 광부와 선택한 광부가 같을 경우
+                if (_minerEquips[equipItem.EquipId] == minerId)
+                    return;
+
+                // 해당 장비를 착용하고 있는 사람의 장비를 해제
+                int putOnMinerId = _minerEquips[equipItem.EquipId];
+
+                // 스탯 재계산
+                if (putOnMinerId != _headMinerId)
+                {
+                    _staffMiners[putOnMinerId].TakeOffEquip();
+                    RecalculateStaffStat(_staffMiners[putOnMinerId]);
+                }
+                else
+                {
+                    _headMiner.TakeOffEquip();
+                    RecalculateHeadStat();
+                }
+            }
+            else
+            {
+                equipItem.SetWear(true);
+            }
+
+            Miner miner = minerId == _headMinerId ? _headMiner : _staffMiners[minerId];
+            // 다른 장비를 착용하고 있을 경우
+            if (miner.EquipId != -1)
+            {
+                // 장비 착용 현황에서 삭제
+                _minerEquips.Remove(miner.EquipId);
+                // 착용 라벨 삭제
+                OnSetWear(miner.EquipId, false);
+                // 장비를 해제
+                miner.TakeOffEquip();
+            }
+            miner.PutOnEquip(_equips[equipItem.EquipId]);
+            _minerEquips[equipItem.EquipId] = minerId;
+            // 스탯 재계산
+            if (minerId == _headMinerId)
+                RecalculateHeadStat();
+            else
+                RecalculateStaffStat(miner);
+        });
+    }
+
     private void AddStaffMiner(int minerId)
     {
         Debug.Log(minerId);
         Miner staff = _staffMiners[minerId] = _minerSpawner.SpawnMiner(minerId);
+        float figure;
+        foreach (EEnforce enforce in _staffStatEnforce)
+        {
+            figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+            staff.EnforceStat(enforce, figure);
+        }
+        staff.EnforceStat(EEnforce.HEAD_CRITICAL_PERCENT, 0);
+        staff.EnforceStat(EEnforce.HEAD_CRITICAL_POWER, 0);
+    }
+
+    private void SwapHeadStaff(int headId, int staffId)
+    {
+        Miner staff = _staffMiners[headId] = _headMiner;
+
+        _headMiner = _staffMiners[staffId];
+        _staffMiners.Remove(staffId);
+
+        // 해당 동료, 반장 스탯 재계산
+        RecalculateHeadStat();
+        RecalculateStaffStat(staff);
+    }
+
+    private void RecalculateHeadStat()
+    {
+        float figure;
+        // 해당 동료, 반장 스탯 재계산
+        foreach (EEnforce enforce in _headStatEnforce)
+        {
+            figure = EnforceManager.GetBase(enforce) + (EnforceManager.GetLevel(enforce) * EnforceManager.GetCoeff(enforce));
+            _headMiner.EnforceStat(enforce, figure);
+        }
+    }
+
+    private void RecalculateStaffStat(Miner staff)
+    {
         float figure;
         foreach (EEnforce enforce in _staffStatEnforce)
         {
