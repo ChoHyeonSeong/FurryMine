@@ -7,4 +7,6 @@ public class MineLevelEntity
     public int Level;
     public int LodeCount;
     public int OrePerLode;
+    public int OreCount;
+    public int RespawnTime;
 }

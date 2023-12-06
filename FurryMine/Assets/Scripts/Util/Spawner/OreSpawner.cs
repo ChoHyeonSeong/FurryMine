@@ -10,33 +10,47 @@ public class OreSpawner : MonoBehaviour
 {
     public static int MineralCount { get; private set; }
 
-    public Action OnSpawnedOre { get; set; }
-    public Func<bool> IsSpawnable { get; set; }
+    public Func<int, bool> IsSpawnable { get; set; }
     public Action OnCollectOre { get; set; }
 
+    [SerializeField]
     private int _oreHealth;
+    [SerializeField]
     private float _respawnTime;
+    [SerializeField]
     private int _oreCount;
 
+    [SerializeField]
     private bool _isSpawning = false;
+    [SerializeField]
     private int _currentOreCount = 0;
 
     private OrePool _orePool;
     private BlankPool _blankPool;
 
     private WaitForSeconds _respawnWait;
-    private Queue<Ore> _newOreQueue;
+    private Queue<Ore> _idleOreQueue;
+
+    public void CollectAllOre()
+    {
+        _currentOreCount = 0;
+        while (_idleOreQueue.Count > 0)
+        {
+            _orePool.DestroyOre(_idleOreQueue.Dequeue());
+        }
+        AstarPath.active.Scan();
+    }
 
     private void Awake()
     {
         _blankPool = FindAnyObjectByType<BlankPool>();
         _orePool = GetComponent<OrePool>();
-        _newOreQueue = new Queue<Ore>();
+        _idleOreQueue = new Queue<Ore>();
     }
 
     private void Update()
     {
-        if (GameApp.IsGameStart && IsSpawnable())
+        if (GameApp.IsGameStart && IsSpawnable(_currentOreCount))
         {
             if (!_isSpawning && _currentOreCount < _oreCount)
             {
@@ -62,7 +76,7 @@ public class OreSpawner : MonoBehaviour
 
     private Ore ResponseOre()
     {
-        return _newOreQueue.Count > 0 ? _newOreQueue.Dequeue() : null;
+        return _idleOreQueue.Count > 0 ? _idleOreQueue.Dequeue() : null;
     }
 
     private void CollectOre(Ore ore)
@@ -75,7 +89,7 @@ public class OreSpawner : MonoBehaviour
 
     private void ReIdleOre(Ore ore)
     {
-        _newOreQueue.Enqueue(ore);
+        _idleOreQueue.Enqueue(ore);
     }
 
     private IEnumerator SpawnOre()
@@ -94,7 +108,7 @@ public class OreSpawner : MonoBehaviour
         Vector2 spawnPos = candidate[Random.Range(0, candidate.Count)];
         Ore ore = _orePool.CreateOre(spawnPos);
         ore.Init(_oreHealth);
-        _newOreQueue.Enqueue(ore);
+        _idleOreQueue.Enqueue(ore);
         AstarPath.active.Scan();
     }
 

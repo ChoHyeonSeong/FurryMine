@@ -38,7 +38,6 @@ public static class ResourceManager
 
         Addressables.LoadAssetsAsync(_minerIconLabel, (Object obj) =>
         {
-            Debug.Log(obj.GetType().Name);
             Texture2D texture = obj as Texture2D;
             MinerIconList.Add(Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f)));
         }).Completed += (table) =>

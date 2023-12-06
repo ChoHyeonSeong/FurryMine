@@ -51,6 +51,22 @@ public class MinerTeam : MonoBehaviour
         _headMiner.EnforceStat(enforce, figure);
     }
 
+    public void GoToOtherMine()
+    {
+        List<Miner> allMIner = new List<Miner>
+        {
+            _headMiner
+        };
+        foreach (Miner miner in _staffMiners.Values)
+            allMIner.Add(miner);
+
+        foreach (Miner miner in allMIner)
+        {
+            // 모든 광부의 target을 Null로 만들기
+            miner.EnterMine();
+        }
+    }
+
     private void Awake()
     {
         _minerSpawner = GetComponent<MinerSpawner>();
@@ -104,10 +120,10 @@ public class MinerTeam : MonoBehaviour
         _followCam.Follow = _headMiner.CameraTr;
 
         _minerEquips = SaveManager.Save.CurrentMinerEquip;
-        foreach(int equipId in SaveManager.Save.EquipIds)
+        foreach (int equipId in SaveManager.Save.EquipIds)
         {
             Equip equip = _equips[equipId] = new Equip(TableManager.EquipTable[equipId]);
-            if(_minerEquips.ContainsKey(equipId))
+            if (_minerEquips.ContainsKey(equipId))
             {
                 int minerId = _minerEquips[equipId];
                 if (minerId != _headMinerId)

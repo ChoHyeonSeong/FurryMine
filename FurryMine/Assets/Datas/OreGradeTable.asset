@@ -15,31 +15,41 @@ MonoBehaviour:
   Table:
   - Id: 0
     Grade: F
+    CoeffHealth: 1
     MineralCount: 1
   - Id: 1
     Grade: E
+    CoeffHealth: 1.2
     MineralCount: 2
   - Id: 2
     Grade: D
+    CoeffHealth: 1.4
     MineralCount: 3
   - Id: 3
     Grade: C
+    CoeffHealth: 1.6
     MineralCount: 4
   - Id: 4
     Grade: B
+    CoeffHealth: 1.8
     MineralCount: 5
   - Id: 5
     Grade: A
+    CoeffHealth: 2
     MineralCount: 6
   - Id: 6
     Grade: S
+    CoeffHealth: 2.2
     MineralCount: 7
   - Id: 7
     Grade: SS
+    CoeffHealth: 2.4
     MineralCount: 8
   - Id: 8
     Grade: SSS
+    CoeffHealth: 2.6
     MineralCount: 9
   - Id: 9
     Grade: L
+    CoeffHealth: 2.8
     MineralCount: 10

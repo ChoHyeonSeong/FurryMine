@@ -50,6 +50,7 @@ public class Miner : MonoBehaviour
     private Animator _animator;
     private Rigidbody2D _rigid;
     private AIPath _aiPath;
+    private Coroutine _miningCoroutine;
 
     private void Awake()
     {
@@ -72,6 +73,7 @@ public class Miner : MonoBehaviour
         _price = 0;
         _mineralCount = 0;
         _target = null;
+        _miningCoroutine = null;
         _finalMiningCount = _minerEntity.MiningCount;
         _crtMiningCount = _finalMiningCount;
     }
@@ -142,6 +144,25 @@ public class Miner : MonoBehaviour
         }
     }
 
+    public void EnterMine()
+    {
+        _aiPath.destination = transform.parent.position;
+        transform.position = transform.parent.position;
+        SetAnim("Idle");
+        if (_isOreTarget)
+        {
+            _target.GetComponent<Ore>().SetMiner(null);
+            _isOreTarget = false;
+        }
+        if (_miningCoroutine != null)
+        {
+            StopCoroutine(_miningCoroutine);
+            _miningCoroutine = null;
+        }
+        _target = null;
+        _crtMiningCount = _finalMiningCount;
+    }
+
     private void Update()
     {
         if (_target == null)
@@ -182,7 +203,7 @@ public class Miner : MonoBehaviour
     {
         Debug.Log("Ã¤±¤ ½ÃÀÛ");
         _aiPath.destination = transform.position;
-        StartCoroutine(MineOre(targetOre));
+        _miningCoroutine = StartCoroutine(MineOre(targetOre));
     }
 
     private void InitAnimatorState()
@@ -221,10 +242,11 @@ public class Miner : MonoBehaviour
             _isOreTarget = false;
             _crtMiningCount--;
             StartCoroutine(BlockMove(_delayTime, _crtMiningCount > 0 ? null : _cart.gameObject));
+            _miningCoroutine = null;
         }
         else
         {
-            StartCoroutine(MineOre(ore));
+            _miningCoroutine = StartCoroutine(MineOre(ore));
         }
     }
 

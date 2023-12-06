@@ -15,31 +15,12 @@ public class Owner : MonoBehaviour
     private float _limitTime = 60f;
     private float _time;
     private int _ownerLevel;
-    // 가지고 있는 광부목록
-    private List<int> _minerIdList;
-    // 가지고 있는 광산목록
-    private List<MineData> _mineDataList;
 
     private void Awake()
     {
         _quotaExp = 5;
         _currentExp = 0;
         _time = _limitTime;
-    }
-    private void OnEnable()
-    {
-        GameApp.OnGameStart += GameStart;
-    }
-
-    private void OnDisable()
-    {
-        GameApp.OnGameStart -= GameStart;
-    }
-
-    private void GameStart()
-    {
-        _minerIdList = SaveManager.Save.MinerIds.ToList();
-        _mineDataList = SaveManager.Save.MineDatas.ToList();
     }
 
     private void Update()

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MineItem : MonoBehaviour
+public class MineItem : MonoBehaviour, IPointerClickHandler
 {
     public static Action<MineItem> OnMiningClick { get; set; }
     public static Action<MineItem> OnSellClick { get; set; }
@@ -33,7 +33,7 @@ public class MineItem : MonoBehaviour
     [SerializeField]
     private GameObject _miningLabel;
 
-    public void InitItem(int index, int remain, string name, string grade, Sprite sprite)
+    public void InitItem(int index, int remain, string name, string grade, int level, Sprite sprite)
     {
         // 매개변수로 Sprite 추가하고
         // OnHeadMiner
@@ -41,10 +41,10 @@ public class MineItem : MonoBehaviour
         // OnInfoMiner
         // Action 변수 추가
         _mineIndex = index;
-        _mineName.text = name;
+        _mineName.text = $"{name} 광산 Lv.{level}";
         _mineGrade.text = $"{grade}급";
         _mineRemain.text = remain.ToString();
-        _mineIcon.sprite = sprite;
+        //_mineIcon.sprite = sprite;
     }
 
     public void SetMining(bool isMining)

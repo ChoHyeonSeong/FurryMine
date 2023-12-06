@@ -16,13 +16,13 @@ public class MineralSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        Ore.OnBreakOre += SpawnMineral;
+        Ore.OnPreBreakOre += SpawnMineral;
         Mineral.OnPickMineral += CollectMineral;
     }
 
     private void OnDisable()
     {
-        Ore.OnBreakOre -= SpawnMineral;
+        Ore.OnPreBreakOre -= SpawnMineral;
         Mineral.OnPickMineral -= CollectMineral;
     }
 

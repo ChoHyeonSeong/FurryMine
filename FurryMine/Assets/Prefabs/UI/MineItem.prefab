@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC554\uC11D \uAD11\uC0B0"
+  m_text: "\uC554\uC11D \uAD11\uC0B0Lv.23"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f144da88c3cd834d88e311a59e022d0, type: 2}
   m_sharedMaterial: {fileID: -874386416509668259, guid: 7f144da88c3cd834d88e311a59e022d0, type: 2}
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _miningBtn: {fileID: 4565049707708846647}
   _sellBtn: {fileID: 8353023743229258132}
-  _mineIcon: {fileID: 0}
+  _mineIcon: {fileID: 5149184229398331034}
   _mineName: {fileID: 35605108957737683}
   _mineGrade: {fileID: 8149291687231898292}
   _mineRemain: {fileID: 8644358232488204391}

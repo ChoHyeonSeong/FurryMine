@@ -13,6 +13,7 @@ public class ManagePage : MonoBehaviour
     private Button _minerMenu;
     [SerializeField]
     private Button _equipMenu;
+    [SerializeField]
     private Button _mineMenu;
     private Button _bagMenu;
 
@@ -22,6 +23,7 @@ public class ManagePage : MonoBehaviour
     private RectTransform _minerContent;
     [SerializeField]
     private RectTransform _equipContent;
+    [SerializeField]
     private RectTransform _mineContent;
     private RectTransform _bagContent;
 
@@ -31,13 +33,13 @@ public class ManagePage : MonoBehaviour
     {
         _minerMenu.onClick.AddListener(ShowMinerMenu);
         _equipMenu.onClick.AddListener(ShowEquipMenu);
-        //_mineMenu.onClick.AddListener(ShowMineMenu);
+        _mineMenu.onClick.AddListener(ShowMineMenu);
         //_bagMenu.onClick.AddListener(ShowBagMenu);
 
 
         _prevContent = _minerContent;
         _equipContent.gameObject.SetActive(false);
-        //_mineContent.gameObject.SetActive(false);
+        _mineContent.gameObject.SetActive(false);
         //_bagContent.gameObject.SetActive(false);
     }
 

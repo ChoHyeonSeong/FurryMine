@@ -5,5 +5,6 @@ public class OreGradeEntity
 {
     public int Id;
     public string Grade;
+    public float CoeffHealth;
     public int MineralCount;
 }

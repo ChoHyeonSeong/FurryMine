@@ -6,6 +6,8 @@ using UnityEngine;
 public class Ore : MonoBehaviour
 {
     public static Action<bool, string, Vector2> OnHitText { get; set; }
+
+    public static Action<Ore> OnPreBreakOre { get; set; }
     public static Action<Ore> OnBreakOre { get; set; }
 
     public static Action<Ore> OnSetMinerNull { get; set; }
@@ -47,6 +49,7 @@ public class Ore : MonoBehaviour
 
     private void Break()
     {
+        OnPreBreakOre(this);
         OnBreakOre(this);
     }
 }

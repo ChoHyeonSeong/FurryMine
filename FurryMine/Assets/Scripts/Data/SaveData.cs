@@ -18,13 +18,24 @@ public class SaveData
         {
             new MineData
             {
-                OreId = 0,
+                OreTypeId = 0,
+                OreGradeId = 0,
+                MineLevelId = 0,
                 OreDeposit = -1,
-                OreHealth = 2,
-                RespawnTime = 1,
-                OreCount = 2,
-                MineralCount = 1,
-                MineralPrice = 1,
+            },
+            new MineData
+            {
+                OreTypeId = 0,
+                OreGradeId = 4,
+                MineLevelId = 0,
+                OreDeposit = 10,
+            },
+            new MineData
+            {
+                OreTypeId = 0,
+                OreGradeId = 2,
+                MineLevelId = 0,
+                OreDeposit = 1000,
             }
         };
         MinerIds = new List<int>
