@@ -9,4 +9,5 @@ public class MineLevelEntity
     public int OrePerLode;
     public int OreCount;
     public int RespawnTime;
+    public float Probability;
 }

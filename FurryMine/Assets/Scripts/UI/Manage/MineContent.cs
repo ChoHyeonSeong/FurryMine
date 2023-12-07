@@ -7,7 +7,7 @@ public class MineContent : MonoBehaviour
     [SerializeField]
     private MineItem _mineItemPrefab;
 
-    private Dictionary<int, MineItem> _mineItems = new Dictionary<int, MineItem>();
+    private List<MineItem> _mineItems = new List<MineItem>();
 
     private void Awake()
     {
@@ -33,7 +33,7 @@ public class MineContent : MonoBehaviour
         }
         int currentIndex = SaveManager.Save.CurrentMineIndex;
         if (currentIndex != 0)
-            _mineItems[currentIndex].SetMining(true);
+            _mineItems[currentIndex - 1].SetMining(true);
     }
 
     private void AddMIneItem(int mineIndex)
@@ -44,22 +44,27 @@ public class MineContent : MonoBehaviour
         OreTypeEntity oreTypeEntity = TableManager.OreTypeTable[data.OreTypeId];
         OreGradeEntity oreGradeEntity = TableManager.OreGradeTable[data.OreGradeId];
         item.InitItem(mineIndex, data.OreDeposit, oreTypeEntity.Type, oreGradeEntity.Grade, mineLevelEntity.Level, null);
-        _mineItems[mineIndex] = item;
+        _mineItems.Add(item);
     }
 
     private void SetMining(int mineIndex, bool isMining)
     {
-        _mineItems[mineIndex].SetMining(isMining);
+        _mineItems[mineIndex - 1].SetMining(isMining);
     }
 
     private void SetDeposit(int index, int deposit)
     {
-        _mineItems[index].SetRemainText(deposit);
+        _mineItems[index - 1].SetRemainText(deposit);
     }
 
     private void RemoveMine(int index)
     {
-        Destroy(_mineItems[index].gameObject);
-        _mineItems.Remove(index);
+        Debug.Log(index);
+        Destroy(_mineItems[index - 1].gameObject);
+        _mineItems.RemoveAt(index - 1);
+        for (int i = 0; i < _mineItems.Count; i++)
+        {
+            _mineItems[i].SetIndex(i + 1);
+        }
     }
 }

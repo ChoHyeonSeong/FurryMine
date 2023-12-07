@@ -19,6 +19,12 @@ public class MineCart : MonoBehaviour
         OnChangeMoney(_money);
     }
 
+    public void InsertMoney(int price)
+    {
+        _money += price;
+        OnChangeMoney(_money);
+    }
+
     public void PlusMoney(int price)
     {
         _money += price;
@@ -41,10 +47,12 @@ public class MineCart : MonoBehaviour
     private void OnEnable()
     {
         GameApp.OnGameStart += GameStart;
+        Mine.OnSellMine += InsertMoney;
     }
 
     private void OnDisable()
     {
         GameApp.OnGameStart -= GameStart;
+        Mine.OnSellMine -= InsertMoney;
     }
 }

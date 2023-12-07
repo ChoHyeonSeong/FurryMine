@@ -110,15 +110,16 @@ public class MinerTeam : MonoBehaviour
 
     private void PreGameStart()
     {
+        // 광부 소환 및 기본 스탯 세팅
         _headMiner = _minerSpawner.SpawnMiner(SaveManager.Save.CurrentHeadId);
 
         foreach (int id in SaveManager.Save.CurrentStaffIds)
         {
             _staffMiners[id] = _minerSpawner.SpawnMiner(id);
         }
-
         _followCam.Follow = _headMiner.CameraTr;
 
+        // 장비 소환 및 착용
         _minerEquips = SaveManager.Save.CurrentMinerEquip;
         foreach (int equipId in SaveManager.Save.EquipIds)
         {

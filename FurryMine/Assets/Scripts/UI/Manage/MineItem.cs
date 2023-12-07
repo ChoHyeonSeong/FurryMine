@@ -13,6 +13,7 @@ public class MineItem : MonoBehaviour, IPointerClickHandler
 
     public int MineIndex { get => _mineIndex; }
 
+    private bool _isMining;
     private int _mineIndex;
     private static MineItem _prevItem;
 
@@ -49,12 +50,18 @@ public class MineItem : MonoBehaviour, IPointerClickHandler
 
     public void SetMining(bool isMining)
     {
+        _isMining = isMining;
         _miningLabel.SetActive(isMining);
     }
 
     public void SetRemainText(int remain)
     {
-        _mineRemain.text = remain.ToString(); 
+        _mineRemain.text = remain.ToString();
+    }
+
+    public void SetIndex(int index)
+    {
+        _mineIndex = index;
     }
 
     public void UnselectItem()
@@ -86,8 +93,11 @@ public class MineItem : MonoBehaviour, IPointerClickHandler
 
     private void SelectItem()
     {
-        _miningBtn.gameObject.SetActive(true);
-        _sellBtn.gameObject.SetActive(true);
+        if (!_isMining)
+        {
+            _miningBtn.gameObject.SetActive(true);
+            _sellBtn.gameObject.SetActive(true);
+        }
         _lightFrame.SetActive(true);
     }
 

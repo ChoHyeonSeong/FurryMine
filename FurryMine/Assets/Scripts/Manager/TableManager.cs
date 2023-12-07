@@ -88,6 +88,69 @@ public static class TableManager
         };
     }
 
+    public static void TestLoad()
+    {
+        _minerRef = new AssetReferenceT<MinerTable>("Assets/Datas/MinerTable.asset");
+        _minerRef.LoadAssetAsync().Completed += (table) =>
+        {
+            var minerData = table.Result;
+            foreach (var entity in minerData.Table)
+                MinerTable[entity.Id] = entity;
+            Debug.Log("MinerTable Load");
+            OnComplete();
+        };
+
+        _enforceRef = new AssetReferenceT<EnforceTable>("Assets/Datas/EnforceTable.asset");
+        _enforceRef.LoadAssetAsync().Completed += (table) =>
+        {
+            var enforceData = table.Result;
+            foreach (var entity in enforceData.Table)
+                EnforceTable[entity.Id] = entity;
+            Debug.Log("EnforceTable Load");
+            OnComplete();
+        };
+
+        _equipRef = new AssetReferenceT<EquipTable>("Assets/Datas/EquipTable.asset");
+        _equipRef.LoadAssetAsync().Completed += (table) =>
+        {
+            var equipData = table.Result;
+            foreach (var entity in equipData.Table)
+                EquipTable[entity.Id] = entity;
+            Debug.Log("EquipTable Load");
+            OnComplete();
+        };
+
+        _mineLevelRef = new AssetReferenceT<MineLevelTable>("Assets/Datas/MineLevelTable.asset");
+        _mineLevelRef.LoadAssetAsync().Completed += (table) =>
+        {
+            var mineLevelData = table.Result;
+            foreach (var entity in mineLevelData.Table)
+                MineLevelTable[entity.Id] = entity;
+            Debug.Log("MineLevelTable Load");
+            OnComplete();
+        };
+
+        _oreGradeRef = new AssetReferenceT<OreGradeTable>("Assets/Datas/OreGradeTable.asset");
+        _oreGradeRef.LoadAssetAsync().Completed += (table) =>
+        {
+            var oreGradeData = table.Result;
+            foreach (var entity in oreGradeData.Table)
+                OreGradeTable[entity.Id] = entity;
+            Debug.Log("OreGradeTable Load");
+            OnComplete();
+        };
+
+        _oreTypeRef = new AssetReferenceT<OreTypeTable>("Assets/Datas/OreTypeTable.asset");
+        _oreTypeRef.LoadAssetAsync().Completed += (table) =>
+        {
+            var oreTypeData = table.Result;
+            foreach (var entity in oreTypeData.Table)
+                OreTypeTable[entity.Id] = entity;
+            Debug.Log("OreTypeTable Load");
+            OnComplete();
+        };
+    }
+
     public static void UnloadTable()
     {
         _minerRef.ReleaseAsset();

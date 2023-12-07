@@ -19,3 +19,32 @@ MonoBehaviour:
     OrePerLode: 1000
     OreCount: 2
     RespawnTime: 1
+    Probability: 40
+  - Id: 1
+    Level: 2
+    LodeCount: 3
+    OrePerLode: 1500
+    OreCount: 3
+    RespawnTime: 1
+    Probability: 68
+  - Id: 2
+    Level: 3
+    LodeCount: 4
+    OrePerLode: 2000
+    OreCount: 4
+    RespawnTime: 1
+    Probability: 86
+  - Id: 3
+    Level: 4
+    LodeCount: 5
+    OrePerLode: 2500
+    OreCount: 5
+    RespawnTime: 1
+    Probability: 96
+  - Id: 4
+    Level: 5
+    LodeCount: 6
+    OrePerLode: 3000
+    OreCount: 6
+    RespawnTime: 1
+    Probability: 100

@@ -10,6 +10,8 @@ public class Mine : MonoBehaviour
     public static Action<int, int> OnCheckDepletion { get; set; }
     public static Action<int> OnRemoveMine { get; set; }
 
+    public static Action<int> OnSellMine { get; set; }
+
     [SerializeField]
     private int _currentMineIndex;
     [SerializeField]
@@ -54,6 +56,7 @@ public class Mine : MonoBehaviour
     {
         GameApp.OnPreGameStart += PreGameStart;
         MineItem.OnMiningClick += SetMiningMine;
+        MineItem.OnSellClick += SellMine;
         _oreSpawner.IsSpawnable += CheckSpawnable;
         _oreSpawner.OnCollectOre += CheckDepletion;
     }
@@ -62,6 +65,7 @@ public class Mine : MonoBehaviour
     {
         GameApp.OnPreGameStart -= PreGameStart;
         MineItem.OnMiningClick -= SetMiningMine;
+        MineItem.OnSellClick -= SellMine;
         _oreSpawner.IsSpawnable -= CheckSpawnable;
         _oreSpawner.OnCollectOre -= CheckDepletion;
     }
@@ -159,8 +163,18 @@ public class Mine : MonoBehaviour
         mineItem.SetMining(true);
         _minerTeam.GoToOtherMine();
         _oreSpawner.CollectAllOre();
+        mineItem.InitSelectItem();
     }
 
+    private void SellMine(MineItem mineItem)
+    {
+        MineData data = _mineDataList[mineItem.MineIndex];
+        OreTypeEntity oreTypeEntity = TableManager.OreTypeTable[data.OreTypeId];
+        OreGradeEntity oreGradeEntity = TableManager.OreGradeTable[data.OreGradeId];
+        OnSellMine((int)(data.OreDeposit * oreTypeEntity.MineralPrice * oreGradeEntity.MineralCount * 0.6f));
+        _mineDataList.RemoveAt(mineItem.MineIndex);
+        OnRemoveMine(mineItem.MineIndex);
+    }
 }
 
 [Serializable]

@@ -7,4 +7,5 @@ public class OreGradeEntity
     public string Grade;
     public float CoeffHealth;
     public int MineralCount;
+    public float Probability;
 }

@@ -237,6 +237,7 @@ public class Miner : MonoBehaviour
         yield return _mineWait;
         SetAnim("Mine");
         yield return _mineAnimWait;
+        // Hit -> 부셔지면 true 반환
         if (ore.Hit((int)(_finalMiningPower * (CheckCritical() ? _finalCriticalPower : 1))))
         {
             _isOreTarget = false;

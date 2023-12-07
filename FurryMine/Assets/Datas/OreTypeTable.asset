@@ -17,3 +17,34 @@ MonoBehaviour:
     Type: "\uC554\uC11D"
     BaseHealth: 10
     MineralPrice: 1
+    Probability: 26
+  - Id: 1
+    Type: "\uAD6C\uB9AC"
+    BaseHealth: 20
+    MineralPrice: 2
+    Probability: 49
+  - Id: 2
+    Type: "\uCCA0"
+    BaseHealth: 30
+    MineralPrice: 3
+    Probability: 68
+  - Id: 3
+    Type: "\uB3D9"
+    BaseHealth: 40
+    MineralPrice: 4
+    Probability: 83
+  - Id: 4
+    Type: "\uC740"
+    BaseHealth: 50
+    MineralPrice: 5
+    Probability: 93
+  - Id: 5
+    Type: "\uAE08"
+    BaseHealth: 60
+    MineralPrice: 6
+    Probability: 98
+  - Id: 6
+    Type: "\uB2E4\uC774\uC544"
+    BaseHealth: 70
+    MineralPrice: 7
+    Probability: 100

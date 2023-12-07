@@ -7,4 +7,5 @@ public class OreTypeEntity
     public string Type;
     public int BaseHealth;
     public int MineralPrice;
+    public float Probability;
 }
