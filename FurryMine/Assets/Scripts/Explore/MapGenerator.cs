@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public List<MineSignature> _signatureSymbols;
+    [SerializeField]
+    private MineSignature _mineSignaturePrefab;
+
+    private List<MineSignature> _mineSignatureList;
 
     public enum DrawMode { NoiseMap, ColorMap };
     public DrawMode _drawMode;
@@ -24,14 +27,15 @@ public class MapGenerator : MonoBehaviour
 
     public TerrainType[] _regions;
 
-    private MapDisplay _display;
+    private MineMapDisplay _display;
     private Color[] _colorMap;
     private float[,] _noiseMap;
 
 
     private void Awake()
     {
-        _display = FindAnyObjectByType<MapDisplay>();
+        _display = GetComponent<MineMapDisplay>();
+        _mineSignatureList = new List<MineSignature>();
     }
 
     public void GenerateMap()
@@ -59,11 +63,9 @@ public class MapGenerator : MonoBehaviour
             _display.DrawTexture(TextureGenerator.TextureFromHeightMap(_noiseMap));
         else if (_drawMode == DrawMode.ColorMap)
             _display.DrawTexture(TextureGenerator.TextureFromColorMap(_colorMap, _mapWidth, _mapHeight));
-
-        _display.SetScale(5);
     }
 
-    public void GenerateMinePosition()
+    public void GenerateMineSignature(int signatureCount)
     {
         List<Vector2> signatureList = new List<Vector2>();
 
@@ -81,22 +83,24 @@ public class MapGenerator : MonoBehaviour
                 {
                     if (maxX > x && minX < x && maxY > y && minY < y)
                     {
-                        signatureList.Add(new Vector2(x - 50, y - 50) * 0.01f);
+                        signatureList.Add(new Vector2(x - 50, y - 50) * 10);
                     }
                 }
             }
         }
 
-        for (int i = 0; i < _signatureSymbols.Count; i++)
+        for (int i = _mineSignatureList.Count; i < signatureCount; i++)
         {
-            int rand = UnityEngine.Random.Range(0, signatureList.Count);
-            Debug.Log(_signatureSymbols[i]);
-            Debug.Log(signatureList[rand]);
-            _signatureSymbols[i].transform.localPosition = signatureList[rand];
-            _signatureSymbols[i].InitMineData(MineGenerator.GenerateMine());
-            signatureList.RemoveAt(rand);
+            _mineSignatureList.Add(Instantiate(_mineSignaturePrefab, transform));
         }
 
+        for (int i = 0; i < signatureCount; i++)
+        {
+            int rand = UnityEngine.Random.Range(0, signatureList.Count);
+            _mineSignatureList[i].transform.localPosition = signatureList[rand];
+            _mineSignatureList[i].InitMineData(MineGenerator.GenerateMine());
+            signatureList.RemoveAt(rand);
+        }
     }
 
     private void OnValidate()
