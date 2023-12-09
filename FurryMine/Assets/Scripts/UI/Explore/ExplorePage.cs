@@ -9,10 +9,10 @@ using UnityEngine.UI;
 
 public class ExplorePage : MonoBehaviour
 {
+    public static Action OnEndExplore { get; set; }
+
     [SerializeField]
     private int _requireMoney;
-    [SerializeField]
-    private int _signatureCount;
     [SerializeField]
     private GameObject _mineMap;
 
@@ -24,12 +24,20 @@ public class ExplorePage : MonoBehaviour
         _mapGenerator = GetComponentInChildren<MapGenerator>();
         ExplorePanel.OnClickConfirm += CheckMoney;
         GameApp.OnGameStart += GameStart;
+        Cave.OnCompleteExplore += EndExplore;
     }
 
     private void OnDestroy()
     {
         GameApp.OnGameStart -= GameStart;
         ExplorePanel.OnClickConfirm -= CheckMoney;
+        Cave.OnCompleteExplore -= EndExplore;
+    }
+
+    private void Start()
+    {
+        _mineMap.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void GameStart()
@@ -43,14 +51,28 @@ public class ExplorePage : MonoBehaviour
         {
             // MineSignature »ý¼º
             _mapGenerator.GenerateMap();
-            _mapGenerator.GenerateMineSignature(_signatureCount);
+            _mapGenerator.GenerateMineSignature();
             _mineCart.MinusMoney(_requireMoney);
             _mineMap.SetActive(true);
         }
     }
-    private void Start()
+
+    private void EndExplore()
     {
-        _mineMap.SetActive(false);
+        StartCoroutine(ReserveEnd(3));
+    }
+
+    private void CancelExplore()
+    {
         gameObject.SetActive(false);
+    }
+
+
+    private IEnumerator ReserveEnd(float time)
+    {
+        yield return new WaitForSeconds(time);
+        OnEndExplore();
+        gameObject.SetActive(false);
+        _mineMap.SetActive(false);
     }
 }

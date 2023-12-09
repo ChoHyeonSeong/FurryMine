@@ -17,6 +17,7 @@ public class MineSignaturePanel : MonoBehaviour
     {
         MineSignature.OnEnterSignature += ShowPanel;
         MineMapDisplay.OnExitSignature += HIdePanel;
+        ExplorePage.OnEndExplore += HIdePanel;
     }
 
     private void Start()
@@ -28,6 +29,7 @@ public class MineSignaturePanel : MonoBehaviour
     {
         MineSignature.OnEnterSignature -= ShowPanel;
         MineMapDisplay.OnExitSignature -= HIdePanel;
+        ExplorePage.OnEndExplore -= HIdePanel;
     }
 
     private void ShowPanel(string grade, string type, int level, Vector3 pos)

@@ -14,6 +14,7 @@ public class MineContent : MonoBehaviour
         GameApp.OnGameStart += GameStart;
         Mine.OnSetMining += SetMining;
         Mine.OnCheckDepletion += SetDeposit;
+        Mine.OnAddMine += AddMIneItem;
         Mine.OnRemoveMine += RemoveMine;
     }
 
@@ -22,6 +23,7 @@ public class MineContent : MonoBehaviour
         GameApp.OnGameStart -= GameStart;
         Mine.OnSetMining -= SetMining;
         Mine.OnCheckDepletion -= SetDeposit;
+        Mine.OnAddMine -= AddMIneItem;
         Mine.OnRemoveMine -= RemoveMine;
     }
 
@@ -44,6 +46,15 @@ public class MineContent : MonoBehaviour
         OreTypeEntity oreTypeEntity = TableManager.OreTypeTable[data.OreTypeId];
         OreGradeEntity oreGradeEntity = TableManager.OreGradeTable[data.OreGradeId];
         item.InitItem(mineIndex, data.OreDeposit, oreTypeEntity.Type, oreGradeEntity.Grade, mineLevelEntity.Level, null);
+        _mineItems.Add(item);
+    }
+    private void AddMIneItem(MineData data)
+    {
+        MineItem item = Instantiate(_mineItemPrefab, transform);
+        MineLevelEntity mineLevelEntity = TableManager.MineLevelTable[data.MineLevelId];
+        OreTypeEntity oreTypeEntity = TableManager.OreTypeTable[data.OreTypeId];
+        OreGradeEntity oreGradeEntity = TableManager.OreGradeTable[data.OreGradeId];
+        item.InitItem(_mineItems.Count + 1, data.OreDeposit, oreTypeEntity.Type, oreGradeEntity.Grade, mineLevelEntity.Level, null);
         _mineItems.Add(item);
     }
 

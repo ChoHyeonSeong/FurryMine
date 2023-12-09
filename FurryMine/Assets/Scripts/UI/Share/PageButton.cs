@@ -58,7 +58,6 @@ public class PageButton : MonoBehaviour
         if (_explorePage != _prevPage)
         {
             _explorePage.SetActive(true);
-            _prevPage = _explorePage;
         }
     }
 }

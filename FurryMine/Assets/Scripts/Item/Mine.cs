@@ -9,6 +9,7 @@ public class Mine : MonoBehaviour
     public static Action<int, bool> OnSetMining { get; set; }
     public static Action<int, int> OnCheckDepletion { get; set; }
     public static Action<int> OnRemoveMine { get; set; }
+    public static Action<MineData> OnAddMine { get; set; }
 
     public static Action<int> OnSellMine { get; set; }
 
@@ -57,6 +58,7 @@ public class Mine : MonoBehaviour
         GameApp.OnPreGameStart += PreGameStart;
         MineItem.OnMiningClick += SetMiningMine;
         MineItem.OnSellClick += SellMine;
+        Cave.OnDiscoverMine += AddMineData;
         _oreSpawner.IsSpawnable += CheckSpawnable;
         _oreSpawner.OnCollectOre += CheckDepletion;
     }
@@ -66,6 +68,7 @@ public class Mine : MonoBehaviour
         GameApp.OnPreGameStart -= PreGameStart;
         MineItem.OnMiningClick -= SetMiningMine;
         MineItem.OnSellClick -= SellMine;
+        Cave.OnDiscoverMine -= AddMineData;
         _oreSpawner.IsSpawnable -= CheckSpawnable;
         _oreSpawner.OnCollectOre -= CheckDepletion;
     }
@@ -174,6 +177,12 @@ public class Mine : MonoBehaviour
         OnSellMine((int)(data.OreDeposit * oreTypeEntity.MineralPrice * oreGradeEntity.MineralCount * 0.6f));
         _mineDataList.RemoveAt(mineItem.MineIndex);
         OnRemoveMine(mineItem.MineIndex);
+    }
+
+    private void AddMineData(MineData data)
+    {
+        _mineDataList.Add(data);
+        OnAddMine(data);
     }
 }
 

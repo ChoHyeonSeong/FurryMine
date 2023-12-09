@@ -6,6 +6,8 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField]
+    private int _signatureCount;
+    [SerializeField]
     private MineSignature _mineSignaturePrefab;
 
     private List<MineSignature> _mineSignatureList;
@@ -36,6 +38,11 @@ public class MapGenerator : MonoBehaviour
     {
         _display = GetComponent<MineMapDisplay>();
         _mineSignatureList = new List<MineSignature>();
+
+        for (int i = 0; i < _signatureCount; i++)
+        {
+            _mineSignatureList.Add(Instantiate(_mineSignaturePrefab, transform));
+        }
     }
 
     public void GenerateMap()
@@ -65,7 +72,7 @@ public class MapGenerator : MonoBehaviour
             _display.DrawTexture(TextureGenerator.TextureFromColorMap(_colorMap, _mapWidth, _mapHeight));
     }
 
-    public void GenerateMineSignature(int signatureCount)
+    public void GenerateMineSignature()
     {
         List<Vector2> signatureList = new List<Vector2>();
 
@@ -89,12 +96,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        for (int i = _mineSignatureList.Count; i < signatureCount; i++)
-        {
-            _mineSignatureList.Add(Instantiate(_mineSignaturePrefab, transform));
-        }
-
-        for (int i = 0; i < signatureCount; i++)
+        for (int i = 0; i < _signatureCount; i++)
         {
             int rand = UnityEngine.Random.Range(0, signatureList.Count);
             _mineSignatureList[i].transform.localPosition = signatureList[rand];

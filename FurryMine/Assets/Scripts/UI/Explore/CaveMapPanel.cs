@@ -1,15 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CaveMapPanel : MonoBehaviour
 {
-    private CaveGenerator _caveGenerator;
+    [SerializeField]
+    private TextMeshProUGUI _oreDepositText;
+    [SerializeField]
+    private TextMeshProUGUI _lodeCountText;
+
+    public static Action OnGenerateCave { get; set; }
 
     private void Awake()
     {
-        _caveGenerator = GetComponentInChildren<CaveGenerator>();
         MineMapPanel.OnClickExplore += GenerateCave;
+        Cave.OnUpdateExploreBoard += UpdateBoard;
+        ExplorePage.OnEndExplore += EndExploreCave;
     }
 
     private void Start()
@@ -20,11 +28,24 @@ public class CaveMapPanel : MonoBehaviour
     private void OnDestroy()
     {
         MineMapPanel.OnClickExplore -= GenerateCave;
+        Cave.OnUpdateExploreBoard -= UpdateBoard;
+        ExplorePage.OnEndExplore -= EndExploreCave;
     }
 
-    private void GenerateCave(MineData data)
+    private void GenerateCave()
     {
-        _caveGenerator.GenerateMap(data.MineLevelId);
+        OnGenerateCave();
         gameObject.SetActive(true);
+    }
+
+    private void UpdateBoard(int oreDeposit, int crtLodeCount, int lodeCount)
+    {
+        _oreDepositText.text = $"±§ºÆ ∏≈¿Â∑Æ : {oreDeposit}";
+        _lodeCountText.text = $"πﬂ∞ﬂ«— ±§∏∆ : {crtLodeCount}/{lodeCount}";
+    }
+
+    private void EndExploreCave()
+    {
+        gameObject.SetActive(false);
     }
 }
