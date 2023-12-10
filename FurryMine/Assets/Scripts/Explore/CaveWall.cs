@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class CaveWall : MonoBehaviour, IPointerClickHandler
 {
+    public static Action OnHitCaveWall { get; set; }
     public static Action<CaveWall> OnBreakCaveWall { get; set; }
 
     public Vector2Int WallPos { get => _wallPos; }
@@ -52,9 +53,9 @@ public class CaveWall : MonoBehaviour, IPointerClickHandler
                 _lode.DiscoverLode();
             gameObject.SetActive(false);
             OnBreakCaveWall(this);
-            return;
         }
         SetHealthText();
+        OnHitCaveWall();
     }
 
     private void SetHealthText()

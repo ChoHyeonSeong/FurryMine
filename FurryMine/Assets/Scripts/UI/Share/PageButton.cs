@@ -31,6 +31,7 @@ public class PageButton : MonoBehaviour
         _enforcePageButton.onClick.AddListener(ShowEnforcePage);
         _managePageButton.onClick.AddListener(ShowManagePage);
         _explorePageButton.onClick.AddListener(ShowExplorePage);
+        _shopPageButton.onClick.AddListener(ShowShopPage);
         _prevPage = _enforcePage;
     }
 
@@ -53,11 +54,22 @@ public class PageButton : MonoBehaviour
             _prevPage = _managePage;
         }
     }
+
     private void ShowExplorePage()
     {
         if (_explorePage != _prevPage)
         {
             _explorePage.SetActive(true);
+        }
+    }
+
+    private void ShowShopPage()
+    {
+        if (_shopPage != _prevPage)
+        {
+            _prevPage.SetActive(false);
+            _shopPage.SetActive(true);
+            _prevPage = _shopPage;
         }
     }
 }

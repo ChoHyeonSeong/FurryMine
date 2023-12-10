@@ -24,7 +24,7 @@ public class SelectMinerPanel : MonoBehaviour
         _selectMinerContent =GetComponentInChildren<SelectMinerContent>();
         MinerTeam.OnSetStaffMiner += ShowSelectStaffMiner;
         MinerTeam.OnSetMinerEquip += ShowSelectMinerEquip;
-        SelectMinerItem.OnSelectClick += ExecuteCallback;
+        SelectMinerItem.OnClickSelect += ExecuteCallback;
         gameObject.SetActive(false);
     }
 
@@ -32,7 +32,7 @@ public class SelectMinerPanel : MonoBehaviour
     {
         MinerTeam.OnSetStaffMiner -= ShowSelectStaffMiner;
         MinerTeam.OnSetMinerEquip -= ShowSelectMinerEquip;
-        SelectMinerItem.OnSelectClick -= ExecuteCallback;
+        SelectMinerItem.OnClickSelect -= ExecuteCallback;
     }
 
     private void ShowSelectStaffMiner(Action<int> callback)

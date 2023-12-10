@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CaveMapPanel : MonoBehaviour
 {
@@ -10,6 +11,15 @@ public class CaveMapPanel : MonoBehaviour
     private TextMeshProUGUI _oreDepositText;
     [SerializeField]
     private TextMeshProUGUI _lodeCountText;
+    [SerializeField]
+    private Slider _miningHealthBar;
+    [SerializeField]
+    private TextMeshProUGUI _miningHealthText;
+
+    [SerializeField]
+    private GameObject _failPanel;
+    [SerializeField]
+    private GameObject _discoverPanel;
 
     public static Action OnGenerateCave { get; set; }
 
@@ -17,6 +27,9 @@ public class CaveMapPanel : MonoBehaviour
     {
         MineMapPanel.OnClickExplore += GenerateCave;
         Cave.OnUpdateExploreBoard += UpdateBoard;
+        Cave.OnUpdateMiningHealth += SetMiningHealthBar;
+        Cave.OnDiscoverMine += DiscoverMine;
+        Cave.OnFailDiscover += FailDiscover;
         ExplorePage.OnEndExplore += EndExploreCave;
     }
 
@@ -29,6 +42,9 @@ public class CaveMapPanel : MonoBehaviour
     {
         MineMapPanel.OnClickExplore -= GenerateCave;
         Cave.OnUpdateExploreBoard -= UpdateBoard;
+        Cave.OnUpdateMiningHealth -= SetMiningHealthBar;
+        Cave.OnDiscoverMine -= DiscoverMine;
+        Cave.OnFailDiscover -= FailDiscover;
         ExplorePage.OnEndExplore -= EndExploreCave;
     }
 
@@ -47,5 +63,23 @@ public class CaveMapPanel : MonoBehaviour
     private void EndExploreCave()
     {
         gameObject.SetActive(false);
+        _failPanel.SetActive(false);
+        _discoverPanel.SetActive(false);
+    }
+
+    private void DiscoverMine(MineData _)
+    {
+        _discoverPanel.SetActive(true);
+    }
+
+    private void FailDiscover()
+    {
+        _failPanel.SetActive(true);
+    }
+
+    private void SetMiningHealthBar(int crtMiningHealth, int miningHealth)
+    {
+        _miningHealthBar.value = crtMiningHealth / (float)miningHealth;
+        _miningHealthText.text = $"{crtMiningHealth}/{miningHealth}";
     }
 }

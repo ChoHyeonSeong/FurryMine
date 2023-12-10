@@ -8,14 +8,14 @@ using UnityEngine.UI;
 
 public class EquipItem : MonoBehaviour, IPointerClickHandler
 {
-    public static Action<EquipItem> OnWearClick { get; set; }
+    public static Action<EquipItem> OnClickWear { get; set; }
     public int EquipId { get => _equipId; }
 
     private int _equipId;
     private static EquipItem _prevItem;
 
     [SerializeField]
-    private Button _infoBtn;
+    private InfoButton _infoBtn;
     [SerializeField]
     private Button _wearBtn;
     [SerializeField]
@@ -42,6 +42,7 @@ public class EquipItem : MonoBehaviour, IPointerClickHandler
         _equipName.text = name;
         _equipRank.text = $"Rank {rank}";
         _equipIcon.sprite = sprite;
+        _infoBtn.SetItemId(id);
     }
 
     public void SetWear(bool isWear)
@@ -73,6 +74,7 @@ public class EquipItem : MonoBehaviour, IPointerClickHandler
     private void Awake()
     {
         _wearBtn.onClick.AddListener(ClickWear);
+        _infoBtn.SetIsMinerInfo(false);
     }
 
     private void SelectItem()
@@ -84,6 +86,7 @@ public class EquipItem : MonoBehaviour, IPointerClickHandler
 
     private void ClickWear()
     {
-        OnWearClick(this);
+        OnClickWear(this);
     }
+
 }

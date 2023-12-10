@@ -10,33 +10,24 @@ public class Mine : MonoBehaviour
     public static Action<int, int> OnCheckDepletion { get; set; }
     public static Action<int> OnRemoveMine { get; set; }
     public static Action<MineData> OnAddMine { get; set; }
-
     public static Action<int> OnSellMine { get; set; }
 
-    [SerializeField]
+    public int CurrentMineIndex { get => _currentMineIndex; }
+    public List<MineData> MineDataList { get => _mineDataList; }
+
     private int _currentMineIndex;
-    [SerializeField]
     private int _oreDeposit;
 
-    [SerializeField]
     private int _oreHealth;
-    [SerializeField]
     private float _respawnTime;
 
-    [SerializeField]
     private int _oreCount;
-    [SerializeField]
     private int _mineralCount;
-    [SerializeField]
     private int _mineralPrice;
 
-    [SerializeField]
     private float _finalRespawnSpeed;
-    [SerializeField]
     private int _finalOreCount;
-    [SerializeField]
     private int _finalMineralCount;
-    [SerializeField]
     private int _finalMineralPrice;
 
     private MinerTeam _minerTeam;

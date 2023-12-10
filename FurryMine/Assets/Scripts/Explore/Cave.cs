@@ -6,9 +6,11 @@ using Random = UnityEngine.Random;
 
 public class Cave : MonoBehaviour
 {
+    public static Action OnFailDiscover { get; set; }
     public static Action<MineData> OnDiscoverMine { get; set; }
     public static Action OnCompleteExplore { get; set; }
     public static Action<int, int, int> OnUpdateExploreBoard { get; set; }
+    public static Action<int, int> OnUpdateMiningHealth { get; set; }
 
     [SerializeField]
     private Vector2Int _startPos;
@@ -20,7 +22,9 @@ public class Cave : MonoBehaviour
     private GameObject _pillarPrefab;
     [SerializeField]
     private Lode _lodePrefab;
-
+    [SerializeField]
+    private int _miningHealth;
+    private int _crtMiningHealth;
     private int _crtLodeCount;
     private int _lodeCount;
     private int _caveWidth;
@@ -56,20 +60,25 @@ public class Cave : MonoBehaviour
         };
         CaveMapPanel.OnGenerateCave += InitCave;
         CaveWall.OnBreakCaveWall += SetHitable;
+        CaveWall.OnHitCaveWall += MinusMiningHealth;
         Lode.OnDiscoverLode += PlusOreDeposit;
+        ExplorePage.OnEndExplore += CollectCaveObject;
     }
 
     private void OnDestroy()
     {
         CaveMapPanel.OnGenerateCave -= InitCave;
         CaveWall.OnBreakCaveWall -= SetHitable;
+        CaveWall.OnHitCaveWall -= MinusMiningHealth;
         Lode.OnDiscoverLode -= PlusOreDeposit;
+        ExplorePage.OnEndExplore -= CollectCaveObject;
     }
 
     public void InitCave()
     {
         _mineData = MineSignature.CurrentSignature.MineData;
         _mineLevelEntity = TableManager.MineLevelTable[_mineData.MineLevelId];
+        _crtMiningHealth = _miningHealth;
         _crtLodeCount = 0;
         _lodeCount = _mineLevelEntity.LodeCount;
         int[,] cave = _generator.MapRandomFill();
@@ -114,6 +123,7 @@ public class Cave : MonoBehaviour
         }
         SetHitable(_startPos);
         OnUpdateExploreBoard(_mineData.OreDeposit, _crtLodeCount, _lodeCount);
+        OnUpdateMiningHealth(_crtMiningHealth, _miningHealth);
     }
 
     public void SetHitable(CaveWall wall)
@@ -137,44 +147,55 @@ public class Cave : MonoBehaviour
     {
         _crtLodeCount++;
         _mineData.OreDeposit += _mineLevelEntity.OrePerLode;
-        if (_crtLodeCount >= _lodeCount)
+        OnUpdateExploreBoard(_mineData.OreDeposit, _crtLodeCount, _lodeCount);
+    }
+
+    private void MinusMiningHealth()
+    {
+        _crtMiningHealth--;
+        OnUpdateMiningHealth(_crtMiningHealth, _miningHealth);
+        if (_crtMiningHealth <= 0 || _crtLodeCount >= _lodeCount)
         {
-            foreach (CaveWall wall in _wallList)
-            {
-                wall.gameObject.SetActive(false);
-                _wallPool.Enqueue(wall);
-            }
-
-            foreach (GameObject pillar in _pillarList)
-            {
-                pillar.SetActive(false);
-                _pillarPool.Enqueue(pillar);
-            }
-
-            foreach(Lode lode in _lodesList)
-            {
-                lode.gameObject.SetActive(false);
-                _lodePool.Enqueue(lode);
-            }
-
-            _wallList.Clear();
-            _pillarList.Clear();
-            _lodesList.Clear();
-
             if (_mineData.OreDeposit > 0)
                 OnDiscoverMine(_mineData);
+            else
+                OnFailDiscover();
             OnCompleteExplore();
         }
-        OnUpdateExploreBoard(_mineData.OreDeposit, _crtLodeCount, _lodeCount);
+    }
+
+    private void CollectCaveObject()
+    {
+        foreach (CaveWall wall in _wallList)
+        {
+            wall.gameObject.SetActive(false);
+            _wallPool.Enqueue(wall);
+        }
+
+        foreach (GameObject pillar in _pillarList)
+        {
+            pillar.SetActive(false);
+            _pillarPool.Enqueue(pillar);
+        }
+
+        foreach (Lode lode in _lodesList)
+        {
+            lode.gameObject.SetActive(false);
+            _lodePool.Enqueue(lode);
+        }
+
+        _wallList.Clear();
+        _pillarList.Clear();
+        _lodesList.Clear();
     }
 
 
     private CaveWall CreateWall()
     {
         CaveWall wall;
-        if(_wallPool.Count > 0)
+        if (_wallPool.Count > 0)
         {
-            wall= _wallPool.Dequeue();
+            wall = _wallPool.Dequeue();
             wall.gameObject.SetActive(true);
         }
         else

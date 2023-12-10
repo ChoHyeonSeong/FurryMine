@@ -68,7 +68,7 @@ MonoBehaviour:
   m_text: "\uAD11\uBD80\uC758\uC774\uB984\uAE00\uC790"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f144da88c3cd834d88e311a59e022d0, type: 2}
-  m_sharedMaterial: {fileID: -874386416509668259, guid: 7f144da88c3cd834d88e311a59e022d0, type: 2}
+  m_sharedMaterial: {fileID: 8099735296988903749, guid: 7f144da88c3cd834d88e311a59e022d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_text: Rank
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7f144da88c3cd834d88e311a59e022d0, type: 2}
-  m_sharedMaterial: {fileID: -874386416509668259, guid: 7f144da88c3cd834d88e311a59e022d0, type: 2}
+  m_sharedMaterial: {fileID: 8099735296988903749, guid: 7f144da88c3cd834d88e311a59e022d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30f84313e856f546a0014e21b5ad112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _infoBtn: {fileID: 8486567293373940221}
+  _infoBtn: {fileID: 339326648605531068}
   _selectBtn: {fileID: 4565049707708846647}
   _minerIcon: {fileID: 5149184229398331034}
   _minerName: {fileID: 35605108957737683}
@@ -920,6 +920,7 @@ GameObject:
   - component: {fileID: 5889872984308123527}
   - component: {fileID: 2018003336782975240}
   - component: {fileID: 8486567293373940221}
+  - component: {fileID: 339326648605531068}
   m_Layer: 5
   m_Name: InfoButton
   m_TagString: Untagged
@@ -1029,6 +1030,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &339326648605531068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294509063582464830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ec95a4fb9ad7841aa6541121668a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8550305735097978114
 GameObject:
   m_ObjectHideFlags: 0

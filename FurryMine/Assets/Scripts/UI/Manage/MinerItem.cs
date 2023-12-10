@@ -9,9 +9,8 @@ using UnityEngine.UI;
 public class MinerItem : MonoBehaviour, IPointerClickHandler
 {
     public static Func<int> GetHeadId { get; set; }
-    public static Action<MinerItem, MinerItem> OnHeadClick { get; set; }
-    public static Action<MinerItem> OnStaffClick { get; set; }
-    public static Action<MinerItem> OnInfoClick { get; set; }
+    public static Action<MinerItem, MinerItem> OnClickHead { get; set; }
+    public static Action<MinerItem> OnClickStaff { get; set; }
 
     public EMinerLabel MinerLabel { get => _minerLabel; }
     public int MinerId { get => _minerId; }
@@ -19,7 +18,7 @@ public class MinerItem : MonoBehaviour, IPointerClickHandler
     private int _minerId;
     private static MinerItem _prevItem;
     [SerializeField]
-    private Button _infoBtn;
+    private InfoButton _infoBtn;
     [SerializeField]
     private Button _staffBtn;
     [SerializeField]
@@ -74,6 +73,7 @@ public class MinerItem : MonoBehaviour, IPointerClickHandler
         _minerName.text = name;
         _minerRank.text = $"Rank {rank}";
         _minerIcon.sprite = sprite;
+        _infoBtn.SetItemId(id);
     }
 
     public void SetLabel(EMinerLabel label)
@@ -102,7 +102,7 @@ public class MinerItem : MonoBehaviour, IPointerClickHandler
         _minerContent = GetComponentInParent<MinerContent>();
         _headBtn.onClick.AddListener(ClickHead);
         _staffBtn.onClick.AddListener(ClickStaff);
-        //_headBtn.onClick.AddListener(ClickHead);
+        _infoBtn.SetIsMinerInfo(true);
     }
 
 
@@ -118,16 +118,11 @@ public class MinerItem : MonoBehaviour, IPointerClickHandler
 
     private void ClickHead()
     {
-        OnHeadClick(this, _minerContent.GetMinerItem(GetHeadId()));
+        OnClickHead(this, _minerContent.GetMinerItem(GetHeadId()));
     }
 
     private void ClickStaff()
     {
-        OnStaffClick(this);
-    }
-
-    private void ClickInfo()
-    {
-        OnInfoClick(this);
+        OnClickStaff(this);
     }
 }

@@ -10,6 +10,8 @@ public class Owner : MonoBehaviour
     public static Action<float> OnSetSubmitMineral { get; set; }
     public static Action<float> OnSetTime { get; set; }
 
+    public int OwnerLevel { get => _ownerLevel; }
+
     private int _quotaExp;
     private int _currentExp;
     private float _limitTime = 60f;

@@ -54,13 +54,18 @@ public class GameApp : MonoBehaviour
 #if UNITY_EDITOR
 #else
         if (pause)
-        {
-            SaveManager.SaveGame(new SaveData(
-                GameManager.Cart.Money,
-                GameManager.Mine.MineLevel,
-                GameManager.Reward.RemainCoolTime,
-                EnforceManager.GetLevelList()
-                ));
+        {   
+            SaveData saveGame = new SaveData();
+            saveGame.Money = GameManager.Cart.Money;
+            saveGame.OwnerLevel = GameManager.Player.OwnerLevel;
+            saveGame.RemainCoolTime = GameManager.Reward.RemainCoolTime;
+            saveGame.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
+            saveGame.CurrentHeadId = GameManager.Team.HeadMinerId;
+            saveGame.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();
+            saveGame.CurrentMinerEquip = GameManager.Team.CurrentMinerEquip;
+            saveGame.EnforceLevels = EnforceManager.GetLevelList();
+            saveGame.MineDatas = GameManager.Mine.MineDataList;
+            SaveManager.SaveGame(saveGame);
         }
 #endif
     }
@@ -71,12 +76,17 @@ public class GameApp : MonoBehaviour
         ResourceManager.UnloadResource();
 #if UNITY_EDITOR
 #else
-        SaveManager.SaveGame(new SaveData(
-            GameManager.Cart.Money,
-            GameManager.Mine.MineLevel,
-            GameManager.Reward.RemainCoolTime,
-            EnforceManager.GetLevelList()
-            ));
+        SaveData saveGame = new SaveData();
+        saveGame.Money = GameManager.Cart.Money;
+        saveGame.OwnerLevel = GameManager.Player.OwnerLevel;
+        saveGame.RemainCoolTime = GameManager.Reward.RemainCoolTime;
+        saveGame.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
+        saveGame.CurrentHeadId = GameManager.Team.HeadMinerId;
+        saveGame.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();
+        saveGame.CurrentMinerEquip = GameManager.Team.CurrentMinerEquip;
+        saveGame.EnforceLevels = EnforceManager.GetLevelList();
+        saveGame.MineDatas = GameManager.Mine.MineDataList;
+        SaveManager.SaveGame(saveGame);
 #endif
     }
 }

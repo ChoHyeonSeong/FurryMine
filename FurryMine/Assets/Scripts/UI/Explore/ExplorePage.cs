@@ -23,6 +23,7 @@ public class ExplorePage : MonoBehaviour
     {
         _mapGenerator = GetComponentInChildren<MapGenerator>();
         ExplorePanel.OnClickConfirm += CheckMoney;
+        ExplorePanel.OnClickCancel += CancelExplore;
         GameApp.OnGameStart += GameStart;
         Cave.OnCompleteExplore += EndExplore;
     }
@@ -30,6 +31,7 @@ public class ExplorePage : MonoBehaviour
     private void OnDestroy()
     {
         GameApp.OnGameStart -= GameStart;
+        ExplorePanel.OnClickCancel -= CancelExplore;
         ExplorePanel.OnClickConfirm -= CheckMoney;
         Cave.OnCompleteExplore -= EndExplore;
     }

@@ -8,14 +8,14 @@ using UnityEngine.UI;
 
 public class SelectMinerItem : MonoBehaviour, IPointerClickHandler
 {
-    public static Action<int> OnSelectClick { get; set; }
+    public static Action<int> OnClickSelect { get; set; }
 
 
     private int _minerId;
     private static SelectMinerItem _prevItem;
 
     [SerializeField]
-    private Button _infoBtn;
+    private InfoButton _infoBtn;
     [SerializeField]
     private Button _selectBtn;
     [SerializeField]
@@ -30,6 +30,7 @@ public class SelectMinerItem : MonoBehaviour, IPointerClickHandler
     private void Awake()
     {
         _selectBtn.onClick.AddListener(ClickSelect);
+        _infoBtn.SetIsMinerInfo(true);
     }
 
     public void InitItem(int id, string name, string rank, Sprite sprite)
@@ -43,6 +44,7 @@ public class SelectMinerItem : MonoBehaviour, IPointerClickHandler
         _minerName.text = name;
         _minerRank.text = $"Rank {rank}";
         _minerIcon.sprite = sprite;
+        _infoBtn.SetItemId(id);
     }
     public void UnselectItem()
     {
@@ -69,11 +71,6 @@ public class SelectMinerItem : MonoBehaviour, IPointerClickHandler
     private void ClickSelect()
     {
         UnselectItem();
-        OnSelectClick(_minerId);
-    }
-
-    private void ClickInfo()
-    {
-        //OnInfoClick(this);
+        OnClickSelect(_minerId);
     }
 }
