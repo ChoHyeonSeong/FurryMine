@@ -14,19 +14,15 @@ public class EnforcePanel : MonoBehaviour
         {
             _items[item.Enforce] = item;
         }
+        RewardReceiver.OnUpdateEnforce += UpdateText;
     }
 
-    private void OnEnable()
+    private void OnDestroy()
     {
-        RewardReceiver.OnRandEnforce += UpdateItem;
+        RewardReceiver.OnUpdateEnforce -= UpdateText;
     }
 
-    private void OnDisable()
-    {
-        RewardReceiver.OnRandEnforce -= UpdateItem;
-    }
-
-    private void UpdateItem(EEnforce enforce)
+    private void UpdateText(EEnforce enforce)
     {
         _items[enforce].SetText(EnforceManager.GetLevel(enforce), EnforceManager.GetCoeff(enforce), EnforceManager.GetPrice(enforce));
     }
