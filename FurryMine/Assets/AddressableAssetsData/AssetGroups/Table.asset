@@ -20,32 +20,38 @@ MonoBehaviour:
   - m_GUID: 4ee0e3d4a47363a43a83dd1ac8c0bf90
     m_Address: Assets/Datas/EnforceTable.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Table
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 25ac6eb3e1fd4c341a24c9411cba5cb3
     m_Address: Assets/Datas/MinerTable.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Table
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dbb76e3d50eaed541ba24103df112f57
     m_Address: Assets/Datas/EquipTable.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Table
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8f25f69d00655734aa4918676cd7aa79
     m_Address: Assets/Datas/MineLevelTable.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Table
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55ffbdbe37ae66449bf42089f9875dc1
     m_Address: Assets/Datas/OreGradeTable.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Table
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 77fa240d1caadf045a0538af86381e15
     m_Address: Assets/Datas/OreTypeTable.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Table
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ff4495624a54e114bb19be1ea6188a86, type: 2}
