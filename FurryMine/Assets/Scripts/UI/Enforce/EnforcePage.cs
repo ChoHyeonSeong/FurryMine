@@ -36,8 +36,10 @@ public class EnforcePage : MonoBehaviour
         _staffMenu.onClick.AddListener(ShowStaffMenu);
         _miningMenu.onClick.AddListener(ShowMiningMenu);
         _snackMenu.onClick.AddListener(ShowSnackMenu);
+    }
 
-
+    private void Start()
+    {
         _prevContent = _headContent;
         _staffContent.gameObject.SetActive(false);
         _miningContent.gameObject.SetActive(false);

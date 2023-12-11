@@ -13,21 +13,22 @@ public class MapGenerator : MonoBehaviour
     private List<MineSignature> _mineSignatureList;
 
     public enum DrawMode { NoiseMap, ColorMap };
-    public DrawMode _drawMode;
+    public DrawMode Mode;
 
-    public int _mapWidth;
-    public int _mapHeight;
-    public float _noiseScale;
+    public int MapWidth;
+    public int MapHeight;
+    public int RequireMoney;
+    public float NoiseScale;
 
-    public int _octaves;
+    public int Octaves;
     [Range(0, 1)]
-    public float _persistance;
-    public float _lacunarity;
+    public float Persistance;
+    public float Lacunarity;
 
-    public int _seed;
-    public Vector2 _offset;
+    public int Seed;
+    public Vector2 Offset;
 
-    public TerrainType[] _regions;
+    public TerrainType[] Regions;
 
     private MineMapDisplay _display;
     private Color[] _colorMap;
@@ -47,43 +48,43 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        _seed = UnityEngine.Random.Range(0, int.MaxValue);
-        _colorMap = new Color[_mapWidth * _mapHeight];
-        _noiseMap = Noise.GenerateNoiseMap(_mapWidth, _mapHeight, _seed, _noiseScale, _octaves, _persistance, _lacunarity, _offset);
-        for (int y = 0; y < _mapHeight; y++)
+        Seed = UnityEngine.Random.Range(0, int.MaxValue);
+        _colorMap = new Color[MapWidth * MapHeight];
+        _noiseMap = Noise.GenerateNoiseMap(MapWidth, MapHeight, Seed, NoiseScale, Octaves, Persistance, Lacunarity, Offset);
+        for (int y = 0; y < MapHeight; y++)
         {
-            for (int x = 0; x < _mapWidth; x++)
+            for (int x = 0; x < MapWidth; x++)
             {
                 float currentHeight = _noiseMap[x, y];
-                for (int i = 0; i < _regions.Length; i++)
+                for (int i = 0; i < Regions.Length; i++)
                 {
-                    if (currentHeight <= _regions[i].Height)
+                    if (currentHeight <= Regions[i].Height)
                     {
-                        _colorMap[y * _mapWidth + x] = _regions[i].Color;
+                        _colorMap[y * MapWidth + x] = Regions[i].Color;
                         break;
                     }
                 }
             }
         }
 
-        if (_drawMode == DrawMode.NoiseMap)
+        if (Mode == DrawMode.NoiseMap)
             _display.DrawTexture(TextureGenerator.TextureFromHeightMap(_noiseMap));
-        else if (_drawMode == DrawMode.ColorMap)
-            _display.DrawTexture(TextureGenerator.TextureFromColorMap(_colorMap, _mapWidth, _mapHeight));
+        else if (Mode == DrawMode.ColorMap)
+            _display.DrawTexture(TextureGenerator.TextureFromColorMap(_colorMap, MapWidth, MapHeight));
     }
 
     public void GenerateMineSignature()
     {
         List<Vector2> signatureList = new List<Vector2>();
 
-        int maxX = (int)(_mapWidth * 0.9f);
-        int minX = (int)(_mapWidth * 0.1f);
-        int maxY = (int)(_mapHeight * 0.9f);
-        int minY = (int)(_mapHeight * 0.1f);
+        int maxX = (int)(MapWidth * 0.9f);
+        int minX = (int)(MapWidth * 0.1f);
+        int maxY = (int)(MapHeight * 0.9f);
+        int minY = (int)(MapHeight * 0.1f);
 
-        for (int y = 0; y < _mapHeight; y++)
+        for (int y = 0; y < MapHeight; y++)
         {
-            for (int x = 0; x < _mapWidth; x++)
+            for (int x = 0; x < MapWidth; x++)
             {
                 float currentHeight = _noiseMap[x, y];
                 if (currentHeight > 0.55f && currentHeight <= 0.9f)
@@ -107,14 +108,14 @@ public class MapGenerator : MonoBehaviour
 
     private void OnValidate()
     {
-        if (_mapWidth < 1)
-            _mapWidth = 1;
-        if (_mapHeight < 1)
-            _mapHeight = 1;
-        if (_lacunarity < 1)
-            _lacunarity = 1;
-        if (_octaves < 0)
-            _octaves = 0;
+        if (MapWidth < 1)
+            MapWidth = 1;
+        if (MapHeight < 1)
+            MapHeight = 1;
+        if (Lacunarity < 1)
+            Lacunarity = 1;
+        if (Octaves < 0)
+            Octaves = 0;
     }
 }
 

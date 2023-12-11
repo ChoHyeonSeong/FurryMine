@@ -48,7 +48,7 @@ public class Mine : MonoBehaviour
     {
         GameApp.OnPreGameStart += PreGameStart;
         MineItem.OnMiningClick += SetMiningMine;
-        MineItem.OnSellClick += SellMine;
+        SellPanel.OnClickConfirmSelling += SellMine;
         Cave.OnDiscoverMine += AddMineData;
         _oreSpawner.IsSpawnable += CheckSpawnable;
         _oreSpawner.OnCollectOre += CheckDepletion;
@@ -58,7 +58,7 @@ public class Mine : MonoBehaviour
     {
         GameApp.OnPreGameStart -= PreGameStart;
         MineItem.OnMiningClick -= SetMiningMine;
-        MineItem.OnSellClick -= SellMine;
+        SellPanel.OnClickConfirmSelling -= SellMine;
         Cave.OnDiscoverMine -= AddMineData;
         _oreSpawner.IsSpawnable -= CheckSpawnable;
         _oreSpawner.OnCollectOre -= CheckDepletion;

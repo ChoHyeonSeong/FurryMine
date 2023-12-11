@@ -12,8 +12,6 @@ public class ExplorePage : MonoBehaviour
     public static Action OnEndExplore { get; set; }
 
     [SerializeField]
-    private int _requireMoney;
-    [SerializeField]
     private GameObject _mineMap;
 
     private MineCart _mineCart;
@@ -49,12 +47,12 @@ public class ExplorePage : MonoBehaviour
 
     private void CheckMoney()
     {
-        if (_mineCart.Money >= _requireMoney)
+        if (_mineCart.Money >= _mapGenerator.RequireMoney)
         {
             // MineSignature »ı¼º
             _mapGenerator.GenerateMap();
             _mapGenerator.GenerateMineSignature();
-            _mineCart.MinusMoney(_requireMoney);
+            _mineCart.MinusMoney(_mapGenerator.RequireMoney);
             _mineMap.SetActive(true);
         }
     }
