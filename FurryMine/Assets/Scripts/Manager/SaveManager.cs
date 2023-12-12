@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -26,12 +27,17 @@ public static class SaveManager
             byte[] bytes = System.Convert.FromBase64String(code);
             string jsonData = System.Text.Encoding.UTF8.GetString(bytes);
             Save = JsonUtility.FromJson<SaveData>(jsonData);
+            if (Save.EnforceLevels != null && Save.EnforceLevels.Count < EnforceManager.EnforceCount)
+            {
+                Debug.Log($"Save.EnforceLevels != null && {Save.EnforceLevels.Count} < {EnforceManager.EnforceCount}");
+                for (int i = Save.EnforceLevels.Count; i < EnforceManager.EnforceCount; i++)
+                {
+                    Save.EnforceLevels.Add(0);
+                }
+            }
         }
-        else
-        {
+        if (Save == null)
             Save = new SaveData();
-            //처음부터
-        }
         Debug.Log("Load Game");
         OnComplete();
     }

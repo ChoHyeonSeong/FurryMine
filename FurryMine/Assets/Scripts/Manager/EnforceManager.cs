@@ -89,10 +89,9 @@ public static class EnforceManager
 
     private static void InitLevel()
     {
-        bool isSaveNull = SaveManager.Save.EnforceLevels == null;
         for (int i = 0; i < EnforceCount; i++)
         {
-            _levelList.Add(isSaveNull ? 0 : SaveManager.Save.EnforceLevels[i]);
+            _levelList.Add(SaveManager.Save.EnforceLevels[i]);
         }
     }
 

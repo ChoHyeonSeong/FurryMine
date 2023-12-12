@@ -18,34 +18,34 @@ MonoBehaviour:
     Limit: 1000
     Coeff: 1
     Base: 0
-    Price: 10
+    Price: 5
   - Id: 1
     Name: "\uCC44\uAD11\uC18D\uB3C4"
     Limit: 1000
     Coeff: 0.01
     Base: 1
-    Price: 10
+    Price: 5
   - Id: 2
     Name: "\uC774\uB3D9\uC18D\uB3C4"
     Limit: 1000
     Coeff: 0.01
     Base: 1
-    Price: 10
+    Price: 5
   - Id: 3
     Name: "\uAC15\uD0C0 \uD655\uB960"
     Limit: 1000
     Coeff: 0.001
     Base: 0
-    Price: 100
+    Price: 50
   - Id: 4
     Name: "\uAC15\uD0C0 \uD30C\uAD34\uB825"
     Limit: 1000
     Coeff: 0.01
     Base: 0
-    Price: 100
+    Price: 50
   - Id: 5
     Name: "\uB3D9\uB8CC \uC778\uC6D0"
-    Limit: 10
+    Limit: 3
     Coeff: 1
     Base: 0
     Price: 10000
@@ -54,55 +54,55 @@ MonoBehaviour:
     Limit: 1000
     Coeff: 1
     Base: 0
-    Price: 100
+    Price: 50
   - Id: 7
     Name: "\uB3D9\uB8CC \uCC44\uAD11\uC18D\uB3C4"
     Limit: 1000
     Coeff: 0.01
     Base: 1
-    Price: 100
+    Price: 50
   - Id: 8
     Name: "\uB3D9\uB8CC \uC774\uB3D9\uC18D\uB3C4"
     Limit: 1000
     Coeff: 0.01
     Base: 1
-    Price: 100
+    Price: 50
   - Id: 9
     Name: "\uC7AC\uC0DD\uC131 \uC2DC\uAC04"
     Limit: 1000
     Coeff: 0.01
     Base: 1
-    Price: 10
+    Price: 50
   - Id: 10
     Name: "\uAD11\uC11D \uAC2F\uC218"
-    Limit: 10
+    Limit: 5
     Coeff: 1
     Base: 0
-    Price: 10
+    Price: 10000
   - Id: 11
     Name: "\uAD11\uBB3C \uAC1C\uC218"
     Limit: 30
     Coeff: 1
     Base: 0
-    Price: 10
+    Price: 1000
   - Id: 12
     Name: "\uAD11\uBB3C \uAC00\uCE58"
     Limit: 50
     Coeff: 1
     Base: 0
-    Price: 10
+    Price: 1000
   - Id: 13
     Name: "\uC900\uBE44\uC2DC\uAC04"
     Limit: 1000
     Coeff: 0.01
     Base: 1
-    Price: 10
+    Price: 100
   - Id: 14
     Name: "\uC9C0\uC18D\uC2DC\uAC04"
     Limit: 1000
     Coeff: 0.01
     Base: 1
-    Price: 10
+    Price: 100
   - Id: 15
     Name: "\uCC44\uAD11\uB825 \uBC84\uD504"
     Limit: 1000

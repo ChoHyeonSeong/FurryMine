@@ -20,23 +20,15 @@ public class RewardButton : MonoBehaviour
     private void OnEnable()
     {
         RewardReceiver.OnRemainCoolTime += UpdateRemainText;
+        RewardReceiver.OnStartCoolTime += ForbidShowAd;
         RewardReceiver.OnEndCoolTime += AllowShowAd;
-        GameApp.OnGameStart += GameStart;
     }
 
     private void OnDisable()
     {
         RewardReceiver.OnRemainCoolTime -= UpdateRemainText;
+        RewardReceiver.OnStartCoolTime -= ForbidShowAd;
         RewardReceiver.OnEndCoolTime -= AllowShowAd;
-        GameApp.OnGameStart -= GameStart;
-    }
-
-    private void GameStart()
-    {
-        if (SaveManager.Save.RemainCoolTime > 0)
-        {
-            ForbidShowAd();
-        }
     }
 
     private void ShowRewardedAd()
@@ -50,9 +42,9 @@ public class RewardButton : MonoBehaviour
 
     private bool CheckReceivableReward()
     {
-        var enumArray = Enum.GetValues(typeof(EEnforce));
-        foreach (EEnforce enforce in enumArray)
+        for (int i = 0; i < EnforceManager.EnforceCount; i++)
         {
+            EEnforce enforce = (EEnforce)i;
             if (EnforceManager.GetLevel(enforce) < EnforceManager.GetLimit(enforce))
                 return true;
         }

@@ -54,7 +54,6 @@ public class DownloadManager : MonoBehaviour
             var handle = Addressables.GetDownloadSizeAsync(label);
             yield return handle;
             _patchSize += handle.Result;
-            Debug.Log(_patchSize);
         }
 
         if (_patchSize > decimal.Zero)

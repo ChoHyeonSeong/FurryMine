@@ -47,6 +47,7 @@ public class MinerContent : MonoBehaviour
 
     private void AddMinerItem(int minerId)
     {
+        Debug.Log($"±¤ºÎ id == {minerId} : MinerCotent-AddMinerItem");
         MinerItem item = Instantiate(_minerItemPrefab, transform);
         MinerEntity entity = TableManager.MinerTable[minerId];
         item.InitItem(minerId, entity.Name, entity.Rank, ResourceManager.MinerIconList[minerId]);

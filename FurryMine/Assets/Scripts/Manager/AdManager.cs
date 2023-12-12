@@ -8,7 +8,7 @@ public static class AdManager
 {
     public static Action OnReceiveReward { get; set; }
 
-    private static string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
+    private static string _adUnitId = "ca-app-pub-5406811308300005/2912140778";
     private static RewardedAd _rewardedAd;
     public static void LoadRewardedAd()
     {

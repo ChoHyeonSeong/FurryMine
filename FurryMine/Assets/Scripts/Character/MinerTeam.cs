@@ -118,6 +118,7 @@ public class MinerTeam : MonoBehaviour
         EquipItem.OnClickWear += SetMinerEquip;
         SelectMinerContent.GetHeadId += GetHeadId;
         SelectMinerContent.GetStaffIdList += GetStaffIdList;
+        EscapeButton.OnClickEscape += EscapeHeadMiner;
     }
 
     private void OnDisable()
@@ -129,6 +130,7 @@ public class MinerTeam : MonoBehaviour
         EquipItem.OnClickWear -= SetMinerEquip;
         SelectMinerContent.GetHeadId -= GetHeadId;
         SelectMinerContent.GetStaffIdList -= GetStaffIdList;
+        EscapeButton.OnClickEscape -= EscapeHeadMiner;
     }
 
     private void PreGameStart()
@@ -177,7 +179,7 @@ public class MinerTeam : MonoBehaviour
                     // 착용장비가 있다면 장비해제
                     if (_headMiner.EquipId != -1)
                     {
-                        _minerEquips.Remove(_headMinerId);
+                        _minerEquips.Remove(_headMiner.EquipId);
                         OnSetWear(_headMiner.EquipId, false);
                         _headMiner.TakeOffEquip();
                     }
@@ -379,5 +381,10 @@ public class MinerTeam : MonoBehaviour
     private List<int> GetStaffIdList()
     {
         return _staffMiners.Keys.ToList();
+    }
+
+    private void EscapeHeadMiner()
+    {
+        _headMiner.transform.position = transform.position;
     }
 }

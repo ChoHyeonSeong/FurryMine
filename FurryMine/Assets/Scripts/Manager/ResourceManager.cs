@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Rendering;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceLocations;
 using Object = UnityEngine.Object;
 
 public static class ResourceManager
@@ -33,15 +35,18 @@ public static class ResourceManager
             OnComplete();
         };
 
-        Addressables.LoadAssetsAsync(_minerIconLabel, (Object obj) =>
+        Addressables.LoadResourceLocationsAsync(_minerIconLabel, typeof(Texture2D)).Completed += (handle) =>
         {
-            Texture2D texture = obj as Texture2D;
-            MinerIconList.Add(Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f)));
-        }).Completed += (table) =>
-        {
-            _minerIconHandle = table;
-            Debug.Log("MinerIcon Load");
-            OnComplete();
+            Addressables.LoadAssetsAsync(handle.Result, (Object obj) =>
+            {
+                Texture2D texture = obj as Texture2D;
+                MinerIconList.Add(Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f)));
+            }).Completed += (table) =>
+            {
+                _minerIconHandle = table;
+                Debug.Log("MinerIcon Load");
+                OnComplete();
+            };
         };
 
         var equipIcons = Resources.LoadAll<Texture2D>("EquipIcon");

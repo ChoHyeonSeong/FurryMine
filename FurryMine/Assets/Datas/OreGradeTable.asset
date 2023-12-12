@@ -45,21 +45,21 @@ MonoBehaviour:
     Probability: 84
   - Id: 6
     Grade: S
-    CoeffHealth: 2.2
-    MineralCount: 7
+    CoeffHealth: 3
+    MineralCount: 12
     Probability: 91
   - Id: 7
     Grade: SS
-    CoeffHealth: 2.4
-    MineralCount: 8
+    CoeffHealth: 4
+    MineralCount: 18
     Probability: 96
   - Id: 8
     Grade: SSS
-    CoeffHealth: 2.6
-    MineralCount: 9
+    CoeffHealth: 5
+    MineralCount: 24
     Probability: 99
   - Id: 9
     Grade: L
-    CoeffHealth: 2.8
-    MineralCount: 10
+    CoeffHealth: 10
+    MineralCount: 48
     Probability: 100

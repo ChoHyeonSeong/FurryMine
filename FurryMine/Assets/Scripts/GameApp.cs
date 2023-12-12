@@ -58,7 +58,8 @@ public class GameApp : MonoBehaviour
             SaveData saveGame = new SaveData();
             saveGame.Money = GameManager.Cart.Money;
             saveGame.OwnerLevel = GameManager.Player.OwnerLevel;
-            saveGame.RemainCoolTime = GameManager.Reward.RemainCoolTime;
+            saveGame.LastExitTime = DateTime.Now.ToString();
+            saveGame.IsAdCoolTime = GameManager.Reward.RemainCoolTime > 0;
             saveGame.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
             saveGame.CurrentHeadId = GameManager.Team.HeadMinerId;
             saveGame.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();
@@ -79,7 +80,8 @@ public class GameApp : MonoBehaviour
         SaveData saveGame = new SaveData();
         saveGame.Money = GameManager.Cart.Money;
         saveGame.OwnerLevel = GameManager.Player.OwnerLevel;
-        saveGame.RemainCoolTime = GameManager.Reward.RemainCoolTime;
+        saveGame.LastExitTime = DateTime.Now.ToString();
+        saveGame.IsAdCoolTime = GameManager.Reward.RemainCoolTime > 0;
         saveGame.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
         saveGame.CurrentHeadId = GameManager.Team.HeadMinerId;
         saveGame.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();

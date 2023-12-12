@@ -8,11 +8,15 @@ public class SaveData
     {
         Money = 0;
         OwnerLevel = 1;
-        RemainCoolTime = 0;
+        IsAdCoolTime = false;
+        LastExitTime = DateTime.Now.ToString();
         CurrentMineIndex = 0;
         CurrentHeadId = 0;
         CurrentStaffIds = new List<int>();
         CurrentMinerEquip = new Dictionary<int, int>();
+        EnforceLevels = new List<int>();
+        for (int i = 0; i < EnforceManager.EnforceCount; i++)
+            EnforceLevels.Add(0);
         MineDatas = new List<MineData>
         {
             new MineData
@@ -35,7 +39,8 @@ public class SaveData
 
     public int Money;
     public int OwnerLevel;
-    public int RemainCoolTime;
+    public string LastExitTime;
+    public bool IsAdCoolTime;
     public int CurrentMineIndex;
     public int CurrentHeadId;
     public List<int> CurrentStaffIds;
