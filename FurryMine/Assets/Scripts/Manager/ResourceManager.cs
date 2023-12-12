@@ -31,7 +31,7 @@ public static class ResourceManager
         }).Completed += (table) =>
         {
             _animCtrlHandle = table;
-            Debug.Log("AnimCtrl Load");
+            //Debug.Log("AnimCtrl Load");
             OnComplete();
         };
 
@@ -44,7 +44,7 @@ public static class ResourceManager
             }).Completed += (table) =>
             {
                 _minerIconHandle = table;
-                Debug.Log("MinerIcon Load");
+                //Debug.Log("MinerIcon Load");
                 OnComplete();
             };
         };

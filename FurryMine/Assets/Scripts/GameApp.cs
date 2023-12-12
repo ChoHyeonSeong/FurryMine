@@ -21,10 +21,12 @@ public class GameApp : MonoBehaviour
         TableManager.OnComplete += CompleteLoading;
         SaveManager.OnComplete += CompleteLoading;
         ResourceManager.OnComplete += CompleteLoading;
+        AdManager.OnComplete += CompleteLoading;
 
         TableManager.LoadTable();
         SaveManager.LoadGame();
         ResourceManager.LoadResource();
+        AdManager.LoadRewardedAd();
     }
 
     private void OnDestroy()
@@ -32,6 +34,7 @@ public class GameApp : MonoBehaviour
         TableManager.OnComplete -= CompleteLoading;
         SaveManager.OnComplete -= CompleteLoading;
         ResourceManager.OnComplete -= CompleteLoading;
+        AdManager.OnComplete -= CompleteLoading;
     }
 
     private void CompleteLoading()
@@ -39,10 +42,11 @@ public class GameApp : MonoBehaviour
         _loadingCount--;
         if (_loadingCount <= 0)
         {
-            Debug.Log("Complete Loading");
+            //Debug.Log("Complete Loading");
+            //Debug.Log("LoadEnforce");
             EnforceManager.LoadEnforce();
+            //Debug.Log("LoadCaching");
             GameManager.LoadCaching();
-            AdManager.LoadRewardedAd();
             IsGameStart = true;
             OnPreGameStart();
             OnGameStart();
@@ -58,8 +62,7 @@ public class GameApp : MonoBehaviour
             SaveData saveGame = new SaveData();
             saveGame.Money = GameManager.Cart.Money;
             saveGame.OwnerLevel = GameManager.Player.OwnerLevel;
-            saveGame.LastExitTime = DateTime.Now.ToString();
-            saveGame.IsAdCoolTime = GameManager.Reward.RemainCoolTime > 0;
+            saveGame.AdDateTime = GameManager.Reward.AdDateTime;
             saveGame.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
             saveGame.CurrentHeadId = GameManager.Team.HeadMinerId;
             saveGame.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();
@@ -80,8 +83,7 @@ public class GameApp : MonoBehaviour
         SaveData saveGame = new SaveData();
         saveGame.Money = GameManager.Cart.Money;
         saveGame.OwnerLevel = GameManager.Player.OwnerLevel;
-        saveGame.LastExitTime = DateTime.Now.ToString();
-        saveGame.IsAdCoolTime = GameManager.Reward.RemainCoolTime > 0;
+        saveGame.AdDateTime = GameManager.Reward.AdDateTime;
         saveGame.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
         saveGame.CurrentHeadId = GameManager.Team.HeadMinerId;
         saveGame.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();

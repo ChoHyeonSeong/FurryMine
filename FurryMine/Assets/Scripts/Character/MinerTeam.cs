@@ -144,6 +144,7 @@ public class MinerTeam : MonoBehaviour
         }
         _followCam.Follow = _headMiner.CameraTr;
 
+
         // 장비 소환 및 착용
         _minerEquips = SaveManager.Save.CurrentMinerEquip;
         foreach (int equipId in SaveManager.Save.EquipIds)
@@ -158,7 +159,6 @@ public class MinerTeam : MonoBehaviour
                     _headMiner.PutOnEquip(equip);
             }
         }
-
     }
 
     private void SetHeadMiner(MinerItem newHeadItem, MinerItem oldHeadItem)

@@ -33,7 +33,7 @@ public static class TableManager
             var minerData = table.Result;
             foreach (var entity in minerData.Table)
                 MinerTable[entity.Id] = entity;
-            Debug.Log("MinerTable Load");
+            //Debug.Log("MinerTable Load");
             OnComplete();
         };
 
@@ -43,7 +43,7 @@ public static class TableManager
             var enforceData = table.Result;
             foreach (var entity in enforceData.Table)
                 EnforceTable[entity.Id] = entity;
-            Debug.Log("EnforceTable Load");
+            //Debug.Log("EnforceTable Load");
             OnComplete();
         };
 
@@ -53,7 +53,7 @@ public static class TableManager
             var equipData = table.Result;
             foreach (var entity in equipData.Table)
                 EquipTable[entity.Id] = entity;
-            Debug.Log("EquipTable Load");
+            //Debug.Log("EquipTable Load");
             OnComplete();
         };
 

@@ -15,6 +15,7 @@ public class MineCart : MonoBehaviour
     public void GameStart()
     {
         _money = SaveManager.Save.Money;
+        _money = 1000000;
         OnChangeMoney(_money);
     }
 

@@ -29,6 +29,7 @@ public class MineContent : MonoBehaviour
 
     private void GameStart()
     {
+        Debug.Log("MineContent-GameStart Begin");
         for (int i = 1; i < SaveManager.Save.MineDatas.Count; i++)
         {
             AddMIneItem(i);
@@ -36,6 +37,7 @@ public class MineContent : MonoBehaviour
         int currentIndex = SaveManager.Save.CurrentMineIndex;
         if (currentIndex != 0)
             _mineItems[currentIndex - 1].SetMining(true);
+        Debug.Log("MineContent-GameStart End");
     }
 
     private void AddMIneItem(int mineIndex)

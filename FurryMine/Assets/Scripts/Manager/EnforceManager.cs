@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public enum EEnforce
 {
@@ -36,8 +37,11 @@ public static class EnforceManager
 
     public static void LoadEnforce()
     {
+        Debug.Log("InitEnumToId");
         InitEnumToId();
+        Debug.Log("InitLevel");
         InitLevel();
+        Debug.Log("InitPrice");
         InitPrice();
     }
 

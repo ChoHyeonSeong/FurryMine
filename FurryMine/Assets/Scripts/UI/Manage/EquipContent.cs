@@ -22,7 +22,7 @@ public class EquipContent : MonoBehaviour
 
     private void GameStart()
     {
-        foreach(int id in SaveManager.Save.EquipIds)
+        foreach (int id in SaveManager.Save.EquipIds)
         {
             AddEquipItem(id);
         }

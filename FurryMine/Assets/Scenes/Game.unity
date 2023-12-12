@@ -6066,11 +6066,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 443831299}
-  - component: {fileID: 443831302}
   - component: {fileID: 443831301}
   - component: {fileID: 443831303}
   - component: {fileID: 443831304}
   - component: {fileID: 443831305}
+  - component: {fileID: 443831306}
   m_Layer: 1
   m_Name: Miners
   m_TagString: Untagged
@@ -6105,19 +6105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540fbd86875a3a44c89e4521ea90739c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &443831302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443831298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 240eb14ce7feb2e49bb380a6d9460ec6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _minerPrefab: {fileID: 2679783252202705591, guid: 3e1ea3420d7d2e3409e48c1cc3e99a33, type: 3}
 --- !u!114 &443831303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6155,6 +6142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d22773daf9503648b0991440747bb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &443831306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443831298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240eb14ce7feb2e49bb380a6d9460ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minerPrefab: {fileID: 2679783252202705591, guid: 3e1ea3420d7d2e3409e48c1cc3e99a33, type: 3}
 --- !u!1 &497978612
 GameObject:
   m_ObjectHideFlags: 0

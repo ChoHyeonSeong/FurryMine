@@ -39,6 +39,22 @@ public class Owner : MonoBehaviour
             OnSetTime(_time / _limitTime);
         }
     }
+
+    private void OnEnable()
+    {
+        GameApp.OnGameStart += GameStart;
+    }
+
+    private void OnDisable()
+    {
+        GameApp.OnGameStart -= GameStart;
+    }
+
+    private void GameStart()
+    {
+        _ownerLevel = SaveManager.Save.OwnerLevel;
+    }
+
     public void SubmitMineral(int count)
     {
         _currentExp += count;

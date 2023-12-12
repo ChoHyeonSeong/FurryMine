@@ -38,7 +38,7 @@ public static class SaveManager
         }
         if (Save == null)
             Save = new SaveData();
-        Debug.Log("Load Game");
+        //Debug.Log("Load Game");
         OnComplete();
     }
 }

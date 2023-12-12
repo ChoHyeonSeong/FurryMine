@@ -47,11 +47,14 @@ public class EnforceApplier : MonoBehaviour
         {
             EnforceManager.LevelUpEnforce(enforce);
             ApplyEnforce(enforce);
+            bool isMaxEnforce = EnforceManager.GetLevel(enforce) >= EnforceManager.GetLimit(enforce);
             item.SetText(
                 EnforceManager.GetLevel(enforce),
                 EnforceManager.GetCoeff(enforce),
-                EnforceManager.GetLevel(enforce) >= EnforceManager.GetLimit(enforce) ? 0 : EnforceManager.GetPrice(enforce)
+                isMaxEnforce ? 0 : EnforceManager.GetPrice(enforce)
                 );
+            if (isMaxEnforce)
+                item.BlockEnforce();
         }
     }
 

@@ -118,6 +118,7 @@ public class Mine : MonoBehaviour
             _oreSpawner.CollectAllOre();
             return;
         }
+        _mineDataList[_currentMineIndex].OreDeposit = _oreDeposit;
         OnCheckDepletion(_currentMineIndex, _oreDeposit);
     }
 

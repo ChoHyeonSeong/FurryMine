@@ -8,8 +8,7 @@ public class SaveData
     {
         Money = 0;
         OwnerLevel = 1;
-        IsAdCoolTime = false;
-        LastExitTime = DateTime.Now.ToString();
+        AdDateTime = null;
         CurrentMineIndex = 0;
         CurrentHeadId = 0;
         CurrentStaffIds = new List<int>();
@@ -39,8 +38,7 @@ public class SaveData
 
     public int Money;
     public int OwnerLevel;
-    public string LastExitTime;
-    public bool IsAdCoolTime;
+    public string AdDateTime;
     public int CurrentMineIndex;
     public int CurrentHeadId;
     public List<int> CurrentStaffIds;

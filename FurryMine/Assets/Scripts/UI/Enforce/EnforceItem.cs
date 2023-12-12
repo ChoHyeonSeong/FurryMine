@@ -48,9 +48,13 @@ public class EnforceItem : MonoBehaviour
                 _valueText.text = $"+{(int)(level * coeff)}";
                 break;
             case EUnit.PERCENT:
-                _valueText.text = $"+{level * coeff * 100}%";
+                _valueText.text = $"+{Mathf.RoundToInt(level * coeff * 100)}%";
                 break;
         }
+    }
+    public void BlockEnforce()
+    {
+        _buyBtn.interactable = false;
     }
 
     private void Awake()
@@ -80,4 +84,5 @@ public class EnforceItem : MonoBehaviour
     {
         OnBuyEnforce(this);
     }
+
 }

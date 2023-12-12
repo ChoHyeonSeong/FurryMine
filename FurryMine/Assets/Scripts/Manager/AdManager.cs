@@ -6,11 +6,43 @@ using UnityEngine;
 
 public static class AdManager
 {
+    public static Action OnComplete { get; set; }
     public static Action OnReceiveReward { get; set; }
 
     private static string _adUnitId = "ca-app-pub-5406811308300005/2912140778";
     private static RewardedAd _rewardedAd;
     public static void LoadRewardedAd()
+    {
+        GameApp.PlusLoadingCount(1);
+        Debug.Log("Loading the rewarded ad.");
+        MobileAds.RaiseAdEventsOnUnityMainThread = true;
+
+        // create our request used to load the ad.
+        var adRequest = new AdRequest();
+
+        // send the request to load the ad.
+        RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
+        {
+            // if error is not null, the load request failed.
+            if (error != null || ad == null)
+            {
+                Debug.LogError("Rewarded ad failed to load an ad " +
+                               "with error : " + error);
+                return;
+            }
+
+            Debug.Log("Rewarded ad loaded with response : "
+                      + ad.GetResponseInfo());
+
+            _rewardedAd = ad;
+
+            RegisterEventHandlers(ad);
+            //Debug.Log("Load AdManager");
+            OnComplete();
+        });
+    }
+
+    public static void ReloadRewardedAd()
     {
         if (_rewardedAd != null)
         {
@@ -38,9 +70,7 @@ public static class AdManager
                       + ad.GetResponseInfo());
 
             _rewardedAd = ad;
-
             RegisterEventHandlers(ad);
-
         });
     }
 
@@ -90,7 +120,7 @@ public static class AdManager
             Debug.Log("Rewarded Ad full screen content closed.");
 
             // Reload the ad so that we can show another as soon as possible.
-            LoadRewardedAd();
+            ReloadRewardedAd();
         };
 
         // Raised when the ad failed to open full screen content.
@@ -100,7 +130,7 @@ public static class AdManager
                            "with error : " + error);
 
             // Reload the ad so that we can show another as soon as possible.
-            LoadRewardedAd();
+            ReloadRewardedAd();
         };
     }
 }

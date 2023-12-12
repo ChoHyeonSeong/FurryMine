@@ -15,20 +15,29 @@ public class RewardButton : MonoBehaviour
         _button = GetComponent<Button>();
         _remainText = GetComponentInChildren<TextMeshProUGUI>();
         _button.onClick.AddListener(ShowRewardedAd);
+        _button.interactable = false;
     }
 
     private void OnEnable()
     {
         RewardReceiver.OnRemainCoolTime += UpdateRemainText;
-        RewardReceiver.OnStartCoolTime += ForbidShowAd;
+        RewardReceiver.OnStartCoolTime += RewardStart;
         RewardReceiver.OnEndCoolTime += AllowShowAd;
     }
 
     private void OnDisable()
     {
         RewardReceiver.OnRemainCoolTime -= UpdateRemainText;
-        RewardReceiver.OnStartCoolTime -= ForbidShowAd;
+        RewardReceiver.OnStartCoolTime -= RewardStart;
         RewardReceiver.OnEndCoolTime -= AllowShowAd;
+    }
+
+    private void RewardStart(bool isCoolTime)
+    {
+        if(isCoolTime)
+            ForbidShowAd();
+        else
+            AllowShowAd();
     }
 
     private void ShowRewardedAd()

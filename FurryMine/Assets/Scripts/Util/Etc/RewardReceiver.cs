@@ -9,15 +9,16 @@ public class RewardReceiver : MonoBehaviour
     public static Action<EEnforce> OnUpdateEnforce { get; set; }
     public static Action<EEnforce> OnRandomEnforce { get; set; }
     public static Action<int> OnRemainCoolTime { get; set; }
-    public static Action OnStartCoolTime { get; set; }
+    public static Action<bool> OnStartCoolTime { get; set; }
     public static Action OnEndCoolTime { get; set; }
 
-    public int RemainCoolTime { get => _remainCoolTime; }
+    public string AdDateTime { get => _adDateTime; }
 
     private const int _coolTime = 300;
     private float _crtTime = 0;
     private bool _isCounting = false;
     private int _remainCoolTime;
+    private string _adDateTime;
 
     private void OnEnable()
     {
@@ -46,6 +47,7 @@ public class RewardReceiver : MonoBehaviour
                     OnEndCoolTime();
                     _isCounting = false;
                     _crtTime = 0;
+                    _adDateTime = null;
                 }
             }
         }
@@ -53,19 +55,22 @@ public class RewardReceiver : MonoBehaviour
 
     private void GameStart()
     {
-        if(SaveManager.Save.IsAdCoolTime)
+        if (SaveManager.Save.AdDateTime != null)
         {
-            DateTime lastExitTime = DateTime.Parse(SaveManager.Save.LastExitTime);
-            TimeSpan compareTime = DateTime.Now - lastExitTime;
+            DateTime adDateTime = DateTime.Parse(SaveManager.Save.AdDateTime);
+            TimeSpan compareTime = DateTime.Now - adDateTime;
             int remainCoolTime = _coolTime - (int)compareTime.TotalSeconds;
             if (remainCoolTime > 0)
             {
                 _remainCoolTime = remainCoolTime;
                 OnRemainCoolTime(_remainCoolTime);
-                OnStartCoolTime();
+                OnStartCoolTime(true);
                 _isCounting = true;
+                _adDateTime = SaveManager.Save.AdDateTime;
+                return;
             }
         }
+        OnStartCoolTime(false);
     }
 
     private void RandomEnforce()
@@ -84,5 +89,6 @@ public class RewardReceiver : MonoBehaviour
         _remainCoolTime = _coolTime;
         OnRemainCoolTime(_remainCoolTime);
         _isCounting = true;
+        _adDateTime = DateTime.Now.ToString();
     }
 }
