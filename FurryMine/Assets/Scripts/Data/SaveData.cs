@@ -6,7 +6,11 @@ public class SaveData
 {
     public SaveData()
     {
+#if UNITY_EDITOR
+        Money = 10000000;
+#else
         Money = 0;
+#endif
         OwnerLevel = 1;
         AdDateTime = string.Empty;
         CurrentMineIndex = 0;
@@ -24,7 +28,16 @@ public class SaveData
                 OreGradeId = 0,
                 MineLevelId = 0,
                 OreDeposit = -1,
-            }
+            },
+#if UNITY_EDITOR
+            new MineData
+            {
+                OreTypeId = 0,
+                OreGradeId = 0,
+                MineLevelId = 0,
+                OreDeposit = 10,
+            },
+#endif
         };
         MinerIds = new List<int>
         {
