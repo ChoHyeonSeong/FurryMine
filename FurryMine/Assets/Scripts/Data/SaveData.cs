@@ -8,7 +8,7 @@ public class SaveData
     {
         Money = 0;
         OwnerLevel = 1;
-        AdDateTime = null;
+        AdDateTime = string.Empty;
         CurrentMineIndex = 0;
         CurrentHeadId = 0;
         CurrentStaffIds = new List<int>();

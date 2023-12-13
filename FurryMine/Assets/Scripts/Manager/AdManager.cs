@@ -6,16 +6,15 @@ using UnityEngine;
 
 public static class AdManager
 {
-    public static Action OnComplete { get; set; }
+    public static Action OnCompleteAdLoading { get; set; }
     public static Action OnReceiveReward { get; set; }
 
     private static string _adUnitId = "ca-app-pub-5406811308300005/2912140778";
     private static RewardedAd _rewardedAd;
     public static void LoadRewardedAd()
     {
-        GameApp.PlusLoadingCount(1);
         Debug.Log("Loading the rewarded ad.");
-        MobileAds.RaiseAdEventsOnUnityMainThread = true;
+        //MobileAds.RaiseAdEventsOnUnityMainThread = true;
 
         // create our request used to load the ad.
         var adRequest = new AdRequest();
@@ -38,7 +37,7 @@ public static class AdManager
 
             RegisterEventHandlers(ad);
             //Debug.Log("Load AdManager");
-            OnComplete();
+            OnCompleteAdLoading();
         });
     }
 
@@ -132,5 +131,11 @@ public static class AdManager
             // Reload the ad so that we can show another as soon as possible.
             ReloadRewardedAd();
         };
+    }
+
+    private static IEnumerator AgainLoadRewardedAd()
+    {
+        yield return new WaitForSeconds(1);
+        LoadRewardedAd();
     }
 }

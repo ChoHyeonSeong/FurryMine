@@ -34,6 +34,8 @@ public class EnforceItem : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _priceText;
 
+    [SerializeField]
+    private int _roundDigit;
 
     private Button _buyBtn;
     private string _titleStr;
@@ -48,7 +50,7 @@ public class EnforceItem : MonoBehaviour
                 _valueText.text = $"+{(int)(level * coeff)}";
                 break;
             case EUnit.PERCENT:
-                _valueText.text = $"+{Mathf.RoundToInt(level * coeff * 100)}%";
+                _valueText.text = $"+{System.Math.Round(level * coeff * 100, _roundDigit)}%";
                 break;
         }
     }

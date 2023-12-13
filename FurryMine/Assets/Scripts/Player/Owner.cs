@@ -53,6 +53,10 @@ public class Owner : MonoBehaviour
     private void GameStart()
     {
         _ownerLevel = SaveManager.Save.OwnerLevel;
+        for (int i = 0; i < _ownerLevel; i++)
+        {
+            _quotaExp = (int)(_quotaExp * Consts.GoldenRatio);
+        }
     }
 
     public void SubmitMineral(int count)

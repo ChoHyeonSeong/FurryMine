@@ -10,9 +10,18 @@ public static class SaveManager
 
     private static string _filePath = Application.persistentDataPath + "/Save.txt";
 
-    public static void SaveGame(SaveData save)
+    public static void SaveGame()
     {
-        string jsonData = JsonUtility.ToJson(save);
+        Save.Money = GameManager.Cart.Money;
+        Save.OwnerLevel = GameManager.Player.OwnerLevel;
+        Save.AdDateTime = GameManager.Reward.AdDateTime;
+        Save.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
+        Save.CurrentHeadId = GameManager.Team.HeadMinerId;
+        Save.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();
+        Save.CurrentMinerEquip = GameManager.Team.CurrentMinerEquip;
+        Save.EnforceLevels = EnforceManager.GetLevelList();
+        Save.MineDatas = GameManager.Mine.MineDataList;
+        string jsonData = JsonUtility.ToJson(Save);
         byte[] bytes = System.Text.Encoding.UTF8.GetBytes(jsonData);
         string code = System.Convert.ToBase64String(bytes);
         File.WriteAllText(_filePath, code);

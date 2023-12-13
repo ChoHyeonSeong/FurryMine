@@ -19,6 +19,7 @@ public class MinerTeam : MonoBehaviour
     [SerializeField]
     private CinemachineVirtualCamera _followCam;
 
+    private bool _isUpEscape = true;
     private int _staffCount;
     private MinerSpawner _minerSpawner;
     private int _headMinerId;
@@ -385,6 +386,16 @@ public class MinerTeam : MonoBehaviour
 
     private void EscapeHeadMiner()
     {
-        _headMiner.transform.position = transform.position;
+        Vector3 escapePos = transform.position;
+        if (_isUpEscape)
+        {
+            _isUpEscape = false;
+        }
+        else
+        {
+            escapePos.y *= -1;
+            _isUpEscape = true;
+        }
+        _headMiner.transform.position = escapePos;
     }
 }

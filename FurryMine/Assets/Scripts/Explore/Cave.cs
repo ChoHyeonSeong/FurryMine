@@ -24,6 +24,10 @@ public class Cave : MonoBehaviour
     private Lode _lodePrefab;
     [SerializeField]
     private int _miningHealth;
+    [SerializeField]
+    private Transform _wallsParent;
+    [SerializeField]
+    private Transform _lodesParent;
     private int _crtMiningHealth;
     private int _crtLodeCount;
     private int _lodeCount;
@@ -200,7 +204,7 @@ public class Cave : MonoBehaviour
         }
         else
         {
-            wall = Instantiate(_wallPrefab, transform);
+            wall = Instantiate(_wallPrefab, _wallsParent);
         }
         return wall;
     }
@@ -215,7 +219,7 @@ public class Cave : MonoBehaviour
         }
         else
         {
-            pillar = Instantiate(_pillarPrefab, transform);
+            pillar = Instantiate(_pillarPrefab, _wallsParent);
         }
         return pillar;
     }
@@ -231,7 +235,7 @@ public class Cave : MonoBehaviour
         }
         else
         {
-            lode = Instantiate(_lodePrefab, transform);
+            lode = Instantiate(_lodePrefab, _lodesParent);
         }
         return lode;
     }

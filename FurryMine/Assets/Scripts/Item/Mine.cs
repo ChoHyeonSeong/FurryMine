@@ -96,16 +96,16 @@ public class Mine : MonoBehaviour
 
     private bool CheckSpawnable(int currentOreCount)
     {
-        if (_oreDeposit == -1)
+        if (_currentMineIndex == 0)
             return true;
         return currentOreCount < _oreDeposit;
     }
 
     private void CheckDepletion()
     {
-        if (_oreDeposit == -1)
+        if (_currentMineIndex == 0)
             return;
-        if (--_oreDeposit == 0)
+        if (--_oreDeposit <= 0)
         {
             // 현재 광산 제거
             _mineDataList.RemoveAt(_currentMineIndex);
@@ -116,6 +116,11 @@ public class Mine : MonoBehaviour
             RecalculateMineStat();
             _minerTeam.GoToOtherMine();
             _oreSpawner.CollectAllOre();
+
+#if UNITY_EDITOR
+#else
+            SaveManager.SaveGame();
+#endif
             return;
         }
         _mineDataList[_currentMineIndex].OreDeposit = _oreDeposit;
@@ -159,6 +164,11 @@ public class Mine : MonoBehaviour
         _minerTeam.GoToOtherMine();
         _oreSpawner.CollectAllOre();
         mineItem.InitSelectItem();
+
+#if UNITY_EDITOR
+#else
+            SaveManager.SaveGame();
+#endif
     }
 
     private void SellMine(MineItem mineItem)
@@ -167,6 +177,8 @@ public class Mine : MonoBehaviour
         OreTypeEntity oreTypeEntity = TableManager.OreTypeTable[data.OreTypeId];
         OreGradeEntity oreGradeEntity = TableManager.OreGradeTable[data.OreGradeId];
         OnSellMine((int)(data.OreDeposit * oreTypeEntity.MineralPrice * oreGradeEntity.MineralCount * 0.6f));
+        if (mineItem.MineIndex < _currentMineIndex)
+            _currentMineIndex--;
         _mineDataList.RemoveAt(mineItem.MineIndex);
         OnRemoveMine(mineItem.MineIndex);
     }
@@ -175,6 +187,10 @@ public class Mine : MonoBehaviour
     {
         _mineDataList.Add(data);
         OnAddMine(data);
+#if UNITY_EDITOR
+#else
+            SaveManager.SaveGame();
+#endif
     }
 }
 

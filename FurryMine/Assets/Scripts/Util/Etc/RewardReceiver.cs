@@ -23,13 +23,13 @@ public class RewardReceiver : MonoBehaviour
     private void OnEnable()
     {
         AdManager.OnReceiveReward += RandomEnforce;
-        GameApp.OnGameStart += GameStart;
+        AdManager.OnCompleteAdLoading += InitAdReward;
     }
 
     private void OnDisable()
     {
         AdManager.OnReceiveReward -= RandomEnforce;
-        GameApp.OnGameStart -= GameStart;
+        AdManager.OnCompleteAdLoading -= InitAdReward;
     }
 
     private void Update()
@@ -47,15 +47,15 @@ public class RewardReceiver : MonoBehaviour
                     OnEndCoolTime();
                     _isCounting = false;
                     _crtTime = 0;
-                    _adDateTime = null;
+                    _adDateTime = string.Empty;
                 }
             }
         }
     }
 
-    private void GameStart()
+    private void InitAdReward()
     {
-        if (SaveManager.Save.AdDateTime != null)
+        if (SaveManager.Save.AdDateTime != string.Empty)
         {
             DateTime adDateTime = DateTime.Parse(SaveManager.Save.AdDateTime);
             TimeSpan compareTime = DateTime.Now - adDateTime;
@@ -90,5 +90,9 @@ public class RewardReceiver : MonoBehaviour
         OnRemainCoolTime(_remainCoolTime);
         _isCounting = true;
         _adDateTime = DateTime.Now.ToString();
+#if UNITY_EDITOR
+#else
+            SaveManager.SaveGame();
+#endif
     }
 }

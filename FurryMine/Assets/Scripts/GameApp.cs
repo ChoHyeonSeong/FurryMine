@@ -21,12 +21,10 @@ public class GameApp : MonoBehaviour
         TableManager.OnComplete += CompleteLoading;
         SaveManager.OnComplete += CompleteLoading;
         ResourceManager.OnComplete += CompleteLoading;
-        AdManager.OnComplete += CompleteLoading;
 
         TableManager.LoadTable();
         SaveManager.LoadGame();
         ResourceManager.LoadResource();
-        AdManager.LoadRewardedAd();
     }
 
     private void OnDestroy()
@@ -34,7 +32,6 @@ public class GameApp : MonoBehaviour
         TableManager.OnComplete -= CompleteLoading;
         SaveManager.OnComplete -= CompleteLoading;
         ResourceManager.OnComplete -= CompleteLoading;
-        AdManager.OnComplete -= CompleteLoading;
     }
 
     private void CompleteLoading()
@@ -47,6 +44,7 @@ public class GameApp : MonoBehaviour
             EnforceManager.LoadEnforce();
             //Debug.Log("LoadCaching");
             GameManager.LoadCaching();
+            AdManager.LoadRewardedAd();
             IsGameStart = true;
             OnPreGameStart();
             OnGameStart();
@@ -59,17 +57,7 @@ public class GameApp : MonoBehaviour
 #else
         if (pause)
         {   
-            SaveData saveGame = new SaveData();
-            saveGame.Money = GameManager.Cart.Money;
-            saveGame.OwnerLevel = GameManager.Player.OwnerLevel;
-            saveGame.AdDateTime = GameManager.Reward.AdDateTime;
-            saveGame.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
-            saveGame.CurrentHeadId = GameManager.Team.HeadMinerId;
-            saveGame.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();
-            saveGame.CurrentMinerEquip = GameManager.Team.CurrentMinerEquip;
-            saveGame.EnforceLevels = EnforceManager.GetLevelList();
-            saveGame.MineDatas = GameManager.Mine.MineDataList;
-            SaveManager.SaveGame(saveGame);
+            SaveManager.SaveGame();
         }
 #endif
     }
@@ -80,17 +68,7 @@ public class GameApp : MonoBehaviour
         ResourceManager.UnloadResource();
 #if UNITY_EDITOR
 #else
-        SaveData saveGame = new SaveData();
-        saveGame.Money = GameManager.Cart.Money;
-        saveGame.OwnerLevel = GameManager.Player.OwnerLevel;
-        saveGame.AdDateTime = GameManager.Reward.AdDateTime;
-        saveGame.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
-        saveGame.CurrentHeadId = GameManager.Team.HeadMinerId;
-        saveGame.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();
-        saveGame.CurrentMinerEquip = GameManager.Team.CurrentMinerEquip;
-        saveGame.EnforceLevels = EnforceManager.GetLevelList();
-        saveGame.MineDatas = GameManager.Mine.MineDataList;
-        SaveManager.SaveGame(saveGame);
+            SaveManager.SaveGame();
 #endif
     }
 }
