@@ -14,6 +14,15 @@ public class Miner : MonoBehaviour
 
     public int EquipId { get => _equip == null ? -1 : _equip.EquipId; }
 
+    public int CurrentMiningCount { get => _crtMiningCount; }
+
+    public bool IsEqualTarget { get => _isEqualTarget; }
+
+    public Ore TargetOre { get => _targetOre; }
+
+    public WaitForSeconds MineAnimWait { get => _mineAnimWait; }
+    public WaitForSeconds MineWait { get => _mineWait; }
+
     private MinerEntity _minerEntity;
 
     private Equip _equip;
@@ -31,35 +40,28 @@ public class Miner : MonoBehaviour
     [SerializeField]
     private float _finalCriticalPower;
 
+    private bool _isEqualTarget;
     private bool _haveEquip;
-    private bool _isOreTarget;
     private int _mineralCount;
     private int _price;
     private int _crtMiningCount; // crt == Current
     private float _miningTime = 1f;
     private float _miningAnimTime = 0.333f;
-    private float _delayTime = 0.3f;
     private WaitForSeconds _mineAnimWait;
     private WaitForSeconds _mineWait;
 
     [SerializeField]
     private Transform _cameraTr;
     private MineCart _cart;
+    private Owner _player;
+    private Ore _targetOre;
     private GameObject _target;
     private SpriteRenderer _spriter;
     private Animator _animator;
     private Rigidbody2D _rigid;
     private AIPath _aiPath;
-    private Coroutine _miningCoroutine;
+    private MinerStateMachine _fsm;
 
-    private void Awake()
-    {
-        _spriter = GetComponentInChildren<SpriteRenderer>();
-        _animator = GetComponentInChildren<Animator>();
-        _rigid = GetComponent<Rigidbody2D>();
-        _aiPath = GetComponent<AIPath>();
-        _cart = GameManager.Cart;
-    }
 
     public void Init(MinerEntity minerEntity, RuntimeAnimatorController animCtrl)
     {
@@ -69,13 +71,12 @@ public class Miner : MonoBehaviour
         _minerEntity = minerEntity;
 
         _haveEquip = false;
-        _isOreTarget = false;
         _price = 0;
         _mineralCount = 0;
         _target = null;
-        _miningCoroutine = null;
         _finalMiningCount = _minerEntity.MiningCount;
         _crtMiningCount = _finalMiningCount;
+        _fsm.ChangeState(EMinerState.IDLE);
     }
 
     public void PutOnEquip(Equip equip)
@@ -133,77 +134,101 @@ public class Miner : MonoBehaviour
 
     public void GoToSpare()
     {
-        if (_isOreTarget)
+        _fsm.StopStateMachine();
+        if (_targetOre != null)
         {
-            _target.GetComponent<Ore>().SetMiner(null);
+            _targetOre.SetMiner(null);
+            _targetOre = null;
         }
-        else
-        {
-            OnChangeMineralCount(0);
-            GameManager.Cart.PlusMoney(_price);
-        }
+        _target = null;
+    }
+
+    public void SetCartTarget()
+    {
+        SetTartget(_cart.gameObject);
+    }
+
+    public void SetOreTarget(Ore targetOre)
+    {
+        SetTartget(targetOre.gameObject);
+        _targetOre = targetOre;
+    }
+
+
+    public void StopMoving()
+    {
+        _aiPath.destination = transform.position;
+    }
+
+    public void StrikeOre()
+    {
+        _targetOre.Hit((int)(_finalMiningPower * (CheckCritical() ? _finalCriticalPower : 1)));
+    }
+
+    public void MinusCurrentMiningCount()
+    {
+        --_crtMiningCount;
+    }
+
+    public void SubmitMineral()
+    {
+        _player.SubmitMineral(_mineralCount);
+        _cart.PlusMoney(_price);
+        _mineralCount = 0;
+        _price = 0;
+        _crtMiningCount = _finalMiningCount;
+        OnChangeMineralCount(_mineralCount);
     }
 
     public void EnterMine()
     {
+        _fsm.StopStateMachine();
         _aiPath.destination = transform.parent.position;
         transform.position = transform.parent.position;
-        SetAnim("Idle");
-        if (_isOreTarget)
+        if (_targetOre != null)
         {
-            _target.GetComponent<Ore>().SetMiner(null);
-            _isOreTarget = false;
-        }
-        if (_miningCoroutine != null)
-        {
-            StopCoroutine(_miningCoroutine);
-            _miningCoroutine = null;
+            _targetOre.SetMiner(null);
+            _targetOre = null;
         }
         _target = null;
         _crtMiningCount = _finalMiningCount;
+        _fsm.ChangeState(EMinerState.IDLE);
     }
 
-    private void Update()
+    public void SetAnim(string param)
     {
-        if (_target == null)
-        {
-            Ore tempOre = RequestOre();
-            if (tempOre != null)
-            {
-                Debug.Log("±§ºÆ πﬂ∞ﬂ");
-                _target = tempOre.gameObject;
-                tempOre.SetMiner(this);
-                _isOreTarget = true;
-                MoveToTarget();
-            }
-        }
+        InitAnimatorState();
+        _animator.SetBool(param, true);
+    }
+
+    public void MoveToTarget()
+    {
+        _spriter.flipX = _target.transform.position.x < _rigid.position.x;
+        _aiPath.destination = _target.transform.position;
+    }
+
+    private void Awake()
+    {
+        _spriter = GetComponentInChildren<SpriteRenderer>();
+        _animator = GetComponentInChildren<Animator>();
+        _rigid = GetComponent<Rigidbody2D>();
+        _aiPath = GetComponent<AIPath>();
+        _fsm = GetComponent<MinerStateMachine>();
+        _cart = GameManager.Cart;
+        _player = GameManager.Player;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(Consts.OreTag))
-        {
-            Ore ore = collision.gameObject.GetComponent<Ore>();
-            if (ore.gameObject == _target)
-                StartMining(ore);
-        }
-        else if (_crtMiningCount == 0 && collision.gameObject.CompareTag(Consts.CartTag))
-        {
-            GameManager.Cart.PlusMoney(_price);
-            GameManager.Player.SubmitMineral(_mineralCount);
-            _mineralCount = 0;
-            _price = 0;
-            _crtMiningCount = _finalMiningCount;
-            OnChangeMineralCount(_mineralCount);
-            StartCoroutine(BlockMove(_delayTime, null));
-        }
+        _isEqualTarget = _target == collision.gameObject;
     }
 
-    private void StartMining(Ore targetOre)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("√§±§ Ω√¿€");
-        _aiPath.destination = transform.position;
-        _miningCoroutine = StartCoroutine(MineOre(targetOre));
+        if (_targetOre != null && _targetOre.gameObject == collision.gameObject)
+        {
+            _targetOre = null;
+        }
     }
 
     private void InitAnimatorState()
@@ -213,51 +238,13 @@ public class Miner : MonoBehaviour
         _animator.SetBool("Mine", false);
     }
 
-    private void SetAnim(string param)
-    {
-        InitAnimatorState();
-        _animator.SetBool(param, true);
-    }
-
-    private void MoveToTarget()
-    {
-        SetAnim("Run");
-        _spriter.flipX = _target.transform.position.x < _rigid.position.x;
-        _aiPath.destination = _target.transform.position;
-    }
-
     private bool CheckCritical()
     {
         return _finalCriticalPercent > Random.value;
     }
-
-    private IEnumerator MineOre(Ore ore)
+    private void SetTartget(GameObject target)
     {
-        SetAnim("Idle");
-        yield return _mineWait;
-        SetAnim("Mine");
-        yield return _mineAnimWait;
-        // Hit -> ∫Œº≈¡ˆ∏È true π›»Ø
-        if (ore.Hit((int)(_finalMiningPower * (CheckCritical() ? _finalCriticalPower : 1))))
-        {
-            _isOreTarget = false;
-            _crtMiningCount--;
-            StartCoroutine(BlockMove(_delayTime, _crtMiningCount > 0 ? null : _cart.gameObject));
-            _miningCoroutine = null;
-        }
-        else
-        {
-            _miningCoroutine = StartCoroutine(MineOre(ore));
-        }
-    }
-
-    private IEnumerator BlockMove(float blockTime, GameObject target)
-    {
-        SetAnim("Idle");
-        _aiPath.destination = transform.position;
-        yield return new WaitForSeconds(blockTime);
+        _isEqualTarget = false;
         _target = target;
-        if (_target != null)
-            MoveToTarget();
     }
 }

@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 6620315322663760026}
   - component: {fileID: 2809713273684258679}
   - component: {fileID: 2679783252202705591}
+  - component: {fileID: 7682888396378886903}
   m_Layer: 8
   m_Name: Miner
   m_TagString: Miner
@@ -477,7 +478,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _finalMiningPower: 0
+  _finalMiningSpeed: 0
+  _finalMovingSpeed: 0
+  _finalMiningCount: 0
+  _finalCriticalPercent: 0
+  _finalCriticalPower: 0
   _cameraTr: {fileID: 2584024700335080972}
+--- !u!114 &7682888396378886903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8007311180258966544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550890ffa2ae53f428020e60ea4a94f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8619226511068304193
 GameObject:
   m_ObjectHideFlags: 0

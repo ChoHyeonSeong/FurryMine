@@ -29,16 +29,14 @@ public class Ore : MonoBehaviour
         }
     }
 
-    public bool Hit(int damage)
+    public void Hit(int damage)
     {
         _health -= damage;  
         OnHitText(false, damage.ToString(), transform.position);
         if (_health <= 0)
         {
             Break();
-            return true;
         }
-        return false;
     }
 
     public void Init(int health)

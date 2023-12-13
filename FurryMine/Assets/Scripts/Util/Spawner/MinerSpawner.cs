@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class MinerSpawner : MonoBehaviour
 {
-
     private MinerPool _minerPool;
 
     public Miner SpawnMiner(int id)
