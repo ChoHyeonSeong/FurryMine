@@ -12,7 +12,7 @@ public class TempAdPage : MonoBehaviour
     private TextMeshProUGUI _timeCountText;
 
     private int _crtTime;
-    private int _limitTime = 5;
+    private int _limitTime = 10;
 
     public void ShowTempAd()
     {
