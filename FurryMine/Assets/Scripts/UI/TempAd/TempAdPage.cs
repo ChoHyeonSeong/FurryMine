@@ -18,6 +18,7 @@ public class TempAdPage : MonoBehaviour
     {
         _crtTime = _limitTime;
         _timeCountText.text = $"{_crtTime}ÃÊ ÈÄ¿¡ ±¤°í Ã¢ÀÌ ´ÝÈü´Ï´Ù...";
+        gameObject.SetActive(true);
         StartCoroutine(StartTimeCount());
     }
 
