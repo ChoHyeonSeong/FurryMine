@@ -7,8 +7,11 @@ using UnityEngine.UI;
 
 public class RewardButton : MonoBehaviour
 {
+    [SerializeField]
+    private TempAdPage _tempAd;
     private Button _button;
     private TextMeshProUGUI _remainText;
+    private bool _isTempAd;
 
     private void Awake()
     {
@@ -23,6 +26,7 @@ public class RewardButton : MonoBehaviour
         RewardReceiver.OnRemainCoolTime += UpdateRemainText;
         RewardReceiver.OnStartCoolTime += RewardStart;
         RewardReceiver.OnEndCoolTime += AllowShowAd;
+        AdManager.OnCompleteAdLoading += SetTempAd;
     }
 
     private void OnDisable()
@@ -30,11 +34,17 @@ public class RewardButton : MonoBehaviour
         RewardReceiver.OnRemainCoolTime -= UpdateRemainText;
         RewardReceiver.OnStartCoolTime -= RewardStart;
         RewardReceiver.OnEndCoolTime -= AllowShowAd;
+        AdManager.OnCompleteAdLoading -= SetTempAd;
+    }
+
+    private void SetTempAd(bool isLoadAd)
+    {
+        _isTempAd = !isLoadAd;
     }
 
     private void RewardStart(bool isCoolTime)
     {
-        if(isCoolTime)
+        if (isCoolTime)
             ForbidShowAd();
         else
             AllowShowAd();
@@ -45,7 +55,14 @@ public class RewardButton : MonoBehaviour
         if (CheckReceivableReward())
         {
             ForbidShowAd();
-            AdManager.ShowRewardedAd();
+            if (_isTempAd)
+            {
+                _tempAd.ShowTempAd();
+            }
+            else
+            {
+                AdManager.ShowRewardedAd();
+            }
         }
     }
 

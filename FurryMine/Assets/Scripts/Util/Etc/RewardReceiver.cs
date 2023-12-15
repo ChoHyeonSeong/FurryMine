@@ -23,12 +23,14 @@ public class RewardReceiver : MonoBehaviour
     private void OnEnable()
     {
         AdManager.OnReceiveReward += RandomEnforce;
+        TempAdPage.OnReceiveReward += RandomEnforce;
         AdManager.OnCompleteAdLoading += InitAdReward;
     }
 
     private void OnDisable()
     {
         AdManager.OnReceiveReward -= RandomEnforce;
+        TempAdPage.OnReceiveReward -= RandomEnforce;
         AdManager.OnCompleteAdLoading -= InitAdReward;
     }
 
@@ -53,7 +55,7 @@ public class RewardReceiver : MonoBehaviour
         }
     }
 
-    private void InitAdReward()
+    private void InitAdReward(bool _)
     {
         if (SaveManager.Save.AdDateTime != string.Empty)
         {

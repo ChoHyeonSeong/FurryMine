@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class AdManager
 {
-    public static Action OnCompleteAdLoading { get; set; }
+    public static Action<bool> OnCompleteAdLoading { get; set; }
     public static Action OnReceiveReward { get; set; }
 
     private static string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
@@ -27,6 +27,7 @@ public static class AdManager
             {
                 Debug.LogError("Rewarded ad failed to load an ad " +
                                "with error : " + error);
+                OnCompleteAdLoading(false);
                 return;
             }
 
@@ -37,7 +38,7 @@ public static class AdManager
 
             RegisterEventHandlers(ad);
             //Debug.Log("Load AdManager");
-            OnCompleteAdLoading();
+            OnCompleteAdLoading(true);
         });
     }
 
