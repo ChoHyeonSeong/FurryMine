@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class SelectMinerContent : MonoBehaviour
 {
-    public static Func<int> GetHeadId { get; set; }
-    public static Func<List<int>> GetStaffIdList { get; set; }
-
     [SerializeField]
     private SelectMinerItem _selectMinerItemPrefab;
 
@@ -30,12 +27,11 @@ public class SelectMinerContent : MonoBehaviour
     {
         if (includeHead)
         {
-            // head 받아오기
-            int headId = GetHeadId();
-            CreateItem(headId);
+            CreateItem(GameManager.Team.HeadMinerId);
         }
+
         // staff 받아오기
-        List<int> staffIdList = GetStaffIdList();
+        List<int> staffIdList = GameManager.Team.GetCurrentStaffIdList();
         foreach (int staffId in staffIdList)
         {
             CreateItem(staffId);

@@ -27,9 +27,9 @@ public class EquipContent : MonoBehaviour
             AddEquipItem(id);
         }
 
-        foreach(int id in SaveManager.Save.CurrentMinerEquip.Keys)
+        foreach(MinerEquip minerEquip in SaveManager.Save.CurrentMinerEquip)
         {
-            _equipItems[id].SetWear(true);
+            _equipItems[minerEquip.EquipId].SetWear(true);
         }
     }
 

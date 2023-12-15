@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MineCart : MonoBehaviour
 {
-    public static Action<bool, string, Vector2> OnPlusText;
+    public static Action<bool, string, Vector2> OnPlusText { get; set; }
     public static Action<int> OnChangeMoney { get; set; }
 
     public int Money { get => _money; }
@@ -47,11 +47,13 @@ public class MineCart : MonoBehaviour
     {
         GameApp.OnGameStart += GameStart;
         Mine.OnSellMine += InsertMoney;
+        AddGoldButton.OnAddGold += InsertMoney;
     }
 
     private void OnDisable()
     {
         GameApp.OnGameStart -= GameStart;
         Mine.OnSellMine -= InsertMoney;
+        AddGoldButton.OnAddGold -= InsertMoney;
     }
 }

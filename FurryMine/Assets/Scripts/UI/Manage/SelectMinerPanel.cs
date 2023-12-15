@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class SelectMinerPanel : MonoBehaviour
 {
+    public static Action<int, int> OnSetStaffMiner { get; set; }
+    public static Action<int, int> OnSetMinerEquip { get; set; }
+
     [SerializeField]
     private Button _cancelBtn;
 
@@ -15,52 +18,58 @@ public class SelectMinerPanel : MonoBehaviour
 
     private const string _changeMinerTitle = "±³Ã¼ÇÒ ±¤ºÎ ¼±ÅÃ";
     private const string _minerEquipTitle = "Âø¿ëÇÒ ±¤ºÎ ¼±ÅÃ";
-    private Action<int> _callback;
+    private bool _isStaff;
+    private int _itemId;
     private SelectMinerContent _selectMinerContent;
 
     private void Awake()
     {
         _cancelBtn.onClick.AddListener(HideSelectMiner);
-        _selectMinerContent =GetComponentInChildren<SelectMinerContent>();
-        MinerTeam.OnSetStaffMiner += ShowSelectStaffMiner;
-        MinerTeam.OnSetMinerEquip += ShowSelectMinerEquip;
-        SelectMinerItem.OnClickSelect += ExecuteCallback;
+        _selectMinerContent = GetComponentInChildren<SelectMinerContent>();
+        MinerTeam.OnSelectMiner += ShowSelectStaffMiner;
+        EquipItem.OnClickWear += ShowSelectMinerEquip;
+        SelectMinerItem.OnClickSelect += SelectMiner;
         gameObject.SetActive(false);
     }
 
     private void OnDestroy()
     {
-        MinerTeam.OnSetStaffMiner -= ShowSelectStaffMiner;
-        MinerTeam.OnSetMinerEquip -= ShowSelectMinerEquip;
-        SelectMinerItem.OnClickSelect -= ExecuteCallback;
+        MinerTeam.OnSelectMiner -= ShowSelectStaffMiner;
+        EquipItem.OnClickWear -= ShowSelectMinerEquip;
+        SelectMinerItem.OnClickSelect -= SelectMiner;
     }
 
-    private void ShowSelectStaffMiner(Action<int> callback)
+    private void ShowSelectStaffMiner(int minerId)
     {
+        _isStaff = true;
         _titleText.text = _changeMinerTitle;
         _selectMinerContent.InitContent(false);
-        _callback = callback;
+        _itemId = minerId;
         gameObject.SetActive(true);
     }
 
-    private void ShowSelectMinerEquip(Action<int> callback)
+    private void ShowSelectMinerEquip(int equipId)
     {
+        _isStaff = false;
         _titleText.text = _minerEquipTitle;
         _selectMinerContent.InitContent(true);
-        _callback = callback;
+        _itemId = equipId;
         gameObject.SetActive(true);
     }
-    
-    private void ExecuteCallback(int minerId)
+
+    private void SelectMiner(int minerId)
     {
-        _callback(minerId);
+        if (_isStaff)
+            OnSetStaffMiner(_itemId, minerId);
+        else
+            OnSetMinerEquip(_itemId, minerId);
         HideSelectMiner();
     }
 
     private void HideSelectMiner()
     {
         _selectMinerContent.PoolContent();
-        _callback = null;
+        _itemId = 0;
         gameObject.SetActive(false);
     }
 

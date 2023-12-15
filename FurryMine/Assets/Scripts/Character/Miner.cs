@@ -20,6 +20,8 @@ public class Miner : MonoBehaviour
 
     public Ore TargetOre { get => _targetOre; }
 
+    public string MinerName { get=>_minerEntity.Name; }
+
     public WaitForSeconds MineAnimWait { get => _mineAnimWait; }
     public WaitForSeconds MineWait { get => _mineWait; }
 
@@ -76,6 +78,8 @@ public class Miner : MonoBehaviour
         _target = null;
         _finalMiningCount = _minerEntity.MiningCount;
         _crtMiningCount = _finalMiningCount;
+        _aiPath.destination = transform.position;
+        _fsm.PlayState();
         _fsm.ChangeState(EMinerState.IDLE);
     }
 
@@ -134,7 +138,7 @@ public class Miner : MonoBehaviour
 
     public void GoToSpare()
     {
-        _fsm.StopStateMachine();
+        _fsm.StopState();
         if (_targetOre != null)
         {
             _targetOre.SetMiner(null);
@@ -182,7 +186,8 @@ public class Miner : MonoBehaviour
 
     public void EnterMine()
     {
-        _fsm.StopStateMachine();
+        Debug.Log("EnterMine Begin");
+        _fsm.StopState();
         _aiPath.destination = transform.parent.position;
         transform.position = transform.parent.position;
         if (_targetOre != null)
@@ -192,7 +197,7 @@ public class Miner : MonoBehaviour
         }
         _target = null;
         _crtMiningCount = _finalMiningCount;
-        _fsm.ChangeState(EMinerState.IDLE);
+        StartCoroutine(RestartWork());
     }
 
     public void SetAnim(string param)
@@ -246,5 +251,12 @@ public class Miner : MonoBehaviour
     {
         _isEqualTarget = false;
         _target = target;
+    }
+
+    private IEnumerator RestartWork()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _fsm.PlayState();
+        _fsm.ChangeState(EMinerState.IDLE);
     }
 }

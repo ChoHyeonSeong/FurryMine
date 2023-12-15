@@ -10,6 +10,7 @@ public enum EMinerState
     THINK,
     MINE,
     SUBMIT,
+    STOP
 }
 
 public class MinerStateMachine : MonoBehaviour
@@ -20,13 +21,19 @@ public class MinerStateMachine : MonoBehaviour
     private MinerState _thinkState;
     private MinerState _mineState;
     private MinerState _submitState;
+    private MinerState _stopState;
 
     private MinerState _crtState;
+    private bool _isStop;
 
     public void ChangeState(EMinerState state)
     {
+        if (_isStop)
+            return;
+
         if (_crtState != null)
             _crtState.Exit(_miner);
+        Debug.Log($"{_miner.MinerName}-{state} Begin");
         switch (state)
         {
             case EMinerState.IDLE:
@@ -48,10 +55,17 @@ public class MinerStateMachine : MonoBehaviour
         _crtState.Enter(_miner);
     }
 
-    public void StopStateMachine()
+    public void StopState()
     {
         _crtState.Stop(_miner);
-        _crtState = null;
+        _crtState = _stopState;
+        _crtState.Enter(_miner);
+        _isStop = true;
+    }
+
+    public void PlayState()
+    {
+        _isStop = false;
     }
 
     private void Awake()
@@ -62,11 +76,12 @@ public class MinerStateMachine : MonoBehaviour
         _thinkState = new ThinkState(this);
         _mineState = new MineState(this);
         _submitState = new SubmitState(this);
+        _stopState = new StopState(this);
     }
 
     private void Update()
     {
-        if (_crtState != null)
+        if (!_isStop)
         {
             _crtState.Execute(_miner);
         }

@@ -8,15 +8,15 @@ using UnityEngine.UI;
 
 public class MinerItem : MonoBehaviour, IPointerClickHandler
 {
-    public static Func<int> GetHeadId { get; set; }
-    public static Action<MinerItem, MinerItem> OnClickHead { get; set; }
-    public static Action<MinerItem> OnClickStaff { get; set; }
+    public static Action<int> OnClickHead { get; set; }
+    public static Action<int> OnClickStaff { get; set; }
+
+    public static MinerItem PrevItem;
 
     public EMinerLabel MinerLabel { get => _minerLabel; }
     public int MinerId { get => _minerId; }
 
     private int _minerId;
-    private static MinerItem _prevItem;
     [SerializeField]
     private InfoButton _infoBtn;
     [SerializeField]
@@ -42,10 +42,10 @@ public class MinerItem : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (_prevItem != null)
-            _prevItem.UnselectItem();
+        if (PrevItem != null)
+            PrevItem.UnselectItem();
         SelectItem();
-        _prevItem = this;
+        PrevItem = this;
     }
 
     public void UnselectItem()
@@ -54,12 +54,6 @@ public class MinerItem : MonoBehaviour, IPointerClickHandler
         _staffBtn.gameObject.SetActive(false);
         _headBtn.gameObject.SetActive(false);
         _lightFrame.SetActive(false);
-    }
-
-    public void InitSelectItem()
-    {
-        _prevItem = null;
-        UnselectItem();
     }
 
     public void InitItem(int id, string name, string rank, Sprite sprite)
@@ -118,11 +112,11 @@ public class MinerItem : MonoBehaviour, IPointerClickHandler
 
     private void ClickHead()
     {
-        OnClickHead(this, _minerContent.GetMinerItem(GetHeadId()));
+        OnClickHead(_minerId);
     }
 
     private void ClickStaff()
     {
-        OnClickStaff(this);
+        OnClickStaff(_minerId);
     }
 }

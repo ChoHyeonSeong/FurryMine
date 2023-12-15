@@ -16,7 +16,7 @@ public class SaveData
         CurrentMineIndex = 0;
         CurrentHeadId = 0;
         CurrentStaffIds = new List<int>();
-        CurrentMinerEquip = new Dictionary<int, int>();
+        CurrentMinerEquip = new List<MinerEquip>();
         EnforceLevels = new List<int>();
         for (int i = 0; i < EnforceManager.EnforceCount; i++)
             EnforceLevels.Add(0);
@@ -55,9 +55,27 @@ public class SaveData
     public int CurrentMineIndex;
     public int CurrentHeadId;
     public List<int> CurrentStaffIds;
-    public Dictionary<int, int> CurrentMinerEquip;
+    public List<MinerEquip> CurrentMinerEquip;
     public List<int> EnforceLevels;
     public List<MineData> MineDatas;
     public List<int> MinerIds;
     public List<int> EquipIds;
+}
+
+[Serializable]
+public class MinerEquip
+{
+    public MinerEquip() : this(0, 0)
+    {
+
+    }
+
+    public MinerEquip(int minerId, int equipId)
+    {
+        MinerId = minerId;
+        EquipId = equipId;
+    }
+
+    public int MinerId;
+    public int EquipId;
 }

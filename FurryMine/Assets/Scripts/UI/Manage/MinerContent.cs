@@ -10,6 +10,7 @@ public enum EMinerLabel
 
 public class MinerContent : MonoBehaviour
 {
+
     [SerializeField]
     private MinerItem _minerItemPrefab;
 
@@ -20,16 +21,24 @@ public class MinerContent : MonoBehaviour
         return _minerItems[id];
     }
 
+    public void InitSelectItem(int minerId)
+    {
+        MinerItem.PrevItem = null;
+        _minerItems[minerId].UnselectItem();
+    }
+
     private void Awake()
     {
         GameApp.OnGameStart += GameStart;
         MinerTeam.OnSetLabel += SetLabel;
+        MinerTeam.OnInitSelectMiner += InitSelectItem;
     }
 
     private void OnDestroy()
     {
         GameApp.OnGameStart -= GameStart;
         MinerTeam.OnSetLabel -= SetLabel;
+        MinerTeam.OnInitSelectMiner -= InitSelectItem;
     }
 
     private void GameStart()

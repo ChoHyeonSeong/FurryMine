@@ -18,7 +18,11 @@ public static class SaveManager
         Save.CurrentMineIndex = GameManager.Mine.CurrentMineIndex;
         Save.CurrentHeadId = GameManager.Team.HeadMinerId;
         Save.CurrentStaffIds = GameManager.Team.GetCurrentStaffIdList();
-        Save.CurrentMinerEquip = GameManager.Team.CurrentMinerEquip;
+        Save.CurrentMinerEquip = new List<MinerEquip>();
+        foreach (var item in GameManager.Team.CurrentMinerEquip)
+        {
+            Save.CurrentMinerEquip.Add(new MinerEquip(item.Key, item.Value));
+        }
         Save.EnforceLevels = EnforceManager.GetLevelList();
         Save.MineDatas = GameManager.Mine.MineDataList;
         string jsonData = JsonUtility.ToJson(Save);

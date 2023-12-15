@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class EquipItem : MonoBehaviour, IPointerClickHandler
 {
-    public static Action<EquipItem> OnClickWear { get; set; }
+    public static Action<int> OnClickWear { get; set; }
     public int EquipId { get => _equipId; }
 
     private int _equipId;
@@ -86,7 +86,6 @@ public class EquipItem : MonoBehaviour, IPointerClickHandler
 
     private void ClickWear()
     {
-        OnClickWear(this);
+        OnClickWear(_equipId);
     }
-
 }
