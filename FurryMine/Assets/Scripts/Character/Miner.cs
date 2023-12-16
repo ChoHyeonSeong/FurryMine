@@ -166,7 +166,13 @@ public class Miner : MonoBehaviour
 
     public void StrikeOre()
     {
+        Debug.Log($"StrikeOre - _targetOre == {_targetOre}");
         _targetOre.Hit((int)(_finalMiningPower * (CheckCritical() ? _finalCriticalPower : 1)));
+    }
+
+    public void BreakOre()
+    {
+        _targetOre = null;
     }
 
     public void MinusCurrentMiningCount()
@@ -226,14 +232,6 @@ public class Miner : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         _isEqualTarget = _target == collision.gameObject;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (_targetOre != null && _targetOre.gameObject == collision.gameObject)
-        {
-            _targetOre = null;
-        }
     }
 
     private void InitAnimatorState()

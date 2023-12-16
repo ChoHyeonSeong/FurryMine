@@ -18,6 +18,7 @@ public class GameApp : MonoBehaviour
     private void Awake()
     {
         Application.targetFrameRate = 60;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         TableManager.OnComplete += CompleteLoading;
         SaveManager.OnComplete += CompleteLoading;
         ResourceManager.OnComplete += CompleteLoading;
