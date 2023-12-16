@@ -47,6 +47,7 @@ public class Ore : MonoBehaviour
 
     private void Break()
     {
+        _miner.BreakOre();
         OnPreBreakOre(this);
         OnBreakOre(this);
     }

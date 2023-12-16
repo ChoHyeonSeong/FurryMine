@@ -8,8 +8,9 @@ public class ThinkState : MinerState
     {
     }
 
-    public override void Execute(Miner miner)
+    public override void Enter(Miner miner)
     {
+        Debug.Log($"ThinkState - miner.TargetOre == {miner.TargetOre}");
         if (miner.TargetOre == null)
         {
             miner.MinusCurrentMiningCount();
